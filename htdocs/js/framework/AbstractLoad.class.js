@@ -264,7 +264,7 @@ NGS.AbstractLoad = NGS.Class({
 				containerElem = containerElem[0];
 			}
 			if (containerElem) {
-				var fade = true;
+				var fade = false;
 				if (fade) {
 					$(containerElem).fadeOut('slow', function() {
 						containerElem.innerHTML = html;

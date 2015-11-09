@@ -7,11 +7,9 @@
  */
 NGS.Dispatcher = {
 
-	baseUrl : "",
 	loadsObject : {},
 
-	initialize : function(baseUrl) {
-		this.baseUrl = baseUrl;
+	initialize : function() {
 		if (NGS.getInitialLoad()) {
 			NGS.nestLoad(NGS.getInitialLoad().load, NGS.getInitialLoad().params);
 		}
@@ -113,7 +111,7 @@ NGS.Dispatcher = {
 		if (NGS.getModule() != null) {
 			module = NGS.getModule() + "/";
 		}
-		return this.baseUrl + dynContainer + _package + "/" + command;
+		return NGS.getHttpHost() + dynContainer + _package + "/" + command;
 	}
 };
 

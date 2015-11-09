@@ -48,7 +48,9 @@
             {
                 "output_file": "ngs_loads_widgets.js",
                 "compress": false,
-                "files": ["loads/widgets/ModifierGroupsLoad.class.js"]
+                "files": [
+                    
+                    ]
             }
         ]
     },

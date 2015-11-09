@@ -1,5 +1,6 @@
 (function($) {
   $.fn.imFormValidator = function(options) {
+
     var defaults = {
       showError : imValidator.showError,
       hideError : imValidator.hideError
@@ -20,10 +21,13 @@
             var status = imValidator.validateFloatNumber($(item).val());
             break;  
           case "string":
-            var status = imValidator.validateString($(item).val(), 1, false);
+            var status = imValidator.validateString($(item).val(), 1, true);
             break;
           case "text":
             var status = imValidator.validateText($(item).val());
+            break;
+          case "data-field":
+            var status = imValidator.validateDataField($(item).val());
             break;
           case "email":
             var status = imValidator.validateEmail($(item).val());
@@ -51,12 +55,6 @@
             break;
           case "policy":
             var status = imValidator.validatePolicy(item);
-            break;
-          case "cc_expiration_date":
-            var status = imValidator.validateCCExpirationDate($(item).val());
-            break;
-          case "ccv":
-            var status = imValidator.validateCCV($(item).val());
             break;
         }
         if (status !== true) {
@@ -125,18 +123,13 @@
     },
     validateMobileNumber : function(str) {
       var str = str.trim();
-      var filter = /^[0-9\+\.\-]*$/;
+      var filter = /^[0-9\+]*$/;
       if (!filter.test(str)) {
         return "Please use only numbers.";
       }
       if (!str) {
         return "You can't leave this empty.";
       }
-      var str1 = str.replace(/\-/g, "");
-        var str2 = str1.replace(/\./g, "");
-        if (str2.length != 10 && str2.length != 11) {
-            return "invalid phone number";
-        }
       return true;
     },
     validateString : function(str, len, allowChars, email) {
@@ -169,49 +162,32 @@
       if (!filter.test(str)) {
         return "Please use only letters (a-z), numbers, and periods.";
       }
-
       return true;
     },
-    validateCCExpirationDate : function(str) {
-      var str = str.trim();
+     validateDataField:function(str){
+         var str = str.trim();
       if (!str) {
         return "You can't leave this empty.";
       }
-      var filter = /^\d{2}\/{0,1}\d{2}$/;
-      if (!filter.test(str)) {
-        return "Please use mm/yy format for date";
-      }
-
-      return true;
-    },
-    validateCCV : function(str) {
-      var str = str.trim();
-      if (!str) {
-        return "Please enter your card's CCV";
-      }
-      var filter = /^\d{3,4}$/;
-      if (!filter.test(str)) {
-        return "Please enter correct CCV";
-      }
-
-      return true;
-    },
+       return true;
+      },
     validatePasswords : function(str, str1) {
       var str = str.trim();
       var str1 = str1.trim();
       filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
       if (str !== str1) {
-        return "You passwords don't match. Can you please try again?";
+        return "These passwords don't match. Try again?";
       }
       return true;
     },
     validatePolicy : function(elem) {
       if (!$(elem).is(':checked')) {
-        return "In order to use our services, you must agree to our Terms of Use and Privacy Policy.";
+        return "In order to use our services, you must agree to imusic.am's Terms of use and privacy policy.";
       }
       return true;
     },
     showError : function(elem, msg) {
+        
       $(elem).parent().append($("<div class='ilyov_validate'>" + msg + "</div>"));
       $(elem).css({
         "border-color" : "#FC5458",
@@ -227,7 +203,7 @@
 })(jQuery);
 
 (function($) {
-  return $.fn.serializeObject = function(trim) {
+  return $.fn.serializeObject = function() {
     var json,
         patterns,
         push_counters,
@@ -246,8 +222,7 @@
       return base;
     };
     this.push_counter = function(key) {
-      if (push_counters[key] ===
-      void 0) {
+      if (push_counters[key] === void 0) {
         push_counters[key] = 0;
       }
       return push_counters[key]++;
@@ -262,11 +237,7 @@
         return;
       }
       keys = elem.name.match(patterns.key);
-      if (trim) {
-        merge = elem.value.trim();
-      } else {
-        merge = elem.value;
-      }
+      merge = elem.value;
       reverse_key = elem.name;
       while (( k = keys.pop()) !==
       void 0) {
