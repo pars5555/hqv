@@ -1,0 +1,69 @@
+[
+    {
+        "output_file": "ngs.js",
+        "compress": true,
+        "builders": [
+            {
+                "output_file": "im_libs.js",
+                "compress": false,
+                "files": [
+                    "lib/jquery.js",
+                    "lib/jquery-ui.js",
+                    "lib/jquery.datetimepicker.js",
+                    "lib/keyboard/jquery.keyboard.min.js"
+                ]
+            },
+            {
+                "output_file": "ngs_framework.js",
+                "compress": false,
+                "files": ["framework/NGS.js",
+                    "framework/Dispatcher.class.js",
+                    "framework/AbstractLoad.class.js",
+                    "framework/AbstractAction.class.js",
+                    "framework/AjaxLoader.class.js",
+                    "framework/CustomEvent.js",
+                    "framework/NGSEvent.js"]
+            },
+            {
+                "output_file": "ngs_global.js",
+                "compress": false,
+                "files": ["index.js",
+                    "conf/config.js"]
+            }
+        ]
+    },
+    {
+        "output_file": "ngs_loads.js",
+        "compress": true,
+        "builders": [
+            {
+                "output_file": "ngs_loads_main.js",
+                "compress": false,
+                "files": [
+                    "loads/main/IndexLoad.class.js",
+                    "loads/main/HomeLoad.class.js",
+                    "loads/main/SearchResultLoad.class.js"
+                ]
+            },
+            {
+                "output_file": "ngs_loads_widgets.js",
+                "compress": false,
+                "files": ["loads/widgets/ModifierGroupsLoad.class.js"]
+            }
+        ]
+    },
+    {
+        "output_file": "ngs_actions.js",
+        "compress": true,
+        "builders": [
+            {
+                "output_file": "ngs_actions_main.js",
+                "compress": false,
+                "files": [
+                    "actions/main/sale/SetNonProfitAction.class.js"
+
+                ]
+            }
+        ]
+    }
+]

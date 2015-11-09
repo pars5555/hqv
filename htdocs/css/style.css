@@ -1,0 +1,42 @@
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-decoration:none;
+    border:none;
+    outline:none;
+    color:inherit;
+}
+
+body{
+    font-size: 13px;
+    color:#333;
+    font-family:OpenSans,sans-serif;
+}
+
+/**************************************************************************************/
+/*                                         WRAPPER                                    */
+/**************************************************************************************/
+
+.wrapper{
+    display:table;
+    width:100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.content{
+    display:table-cell;
+    vertical-align: top;
+    padding-left:20px;
+}
+
+.title{
+    border-bottom: 2px solid #555;
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-align: center;	
+    font-weight:600;
+    color:#555;
+}

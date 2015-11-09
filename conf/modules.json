@@ -1,0 +1,9 @@
+{
+  "default": {
+    "subdomain": {},
+    "path": {},
+    "default": {
+      "dir": "hqv"
+    }
+  }
+}

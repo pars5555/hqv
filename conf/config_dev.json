@@ -1,0 +1,19 @@
+{
+	"VERSION": "1.0.0",
+	"DB": {
+		"mysql": {
+			"host": "127.0.0.1",
+			"user": "root",
+			"pass": "",
+			"name": "referendum"
+		},
+		"mongo": {
+			"host": "127.0.0.1",
+			"user": "",
+			"pass": "",
+			"name": "referendum"
+		}
+	},
+	"static_path": "hqv.am",
+	"contact_email": "info@naghashyan.com"
+}

@@ -1,0 +1,4 @@
+#map_canvas path {
+    stroke-width:1; /* control the countries borders width */
+    stroke:#fff; /* choose a color for the border */
+}
