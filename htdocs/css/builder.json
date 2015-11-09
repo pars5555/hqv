@@ -11,6 +11,7 @@
                     "style.css",
                     "main.css",
                     "jquery-ui.css",
+                    "jquery.datetimepicker.css",
                     "keyboard.min.css"
                 ]
             }
