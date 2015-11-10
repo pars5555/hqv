@@ -21,14 +21,12 @@ body{
 .wrapper{
     display:table;
     width:100%;
-    padding: 20px;
     box-sizing: border-box;
 }
 
 .content{
     display:table-cell;
     vertical-align: top;
-    padding-left:20px;
 }
 
 .title{
@@ -39,4 +37,11 @@ body{
     text-align: center;	
     font-weight:600;
     color:#555;
+}
+/**************************************************************************************/
+/*                           SEARCH RESULT WRAPPER                                    */
+/**************************************************************************************/
+.search-result-wrapper .search-result-collection {
+    max-height: 300px;
+    overflow-y:auto;
 }

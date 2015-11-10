@@ -5,7 +5,8 @@ NGS.createLoad("hqv.loads.main.search_result", {
     onError: function (params) {
 
     },
-    afterLoad: function () {       
-
+    afterLoad: function () {   
+        jQuery("#searchLoader").hide();
+        jQuery("#searchResultWrapper").show();
     }
 });
