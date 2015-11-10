@@ -34,12 +34,12 @@
 			<div class="row">
 				<form class="col s12">
 			      <div class="row">
-			        <div class="input-field col s6">
+			        <div class="input-field col s12 m6 6">
 			          <i class="material-icons prefix">account_circle</i>
 			          <input id="firstName" type="text" class="keyboard">
 			          <label for="firstName">First Name</label>
 			        </div>
-			        <div class="input-field col s6">
+			        <div class="input-field col s12 m6 6">
 			          <i class="material-icons prefix">account_circle</i>
 			          <input id="lastName" type="tel" class="keyboard">
 			          <label for="lastName">Last Name</label>

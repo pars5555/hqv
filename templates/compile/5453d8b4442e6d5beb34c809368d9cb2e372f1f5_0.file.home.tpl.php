@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-10 14:52:01
+<?php /* Smarty version 3.1.27, created on 2015-11-10 15:06:42
          compiled from "D:\xampp\htdocs\hqv\templates\main\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:274565641f681bac4f9_76610588%%*/
+/*%%SmartyHeaderCode:50545641f9f20f2b87_09846642%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5453d8b4442e6d5beb34c809368d9cb2e372f1f5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\home.tpl',
-      1 => 1447163520,
+      1 => 1447164401,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '274565641f681bac4f9_76610588',
+  'nocache_hash' => '50545641f9f20f2b87_09846642',
   'variables' => 
   array (
     'SITE_PATH' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5641f681bd8e06_70669962',
+  'unifunc' => 'content_5641f9f2124d09_64384190',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5641f681bd8e06_70669962')) {
-function content_5641f681bd8e06_70669962 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5641f9f2124d09_64384190')) {
+function content_5641f9f2124d09_64384190 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '274565641f681bac4f9_76610588';
+$_smarty_tpl->properties['nocache_hash'] = '50545641f9f20f2b87_09846642';
 ?>
 <!-- <input type="text" id='firstName' class="keyboard">
 <input type="text" id='lastName' class="keyboard">
@@ -65,12 +65,12 @@ $_smarty_tpl->properties['nocache_hash'] = '274565641f681bac4f9_76610588';
 			<div class="row">
 				<form class="col s12">
 			      <div class="row">
-			        <div class="input-field col s6">
+			        <div class="input-field col s12 m6 6">
 			          <i class="material-icons prefix">account_circle</i>
 			          <input id="firstName" type="text" class="keyboard">
 			          <label for="firstName">First Name</label>
 			        </div>
-			        <div class="input-field col s6">
+			        <div class="input-field col s12 m6 6">
 			          <i class="material-icons prefix">account_circle</i>
 			          <input id="lastName" type="tel" class="keyboard">
 			          <label for="lastName">Last Name</label>
