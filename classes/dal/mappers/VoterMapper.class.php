@@ -21,7 +21,7 @@ namespace hqv\dal\mappers {
     class VoterMapper extends AdvancedAbstractMysqlMapper {
 
         private static $instance;
-        public $tableName = "currencies";
+        public $tableName = "voters";
 
         public static function getInstance() {
             if (self::$instance == null) {
@@ -31,7 +31,7 @@ namespace hqv\dal\mappers {
         }
 
         public function createDto() {
-            return new CurrencyDto();
+            return new VoterDto();
         }
 
         public function getPKFieldName() {

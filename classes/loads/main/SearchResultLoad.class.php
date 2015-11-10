@@ -11,26 +11,27 @@
 
 namespace hqv\loads\main {
 
-    use NGS;
     use hqv\loads\NgsLoad;
     use hqv\managers\VoterManager;
+    use hqv\security\RequestGroups;
+    use NGS;
 
     class SearchResultLoad extends NgsLoad {
 
         public function load() {
             list($birthDate, $firstName, $lastName) = $this->validateParams();
-            $where = ['birth_date', '=', $birthDate];
+            $where = ['birth_date', '=', "'$birthDate'"];
             if (!empty($firstName)) {
                 $where[] = 'and';
                 $where[] = 'first_name';
                 $where[] = 'like';
-                $where[] = "'%$firstName%'";
+                $where[] = "'$firstName%'";
             }
             if (!empty($firstName)) {
                 $where[] = 'and';
                 $where[] = 'last_name';
                 $where[] = 'like';
-                $where[] = "'%$lastName%'";
+                $where[] = "'$lastName%'";
             }
             $voters = VoterManager::getInstance()->selectAdvance('*', $where, ['first_name']);
             $this->addParam('voters', $voters);
@@ -59,7 +60,7 @@ namespace hqv\loads\main {
         }
 
         public function getRequestGroup() {
-            RequestGroupsestGroups::$guestRequest;
+            RequestGroups::$guestRequest;
         }
 
     }

@@ -12,7 +12,7 @@
 
 namespace hqv\managers {
 
-    use hqv\dal\mappers\CurrencyMapper;
+    use hqv\dal\mappers\VoterMapper;
 
     class VoterManager extends AdvancedAbstractManager {
 

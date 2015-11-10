@@ -1,6 +1,6 @@
 NGS.createLoad("hqv.loads.main.search_result", {
     getContainer: function () {
-        return "initialLoad";
+        return "searchResult";
     },
     onError: function (params) {
 

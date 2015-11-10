@@ -8,7 +8,19 @@ NGS.createLoad("hqv.loads.main.home", {
     afterLoad: function () {
         this.initBirthDate();
         this.initArmKeyboard();
+        this.initSearch();
 
+    },
+    initSearch: function () {
+        $('#searchVoters').click(function () {
+            var firstName = $('#firstName').val();
+            var lastName = $('#lastName').val();
+            var birthDate = $('#birthDate').val();
+            if (birthDate.length > 0)
+            {
+                NGS.load("hqv.loads.main.search_result", {birthDate: birthDate, firstName:firstName,lastName:lastName});
+            }
+        });
     },
     initArmKeyboard: function () {
         $.keyboard.layouts.arm = {
@@ -49,10 +61,10 @@ NGS.createLoad("hqv.loads.main.home", {
             lang: 'hy',
             timepicker: false,
             step: 1,
-             formatDate:'Y-m-d',
- yearStart:1920,
- yearEnd:2000,
- defaultDate:'1990-01-01'
+            formatDate: 'Y-m-d',
+            yearStart: 1920,
+            yearEnd: 2000,
+            defaultDate: '1990-01-01'
         });
     }
 });
