@@ -18,7 +18,7 @@ namespace hqv\dal\dto {
 
     use \ngs\framework\dal\dto\AbstractDto;
 
-    class VoterDto extends AbstractDto {
+    class AreaDto extends AbstractDto {
 
         // constructs class instance
         public function __construct() {
@@ -28,15 +28,12 @@ namespace hqv\dal\dto {
         // Map of DB value to Field value
         private $mapArray = array(
             "id" => "id", 
-            "number" => "number",
-            "first_name" => "firstName",
-            "last_name" => "lastName",
-            "father_name" => "fatherName",
-            "address" => "address",
-            "birth_date" => "birthDate",
-            "territory" => "territory",
+            "region" => "region",
+            "community" => "community",
             "area_id" => "areaId",
-            "area" => "area"
+            "father_name" => "fatherName",
+            "territory_id" => "territoryId",
+            "address" => "address"
             );
 
         // returns map array

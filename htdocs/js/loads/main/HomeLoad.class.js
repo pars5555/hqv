@@ -75,7 +75,12 @@ NGS.createLoad("hqv.loads.main.home", {
             weekdaysShort: [ 'կիր', 'երկ', 'երեք', 'չոր', 'հինգ', 'ուրբ', 'շաբ' ],
             format: 'yyyy-mm-dd',
             selectMonths: true,
-            selectYears: 70
+            selectYears: 70,
+            clear: null,
+            today : null,
+            min: [1922,11,30],
+            max: [1990,11,15]
+            
         });
 
         // $('#birthDate').datetimepicker({

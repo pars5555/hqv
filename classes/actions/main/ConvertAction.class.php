@@ -30,19 +30,39 @@ namespace hqv\actions\main {
               var_dump($i);
               }
               exit; */
-           /* $offset = 0;
+            /* $offset = 0;
+              while (true) {
+              $allData = \hqv\managers\DataManager::getInstance()->selectAdvance('*', [], [], null, $offset, 5000);
+              if (empty($allData ))
+              {
+              break;
+              }
+              $offset += 5000;
+              foreach ($allData as $row) {
+              \hqv\managers\DataOkManager::getInstance()->addRow(
+              $row->F1, $row->F2, $row->F3, $row->F4, $row->F5, $row->F6, $row->F7, $row->F8);
+              }
+              } */
+            $offset = 0;
+            $limit= 5000;
             while (true) {
-                $allData = \hqv\managers\DataManager::getInstance()->selectAdvance('*', [], [], null, $offset, 5000);
-                if (empty($allData ))
-                {
+                $allData = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', [], [], null, $offset, $limit);
+                
+                if (empty($allData)) {
                     break;
                 }
-                $offset += 5000;
+                $offset += $limit;
                 foreach ($allData as $row) {
-                    \hqv\managers\DataOkManager::getInstance()->addRow(
-                            $row->F1, $row->F2, $row->F3, $row->F4, $row->F5, $row->F6, $row->F7, $row->F8);
+                    $t = $row->getTerritory();
+                    $a = $row->getArea();
+                    $area = \hqv\managers\AreaManager::getInstance()->selectAdvance('*', ['area_id', '=', $a, 'and', 'territory_id', '=', $t]);
+                    if (!empty($area)) {
+                        $area = $area[0];
+                        $row->setAreaId($area->getId());
+                        \hqv\managers\VoterManager::getInstance()->updateByPK($row);
+                    }
                 }
-            }*/
+            }
         }
 
     }
