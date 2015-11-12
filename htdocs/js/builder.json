@@ -63,7 +63,7 @@
                 "output_file": "ngs_actions_main.js",
                 "compress": false,
                 "files": [
-                    "actions/main/sale/SetNonProfitAction.class.js"
+                    "actions/main/SetDataAction.class.js"
 
                 ]
             }

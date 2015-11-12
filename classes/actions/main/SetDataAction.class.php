@@ -16,10 +16,12 @@ namespace hqv\actions\main {
 
     use hqv\actions\BaseAction;
 
-    class SetWillParticipateAction extends BaseAction {
+    class SetDataAction extends BaseAction {
 
         public function service() {
-            \hqv\managers\VoterManager::getInstance()->selectAdvance();
+            list($voterId, $email, $phone, $willVote, $ipAddress, $country, $browser, $wantsReceiveEmail ) =$this->validateData();
+            \hqv\managers\VoterDataManager::getInstance()->addRow($voterId, $email, $phone, $willVote, $ipAddress, $country, $browser, $wantsReceiveEmail);
+            
         }
 
     }

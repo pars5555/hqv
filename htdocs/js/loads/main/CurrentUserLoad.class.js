@@ -5,7 +5,13 @@ NGS.createLoad("hqv.loads.main.current_user", {
     onError: function (params) {
 
     },
-    afterLoad: function () {   
-		jQuery('#currentUserModal').openModal();
+    afterLoad: function () {
+        jQuery('#currentUserModal').openModal(
+                {
+                    complete: function () {
+                        NGS.load('hqv.actions.main.sale.set_data', {});
+                    }
+                }
+        );
     }
 });

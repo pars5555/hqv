@@ -88,9 +88,9 @@ NGS.createLoad("hqv.loads.main.home", {
             lang: 'hy',
             timepicker: false,
             step: 1,
-            formatDate: 'Y-m-d',
-            yearStart: 1920,
-            yearEnd: 2000,
+            formatDate:'Y-m-d',
+            yearStart: 1922,
+            yearEnd: 1997,
             defaultDate: '1990-01-01'
         });
     }
