@@ -45,3 +45,17 @@ body{
     max-height: 300px;
     overflow-y:auto;
 }
+/**************************************************************************************/
+/*                                        KEYBOARD                                    */
+/**************************************************************************************/
+.ui-keyboard {
+    background-color:#f9f9f9 !important;
+}
+.ui-keyboard-keyset .ui-keyboard-button {
+    background-color: #26a69a !important;
+    color: #fff !important;
+}
+.ui-keyboard-keyset .ui-keyboard-button.ui-state-hover {
+    background-color: #2bbbad;
+    border-color: #2bbbad;
+}

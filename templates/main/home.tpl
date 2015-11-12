@@ -1,10 +1,3 @@
-<!-- <input type="text" id='firstName' class="keyboard">
-<input type="text" id='lastName' class="keyboard">
-<input type="text" id="birthDate" style="border: 1px solid gray">
-<button id="searchVoters">search</button>
-<div id="searchResult">
-    
-</div> -->
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row center valign">
 			<div class="col s12">
@@ -12,7 +5,7 @@
 		      	<h5 class="header light white-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</h5>
 			</div>
 			<div class="col s12">
-				<a href="#searchDashboard" class="btn-large">
+				<a href="#searchDashboard" class="btn">
 		          	Get Started
 		          </a>
 			</div>

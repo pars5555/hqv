@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-10 15:06:42
+<?php /* Smarty version 3.1.27, created on 2015-11-12 14:03:05
          compiled from "D:\xampp\htdocs\hqv\templates\main\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:50545641f9f20f2b87_09846642%%*/
+/*%%SmartyHeaderCode:1100656448e09f3df27_28643388%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,32 +9,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5453d8b4442e6d5beb34c809368d9cb2e372f1f5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\home.tpl',
-      1 => 1447164401,
+      1 => 1447166111,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '50545641f9f20f2b87_09846642',
+  'nocache_hash' => '1100656448e09f3df27_28643388',
   'variables' => 
   array (
     'SITE_PATH' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5641f9f2124d09_64384190',
+  'unifunc' => 'content_56448e0a283684_86244730',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5641f9f2124d09_64384190')) {
-function content_5641f9f2124d09_64384190 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56448e0a283684_86244730')) {
+function content_56448e0a283684_86244730 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '50545641f9f20f2b87_09846642';
+$_smarty_tpl->properties['nocache_hash'] = '1100656448e09f3df27_28643388';
 ?>
-<!-- <input type="text" id='firstName' class="keyboard">
-<input type="text" id='lastName' class="keyboard">
-<input type="text" id="birthDate" style="border: 1px solid gray">
-<button id="searchVoters">search</button>
-<div id="searchResult">
-    
-</div> -->
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row center valign">
 			<div class="col s12">
@@ -42,7 +35,7 @@ $_smarty_tpl->properties['nocache_hash'] = '50545641f9f20f2b87_09846642';
 		      	<h5 class="header light white-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</h5>
 			</div>
 			<div class="col s12">
-				<a href="#searchDashboard" class="btn-large">
+				<a href="#searchDashboard" class="btn">
 		          	Get Started
 		          </a>
 			</div>
