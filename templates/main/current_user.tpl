@@ -16,8 +16,6 @@
 			<input disabled  id="icon_telephone" value="test Birthday" type="tel" class="validate">
 			<label class="active" for="icon_telephone">perm_contact_calendar</label>
 		</div>
-
-
 		<div class="input-field col s12 m6 6">
 			<i class="material-icons prefix">phone</i>
 			<input id="icon_telephone" type="tel" class="validate">
