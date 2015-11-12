@@ -1,3 +1,29 @@
+<?php /* Smarty version 3.1.27, created on 2015-11-12 15:20:04
+         compiled from "D:\xampp\htdocs\hqv\templates\main\current_user.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:312025644a0149e9913_44074530%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'b7d845e2abf9ef1dcca359ccb19e0be7a9e5185e' => 
+    array (
+      0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\current_user.tpl',
+      1 => 1447337977,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '312025644a0149e9913_44074530',
+  'has_nocache_code' => false,
+  'version' => '3.1.27',
+  'unifunc' => 'content_5644a014a022d0_12640647',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_5644a014a022d0_12640647')) {
+function content_5644a014a022d0_12640647 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '312025644a0149e9913_44074530';
+?>
 <h4>Edit User</h4>
 <form class="col s12">
 	<div class="section row">
@@ -42,4 +68,6 @@
 			<label for="icon_prefix2">First Name</label>
 	    </div>
 	</div>
-</form>
+</form><?php }
+}
+?>

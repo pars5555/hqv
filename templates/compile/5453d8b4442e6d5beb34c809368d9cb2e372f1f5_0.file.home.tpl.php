@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-12 14:26:29
+<?php /* Smarty version 3.1.27, created on 2015-11-12 15:23:48
          compiled from "D:\xampp\htdocs\hqv\templates\main\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:18160564493850d8bf4_04854647%%*/
+/*%%SmartyHeaderCode:112585644a0f4ca1ee5_19776258%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5453d8b4442e6d5beb34c809368d9cb2e372f1f5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\home.tpl',
-      1 => 1447334788,
+      1 => 1447338228,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '18160564493850d8bf4_04854647',
+  'nocache_hash' => '112585644a0f4ca1ee5_19776258',
   'variables' => 
   array (
     'SITE_PATH' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56449385109f98_02925669',
+  'unifunc' => 'content_5644a0f4ce91c7_66673474',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56449385109f98_02925669')) {
-function content_56449385109f98_02925669 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5644a0f4ce91c7_66673474')) {
+function content_5644a0f4ce91c7_66673474 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '18160564493850d8bf4_04854647';
+$_smarty_tpl->properties['nocache_hash'] = '112585644a0f4ca1ee5_19776258';
 ?>
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row center valign">
@@ -100,10 +100,7 @@ $_smarty_tpl->properties['nocache_hash'] = '18160564493850d8bf4_04854647';
 				</div>
 			</div>
 			<div id="searchResultWrapper" class="search-result-wrapper" style="display:none;">
-				<div id="currentUser" class="search-result-collection">
-				</div>
 				<div id="searchResult" class="search-result-collection">
-
 		      	</div>
 				<div class="row">
 					<button id="searchVoters" class="btn waves-effect waves-light col s12">
@@ -246,6 +243,17 @@ $_smarty_tpl->properties['nocache_hash'] = '18160564493850d8bf4_04854647';
 		<img src="" />
 		<p>Partner name</p>
 	</div>
-</div><?php }
+</div>
+<div id="currentUserModal" class="modal current-user-modal modal-fixed-footer">
+	<div id="currentUser" class="modal-content row">
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-action modal-close btn cancel-btn">Cancel</a>
+		<a href="#!" class="modal-action modal-close btn">Save</a>
+	</div>
+</div>
+
+
+<?php }
 }
 ?>

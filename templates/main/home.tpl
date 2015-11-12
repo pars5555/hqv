@@ -69,10 +69,7 @@
 				</div>
 			</div>
 			<div id="searchResultWrapper" class="search-result-wrapper" style="display:none;">
-				<div id="currentUser" class="search-result-collection">
-				</div>
 				<div id="searchResult" class="search-result-collection">
-
 		      	</div>
 				<div class="row">
 					<button id="searchVoters" class="btn waves-effect waves-light col s12">
@@ -213,3 +210,13 @@
 		<p>Partner name</p>
 	</div>
 </div>
+<div id="currentUserModal" class="modal current-user-modal modal-fixed-footer">
+	<div id="currentUser" class="modal-content row">
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-action modal-close btn cancel-btn">Cancel</a>
+		<a href="#!" class="modal-action modal-close btn">Save</a>
+	</div>
+</div>
+
+

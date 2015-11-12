@@ -12,7 +12,6 @@ NGS.createLoad("hqv.loads.main.home", {
         this.initParallax();
         this.initScrollSpy();
         this.initSideNav();
-
     },
     initSearch: function () {
         $('#searchVoters').click(function (e) {
@@ -68,31 +67,31 @@ NGS.createLoad("hqv.loads.main.home", {
         jQuery(".button-collapse").sideNav();
     },
     initBirthDate: function () {
-        $('#birthDate').pickadate({
-            monthsFull: [ 'Հունվար', 'Փետրվար', 'Մարտ', 'Ապրիլ', 'Մայիս', 'Հունիս', 'Հուլիս', 'Օգոստոս', 'Սեպտեմբեր', 'Հոկտեմբեր', 'Նոյեմբեր', 'Դեկտեմբեր' ],
-            monthsShort: [ 'Հուն', 'Փետ', 'Մար', 'Ապր', 'Մայ', 'Հուն', 'Հուլ', 'Օգոս', 'Սեպ', 'Հոկ', 'Նոյ', 'Դեկ' ],
-            weekdaysFull: [ 'Կիրակի ', 'Երկուշաբթի', 'Երեքշաբթի', 'Չորեքշաբթի', 'Հինգշաբթի', 'Ուրբաթ', 'Շաբաթ' ],
-            weekdaysShort: [ 'կիր', 'երկ', 'երեք', 'չոր', 'հինգ', 'ուրբ', 'շաբ' ],
-            format: 'yyyy-mm-dd',
-            selectMonths: true,
-            selectYears: 70,
-            clear: null,
-            today : null,
-            min: [1922,11,30],
-            max: [1990,11,15]
+        // $('#birthDate').pickadate({
+        //     monthsFull: [ 'Հունվար', 'Փետրվար', 'Մարտ', 'Ապրիլ', 'Մայիս', 'Հունիս', 'Հուլիս', 'Օգոստոս', 'Սեպտեմբեր', 'Հոկտեմբեր', 'Նոյեմբեր', 'Դեկտեմբեր' ],
+        //     monthsShort: [ 'Հուն', 'Փետ', 'Մար', 'Ապր', 'Մայ', 'Հուն', 'Հուլ', 'Օգոս', 'Սեպ', 'Հոկ', 'Նոյ', 'Դեկ' ],
+        //     weekdaysFull: [ 'Կիրակի ', 'Երկուշաբթի', 'Երեքշաբթի', 'Չորեքշաբթի', 'Հինգշաբթի', 'Ուրբաթ', 'Շաբաթ' ],
+        //     weekdaysShort: [ 'կիր', 'երկ', 'երեք', 'չոր', 'հինգ', 'ուրբ', 'շաբ' ],
+        //     format: 'yyyy-mm-dd',
+        //     selectMonths: true,
+        //     selectYears: 70,
+        //     clear: null,
+        //     today : null,
+        //     min: [1922,11,30],
+        //     max: [1990,11,15]
             
-        });
-
-        // $('#birthDate').datetimepicker({
-        //     format: 'Y-m-d',
-        //     inline: false,
-        //     lang: 'hy',
-        //     timepicker: false,
-        //     step: 1,
-        //     formatDate: 'Y-m-d',
-        //     yearStart: 1920,
-        //     yearEnd: 2000,
-        //     defaultDate: '1990-01-01'
         // });
+
+        $('#birthDate').datetimepicker({
+            format: 'Y-m-d',
+            inline: false,
+            lang: 'hy',
+            timepicker: false,
+            step: 1,
+            formatDate: 'Y-m-d',
+            yearStart: 1920,
+            yearEnd: 2000,
+            defaultDate: '1990-01-01'
+        });
     }
 });
