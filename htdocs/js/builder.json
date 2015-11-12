@@ -42,7 +42,8 @@
                 "files": [
                     "loads/main/IndexLoad.class.js",
                     "loads/main/HomeLoad.class.js",
-                    "loads/main/SearchResultLoad.class.js"
+                    "loads/main/SearchResultLoad.class.js",
+                    "loads/main/CurrentUserLoad.class.js"
                 ]
             },
             {

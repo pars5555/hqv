@@ -8,5 +8,8 @@ NGS.createLoad("hqv.loads.main.search_result", {
     afterLoad: function () {   
         jQuery("#searchLoader").hide();
         jQuery("#searchResultWrapper").show();
+        jQuery(".f_current_user").click(function(){
+            NGS.load("hqv.loads.main.current_user", {});
+        });
     }
 });

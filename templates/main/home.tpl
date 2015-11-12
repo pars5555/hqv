@@ -69,6 +69,8 @@
 				</div>
 			</div>
 			<div id="searchResultWrapper" class="search-result-wrapper" style="display:none;">
+				<div id="currentUser" class="search-result-collection">
+				</div>
 				<div id="searchResult" class="search-result-collection">
 
 		      	</div>
