@@ -9,11 +9,11 @@
         <li>
           <a id="lanBtn" class="f_lan_drop_down dropdown-button" href="javascript:void(0);" data-activates="dropdown1">Language<i class="material-icons right">arrow_drop_down</i></a>
           <ul id="dropdown1" class="dropdown-content">
-            <li><a href="javascript:void(0);" class="f_cur_lan">Am</a></li>
+            <li><a href="{$SITE_PATH}/lang/am" class="f_cur_lan">Arm</a></li>
             <li class="divider"></li>
-            <li><a href="javascript:void(0);" class="f_cur_lan">En</a></li>
+            <li><a href="{$SITE_PATH}/lang/en" class="f_cur_lan">Eng</a></li>
             <li class="divider"></li>
-            <li><a href="javascript:void(0);" class="f_cur_lan">Rus</a></li>
+            <li><a href="{$SITE_PATH}/lang/ru" class="f_cur_lan">Rus</a></li>
           </ul>
         </li>
       </ul>

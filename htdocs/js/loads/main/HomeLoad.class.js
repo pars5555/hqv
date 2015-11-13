@@ -14,16 +14,33 @@ NGS.createLoad("hqv.loads.main.home", {
         this.initSideNav();
         this.initLanDropDown();
     },
+    convertEnCharsToArmChars: function (text) {
+        text = text.toLowerCase();
+        var find = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "7", "8", "[", "]", "=", "/", "0", "9"];
+        var replace = ["ա", "բ", "ց", "դ", "ե", "ֆ", "գ", "հ", "ի", "յ", "կ", "լ", "մ", "ն", "օ", "փ", "ք", "ռ", "ս", "տ", "ւ", "վ", "ո", "ղ", "ը", "զ", "է", "թ", "փ", "ձ", "ջ", "և", "ր", "խ", "ծ", "ժ", "շ", "ճ", "չ"];
+        for (var i = 0; i < find.length; i++)  
+        {
+            text = text.replace(find[i], replace[i]);
+	    }
+        return text.ucfirst();
+    },
     initSearch: function () {
+        var thisInstance = this;
+        $('#firstName, #lastName').on('input', function () {
+            var text = $(this).val();
+            text = thisInstance.convertEnCharsToArmChars(text);
+           $(this).val(text);            
+        });
+
         $('#searchVoters').click(function (e) {
             e.preventDefault();
             var firstName = $('#firstName').val();
             var lastName = $('#lastName').val();
             var birthDate = $('#birthDate').val();
-            if (birthDate.length > 0){
+            if (birthDate.length > 0) {
                 jQuery("#searchResultModal").openModal();
                 jQuery("#searchLoader").show();
-                NGS.load("hqv.loads.main.search_result", {birthDate: birthDate, firstName:firstName,lastName:lastName});
+                NGS.load("hqv.loads.main.search_result", {birthDate: birthDate, firstName: firstName, lastName: lastName});
             }
         });
     },
@@ -59,35 +76,35 @@ NGS.createLoad("hqv.loads.main.home", {
             }
         });
     },
-    initParallax: function(){
+    initParallax: function () {
         jQuery('.parallax').parallax();
     },
-    initScrollSpy: function(){
+    initScrollSpy: function () {
         jQuery('.scrollspy').scrollSpy();
     },
-    initSideNav: function(){
+    initSideNav: function () {
         jQuery(".button-collapse").sideNav();
     },
-    initLanDropDown: function(){
+    initLanDropDown: function () {
         jQuery(".f_lan_drop_down").dropdown();
-        jQuery(".f_cur_lan").click(function(){
+        jQuery(".f_cur_lan").click(function () {
             jQuery('#lanBtn').text(jQuery(this).text());
         });
-        
+
     },
     initBirthDate: function () {
         $('#birthDate').pickadate({
-            monthsFull: [ 'Հունվար', 'Փետրվար', 'Մարտ', 'Ապրիլ', 'Մայիս', 'Հունիս', 'Հուլիս', 'Օգոստոս', 'Սեպտեմբեր', 'Հոկտեմբեր', 'Նոյեմբեր', 'Դեկտեմբեր' ],
-            monthsShort: [ 'Հուն', 'Փետ', 'Մար', 'Ապր', 'Մայ', 'Հուն', 'Հուլ', 'Օգոս', 'Սեպ', 'Հոկ', 'Նոյ', 'Դեկ' ],
-            weekdaysFull: [ 'Կիրակի ', 'Երկուշաբթի', 'Երեքշաբթի', 'Չորեքշաբթի', 'Հինգշաբթի', 'Ուրբաթ', 'Շաբաթ' ],
-            weekdaysShort: [ 'կիր', 'երկ', 'երեք', 'չոր', 'հինգ', 'ուրբ', 'շաբ' ],
+            monthsFull: ['Հունվար', 'Փետրվար', 'Մարտ', 'Ապրիլ', 'Մայիս', 'Հունիս', 'Հուլիս', 'Օգոստոս', 'Սեպտեմբեր', 'Հոկտեմբեր', 'Նոյեմբեր', 'Դեկտեմբեր'],
+            monthsShort: ['Հուն', 'Փետ', 'Մար', 'Ապր', 'Մայ', 'Հուն', 'Հուլ', 'Օգոս', 'Սեպ', 'Հոկ', 'Նոյ', 'Դեկ'],
+            weekdaysFull: ['Կիրակի ', 'Երկուշաբթի', 'Երեքշաբթի', 'Չորեքշաբթի', 'Հինգշաբթի', 'Ուրբաթ', 'Շաբաթ'],
+            weekdaysShort: ['կիր', 'երկ', 'երեք', 'չոր', 'հինգ', 'ուրբ', 'շաբ'],
             format: 'yyyy-mm-dd',
             selectMonths: true,
             selectYears: 70,
             clear: null,
-            today : null,
-            min: [1922,11,30],
-            max: [1990,11,15]
+            today: null,
+            min: [1922, 11, 30],
+            max: [1990, 11, 15]
         });
     }
 });

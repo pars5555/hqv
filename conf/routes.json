@@ -1,5 +1,14 @@
 {
   
+    "lang": [
+        {
+            "action": "actions.main.set_language",
+            "route": "[:lang]",
+            "constraints": {
+                "lang": "[a-zA-Z]+"
+            }
+        }
+    ],
     "sale": [
      
         {

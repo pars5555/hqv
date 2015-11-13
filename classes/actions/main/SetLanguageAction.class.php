@@ -20,7 +20,7 @@ namespace hqv\actions\main {
 
         public function service() {
             if (isset(NGS()->args()->lang) && in_array(NGS()->args()->lang, ['am', 'en', 'ru'])) {
-                setcookie('ul', NGS()->args()->lang, time() + 60 * 60 * 24 * 365, "/", HTTP_HOST);
+                setcookie('ul', NGS()->args()->lang, time() + 60 * 60 * 24 * 365, "/", NGS()->getHttpUtils()->getHttpHost());
             }
             header("location: " . $_SERVER['HTTP_REFERER']);
             exit;

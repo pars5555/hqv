@@ -10,7 +10,8 @@
                     "lib/jquery.js",
                     "lib/jquery-ui.js",
                     "lib/jquery.datetimepicker.js",
-                    "lib/keyboard/jquery.keyboard.min.js"
+                    "lib/keyboard/jquery.keyboard.min.js",
+                    "util/UtilFunctions.js"
                 ]
             },
             {
