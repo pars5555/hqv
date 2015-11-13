@@ -210,7 +210,7 @@
 		</div>
 	</div>
 	<div class="modal-footer">
-		<a href="#!" class="modal-action modal-close btn disabled">Close</a>
+		<a href="#!" class="modal-action modal-close btn">Close</a>
 	</div>
 </div>
 <div id="currentUserModal" class="modal current-user-modal modal-fixed-footer">

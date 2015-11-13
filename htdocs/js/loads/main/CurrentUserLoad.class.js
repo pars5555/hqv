@@ -9,6 +9,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
         jQuery('#currentUserModal').openModal();
         jQuery("#currentUserModalBtn").click(function(){
             alert(1);
+            // jQuery('#currentUserModal').closeModal();
             jQuery('#thankModal').openModal();
             jQuery(this).removeClass('disabled');
         });
