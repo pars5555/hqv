@@ -53,30 +53,7 @@
 			</div>
 		</div>
 		<div class="col s12">
-			<div id="searchLoader" class="center-align hidden" style="display:none;">
-				<div class="preloader-wrapper big active">
-					<div class="spinner-layer spinner-red-only">
-						<div class="circle-clipper left">
-							<div class="circle"></div>
-						</div>
-						<div class="gap-patch">
-							<div class="circle"></div>
-						</div>
-						<div class="circle-clipper right">
-							<div class="circle"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="searchResultWrapper" class="search-result-wrapper" style="display:none;">
-				<div id="searchResult" class="search-result-collection">
-		      	</div>
-				<div class="row">
-					<button id="searchVoters" class="btn waves-effect waves-light col s12">
-						Show more
-					</button>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 </div>
@@ -210,13 +187,49 @@
 		<p>Partner name</p>
 	</div>
 </div>
+<div id="searchResultModal" class="modal current-user-modal modal-fixed-footer">
+	<div id="" class="modal-content row">
+		<div id="searchLoader" class="center-align hidden" style="display:none;">
+			<div class="preloader-wrapper big active">
+				<div class="spinner-layer spinner-red-only">
+					<div class="circle-clipper left">
+						<div class="circle"></div>
+					</div>
+					<div class="gap-patch">
+						<div class="circle"></div>
+					</div>
+					<div class="circle-clipper right">
+						<div class="circle"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="searchResultWrapper" class="search-result-wrapper" style="display:none;">
+			<div id="searchResult" class="search-result-collection">
+	      	</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-action modal-close btn disabled">Close</a>
+	</div>
+</div>
 <div id="currentUserModal" class="modal current-user-modal modal-fixed-footer">
 	<div id="currentUser" class="modal-content row">
 	</div>
 	<div class="modal-footer">
-		<a href="#!" class="modal-action modal-close btn cancel-btn">Cancel</a>
-		<a href="#!" class="modal-action modal-close btn">Save</a>
+		<a id="currentUserModalBtn" href="#!" class="modal-action modal-close btn disabled">Save</a>
 	</div>
 </div>
+<div id="thankModal" class="modal modal-sm current-user-modal modal-fixed-footer">
+	<div class="modal-content row">
+		<h4>Thank you</h4>
+		<p>thank you for the vote</p>
+	</div>
+	<div class="modal-footer">
+		<a  href="#!" class="modal-action modal-close btn">Ok</a>
+	</div>
+</div>
+
+
 
 

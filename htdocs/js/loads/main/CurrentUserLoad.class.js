@@ -6,12 +6,11 @@ NGS.createLoad("hqv.loads.main.current_user", {
 
     },
     afterLoad: function () {
-        jQuery('#currentUserModal').openModal(
-                {
-                    complete: function () {
-                        NGS.load('hqv.actions.main.sale.set_data', {});
-                    }
-                }
-        );
+        jQuery('#currentUserModal').openModal();
+        jQuery("#currentUserModalBtn").click(function(){
+            alert(1);
+            jQuery('#thankModal').openModal();
+            jQuery(this).removeClass('disabled');
+        });
     }
 });

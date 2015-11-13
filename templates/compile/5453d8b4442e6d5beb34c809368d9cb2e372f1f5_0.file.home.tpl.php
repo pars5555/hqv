@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-12 15:23:48
+<?php /* Smarty version 3.1.27, created on 2015-11-13 10:28:41
          compiled from "D:\xampp\htdocs\hqv\templates\main\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:112585644a0f4ca1ee5_19776258%%*/
+/*%%SmartyHeaderCode:288485645ad49994652_10709548%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5453d8b4442e6d5beb34c809368d9cb2e372f1f5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\home.tpl',
-      1 => 1447338228,
+      1 => 1447406921,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '112585644a0f4ca1ee5_19776258',
+  'nocache_hash' => '288485645ad49994652_10709548',
   'variables' => 
   array (
     'SITE_PATH' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5644a0f4ce91c7_66673474',
+  'unifunc' => 'content_5645ad49bf7d43_75090313',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5644a0f4ce91c7_66673474')) {
-function content_5644a0f4ce91c7_66673474 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5645ad49bf7d43_75090313')) {
+function content_5645ad49bf7d43_75090313 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '112585644a0f4ca1ee5_19776258';
+$_smarty_tpl->properties['nocache_hash'] = '288485645ad49994652_10709548';
 ?>
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row center valign">
@@ -84,30 +84,7 @@ $_smarty_tpl->properties['nocache_hash'] = '112585644a0f4ca1ee5_19776258';
 			</div>
 		</div>
 		<div class="col s12">
-			<div id="searchLoader" class="center-align hidden" style="display:none;">
-				<div class="preloader-wrapper big active">
-					<div class="spinner-layer spinner-red-only">
-						<div class="circle-clipper left">
-							<div class="circle"></div>
-						</div>
-						<div class="gap-patch">
-							<div class="circle"></div>
-						</div>
-						<div class="circle-clipper right">
-							<div class="circle"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="searchResultWrapper" class="search-result-wrapper" style="display:none;">
-				<div id="searchResult" class="search-result-collection">
-		      	</div>
-				<div class="row">
-					<button id="searchVoters" class="btn waves-effect waves-light col s12">
-						Show more
-					</button>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 </div>
@@ -244,14 +221,50 @@ $_smarty_tpl->properties['nocache_hash'] = '112585644a0f4ca1ee5_19776258';
 		<p>Partner name</p>
 	</div>
 </div>
+<div id="searchResultModal" class="modal current-user-modal modal-fixed-footer">
+	<div id="" class="modal-content row">
+		<div id="searchLoader" class="center-align hidden" style="display:none;">
+			<div class="preloader-wrapper big active">
+				<div class="spinner-layer spinner-red-only">
+					<div class="circle-clipper left">
+						<div class="circle"></div>
+					</div>
+					<div class="gap-patch">
+						<div class="circle"></div>
+					</div>
+					<div class="circle-clipper right">
+						<div class="circle"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="searchResultWrapper" class="search-result-wrapper" style="display:none;">
+			<div id="searchResult" class="search-result-collection">
+	      	</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-action modal-close btn disabled">Close</a>
+	</div>
+</div>
 <div id="currentUserModal" class="modal current-user-modal modal-fixed-footer">
 	<div id="currentUser" class="modal-content row">
 	</div>
 	<div class="modal-footer">
-		<a href="#!" class="modal-action modal-close btn cancel-btn">Cancel</a>
-		<a href="#!" class="modal-action modal-close btn">Save</a>
+		<a id="currentUserModalBtn" href="#!" class="modal-action modal-close btn disabled">Save</a>
 	</div>
 </div>
+<div id="thankModal" class="modal modal-sm current-user-modal modal-fixed-footer">
+	<div class="modal-content row">
+		<h4>Thank you</h4>
+		<p>thank you for the vote</p>
+	</div>
+	<div class="modal-footer">
+		<a  href="#!" class="modal-action modal-close btn">Ok</a>
+	</div>
+</div>
+
+
 
 
 <?php }

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-12 15:34:00
+<?php /* Smarty version 3.1.27, created on 2015-11-13 10:05:07
          compiled from "D:\xampp\htdocs\hqv\templates\main\current_user.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:96665644a358eafe74_95158698%%*/
+/*%%SmartyHeaderCode:273465645a7c3233812_86989876%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,41 +9,54 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b7d845e2abf9ef1dcca359ccb19e0be7a9e5185e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\current_user.tpl',
-      1 => 1447338796,
+      1 => 1447405497,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '96665644a358eafe74_95158698',
+  'nocache_hash' => '273465645a7c3233812_86989876',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5644a358ec95a4_34652899',
+  'unifunc' => 'content_5645a7c324ce00_00417215',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5644a358ec95a4_34652899')) {
-function content_5644a358ec95a4_34652899 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5645a7c324ce00_00417215')) {
+function content_5645a7c324ce00_00417215 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '96665644a358eafe74_95158698';
+$_smarty_tpl->properties['nocache_hash'] = '273465645a7c3233812_86989876';
 ?>
-<h4>Edit User</h4>
+<h4>Message</h4>
+<p class="center-align red-text text-darken-4">Warning Message</p>
 <form class="col s12">
 	<div class="section row">
-		<div class="input-field col s12 m6 6">
+		<div class="input-field col s12 m4 4">
 			<i class="material-icons prefix">account_circle</i>
-			<input disabled  id="icon_telephone" value="test first name" type="tel" class="validate">
-			<label class="active" for="icon_telephone">First Name</label>
+			<input disabled  id="firstName" value="test first name" type="tel" class="validate">
+			<label class="active" for="firstName">First Name</label>
 		</div>
-		<div class="input-field col s12 m6 6">
+		<div class="input-field col s12 m4 4">
 			<i class="material-icons prefix">account_circle</i>
-			<input disabled  id="icon_telephone" value="test last name" type="tel" class="validate">
-			<label class="active" for="icon_telephone">Last Name</label>
+			<input disabled  id="lastName" value="test last name" type="tel" class="validate">
+			<label class="active" for="lastName">Last Name</label>
 		</div>
-		<div class="input-field col s12 m12 12">
-			<i class="material-icons prefix">phone</i>
-			<input disabled  id="icon_telephone" value="test Birthday" type="tel" class="validate">
-			<label class="active" for="icon_telephone">perm_contact_calendar</label>
+		<div class="input-field col s12 m4 4">
+			<i class="material-icons prefix">account_circle</i>
+			<input disabled  id="father1" value="test Father name" type="tel" class="validate">
+			<label class="active" for="father1">Father name</label>
 		</div>
-
-
+		<div class="input-field col s12 m4 4">
+			<i class="material-icons prefix">perm_contact_calendar</i>
+			<input disabled  id="Birthday" value="Birthday" type="tel" class="validate">
+			<label class="active" for="Birthday">Birthday</label>
+		</div>
+		<div class="input-field col s12 m8 8">
+			<i class="material-icons prefix">mode_edit</i>
+			<input disabled  id="Address1" value="Address" type="tel" class="validate">
+			<label class="active" for="Address1">Address</label>
+	    </div>
+	    <div class="input-field col s12 m12 12">
+			<input disabled  id="Address2" value="Address" type="tel" class="validate">
+			<label class="active" for="Address2">Address</label>
+	    </div>
 		<div class="input-field col s12 m6 6">
 			<i class="material-icons prefix">phone</i>
 			<input id="icon_telephone" type="tel" class="validate">
@@ -69,21 +82,27 @@ $_smarty_tpl->properties['nocache_hash'] = '96665644a358eafe74_95158698';
 	    <div class="col s12 m6 6">
 	    	<div class="switch">
 				<p>I will vote</p>
-				<label>
-					No
-					<input type="checkbox">
-					<span class="lever"></span>
-					Yes
-				</label>
+				<p>
+			      <input name="group1" type="radio" id="radioTest1" />
+			      <label for="radioTest1">Red</label>
+			    </p>
+			    <p>
+			      <input name="group1" type="radio" id="radioTest2" />
+			      <label for="radioTest2">Yellow</label>
+			    </p>
+			    <p>
+			      <input name="group1" type="radio" id="radioTest3" />
+			      <label for="radioTest3">Yellow</label>
+			    </p>
 			</div>
 	    </div>
 	</div>
 	<div class="section row">
-	    <div class="input-field col s12">
+	    <!-- <div class="input-field col s12">
 			<i class="material-icons prefix">mode_edit</i>
 			<textarea id="icon_prefix2" class="materialize-textarea"></textarea>
 			<label for="icon_prefix2">Address</label>
-	    </div>
+	    </div> -->
 	</div>
 </form><?php }
 }

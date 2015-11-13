@@ -42,8 +42,14 @@ body{
 /*                           SEARCH RESULT WRAPPER                                    */
 /**************************************************************************************/
 .search-result-wrapper .search-result-collection {
-    max-height: 300px;
-    overflow-y:auto;
+    /*max-height: 300px;
+    overflow-y:auto;*/
+}
+.search-result-wrapper .cur-user{
+    cursor: pointer;
+}
+.search-result-wrapper .cur-user:hover {
+    background-color: #f9f9f9;
 }
 /**************************************************************************************/
 /*                                        KEYBOARD                                    */

@@ -12,6 +12,7 @@ NGS.createLoad("hqv.loads.main.home", {
         this.initParallax();
         this.initScrollSpy();
         this.initSideNav();
+        this.initLanDropDown();
     },
     initSearch: function () {
         $('#searchVoters').click(function (e) {
@@ -20,6 +21,7 @@ NGS.createLoad("hqv.loads.main.home", {
             var lastName = $('#lastName').val();
             var birthDate = $('#birthDate').val();
             if (birthDate.length > 0){
+                jQuery("#searchResultModal").openModal();
                 jQuery("#searchLoader").show();
                 NGS.load("hqv.loads.main.search_result", {birthDate: birthDate, firstName:firstName,lastName:lastName});
             }
@@ -66,32 +68,26 @@ NGS.createLoad("hqv.loads.main.home", {
     initSideNav: function(){
         jQuery(".button-collapse").sideNav();
     },
+    initLanDropDown: function(){
+        jQuery(".f_lan_drop_down").dropdown();
+        jQuery(".f_cur_lan").click(function(){
+            jQuery('#lanBtn').text(jQuery(this).text());
+        });
+        
+    },
     initBirthDate: function () {
-        // $('#birthDate').pickadate({
-        //     monthsFull: [ 'Հունվար', 'Փետրվար', 'Մարտ', 'Ապրիլ', 'Մայիս', 'Հունիս', 'Հուլիս', 'Օգոստոս', 'Սեպտեմբեր', 'Հոկտեմբեր', 'Նոյեմբեր', 'Դեկտեմբեր' ],
-        //     monthsShort: [ 'Հուն', 'Փետ', 'Մար', 'Ապր', 'Մայ', 'Հուն', 'Հուլ', 'Օգոս', 'Սեպ', 'Հոկ', 'Նոյ', 'Դեկ' ],
-        //     weekdaysFull: [ 'Կիրակի ', 'Երկուշաբթի', 'Երեքշաբթի', 'Չորեքշաբթի', 'Հինգշաբթի', 'Ուրբաթ', 'Շաբաթ' ],
-        //     weekdaysShort: [ 'կիր', 'երկ', 'երեք', 'չոր', 'հինգ', 'ուրբ', 'շաբ' ],
-        //     format: 'yyyy-mm-dd',
-        //     selectMonths: true,
-        //     selectYears: 70,
-        //     clear: null,
-        //     today : null,
-        //     min: [1922,11,30],
-        //     max: [1990,11,15]
-            
-        // });
-
-        $('#birthDate').datetimepicker({
-            format: 'Y-m-d',
-            inline: false,
-            lang: 'hy',
-            timepicker: false,
-            step: 1,
-            formatDate:'Y-m-d',
-            yearStart: 1922,
-            yearEnd: 1997,
-            defaultDate: '1990-01-01'
+        $('#birthDate').pickadate({
+            monthsFull: [ 'Հունվար', 'Փետրվար', 'Մարտ', 'Ապրիլ', 'Մայիս', 'Հունիս', 'Հուլիս', 'Օգոստոս', 'Սեպտեմբեր', 'Հոկտեմբեր', 'Նոյեմբեր', 'Դեկտեմբեր' ],
+            monthsShort: [ 'Հուն', 'Փետ', 'Մար', 'Ապր', 'Մայ', 'Հուն', 'Հուլ', 'Օգոս', 'Սեպ', 'Հոկ', 'Նոյ', 'Դեկ' ],
+            weekdaysFull: [ 'Կիրակի ', 'Երկուշաբթի', 'Երեքշաբթի', 'Չորեքշաբթի', 'Հինգշաբթի', 'Ուրբաթ', 'Շաբաթ' ],
+            weekdaysShort: [ 'կիր', 'երկ', 'երեք', 'չոր', 'հինգ', 'ուրբ', 'շաբ' ],
+            format: 'yyyy-mm-dd',
+            selectMonths: true,
+            selectYears: 70,
+            clear: null,
+            today : null,
+            min: [1922,11,30],
+            max: [1990,11,15]
         });
     }
 });
