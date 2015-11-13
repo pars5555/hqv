@@ -71,3 +71,7 @@ body{
 .current-user-modal .cancel-btn {
     margin-left: 10px !important;
 }
+.thankyou-modal {
+    height: 40% !important;
+    width: 35% !important;
+}

@@ -220,7 +220,7 @@
 		<a id="currentUserModalBtn" href="#!" class="modal-action modal-close btn disabled">Save</a>
 	</div>
 </div>
-<div id="thankModal" class="modal modal-sm current-user-modal modal-fixed-footer">
+<div id="thankModal" class="modal thankyou-modal current-user-modal modal-fixed-footer">
 	<div class="modal-content row">
 		<h4>Thank you</h4>
 		<p>thank you for the vote</p>

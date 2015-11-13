@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-13 10:28:41
+<?php /* Smarty version 3.1.27, created on 2015-11-13 10:33:34
          compiled from "D:\xampp\htdocs\hqv\templates\main\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:288485645ad49994652_10709548%%*/
+/*%%SmartyHeaderCode:73355645ae6e18e008_94698721%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5453d8b4442e6d5beb34c809368d9cb2e372f1f5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\home.tpl',
-      1 => 1447406921,
+      1 => 1447407212,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '288485645ad49994652_10709548',
+  'nocache_hash' => '73355645ae6e18e008_94698721',
   'variables' => 
   array (
     'SITE_PATH' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5645ad49bf7d43_75090313',
+  'unifunc' => 'content_5645ae6e1b78c1_66071955',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5645ad49bf7d43_75090313')) {
-function content_5645ad49bf7d43_75090313 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5645ae6e1b78c1_66071955')) {
+function content_5645ae6e1b78c1_66071955 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '288485645ad49994652_10709548';
+$_smarty_tpl->properties['nocache_hash'] = '73355645ae6e18e008_94698721';
 ?>
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row center valign">
@@ -254,7 +254,7 @@ $_smarty_tpl->properties['nocache_hash'] = '288485645ad49994652_10709548';
 		<a id="currentUserModalBtn" href="#!" class="modal-action modal-close btn disabled">Save</a>
 	</div>
 </div>
-<div id="thankModal" class="modal modal-sm current-user-modal modal-fixed-footer">
+<div id="thankModal" class="modal thankyou-modal current-user-modal modal-fixed-footer">
 	<div class="modal-content row">
 		<h4>Thank you</h4>
 		<p>thank you for the vote</p>
