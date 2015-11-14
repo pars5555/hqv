@@ -6,4 +6,7 @@
 		</div>
 		<div class="divider"></div>
 	{/foreach}
+	{if count($ns.voters) eq 0}
+		<h5 class="center-align">No users</h5>
+	{/if}
 </div>
