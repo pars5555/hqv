@@ -42,33 +42,43 @@
 			<label for="email" data-error="wrong" data-success="right">Email</label>
 	    </div>
 	    <div class="col s12 m6 6">
-	    	<p>
-				<input type="checkbox" id="test1" checked="checked" />
-				<label for="test1">Notify me by email</label>	
-	    	</p>
-	    	<p>
-				<input type="checkbox" id="test2" checked="checked" />
-				<label for="test2">I will be in Armenia at 6th</label>	
-	    	</p>
-			
+	    	<div class="row">
+	    		<div class="col s12 m6 6">
+	    			<p>
+						<input type="checkbox" id="test1" checked="checked" />
+						<label for="test1">Notify me by email</label>	
+			    	</p>
+	    		</div>
+	    		<div class="col s12 m6 6">
+		    		<p>
+						<input type="checkbox" id="test2" checked="checked" />
+						<label for="test2">I will be in Armenia at 6th</label>	
+			    	</p>
+	    		</div>
+	    	</div>
 	    </div>
-
-	    <div class="col s12 m6 6">
-	    	<div class="switch">
-				<p>I will vote</p>
-				<p>
-			      <input name="group1" type="radio" id="radioTest1" />
-			      <label for="radioTest1">Red</label>
-			    </p>
-			    <p>
-			      <input name="group1" type="radio" id="radioTest2" />
-			      <label for="radioTest2">Yellow</label>
-			    </p>
-			    <p>
-			      <input name="group1" type="radio" id="radioTest3" />
-			      <label for="radioTest3">Yellow</label>
-			    </p>
-			</div>
+	    <div class="col s12 m12 12">
+		    <div class="row">
+			    <div class="col s6 m6 6 offset-m3">
+					<h4 class="center-align">I will vote</h4>
+					<!-- <p class="hide">
+				      <input name="vote-group" type="radio" id="yesRadioBtn" />
+				      <label for="radioTest1">Yes</label>
+				    </p>
+				    <p class="hide">
+				      <input name="vote-group" type="radio" id="noRadioBtn" />
+				      <label for="radioTest2">No</label>
+				    </p> -->
+				    <div class="f_vote_btn yes vote-btn left" data-ans='yes'>
+				    	Yes
+				    </div>
+				    <div class="f_vote_btn no vote-btn right" data-ans='no'>
+				    	No
+				    </div>
+					<input id="voteAnswer" name="" type="hidden" />
+				    <div class="clearfix"></div>
+			    </div>
+		    </div>
 	    </div>
 	</div>
 	<div class="section row">

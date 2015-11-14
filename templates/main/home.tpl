@@ -188,6 +188,9 @@
 	</div>
 </div>
 <div id="searchResultModal" class="modal current-user-modal modal-fixed-footer">
+	<div class="modal-header">
+		<div class="close-btn modal-action modal-close">x</div>
+	</div>
 	<div id="" class="modal-content row">
 		<div id="searchLoader" class="center-align hidden" style="display:none;">
 			<div class="preloader-wrapper big active">
@@ -214,13 +217,19 @@
 	</div>
 </div>
 <div id="currentUserModal" class="modal current-user-modal modal-fixed-footer">
+	<div class="modal-header">
+		<div class="close-btn modal-action modal-close">x</div>
+	</div>
 	<div id="currentUser" class="modal-content row">
 	</div>
 	<div class="modal-footer">
-		<a id="currentUserModalBtn" href="#!" class="modal-action modal-close btn disabled">Save</a>
+		<a id="currentUserModalBtn" href="#!" class="btn disabled">Save</a>
 	</div>
 </div>
 <div id="thankModal" class="modal thankyou-modal current-user-modal modal-fixed-footer">
+	<div class="modal-header">
+		<div class="close-btn modal-action modal-close">x</div>
+	</div>
 	<div class="modal-content row">
 		<h4>Thank you</h4>
 		<p>thank you for the vote</p>

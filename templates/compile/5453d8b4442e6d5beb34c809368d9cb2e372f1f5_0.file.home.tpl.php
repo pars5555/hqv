@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-13 10:36:08
+<?php /* Smarty version 3.1.27, created on 2015-11-14 10:37:32
          compiled from "D:\xampp\htdocs\hqv\templates\main\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:73425645af08807769_20464773%%*/
+/*%%SmartyHeaderCode:21929564700dc2fbd93_97026363%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5453d8b4442e6d5beb34c809368d9cb2e372f1f5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\home.tpl',
-      1 => 1447407330,
+      1 => 1447493851,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '73425645af08807769_20464773',
+  'nocache_hash' => '21929564700dc2fbd93_97026363',
   'variables' => 
   array (
     'SITE_PATH' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5645af0885bd46_22779604',
+  'unifunc' => 'content_564700dc32f2d7_07313650',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5645af0885bd46_22779604')) {
-function content_5645af0885bd46_22779604 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564700dc32f2d7_07313650')) {
+function content_564700dc32f2d7_07313650 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '73425645af08807769_20464773';
+$_smarty_tpl->properties['nocache_hash'] = '21929564700dc2fbd93_97026363';
 ?>
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row center valign">
@@ -222,6 +222,9 @@ $_smarty_tpl->properties['nocache_hash'] = '73425645af08807769_20464773';
 	</div>
 </div>
 <div id="searchResultModal" class="modal current-user-modal modal-fixed-footer">
+	<div class="modal-header">
+		<div class="close-btn modal-action modal-close">x</div>
+	</div>
 	<div id="" class="modal-content row">
 		<div id="searchLoader" class="center-align hidden" style="display:none;">
 			<div class="preloader-wrapper big active">
@@ -248,13 +251,19 @@ $_smarty_tpl->properties['nocache_hash'] = '73425645af08807769_20464773';
 	</div>
 </div>
 <div id="currentUserModal" class="modal current-user-modal modal-fixed-footer">
+	<div class="modal-header">
+		<div class="close-btn modal-action modal-close">x</div>
+	</div>
 	<div id="currentUser" class="modal-content row">
 	</div>
 	<div class="modal-footer">
-		<a id="currentUserModalBtn" href="#!" class="modal-action modal-close btn disabled">Save</a>
+		<a id="currentUserModalBtn" href="#!" class="btn disabled">Save</a>
 	</div>
 </div>
 <div id="thankModal" class="modal thankyou-modal current-user-modal modal-fixed-footer">
+	<div class="modal-header">
+		<div class="close-btn modal-action modal-close">x</div>
+	</div>
 	<div class="modal-content row">
 		<h4>Thank you</h4>
 		<p>thank you for the vote</p>

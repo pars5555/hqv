@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-13 10:05:07
+<?php /* Smarty version 3.1.27, created on 2015-11-14 10:51:48
          compiled from "D:\xampp\htdocs\hqv\templates\main\current_user.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:273465645a7c3233812_86989876%%*/
+/*%%SmartyHeaderCode:6873564704341c54e5_62317929%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b7d845e2abf9ef1dcca359ccb19e0be7a9e5185e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\current_user.tpl',
-      1 => 1447405497,
+      1 => 1447494665,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '273465645a7c3233812_86989876',
+  'nocache_hash' => '6873564704341c54e5_62317929',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5645a7c324ce00_00417215',
+  'unifunc' => 'content_564704341e2c16_86467486',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5645a7c324ce00_00417215')) {
-function content_5645a7c324ce00_00417215 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564704341e2c16_86467486')) {
+function content_564704341e2c16_86467486 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '273465645a7c3233812_86989876';
+$_smarty_tpl->properties['nocache_hash'] = '6873564704341c54e5_62317929';
 ?>
 <h4>Message</h4>
 <p class="center-align red-text text-darken-4">Warning Message</p>
@@ -68,33 +68,43 @@ $_smarty_tpl->properties['nocache_hash'] = '273465645a7c3233812_86989876';
 			<label for="email" data-error="wrong" data-success="right">Email</label>
 	    </div>
 	    <div class="col s12 m6 6">
-	    	<p>
-				<input type="checkbox" id="test1" checked="checked" />
-				<label for="test1">Notify me by email</label>	
-	    	</p>
-	    	<p>
-				<input type="checkbox" id="test2" checked="checked" />
-				<label for="test2">I will be in Armenia at 6th</label>	
-	    	</p>
-			
+	    	<div class="row">
+	    		<div class="col s12 m6 6">
+	    			<p>
+						<input type="checkbox" id="test1" checked="checked" />
+						<label for="test1">Notify me by email</label>	
+			    	</p>
+	    		</div>
+	    		<div class="col s12 m6 6">
+		    		<p>
+						<input type="checkbox" id="test2" checked="checked" />
+						<label for="test2">I will be in Armenia at 6th</label>	
+			    	</p>
+	    		</div>
+	    	</div>
 	    </div>
-
-	    <div class="col s12 m6 6">
-	    	<div class="switch">
-				<p>I will vote</p>
-				<p>
-			      <input name="group1" type="radio" id="radioTest1" />
-			      <label for="radioTest1">Red</label>
-			    </p>
-			    <p>
-			      <input name="group1" type="radio" id="radioTest2" />
-			      <label for="radioTest2">Yellow</label>
-			    </p>
-			    <p>
-			      <input name="group1" type="radio" id="radioTest3" />
-			      <label for="radioTest3">Yellow</label>
-			    </p>
-			</div>
+	    <div class="col s12 m12 12">
+		    <div class="row">
+			    <div class="col s6 m6 6 offset-m3">
+					<h4 class="center-align">I will vote</h4>
+					<!-- <p class="hide">
+				      <input name="vote-group" type="radio" id="yesRadioBtn" />
+				      <label for="radioTest1">Yes</label>
+				    </p>
+				    <p class="hide">
+				      <input name="vote-group" type="radio" id="noRadioBtn" />
+				      <label for="radioTest2">No</label>
+				    </p> -->
+				    <div class="f_vote_btn yes vote-btn left" data-ans='yes'>
+				    	Yes
+				    </div>
+				    <div class="f_vote_btn no vote-btn right" data-ans='no'>
+				    	No
+				    </div>
+					<input id="voteAnswer" name="" type="hidden" />
+				    <div class="clearfix"></div>
+			    </div>
+		    </div>
 	    </div>
 	</div>
 	<div class="section row">

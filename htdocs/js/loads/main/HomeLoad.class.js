@@ -39,6 +39,7 @@ NGS.createLoad("hqv.loads.main.home", {
             var birthDate = $('#birthDate').val();
             if (birthDate.length > 0) {
                 jQuery("#searchResultModal").openModal();
+                jQuery("#searchResult").html('');
                 jQuery("#searchLoader").show();
                 NGS.load("hqv.loads.main.search_result", {birthDate: birthDate, firstName: firstName, lastName: lastName});
             }
