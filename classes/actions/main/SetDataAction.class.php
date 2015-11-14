@@ -19,9 +19,12 @@ namespace hqv\actions\main {
     class SetDataAction extends BaseAction {
 
         public function service() {
-            list($voterId, $email, $phone, $willVote, $ipAddress, $country, $browser, $wantsReceiveEmail ) =$this->validateData();
+            list($voterId, $email, $phone, $willVote, $ipAddress, $country, $browser, $wantsReceiveEmail ) = $this->validateData();
             \hqv\managers\VoterDataManager::getInstance()->addRow($voterId, $email, $phone, $willVote, $ipAddress, $country, $browser, $wantsReceiveEmail);
-            
+            if (!empty($email)) {
+                $mailgunManager = \hqv\managers\MailgunEmailSenderManager::getInstance();
+                $mailgunManager->sendSingleHtmlEmail('pars5555@yahoo.com', 'Hi!!!', "<div style='color:red'>Barev Բարեվ</div>", 'hanraqve@gmail.com', 'Հանրաքվե');
+            }
         }
 
     }
