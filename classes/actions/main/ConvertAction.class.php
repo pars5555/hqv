@@ -43,7 +43,7 @@ namespace hqv\actions\main {
               $row->F1, $row->F2, $row->F3, $row->F4, $row->F5, $row->F6, $row->F7, $row->F8);
               }
               } */
-            $offset = 0;
+            /*$offset = 0;
             $limit= 5000;
             while (true) {
                 $allData = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', [], [], null, $offset, $limit);
@@ -62,7 +62,23 @@ namespace hqv\actions\main {
                         \hqv\managers\VoterManager::getInstance()->updateByPK($row);
                     }
                 }
-            }
+            }*/
+           /* $offset = 0;
+            $limit= 5000;
+            while (true) {
+                $allData = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', [], [], null, $offset, $limit);
+                
+                if (empty($allData)) {
+                    break;
+                }
+                $offset += $limit;
+                foreach ($allData as $row) {                    
+                        $row->setHash(sha1(uniqid()));
+                        \hqv\managers\VoterManager::getInstance()->updateByPK($row);
+                  
+                }
+                break;
+            }*/
         }
 
     }

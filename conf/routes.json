@@ -1,5 +1,4 @@
 {
-  
     "lang": [
         {
             "action": "actions.main.set_language",
@@ -9,23 +8,28 @@
             }
         }
     ],
-    "sale": [
-     
+    "about": [
         {
-            "action": "loads.main.main",
-            "route": "[:id]",
-            "constraints": {
-                "id": "[0-9]+"
-            },
+            "action": "loads.main.index",
             "nestedLoad": {
                 "content": {
-                    "action": "loads.main.sale.open"
+                    "action": "loads.main.about"
                 }
             }
         }
 
     ],
-  
+    "contact": [
+        {
+            "action": "loads.main.index",
+            "nestedLoad": {
+                "content": {
+                    "action": "loads.main.contact"
+                }
+            }
+        }
+
+    ],
     "default": {
         "action": "loads.main.index",
         "nestedLoad": {

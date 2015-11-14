@@ -35,6 +35,7 @@ namespace hqv\loads {
             parent::initialize();
             $lm = TranslationManager::getInstance();
             $this->addParam("lm", $lm);
+            $this->addParam("loadName", NGS()->getRoutesEngine()->getPackage());
         }
 
         protected function initErrorMessages() {

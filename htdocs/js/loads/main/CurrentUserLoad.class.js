@@ -10,11 +10,11 @@ NGS.createLoad("hqv.loads.main.current_user", {
         jQuery('#currentUserModal').openModal();
         var thisInstance = this;
         jQuery("#currentUserModalBtn").click(function(e){
-            console.log(thisInstance.isSavable)
             if(!thisInstance.isSavable){
                 return false;
             }
-            alert(1)
+            $('#cu_will_vote')
+            $('#cu_')
             jQuery('#currentUserModal').closeModal();
             jQuery('#thankModal').openModal();
             jQuery(this).removeClass('disabled');
@@ -27,10 +27,8 @@ NGS.createLoad("hqv.loads.main.current_user", {
             jQuery('.f_vote_btn').removeClass('active');
             jQuery(this).addClass('active');
             jQuery("#currentUserModalBtn").removeClass('disabled');
-            
             thisInstance.isSavable = true;
-
-            jQuery("#voteAnswer").val(jQuery(this).data('ans'));
+            jQuery("#cu_will_vote").val(jQuery(this).data('ans'));
         });
-    },
+    }
 });

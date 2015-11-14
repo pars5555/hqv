@@ -35,9 +35,9 @@ namespace hqv\managers {
             return self::$instance;
         }
 
-        public function addRow($voterId, $email, $phone, $willVote, $ipAddress, $country, $browser, $wantsReceiveEmail) {
+        public function addRow($voterHash, $email, $phone, $willVote, $ipAddress, $country, $browser, $wantsReceiveEmail) {
             $dto = $this->createDto();
-            $dto ->setVoterId($voterId);
+            $dto ->setVoterId($voterHash);
             $dto ->setEmail($email);
             $dto ->setPhone($phone);
             $dto ->setWillWote($willVote);
@@ -46,8 +46,9 @@ namespace hqv\managers {
             $dto ->setBrowser($browser);
             $dto ->setWantsReceiveEmail($wantsReceiveEmail);
             return $this->insertDto($dto);
-            
         }
+        
+        
 
     }
 

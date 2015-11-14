@@ -1,6 +1,6 @@
 <div>
 	{foreach from=$ns.voters item=voter}
-		<div class="section cur-user f_current_user">
+		<div class="section cur-user f_current_user" data-hash="{$voter->getHash()}">
 			<h5>{$voter->getFirstName()} {$voter->getLastName()} {$voter->getFatherName()}</h5>
 			<p>{$voter->getAddress()}</p>
 		</div>

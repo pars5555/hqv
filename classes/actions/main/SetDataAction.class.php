@@ -19,12 +19,32 @@ namespace hqv\actions\main {
     class SetDataAction extends BaseAction {
 
         public function service() {
-            list($voterId, $email, $phone, $willVote, $ipAddress, $country, $browser, $wantsReceiveEmail ) = $this->validateData();
-            \hqv\managers\VoterDataManager::getInstance()->addRow($voterId, $email, $phone, $willVote, $ipAddress, $country, $browser, $wantsReceiveEmail);
-            if (!empty($email)) {
-                $mailgunManager = \hqv\managers\MailgunEmailSenderManager::getInstance();
-                $mailgunManager->sendSingleHtmlEmail('pars5555@yahoo.com', 'Hi!!!', "<div style='color:red'>Barev Բարեվ</div>", 'hanraqve@gmail.com', 'Հանրաքվե');
+            $validateData = $this->validateData();
+            if ($validateData) {
+                list($voterHash, $email, $phone, $willVote, $ipAddress, $country, $browser) = $validateData;
+                \hqv\managers\VoterDataManager::getInstance()->addRow($voterHash, $email, $phone, $willVote, $ipAddress, $country, $browser, $wantsReceiveEmail);
+                if (!empty($email)) {
+                    $mailgunManager = \hqv\managers\MailgunEmailSenderManager::getInstance();
+                    $mailgunManager->sendSingleHtmlEmail('pars5555@yahoo.com', 'Hi!!!', "<div style='color:red'>Barev Բարեվ</div>", 'hanraqve@gmail.com', 'Հանրաքվե');
+                }
             }
+        }
+
+        public function validateData() {
+            if (!isset(NGS()->args()->hash)) {
+                return false;
+            }
+            if (!isset(NGS()->args()->email)) {
+                return false;
+            }
+            if (!isset(NGS()->args()->phone)) {
+                return false;
+            }
+            if (!isset(NGS()->args()->will_vote)) {
+                return false;
+            }
+
+            return [$_SERVER['REMOTE_ADDR']];
         }
 
     }

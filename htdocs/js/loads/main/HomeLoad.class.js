@@ -36,7 +36,7 @@ NGS.createLoad("hqv.loads.main.home", {
             e.preventDefault();
             var firstName = $('#firstName').val();
             var lastName = $('#lastName').val();
-            var birthDate = $('#birthDate').val();
+            var birthDate = $('input[name="birthDate"]').val();
             if (birthDate.length > 0) {
                 jQuery("#searchResultModal").openModal();
                 jQuery("#searchResult").html('');
@@ -95,11 +95,14 @@ NGS.createLoad("hqv.loads.main.home", {
     },
     initBirthDate: function () {
         $('#birthDate').pickadate({
+            format: 'd mmmm, yyyy',
+            formatSubmit: 'yyyy-mm-dd',
+            hiddenPrefix: 'birthDate',
+            hiddenSuffix: '',
             monthsFull: ['Հունվար', 'Փետրվար', 'Մարտ', 'Ապրիլ', 'Մայիս', 'Հունիս', 'Հուլիս', 'Օգոստոս', 'Սեպտեմբեր', 'Հոկտեմբեր', 'Նոյեմբեր', 'Դեկտեմբեր'],
             monthsShort: ['Հուն', 'Փետ', 'Մար', 'Ապր', 'Մայ', 'Հուն', 'Հուլ', 'Օգոս', 'Սեպ', 'Հոկ', 'Նոյ', 'Դեկ'],
             weekdaysFull: ['Կիրակի ', 'Երկուշաբթի', 'Երեքշաբթի', 'Չորեքշաբթի', 'Հինգշաբթի', 'Ուրբաթ', 'Շաբաթ'],
             weekdaysShort: ['կիր', 'երկ', 'երեք', 'չոր', 'հինգ', 'ուրբ', 'շաբ'],
-            format: 'yyyy-mm-dd',
             selectMonths: true,
             selectYears: 70,
             clear: null,

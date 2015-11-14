@@ -35,6 +35,14 @@ namespace hqv\managers {
             return self::$instance;
         }
 
+        public function getByHash($hash) {
+            $rows = $this->selectByField('hash', $hash);
+            if (!empty($rows)) {
+                return $rows [0];
+            }
+            return null;
+        }
+
     }
 
 }
