@@ -30,14 +30,17 @@ namespace hqv\dal\dto {
             "id" => "id", 
             "voter_id" => "voterId",
             "will_vote" => "willVote",
+            "will_be_in_arm" => "willBeInArm",
             "phone" => "phone",
             "email" => "email",
-            "wants_receive_email" => "wantsReceiveEmail",
             "note" => "note",
             "ip_address" => "ipAddress",
+            "datetime" => "datetime",
             "country" => "country",
             "datetime" => "datetime",
-            "browser" => "browser"
+            "browser" => "browser",
+            "browser_version" => "browserVersion",
+            "platform" => "platform"
             );
 
         // returns map array

@@ -21,7 +21,7 @@ namespace hqv\dal\mappers {
     class VoterDataMapper extends AdvancedAbstractMysqlMapper {
 
         private static $instance;
-        public $tableName = "voters";
+        public $tableName = "voter_data";
 
         public static function getInstance() {
             if (self::$instance == null) {

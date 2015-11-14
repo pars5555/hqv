@@ -1,4 +1,4 @@
-NGS.createAction("hqv.actions.main.sale.set_data", {
+NGS.createAction("hqv.actions.main.set_data", {
     onError: function (res) {
         
     },
