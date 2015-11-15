@@ -46,7 +46,7 @@ namespace hqv\managers {
             $dto ->setCountry($country);
             $dto ->setBrowser($browser);
             $dto ->setBrowserVersion($version);
-            $dto ->setOs($os);
+            $dto ->setPlatform($os);
             $dto ->setDatetime(date('Y-m-d H:i:s'));
             return $this->insertDto($dto);
         }

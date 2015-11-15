@@ -16,9 +16,11 @@ namespace hqv\actions\main {
 
     use hqv\actions\BaseAction;
     use hqv\managers\MailgunEmailSenderManager;
+    use hqv\managers\TranslationManager;
     use hqv\managers\VoterDataManager;
     use hqv\managers\VoterManager;
     use NGS;
+    use ngs\framework\templater\NgsTemplater;
 
     class SetDataAction extends BaseAction {
 
@@ -31,10 +33,17 @@ namespace hqv\actions\main {
                     VoterDataManager::getInstance()->addRow($voter->getId(), $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os);
                     if (!empty($email)) {
                         $mailgunManager = MailgunEmailSenderManager::getInstance();
-                        $mailgunManager->sendSingleHtmlEmail('pars5555@yahoo.com', 'Hi!!!', "<div style='color:red'>Barev Բարեվ</div>", 'hanraqve@gmail.com', 'Հանրաքվե');
+                        $mailgunManager->sendSingleHtmlEmail('pars5555@yahoo.com', 'Hi!!!', $this->getEmailHtml(), 'hanraqve@gmail.com', 'Հանրաքվե');
                     }
                 }
             }
+        }
+
+        private function getEmailHtml() {
+            $templetor = new NgsTemplater();
+            $templetor->smartyInitialize();
+            $templetor->getSmarty()->assign('lm', TranslationManager::getInstance());
+            return $templetor->getSmarty()->fetch(NGS()->getTemplateDir() . "/main/email/thanks.tpl");
         }
 
         public function validateData() {
