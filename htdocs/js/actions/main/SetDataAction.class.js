@@ -3,6 +3,6 @@ NGS.createAction("hqv.actions.main.set_data", {
         
     },
     afterAction: function (transport) {
-        console.log(transport);
+        NGS.load("hqv.loads.main.thank_you", {});
     }
 });

@@ -49,21 +49,27 @@ body{
     cursor: pointer;
 }
 .search-result-wrapper .cur-user:hover {
-    background-color: #f9f9f9;
+    background-color: #f6f6f6;
 }
 /**************************************************************************************/
 /*                                        KEYBOARD                                    */
 /**************************************************************************************/
 .ui-keyboard {
     background-color:#f9f9f9 !important;
+    background-image: none !important;
 }
 .ui-keyboard-keyset .ui-keyboard-button {
+    background-image: none !important;
     background-color: #26a69a !important;
     color: #fff !important;
 }
 .ui-keyboard-keyset .ui-keyboard-button.ui-state-hover {
     background-color: #2bbbad;
     border-color: #2bbbad;
+}
+input.ui-widget-content {
+    background-color: transparent !important;
+    background-image: none !important;
 }
 /**************************************************************************************/
 /*                                        MODAL                                       */
@@ -76,11 +82,11 @@ body{
     width: 35% !important;
 }
 .modal .close-btn {
-    font-size: 13px;
-    position: absolute;
-    right: 22px;
     cursor: pointer;
-    top: 5px;
+    font-size: 38px;
+    position: absolute;
+    right: 4px;
+    top: 0;
     z-index: 300;
 }
 .modal .close-btn:hover {
@@ -88,9 +94,12 @@ body{
 }
 .modal .vote-btn {
     color: #fff;
-    padding: 20px 30px;
-    font-size: 18px;
     cursor: pointer;
+    font-size: 18px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    width: 120px;
 }
 .modal .vote-btn.no{
     background-color: #ee6e73;
@@ -105,4 +114,52 @@ body{
 .modal .vote-btn.yes:hover,
 .modal .vote-btn.yes.active {
     background-color: #46c6ba;
+}
+.modal.modal-fixed-footer .modal-content {
+   margin-top: 40px !important; 
+}
+#currentUser.modal-content {
+    padding-top: 0px;
+}
+.vote-text {
+    font-size: 16px;
+}
+/**************************************************************************************/
+/*                                        CALENDAR                                    */
+/**************************************************************************************/
+.picker__day--infocus{
+    padding: 0.45rem 0 !important;
+}
+.picker__date-display {
+    padding-bottom: 0px !important;
+}
+.picker__weekday-display {
+    margin-bottom: 0px !important;
+}
+.picker__month-display {
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+.picker__day-display {
+    display: inline-block !important;
+    margin: 0 10px !important;
+    vertical-align: middle !important;
+}
+.picker__year-display {
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+.picker__footer .picker__close {
+    margin: 0px auto;
+    background-color: #26a69a;
+    color: #fff;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-decoration: none;
+    height: 36px;
+    line-height: 36px;
+}
+.picker__footer .picker__close:hover {
+    background-color: #2bbbad;
 }

@@ -189,7 +189,7 @@
 </div>
 <div id="searchResultModal" class="modal current-user-modal modal-fixed-footer">
 	<div class="modal-header">
-		<div class="close-btn modal-action modal-close">x</div>
+		<i class="fa fa-times close-btn modal-action modal-close"></i>
 	</div>
 	<div id="" class="modal-content row">
 		<div id="searchLoader" class="center-align hidden" style="display:none;">
@@ -212,13 +212,10 @@
 	      	</div>
 		</div>
 	</div>
-	<div class="modal-footer">
-		<a href="#!" class="modal-action modal-close btn">Close</a>
-	</div>
 </div>
 <div id="currentUserModal" class="modal current-user-modal modal-fixed-footer">
 	<div class="modal-header">
-		<div class="close-btn modal-action modal-close">x</div>
+		<i class="fa fa-times close-btn modal-action modal-close"></i>
 	</div>
 	<div id="currentUser" class="modal-content row">
 	</div>
@@ -228,11 +225,27 @@
 </div>
 <div id="thankModal" class="modal thankyou-modal current-user-modal modal-fixed-footer">
 	<div class="modal-header">
-		<div class="close-btn modal-action modal-close">x</div>
+		<i class="fa fa-times close-btn modal-action modal-close"></i>
 	</div>
 	<div class="modal-content row">
-		<h4>Thank you</h4>
-		<p>thank you for the vote</p>
+		<div id="thankyouLoader" class="center-align hidden" style="display:none;">
+			<div class="preloader-wrapper big active">
+				<div class="spinner-layer spinner-red-only">
+					<div class="circle-clipper left">
+						<div class="circle"></div>
+					</div>
+					<div class="gap-patch">
+						<div class="circle"></div>
+					</div>
+					<div class="circle-clipper right">
+						<div class="circle"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="thankYouContainer">
+			
+		</div>
 	</div>
 	<div class="modal-footer">
 		<a  href="#!" class="modal-action modal-close btn">Ok</a>

@@ -35,6 +35,7 @@ namespace hqv\loads\main {
             }
             $voters = VoterManager::getInstance()->selectAdvance('*', $where, ['first_name']);
             $this->addParam('voters', $voters);
+
         }
 
         public function validateParams() {

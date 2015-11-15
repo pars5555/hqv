@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-14 10:51:48
+<?php /* Smarty version 3.1.27, created on 2015-11-15 10:23:29
          compiled from "D:\xampp\htdocs\hqv\templates\main\current_user.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:6873564704341c54e5_62317929%%*/
+/*%%SmartyHeaderCode:89456484f11f0c9f9_08259912%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,111 +9,87 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b7d845e2abf9ef1dcca359ccb19e0be7a9e5185e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\current_user.tpl',
-      1 => 1447494665,
+      1 => 1447579404,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '6873564704341c54e5_62317929',
+  'nocache_hash' => '89456484f11f0c9f9_08259912',
+  'variables' => 
+  array (
+    'ns' => 0,
+  ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564704341e2c16_86467486',
+  'unifunc' => 'content_56484f11f37ab9_78731354',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564704341e2c16_86467486')) {
-function content_564704341e2c16_86467486 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56484f11f37ab9_78731354')) {
+function content_56484f11f37ab9_78731354 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '6873564704341c54e5_62317929';
-?>
-<h4>Message</h4>
-<p class="center-align red-text text-darken-4">Warning Message</p>
-<form class="col s12">
-	<div class="section row">
-		<div class="input-field col s12 m4 4">
-			<i class="material-icons prefix">account_circle</i>
-			<input disabled  id="firstName" value="test first name" type="tel" class="validate">
-			<label class="active" for="firstName">First Name</label>
-		</div>
-		<div class="input-field col s12 m4 4">
-			<i class="material-icons prefix">account_circle</i>
-			<input disabled  id="lastName" value="test last name" type="tel" class="validate">
-			<label class="active" for="lastName">Last Name</label>
-		</div>
-		<div class="input-field col s12 m4 4">
-			<i class="material-icons prefix">account_circle</i>
-			<input disabled  id="father1" value="test Father name" type="tel" class="validate">
-			<label class="active" for="father1">Father name</label>
-		</div>
-		<div class="input-field col s12 m4 4">
-			<i class="material-icons prefix">perm_contact_calendar</i>
-			<input disabled  id="Birthday" value="Birthday" type="tel" class="validate">
-			<label class="active" for="Birthday">Birthday</label>
-		</div>
-		<div class="input-field col s12 m8 8">
-			<i class="material-icons prefix">mode_edit</i>
-			<input disabled  id="Address1" value="Address" type="tel" class="validate">
-			<label class="active" for="Address1">Address</label>
-	    </div>
-	    <div class="input-field col s12 m12 12">
-			<input disabled  id="Address2" value="Address" type="tel" class="validate">
-			<label class="active" for="Address2">Address</label>
-	    </div>
-		<div class="input-field col s12 m6 6">
-			<i class="material-icons prefix">phone</i>
-			<input id="icon_telephone" type="tel" class="validate">
-			<label for="icon_telephone">Telephone</label>
-		</div>
-		<div class="input-field col s12 m6 6">
-			<i class="material-icons prefix">mailbox</i>
-			<input id="email" type="email" class="validate">
-			<label for="email" data-error="wrong" data-success="right">Email</label>
-	    </div>
-	    <div class="col s12 m6 6">
-	    	<div class="row">
-	    		<div class="col s12 m6 6">
-	    			<p>
-						<input type="checkbox" id="test1" checked="checked" />
-						<label for="test1">Notify me by email</label>	
-			    	</p>
-	    		</div>
-	    		<div class="col s12 m6 6">
-		    		<p>
-						<input type="checkbox" id="test2" checked="checked" />
-						<label for="test2">I will be in Armenia at 6th</label>	
-			    	</p>
-	    		</div>
-	    	</div>
-	    </div>
-	    <div class="col s12 m12 12">
-		    <div class="row">
-			    <div class="col s6 m6 6 offset-m3">
-					<h4 class="center-align">I will vote</h4>
-					<!-- <p class="hide">
-				      <input name="vote-group" type="radio" id="yesRadioBtn" />
-				      <label for="radioTest1">Yes</label>
-				    </p>
-				    <p class="hide">
-				      <input name="vote-group" type="radio" id="noRadioBtn" />
-				      <label for="radioTest2">No</label>
-				    </p> -->
-				    <div class="f_vote_btn yes vote-btn left" data-ans='yes'>
-				    	Yes
-				    </div>
-				    <div class="f_vote_btn no vote-btn right" data-ans='no'>
-				    	No
-				    </div>
-					<input id="voteAnswer" name="" type="hidden" />
-				    <div class="clearfix"></div>
-			    </div>
-		    </div>
-	    </div>
-	</div>
-	<div class="section row">
-	    <!-- <div class="input-field col s12">
-			<i class="material-icons prefix">mode_edit</i>
-			<textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-			<label for="icon_prefix2">Address</label>
-	    </div> -->
-	</div>
-</form><?php }
+$_smarty_tpl->properties['nocache_hash'] = '89456484f11f0c9f9_08259912';
+if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
+    <?php if (!empty($_smarty_tpl->tpl_vars['ns']->value['voter_data'])) {?>
+        <p class="center-align red-text text-darken-4">You have already voted! call us if you were not</p>
+    <?php }?>
+    <form class="col s12">
+        <div class="section row">
+            <div class="input-field col s12 m12 12 vote-text">
+                <?php echo $_smarty_tpl->tpl_vars['ns']->value['voter']->getFirstName();?>
+
+                <?php echo $_smarty_tpl->tpl_vars['ns']->value['voter']->getLastName();?>
+
+                <?php echo $_smarty_tpl->tpl_vars['ns']->value['voter']->getFatherName();?>
+
+                <?php echo $_smarty_tpl->tpl_vars['ns']->value['voter']->getBirthDate();?>
+
+                <?php echo $_smarty_tpl->tpl_vars['ns']->value['voter']->getAddress();?>
+
+            </div>
+            <div class="input-field col s12 m12 12 vote-text">
+                <?php echo $_smarty_tpl->tpl_vars['ns']->value['area']->getAddress();?>
+
+            </div>
+            <div class="input-field col s12 m6 6">
+                <i class="material-icons prefix">phone</i>
+                <input id="cu_telephone" type="text" class="validate">
+                <label for="cu_telephone">Telephone</label>
+            </div>
+            <div class="input-field col s12 m6 6">
+                <i class="material-icons prefix">mailbox</i>
+                <input id="cu_email" type="text" class="validate">
+                <label for="cu_email">Email</label>
+            </div>
+            <div class="col s12 m6 6">
+                <div class="row">                   
+                    <div class="col s12 m6 6">
+                        <p>
+                            <input type="checkbox" id="cu_will_be_in_armenia" checked="checked" />
+                            <label for="cu_will_be_in_armenia">I will be in Armenia at 6th</label>	
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m12 12">
+                <div class="row">
+                    <div class="col s6 m8 8 offset-m2">
+                        <div class="f_vote_btn yes vote-btn left" data-ans='1'>
+                            Yes
+                        </div>
+                        <div class="f_vote_btn no vote-btn right" data-ans='0'>
+                            No
+                        </div>
+                        <input id="cu_will_vote" type="hidden" />
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="voterHash" value="<?php echo $_smarty_tpl->tpl_vars['ns']->value['voter']->getHash();?>
+"/>
+    </form>
+<?php } else { ?>
+    <h4>Wrong Voter Data!<h4>
+<?php }
+}
 }
 ?>

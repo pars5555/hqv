@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-14 10:37:32
+<?php /* Smarty version 3.1.27, created on 2015-11-15 10:05:03
          compiled from "D:\xampp\htdocs\hqv\templates\main\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:21929564700dc2fbd93_97026363%%*/
+/*%%SmartyHeaderCode:910856484abf9b21d9_88632959%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5453d8b4442e6d5beb34c809368d9cb2e372f1f5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\home.tpl',
-      1 => 1447493851,
+      1 => 1447578303,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '21929564700dc2fbd93_97026363',
+  'nocache_hash' => '910856484abf9b21d9_88632959',
   'variables' => 
   array (
     'SITE_PATH' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564700dc32f2d7_07313650',
+  'unifunc' => 'content_56484abf9db566_40548501',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564700dc32f2d7_07313650')) {
-function content_564700dc32f2d7_07313650 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56484abf9db566_40548501')) {
+function content_56484abf9db566_40548501 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '21929564700dc2fbd93_97026363';
+$_smarty_tpl->properties['nocache_hash'] = '910856484abf9b21d9_88632959';
 ?>
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row center valign">
@@ -223,7 +223,7 @@ $_smarty_tpl->properties['nocache_hash'] = '21929564700dc2fbd93_97026363';
 </div>
 <div id="searchResultModal" class="modal current-user-modal modal-fixed-footer">
 	<div class="modal-header">
-		<div class="close-btn modal-action modal-close">x</div>
+		<i class="fa fa-times close-btn modal-action modal-close"></i>
 	</div>
 	<div id="" class="modal-content row">
 		<div id="searchLoader" class="center-align hidden" style="display:none;">
@@ -246,13 +246,10 @@ $_smarty_tpl->properties['nocache_hash'] = '21929564700dc2fbd93_97026363';
 	      	</div>
 		</div>
 	</div>
-	<div class="modal-footer">
-		<a href="#!" class="modal-action modal-close btn">Close</a>
-	</div>
 </div>
 <div id="currentUserModal" class="modal current-user-modal modal-fixed-footer">
 	<div class="modal-header">
-		<div class="close-btn modal-action modal-close">x</div>
+		<i class="fa fa-times close-btn modal-action modal-close"></i>
 	</div>
 	<div id="currentUser" class="modal-content row">
 	</div>
@@ -262,11 +259,27 @@ $_smarty_tpl->properties['nocache_hash'] = '21929564700dc2fbd93_97026363';
 </div>
 <div id="thankModal" class="modal thankyou-modal current-user-modal modal-fixed-footer">
 	<div class="modal-header">
-		<div class="close-btn modal-action modal-close">x</div>
+		<i class="fa fa-times close-btn modal-action modal-close"></i>
 	</div>
 	<div class="modal-content row">
-		<h4>Thank you</h4>
-		<p>thank you for the vote</p>
+		<div id="thankyouLoader" class="center-align hidden" style="display:none;">
+			<div class="preloader-wrapper big active">
+				<div class="spinner-layer spinner-red-only">
+					<div class="circle-clipper left">
+						<div class="circle"></div>
+					</div>
+					<div class="gap-patch">
+						<div class="circle"></div>
+					</div>
+					<div class="circle-clipper right">
+						<div class="circle"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="thankYouContainer">
+			
+		</div>
 	</div>
 	<div class="modal-footer">
 		<a  href="#!" class="modal-action modal-close btn">Ok</a>
