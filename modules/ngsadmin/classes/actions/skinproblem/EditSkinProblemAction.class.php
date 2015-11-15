@@ -1,0 +1,27 @@
+<?php
+
+namespace ngsadmin\actions\skinproblem {
+
+use ngs\framework\AbstractAction;
+use ngsadmin\managers\SkinProblemManager;
+use ngsadmin\security\RequestGroups;
+
+
+  class EditSkinProblemAction extends AbstractAction {
+
+    public function service() {
+       $id = NGS()->args()->getId();
+       $description = NGS()->args()->getDescription();
+       $updateDescription = SkinProblemManager::getInstance()->updateDescription($id,$description);
+        if(!$updateDescription){
+           throw  new \ngs\framework\exceptions\NgsErrorException('Edit Not Complete');
+       }
+    }
+
+    public function getRequestGroup() {
+      return RequestGroups::$guestRequest;
+    }
+
+  }
+
+}

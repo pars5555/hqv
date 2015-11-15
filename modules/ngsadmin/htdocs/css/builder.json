@@ -1,0 +1,18 @@
+[
+  {
+    "output_file": "styles.css",
+    "compress": true,
+    "builders": [
+      {
+        "output_file": "main.css",
+        "compress": false,
+        "files": [
+          "admin.css",
+          "style.css",
+          "skin.css",
+          "jquery/jquery-ui.css"
+        ]
+      }
+    ]
+  }
+]

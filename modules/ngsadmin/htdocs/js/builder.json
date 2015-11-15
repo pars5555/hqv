@@ -1,0 +1,132 @@
+[
+  {
+    "output_file": "ngs.js",
+    "compress": true,
+    "builders": [
+      {
+        "output_file": "im_libs.js",
+        "compress": false,
+        "module": "bclub",
+        "files": [
+          "lib/jquery.min.js",
+          "lib/jquery-ui.min.js",
+          "lib/select2.min.js",
+          "lib/tinymce/tinymce.min.js",
+          "lib/fileupload/jquery.iframe-transport.js",
+          "lib/fileupload/load-image.all.min.js",
+          "lib/fileupload/jquery.fileupload.js",
+          "lib/fileupload/jquery.fileupload-process.js",
+          "lib/fileupload/jquery.fileupload-image.js"
+        ]
+      },
+      {
+        "output_file": "ngs_framework.js",
+        "compress": false,
+        "module": "bclub",
+        "files": [
+          "framework/NGS.js",
+          "framework/Dispatcher.class.js",
+          "framework/AbstractLoad.class.js",
+          "framework/AbstractAction.class.js",
+          "framework/AjaxLoader.class.js",
+          "framework/CustomEvent.js",
+          "framework/NGSEvent.js"
+        ]
+      },
+      {
+        "output_file": "ngs_global.js",
+        "compress": false,
+        "module": "bclub",
+        "files": [
+          "index.js",
+          "conf/config.js"
+        ]
+      },
+      {
+        "output_file": "im_utils.js",
+        "compress": false,
+        "module": "bclub",
+        "files": [
+          "util/FileUtil.class.js",
+          "util/FormValidator.class.js",
+          "util/UrlObserver.class.js",
+          "util/ilyovSorting.js",
+          "util/ilyovPaging.js"
+        ]
+      }
+    ]
+  },
+  {
+    "output_file": "ngs_loads.js",
+    "compress": true,
+    "builders": [
+      {
+        "output_file": "ngs_loads_main.js",
+        "compress": false,
+        "files": [
+          "loads/MainLoad.class.js",
+          "loads/LoginLoad.class.js",
+          "loads/users/UserLoad.class.js",
+          "loads/users/UploadUserLoad.class.js",
+          "loads/users/UploadUserListLoad.class.js",
+          "loads/pharmacy/PharmacyListLoad.class.js",
+          "loads/pharmacy/PharmacyLoad.class.js",
+          "loads/skintype/SkinTypeListLoad.class.js",
+          "loads/skintype/SkinTypeLoad.class.js",
+          "loads/skintype/EditSkinTypeLoad.class.js",
+          "loads/skinproblem/SkinProblemListLoad.class.js",
+          "loads/skinproblem/SkinProblemLoad.class.js",
+          "loads/skinproblem/EditSkinProblemLoad.class.js",
+          "loads/orderhistory/OrderHistoryListLoad.class.js",
+          "loads/orderhistory/OrderHistoryLoad.class.js",
+          "loads/country/CountryLoad.class.js",
+          "loads/country/CountryListLoad.class.js",
+          "loads/registers/MamaClubLoad.class.js",
+          "loads/registers/OfferLoad.class.js",
+          "loads/registers/ProductLoad.class.js",
+          "loads/users/UserListLoad.class.js",
+          "loads/professions/ProfessionsListLoad.class.js",
+          "loads/professions/ProfessionsLoad.class.js",
+          "loads/users/AddEditUserLoad.class.js"
+        ]
+      }
+    ]
+  },
+  {
+    "output_file": "ngs_actions.js",
+    "compress": true,
+    "builders": [
+      {
+        "output_file": "ngs_actions_main.js",
+        "compress": false,
+        "files": [
+          "actions/SiteAction.class.js",
+          "actions/main/LoginAction.class.js",
+          "actions/users/AddEditUserAction.class.js",
+          "actions/users/DeleteUserAction.class.js",
+          "actions/skinproblem/EditSkinProblemAction.class.js",
+          "actions/registers/DeleteImageAction.class.js",
+          "actions/registers/UpdateDescriptionAction.class.js",
+          "actions/skintype/EditSkinTypeAction.class.js"
+        ]
+      }
+    ]
+  },
+  {
+    "output_file": "ngs_managers.js",
+    "compress": true,
+    "builders": [
+      {
+        "output_file": "ngs_admin_managers.js",
+        "compress": false,
+        "files": [
+          "managers/DialogsManager.class.js",
+          "managers/RegisterPagesManager.class.js",
+          "managers/OrderingManager.class.js",
+          "managers/PagingManager.class.js",
+          "managers/UploadManager.class.js"
+        ]
+      }
+    ]
+  }
+]
