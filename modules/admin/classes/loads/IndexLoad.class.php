@@ -15,21 +15,19 @@
  *
  */
 
-namespace admin\loads\main {
+namespace admin\loads {
 
-    use demo\security\RequestGroups;
+    use NGS;
+    use ngs\framework\AbstractLoad;
 
-    class IndexLoad extends \ngs\framework\AbstractLoad {
+    class IndexLoad extends AbstractLoad {
 
         public function load() {
+            
         }
 
         public function getTemplate() {
-            return NGS()->getTemplateDir() . "/main/index.tpl";
-        }
-
-        public function getRequestGroup() {
-            return RequestGroups::$guestRequest;
+            return NGS()->getTemplateDir() . "/index.tpl";
         }
 
     }

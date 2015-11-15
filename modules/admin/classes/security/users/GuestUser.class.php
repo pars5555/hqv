@@ -28,7 +28,7 @@ namespace admin\security\users {
      * @return int userId
      */
     public function register() {
-      $this->setCookieParam("but", UserGroups::$GUEST);
+      $this->setCookieParam("ut", UserGroups::$GUEST);
       return true;
     }
 
@@ -38,7 +38,7 @@ namespace admin\security\users {
      * @return int
      */
     public function getLevel() {
-      return $this->getCookieParam("but");
+      return $this->getCookieParam("ut");
     }
 
     /**

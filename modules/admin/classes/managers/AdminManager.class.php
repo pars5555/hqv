@@ -4,7 +4,7 @@
  * @site http://naghashyan.com
  * @mail levon@naghashyan.com
  * @year 2015
- * @package ngsadmin.managers
+ * @package admin.managers
  * @version 1.0.0
  *
  */

@@ -29,7 +29,7 @@ namespace admin\security\users {
      * @return
      */
     protected function setUniqueId($uniqueId) {
-      $this->setCookieParam("buh", $uniqueId);
+      $this->setCookieParam("uh", $uniqueId);
     }
 
     /**
@@ -39,7 +39,7 @@ namespace admin\security\users {
      * @return
      */
     protected function setId($id) {
-      $this->setCookieParam("bud", $id);
+      $this->setCookieParam("ud", $id);
     }
 
     /**
@@ -48,7 +48,7 @@ namespace admin\security\users {
      * @return
      */
     protected function getUniqueId() {
-      return $this->getCookieParam("buh");
+      return $this->getCookieParam("uh");
     }
 
     /**
@@ -57,7 +57,7 @@ namespace admin\security\users {
      * @return
      */
     protected function getId() {
-      return $this->getCookieParam("bud");
+      return $this->getCookieParam("ud");
     }
 
   }

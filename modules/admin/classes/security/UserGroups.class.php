@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Contains definitions for all participant roles in system.
  *
@@ -10,17 +11,21 @@
  * @version 6.0
  *
  */
+
 namespace admin\security {
-	class UserGroups {
-		
-		/**
-		 * @var System administrator
-		 */
-		public static $NGSADMIN = 0;
-    /**
-     * @var Non authorized user with minimum privileges
-     */
-    public static $GUEST = 11;
-	}
+
+    class UserGroups {
+
+        /**
+         * @var System administrator
+         */
+        public static $ADMIN = 1;
+
+        /**
+         * @var Non authorized user with minimum privileges
+         */
+        public static $GUEST = 11;
+
+    }
 
 }

@@ -103,7 +103,9 @@ namespace ngs\framework {
             $loadObj->initialize();
 
             if (NGS()->getSessionManager()->validateRequest($loadObj) === false) {
-                throw NGS()->getNoAccessException("User hasn't access to the load: " . $actionArr["action"], 1);
+                if ($loadObj->onNoAccess()) {
+                        return;
+                    }
             }
 
             $loadObj->service();

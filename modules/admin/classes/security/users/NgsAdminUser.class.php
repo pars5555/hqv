@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  * Creates en instance of admin user class and
@@ -12,50 +13,52 @@
  * @version 6.0
  *
  */
+
 namespace admin\security\users {
-	use \admin\security\UserGroups;
-	use \admin\managers\AdminManager;
 
-	class NgsAdminUser extends AbstractAdminUser {
+    use \admin\security\UserGroups;
+    use \admin\managers\AdminManager;
 
-		
-		public function __construct() {
-			parent::__construct();
-		}
-    
-		/**
-		 * register guest user
-		 *
-		 * @return int userId
-		 */
-		public function login($id){
-			$userHashcode = AdminManager::getInstance()->loginUser($id);
-			$this->setCookieParam("but", UserGroups::$NGSADMIN);
-			$this->setUniqueId($userHashcode);
-			$this->setId($id);
-			return $id;
-		}
-    
-    /**
-     * Returns user's level
-     *
-     * @return int
-     */
-    public function getLevel() {
-      return $this->getCookieParam("but");
+    class NgsAdminUser extends AbstractAdminUser {
+
+        public function __construct() {
+            parent::__construct();
+        }
+
+        /**
+         * register guest user
+         *
+         * @return int userId
+         */
+        public function login($id) {
+            $userHashcode = AdminManager::getInstance()->loginUser($id);
+            $this->setCookieParam("ut", UserGroups::$ADMIN);
+            $this->setUniqueId($userHashcode);
+            $this->setId($id);
+            return $id;
+        }
+
+        /**
+         * Returns user's level
+         *
+         * @return int
+         */
+        public function getLevel() {
+            return $this->getCookieParam("ut");
+        }
+
+        /**
+         * Validates user credentials
+         *
+         * @return TRUE - if validation passed, and FALSE - otherwise
+         */
+        public function validate() {
+            if (AdminManager::getInstance()->validate($this->getId(), $this->getUniqueId())) {
+                return true;
+            }
+            throw new \ngs\framework\exceptions\InvalidUserException("wrong user");
+        }
+
     }
-
-		/**
-		 * Validates user credentials
-		 *
-		 * @return TRUE - if validation passed, and FALSE - otherwise
-		 */
-		public function validate() {
-			if(AdminManager::getInstance()->validate($this->getId(), $this->getUniqueId())){
-				return true;
-			}
-			throw new \ngs\framework\exceptions\InvalidUserException("wrong user");
-		}
-	}
 
 }

@@ -13,7 +13,7 @@
 namespace hqv\security {
 	class RequestGroups {
 
-		public static $adminsRequest = 0;
+		public static $adminRequest = 1;
 		public static $guestRequest = 11;
 
 	}

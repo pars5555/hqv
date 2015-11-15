@@ -15,24 +15,18 @@
  *
  */
 
-namespace admin\loads\main {
+namespace admin\loads {
 
-    use hqv\security\RequestGroups;
+    use admin\loads\BaseAdminLoad;
     use NGS;
-    use ngs\framework\AbstractLoad;
 
-    class HomeLoad extends AbstractLoad {
+    class HomeLoad extends BaseAdminLoad {
 
         public function load() {
-            
         }
 
         public function getTemplate() {
-            return NGS()->getTemplateDir() . "/main/home.tpl";
-        }
-
-        public function getRequestGroup() {
-            return RequestGroups::$guestRequest;
+            return NGS()->getTemplateDir() . "/home.tpl";
         }
 
     }
