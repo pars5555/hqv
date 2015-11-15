@@ -1,2 +1,0 @@
-{extends file='../table.tpl'}
-

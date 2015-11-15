@@ -1,4 +1,5 @@
 <?php
+
 /**
  * NGS demo load for demostration subdomain module structure
  * this class extends from AbstractLoad class
@@ -15,21 +16,25 @@
  */
 
 namespace admin\loads\main {
-	use demo\security\RequestGroups;
 
-	class HomeLoad extends \ngs\framework\AbstractLoad {
+    use hqv\security\RequestGroups;
+    use NGS;
+    use ngs\framework\AbstractLoad;
 
-		public function load() {
-		}
+    class HomeLoad extends AbstractLoad {
 
-		public function getTemplate() {
-			return NGS()->getTemplateDir()."/main/home.tpl";
-		}
+        public function load() {
+            
+        }
 
-		public function getRequestGroup() {
-			return RequestGroups::$guestRequest;
-		}
+        public function getTemplate() {
+            return NGS()->getTemplateDir() . "/main/home.tpl";
+        }
 
-	}
+        public function getRequestGroup() {
+            return RequestGroups::$guestRequest;
+        }
+
+    }
 
 }
