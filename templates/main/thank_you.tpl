@@ -1,1 +1,4 @@
-<h4>Thank you</h4>
+<h4>Thank you {$ns.voter->getFirstName()}</h4>
+<p>
+message...
+</p>

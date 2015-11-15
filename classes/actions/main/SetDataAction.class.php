@@ -30,6 +30,7 @@ namespace hqv\actions\main {
                 list($hash, $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os) = $validateData;
                 $voter = VoterManager::getInstance()->getByHash($hash);
                 if (isset($voter)) {
+                    $this->addParam('hash', $hash);
                     VoterDataManager::getInstance()->addRow($voter->getId(), $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os);
                     if (!empty($email)) {
                         $mailgunManager = MailgunEmailSenderManager::getInstance();

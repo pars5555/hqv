@@ -11,17 +11,24 @@
 
 namespace hqv\loads\main {
 
-use hqv\loads\NgsLoad;
-use hqv\managers\AreaManager;
-use hqv\managers\VoterDataManager;
-use hqv\managers\VoterManager;
-use hqv\security\RequestGroups;
-use NGS;
+    use hqv\loads\NgsLoad;
+    use hqv\managers\AreaManager;
+    use hqv\managers\VoterDataManager;
+    use hqv\managers\VoterManager;
+    use hqv\security\RequestGroups;
+    use NGS;
 
     class ThankYouLoad extends NgsLoad {
 
         public function load() {
-            
+            if (!isset(NGS()->args()->hash)) {
+                return;
+            }
+            $hash = NGS()->args()->hash;
+            $voter = VoterManager::getInstance()->getByHash($hash);
+            if (isset($voter)) {
+                $this->addParam('voter', $voter);
+            }
         }
 
         public function getTemplate() {
