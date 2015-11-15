@@ -1,9 +1,13 @@
 {
-  "default": {
-    "subdomain": {},
-    "path": {},
     "default": {
-      "dir": "hqv"
+        "subdomain": {
+            "admin": {
+                "dir": "admin"
+            }
+        },
+        "path": {},
+        "default": {
+            "dir": "hqv"
+        }
     }
-  }
 }

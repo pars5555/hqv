@@ -165,7 +165,7 @@ NGS()->define("NGS_EXCEPTION_NOT_FOUND", 'ngs\framework\exceptions\NotFoundExcep
 |--------------------------------------------------------------------------
 */
 //---defining if modules enabled
-NGS()->define("MODULES_ENABLE", FALSE);
+NGS()->define("MODULES_ENABLE", TRUE);
 //---defining modules dir
 NGS()->define("MODULES_DIR", "modules");
 //---defining modules routing file

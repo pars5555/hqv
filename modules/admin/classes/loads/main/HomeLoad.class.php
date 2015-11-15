@@ -14,17 +14,16 @@
  *
  */
 
-namespace demosubdomain\loads\main {
+namespace admin\loads\main {
 	use demo\security\RequestGroups;
 
-	class MainLoad extends \ngs\framework\AbstractLoad {
+	class HomeLoad extends \ngs\framework\AbstractLoad {
 
 		public function load() {
-
 		}
 
 		public function getTemplate() {
-			return NGS()->getTemplateDir()."/main/index.tpl";
+			return NGS()->getTemplateDir()."/main/home.tpl";
 		}
 
 		public function getRequestGroup() {
