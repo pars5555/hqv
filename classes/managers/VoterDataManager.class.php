@@ -35,23 +35,22 @@ namespace hqv\managers {
             return self::$instance;
         }
 
-        public function addRow($voterId, $email, $phone, $will_vote,$will_be_in_arm, $ip_address, $country, $browser, $version, $os) {
-            $dto = $this->createDto();            
-            $dto ->setVoterId($voterId);
-            $dto ->setEmail($email);
-            $dto ->setPhone($phone);
-            $dto ->setWillWote($will_vote);
-            $dto ->setBeWillInArm($will_be_in_arm);
-            $dto ->setIpAddress($ip_address);
-            $dto ->setCountry($country);
-            $dto ->setBrowser($browser);
-            $dto ->setBrowserVersion($version);
-            $dto ->setPlatform($os);
-            $dto ->setDatetime(date('Y-m-d H:i:s'));
+
+        public function addRow($voterId, $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os) {
+            $dto = $this->createDto();
+            $dto->setVoterId($voterId);
+            $dto->setEmail($email);
+            $dto->setPhone($phone);
+            $dto->setWillWote($will_vote);
+            $dto->setBeWillInArm($will_be_in_arm);
+            $dto->setIpAddress($ip_address);
+            $dto->setCountry($country);
+            $dto->setBrowser($browser);
+            $dto->setBrowserVersion($version);
+            $dto->setPlatform($os);
+            $dto->setDatetime(date('Y-m-d H:i:s'));
             return $this->insertDto($dto);
         }
-        
-        
 
     }
 

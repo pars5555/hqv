@@ -11,9 +11,12 @@
 
 namespace hqv\loads\main {
 
-    use hqv\loads\NgsLoad;
-    use hqv\security\RequestGroups;
-    use NGS;
+use hqv\loads\NgsLoad;
+use hqv\managers\AreaManager;
+use hqv\managers\VoterDataManager;
+use hqv\managers\VoterManager;
+use hqv\security\RequestGroups;
+use NGS;
 
     class CurrentUserLoad extends NgsLoad {
 
@@ -22,9 +25,13 @@ namespace hqv\loads\main {
                 return;
             }
             $hash = NGS()->args()->hash;
-            $voter = \hqv\managers\VoterManager::getInstance()->getByHash($hash);
+            $voter = VoterManager::getInstance()->getByHash($hash);
             if (isset($voter)) {
+                $voterData = VoterDataManager::getInstance()->selectByField('voter_id', $voter->getId());
+                $area = AreaManager::getInstance()->selectByPK($voter->getAreaId());
                 $this->addParam('voter', $voter);
+                $this->addParam('area', $area);
+                $this->addParam('voter_data', $voterData);
             }
         }
 
