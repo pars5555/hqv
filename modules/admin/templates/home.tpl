@@ -69,6 +69,21 @@
 			          <label for="email">Email</label>
 			        </div>
 			      </div>
+			      <div class="row">
+			        <div class="input-field col s12">
+			          <textarea id="textarea1" class="materialize-textarea"></textarea>
+			          <label for="textarea1">Textarea</label>
+			        </div>
+			      </div>
+			      <div class="row">
+				      <div class="input-field col s12">
+					    <select class="browser-default">
+					      <option value="1">Option 1</option>
+					      <option value="2">Option 2</option>
+					      <option value="3">Option 3</option>
+					    </select>
+					  </div>
+			      </div>
 			    </form>
 			  </div>
 		</div>
@@ -189,3 +204,5 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+</script>

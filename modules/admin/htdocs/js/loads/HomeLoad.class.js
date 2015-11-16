@@ -7,5 +7,7 @@ NGS.createLoad("admin.loads.home", {
     },
     afterLoad: function () {
     	console.log(111);
+    	console.log($('select'))
+		$('select').material_select();
     }
 });

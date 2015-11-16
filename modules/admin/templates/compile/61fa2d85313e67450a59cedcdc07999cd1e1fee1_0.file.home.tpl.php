@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-16 11:58:36
+<?php /* Smarty version 3.1.27, created on 2015-11-16 12:03:18
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:232695649b6dc611527_33606048%%*/
+/*%%SmartyHeaderCode:74775649b7f602e9a0_66838135%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '61fa2d85313e67450a59cedcdc07999cd1e1fee1' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\home.tpl',
-      1 => 1447671515,
+      1 => 1447671797,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '232695649b6dc611527_33606048',
+  'nocache_hash' => '74775649b7f602e9a0_66838135',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5649b6dc63a712_81430296',
+  'unifunc' => 'content_5649b7f604d087_72503861',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5649b6dc63a712_81430296')) {
-function content_5649b6dc63a712_81430296 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5649b7f604d087_72503861')) {
+function content_5649b7f604d087_72503861 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '232695649b6dc611527_33606048';
+$_smarty_tpl->properties['nocache_hash'] = '74775649b7f602e9a0_66838135';
 ?>
 <div class="breadscrumb">
 	<nav class="red darken-3" style="padding-left:10px;">
@@ -94,6 +94,21 @@ $_smarty_tpl->properties['nocache_hash'] = '232695649b6dc611527_33606048';
 			          <input id="email" type="email" class="validate">
 			          <label for="email">Email</label>
 			        </div>
+			      </div>
+			      <div class="row">
+			        <div class="input-field col s12">
+			          <textarea id="textarea1" class="materialize-textarea"></textarea>
+			          <label for="textarea1">Textarea</label>
+			        </div>
+			      </div>
+			      <div class="row">
+				      <div class="input-field col s12">
+					    <select class="browser-default">
+					      <option value="1">Option 1</option>
+					      <option value="2">Option 2</option>
+					      <option value="3">Option 3</option>
+					    </select>
+					  </div>
 			      </div>
 			    </form>
 			  </div>
@@ -214,6 +229,10 @@ $_smarty_tpl->properties['nocache_hash'] = '232695649b6dc611527_33606048';
 		      
 		</div>
 	</div>
-</div><?php }
+</div>
+<?php echo '<script'; ?>
+ type="text/javascript">
+<?php echo '</script'; ?>
+><?php }
 }
 ?>
