@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-15 10:23:29
+<?php /* Smarty version 3.1.27, created on 2015-11-16 11:11:02
          compiled from "D:\xampp\htdocs\hqv\templates\main\current_user.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:89456484f11f0c9f9_08259912%%*/
+/*%%SmartyHeaderCode:245655649abb6727346_15347937%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b7d845e2abf9ef1dcca359ccb19e0be7a9e5185e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\current_user.tpl',
-      1 => 1447579404,
+      1 => 1447668655,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '89456484f11f0c9f9_08259912',
+  'nocache_hash' => '245655649abb6727346_15347937',
   'variables' => 
   array (
     'ns' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56484f11f37ab9_78731354',
+  'unifunc' => 'content_5649abb67569e3_06482110',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56484f11f37ab9_78731354')) {
-function content_56484f11f37ab9_78731354 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5649abb67569e3_06482110')) {
+function content_5649abb67569e3_06482110 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '89456484f11f0c9f9_08259912';
+$_smarty_tpl->properties['nocache_hash'] = '245655649abb6727346_15347937';
 if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
     <?php if (!empty($_smarty_tpl->tpl_vars['ns']->value['voter_data'])) {?>
         <p class="center-align red-text text-darken-4">You have already voted! call us if you were not</p>
@@ -42,11 +42,15 @@ if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
 
                 <?php echo $_smarty_tpl->tpl_vars['ns']->value['voter']->getBirthDate();?>
 
-                <?php echo $_smarty_tpl->tpl_vars['ns']->value['voter']->getAddress();?>
+                <?php echo $_smarty_tpl->tpl_vars['ns']->value['area']->getRegion();?>
+, <?php echo $_smarty_tpl->tpl_vars['ns']->value['area']->getCommunity();?>
+, <?php echo $_smarty_tpl->tpl_vars['ns']->value['voter']->getAddress();?>
 
             </div>
             <div class="input-field col s12 m12 12 vote-text">
-                <?php echo $_smarty_tpl->tpl_vars['ns']->value['area']->getAddress();?>
+                <?php echo $_smarty_tpl->tpl_vars['ns']->value['area']->getRegion();?>
+, <?php echo $_smarty_tpl->tpl_vars['ns']->value['area']->getCommunity();?>
+, <?php echo $_smarty_tpl->tpl_vars['ns']->value['area']->getAddress();?>
 
             </div>
             <div class="input-field col s12 m6 6">
@@ -56,7 +60,8 @@ if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
             </div>
             <div class="input-field col s12 m6 6">
                 <i class="material-icons prefix">mailbox</i>
-                <input id="cu_email" type="text" class="validate">
+                <input id="cu_email" type="text" class="">
+                <div id="emailError" class="red-text text-darken-4 error-message" style="display:none;">please provide valid email</div>
                 <label for="cu_email">Email</label>
             </div>
             <div class="col s12 m6 6">

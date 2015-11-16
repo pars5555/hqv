@@ -6,8 +6,9 @@ NGS.createLoad("hqv.loads.main.current_user", {
 
     },
     isSavable: false,
+    validEmail: false,
     afterLoad: function () {
-      
+        this.validateEmail()
         jQuery("#currentUserModalBtn").addClass('disabled');
         this.isSavable = false;
         jQuery('#currentUserModal').openModal();
@@ -29,14 +30,41 @@ NGS.createLoad("hqv.loads.main.current_user", {
         });
         this.votingBtn();
     },
+    isValidEmailAddress: function(emailAddress){
+        if(emailAddress){
+            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return regex.test(emailAddress);
+        }
+    },
+    validateEmail : function(){
+        var thisInstance = this;
+        jQuery('#cu_email').on('input', function() {
+            if(thisInstance.isValidEmailAddress(jQuery(this).val())){
+                if(jQuery('.f_vote_btn').hasClass('active')){
+                    thisInstance.isSavable = true;
+                    jQuery("#currentUserModalBtn").removeClass('disabled');
+                }
+                thisInstance.validEmail = true;
+                jQuery('#emailError').hide();
+            }else {
+                thisInstance.isSavable = false;
+                thisInstance.validEmail = false;
+                jQuery("#currentUserModalBtn").addClass('disabled');
+                jQuery('#emailError').show();
+            }
+        });
+    },
     votingBtn: function () {
         var thisInstance = this;
         jQuery('.f_vote_btn').click(function () {
             jQuery('.f_vote_btn').removeClass('active');
             jQuery(this).addClass('active');
-            jQuery("#currentUserModalBtn").removeClass('disabled');
-            thisInstance.isSavable = true;
             jQuery("#cu_will_vote").val(jQuery(this).data('ans'));
+            
+            if(thisInstance.validEmail){
+                jQuery("#currentUserModalBtn").removeClass('disabled');
+                thisInstance.isSavable = true;
+            }
         });
     }
 });

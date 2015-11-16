@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-14 18:22:32
+<?php /* Smarty version 3.1.27, created on 2015-11-16 10:54:36
          compiled from "D:\xampp\htdocs\hqv\templates\main\search_result.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1932856476dd8667515_21213932%%*/
+/*%%SmartyHeaderCode:269375649a7dc291d88_30790188%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,25 +9,26 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '545e272bd7e6e85e91528d45e494f9315c51387c' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\search_result.tpl',
-      1 => 1447521630,
+      1 => 1447664249,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1932856476dd8667515_21213932',
+  'nocache_hash' => '269375649a7dc291d88_30790188',
   'variables' => 
   array (
     'ns' => 0,
     'voter' => 0,
+    'area' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56476dd86919a3_49962069',
+  'unifunc' => 'content_5649a7dc31c4b5_77496925',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56476dd86919a3_49962069')) {
-function content_56476dd86919a3_49962069 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5649a7dc31c4b5_77496925')) {
+function content_5649a7dc31c4b5_77496925 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1932856476dd8667515_21213932';
+$_smarty_tpl->properties['nocache_hash'] = '269375649a7dc291d88_30790188';
 ?>
 <div>
 	<?php
@@ -47,7 +48,10 @@ $foreach_voter_Sav = $_smarty_tpl->tpl_vars['voter'];
  <?php echo $_smarty_tpl->tpl_vars['voter']->value->getLastName();?>
  <?php echo $_smarty_tpl->tpl_vars['voter']->value->getFatherName();?>
 </h5>
-			<p><?php echo $_smarty_tpl->tpl_vars['voter']->value->getAddress();?>
+			<?php $_smarty_tpl->tpl_vars['area'] = new Smarty_Variable($_smarty_tpl->tpl_vars['ns']->value['areas'][$_smarty_tpl->tpl_vars['voter']->value->getAreaId()], null, 0);?>
+                        <p><?php echo $_smarty_tpl->tpl_vars['area']->value->getRegion();?>
+, <?php echo $_smarty_tpl->tpl_vars['area']->value->getCommunity();?>
+, <?php echo $_smarty_tpl->tpl_vars['voter']->value->getAddress();?>
 </p>
 		</div>
 		<div class="divider"></div>

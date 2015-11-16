@@ -21,7 +21,8 @@
             </div>
             <div class="input-field col s12 m6 6">
                 <i class="material-icons prefix">mailbox</i>
-                <input id="cu_email" type="text" class="validate">
+                <input id="cu_email" type="text" class="">
+                <div id="emailError" class="red-text text-darken-4 error-message" style="display:none;">please provide valid email</div>
                 <label for="cu_email">Email</label>
             </div>
             <div class="col s12 m6 6">
