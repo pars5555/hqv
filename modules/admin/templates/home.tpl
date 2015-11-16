@@ -73,4 +73,119 @@
 			  </div>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col s12 m6 6">
+			 <form action="#">
+			    <p>
+			      <input name="group1" type="radio" id="test1" />
+			      <label for="test1">Red</label>
+			    </p>
+			    <p>
+			      <input name="group1" type="radio" id="test2" />
+			      <label for="test2">Yellow</label>
+			    </p>
+			    <p>
+			      <input class="with-gap" name="group1" type="radio" id="test3"  />
+			      <label for="test3">Green</label>
+			    </p>
+			      <p>
+			        <input name="group1" type="radio" id="test4" disabled="disabled" />
+			        <label for="test4">Brown</label>
+			    </p>
+			  </form>
+		</div>
+		<div class="col s12 m6 6">
+			<form action="#">
+			    <p>
+			      <input type="checkbox" id="test5" />
+			      <label for="test5">Red</label>
+			    </p>
+			    <p>
+			      <input type="checkbox" id="test6" checked="checked" />
+			      <label for="test6">Yellow</label>
+			    </p>
+			    <p>
+			      <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+			      <label for="filled-in-box">Filled in</label>
+			    </p>
+			    <p>
+			      <input type="checkbox" id="test7" checked="checked" disabled="disabled" />
+			      <label for="test7">Green</label>
+			    </p>
+			      <p>
+			        <input type="checkbox" id="test8" disabled="disabled" />
+			        <label for="test8">Brown</label>
+			    </p>
+			  </form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12 m6 6">
+			<div class="switch">
+			    <label>
+			      Off
+			      <input type="checkbox">
+			      <span class="lever"></span>
+			      On
+			    </label>
+		  	</div>
+		  	<table class="bordered">
+		        <thead>
+		          <tr>
+		              <th data-field="id">Name</th>
+		              <th data-field="name">Item Name</th>
+		              <th data-field="price">Item Price</th>
+		          </tr>
+		        </thead>
+
+		        <tbody>
+		          <tr>
+		            <td>Alvin</td>
+		            <td>Eclair</td>
+		            <td>$0.87</td>
+		          </tr>
+		          <tr>
+		            <td>Alan</td>
+		            <td>Jellybean</td>
+		            <td>$3.76</td>
+		          </tr>
+		          <tr>
+		            <td>Jonathan</td>
+		            <td>Lollipop</td>
+		            <td>$7.00</td>
+		          </tr>
+		        </tbody>
+		      </table>
+		</div>
+		<div class="col s12 m6 6">
+			<table class='striped'>
+		        <thead>
+		          <tr>
+		              <th data-field="id">Name</th>
+		              <th data-field="name">Item Name</th>
+		              <th data-field="price">Item Price</th>
+		          </tr>
+		        </thead>
+
+		        <tbody>
+		          <tr>
+		            <td>Alvin</td>
+		            <td>Eclair</td>
+		            <td>$0.87</td>
+		          </tr>
+		          <tr>
+		            <td>Alan</td>
+		            <td>Jellybean</td>
+		            <td>$3.76</td>
+		          </tr>
+		          <tr>
+		            <td>Jonathan</td>
+		            <td>Lollipop</td>
+		            <td>$7.00</td>
+		          </tr>
+		        </tbody>
+		      </table>
+		      
+		</div>
+	</div>
 </div>
