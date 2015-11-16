@@ -1,4 +1,4 @@
-NGS.createLoad("admin.loads.main.login", {
+NGS.createLoad("admin.loads.login", {
     getContainer: function () {
         return "initialLoad";
     },

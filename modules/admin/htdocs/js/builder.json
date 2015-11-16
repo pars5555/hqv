@@ -55,9 +55,9 @@
         "output_file": "ngs_loads_main.js",
         "compress": false,
         "files": [
-          "loads/main/IndexLoad.class.js",
-          "loads/main/LoginLoad.class.js",
-          "loads/main/HomeLoad.class.js"
+          "loads/IndexLoad.class.js",
+          "loads/LoginLoad.class.js",
+          "loads/HomeLoad.class.js"
         ]
       }
     ]
