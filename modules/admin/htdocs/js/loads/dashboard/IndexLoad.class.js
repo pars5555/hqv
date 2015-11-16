@@ -6,5 +6,6 @@ NGS.createLoad("admin.loads.dashboard.index", {
 
     },
     afterLoad: function () {
+        $('#slide-out ')
     }
 });

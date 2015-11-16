@@ -8,12 +8,7 @@
                 }
             }
         }
-    ],
-    "dologin": [
-        {
-            "action": "actions.login"
-        }
-    ],
+    ],    
     "home": [
         {
             "action": "loads.index",

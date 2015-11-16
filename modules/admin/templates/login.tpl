@@ -2,7 +2,7 @@
 	<div class="section row">
 		<div class="col s12 m6 6 offset-m3">
 			<h5>Admin Login</h5>
-			<form action="{$SITE_PATH}/dologin" method="POST" autocomplete="off">
+			<form action="{$SITE_PATH}/dyn/login/do_login" method="POST" autocomplete="off">
 				<div class="input-field col s12">
 					<input id="userName" type="text" name="username"/>
 					<label for="userName">Username</label>

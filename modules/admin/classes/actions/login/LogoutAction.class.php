@@ -1,6 +1,6 @@
 <?php
 
-namespace admin\actions {
+namespace admin\actions\login {
 
     use NGS;
     use ngs\framework\AbstractAction;

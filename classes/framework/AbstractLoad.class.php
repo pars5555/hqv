@@ -101,7 +101,6 @@ namespace ngs\framework {
             }
             $loadObj->setLoadName($loadArr["action"]);
             $loadObj->initialize();
-
             if (NGS()->getSessionManager()->validateRequest($loadObj) === false) {
                 if ($loadObj->onNoAccess()) {
                         return;

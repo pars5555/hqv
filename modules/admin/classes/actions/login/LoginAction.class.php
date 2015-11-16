@@ -1,6 +1,6 @@
 <?php
 
-namespace admin\actions {
+namespace admin\actions\login {
 
     use admin\managers\AdminManager;
     use admin\security\RequestGroups;

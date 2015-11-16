@@ -174,7 +174,7 @@ namespace ngs\framework {
                     return true;
                 }
             }
-            return true;
+            return false;
         }
 
         /**

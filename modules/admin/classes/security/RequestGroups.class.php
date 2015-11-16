@@ -16,7 +16,7 @@ namespace admin\security {
 
     class RequestGroups {
 
-        public static $adminRequest = 0;
+        public static $adminRequest = 1;
         public static $guestRequest = 11;
 
     }

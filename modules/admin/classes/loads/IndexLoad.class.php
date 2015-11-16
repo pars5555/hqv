@@ -23,7 +23,7 @@ namespace admin\loads {
     class IndexLoad extends AbstractLoad {
 
         public function load() {
-            
+            $this->addParam('userId', NGS()->getSessionManager()->getUserId());
         }
 
         public function getTemplate() {

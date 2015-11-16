@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-16 17:23:01
+<?php /* Smarty version 3.1.27, created on 2015-11-16 21:19:34
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\index.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:12021564a02e5e0f499_72800000%%*/
+/*%%SmartyHeaderCode:16963564a3a56838f21_44618061%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,26 +9,30 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8a9fe363b74e17cd6b55d75302076be5af7c598e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\index.tpl',
-      1 => 1447690955,
+      1 => 1447705170,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12021564a02e5e0f499_72800000',
+  'nocache_hash' => '16963564a3a56838f21_44618061',
+  'variables' => 
+  array (
+    'ns' => 0,
+  ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564a02e6019503_49623260',
+  'unifunc' => 'content_564a3a568cb892_75580783',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564a02e6019503_49623260')) {
-function content_564a02e6019503_49623260 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564a3a568cb892_75580783')) {
+function content_564a3a568cb892_75580783 ($_smarty_tpl) {
 if (!is_callable('smarty_function_nest')) require_once 'D:\\xampp\\htdocs\\hqv\\classes\\framework\\lib\\smarty\\plugins\\function.nest.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '12021564a02e5e0f499_72800000';
+$_smarty_tpl->properties['nocache_hash'] = '16963564a3a56838f21_44618061';
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-         <?php echo $_smarty_tpl->getSubTemplate ("./util/header_control.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+        <?php echo $_smarty_tpl->getSubTemplate ("./util/header_control.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
     </head>
@@ -41,9 +45,11 @@ $_smarty_tpl->properties['nocache_hash'] = '12021564a02e5e0f499_72800000';
 
         </header>
         <section class="wrapper">
-            <?php echo $_smarty_tpl->getSubTemplate ("./util/sidebar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+            <?php if ($_smarty_tpl->tpl_vars['ns']->value['userId'] > 0) {?>
+                <?php echo $_smarty_tpl->getSubTemplate ("./util/sidebar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
+            <?php }?>
             <div class="content" id="indexRightContent">
                 <?php echo smarty_function_nest(array('ns'=>'content'),$_smarty_tpl);?>
 

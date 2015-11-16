@@ -132,14 +132,13 @@ namespace admin\managers {
             if ($user == null) {
                 $user = $this->getUser();
             }
-
             switch ($request->getRequestGroup()) {
                 case RequestGroups::$adminRequest :
                     if ($user->getLevel() == UserGroups::$ADMIN) {
                         return true;
                     }
                     break;
-                case RequestGroups::$guestRequest :
+                case RequestGroups::$guestRequest:
                     return true;
                     break;
             }
