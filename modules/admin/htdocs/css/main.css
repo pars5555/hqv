@@ -4,6 +4,18 @@ header, main, footer, .content {
 .admin-content {
 	padding: 10px 10px 0px;
 }
+.real-voters tbody tr {
+	cursor: pointer;
+	-webkit-transition: background-color 0.4s;
+    -moz-transition: background-color 0.4s;
+    -o-transition: background-color 0.4s;
+    transition: background-color 0.4s;
+}
+.real-voters tbody tr.active,
+.real-voters tbody tr:hover{
+	background-color: #ccc;
+	color: #fff;
+}
 @media only screen and (max-width : 992px) {
 	header, main, footer, .content {
 	  padding-left: 0;

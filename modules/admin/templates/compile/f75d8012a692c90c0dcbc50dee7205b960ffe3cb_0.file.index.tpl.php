@@ -1,3 +1,33 @@
+<?php /* Smarty version 3.1.27, created on 2015-11-16 22:01:40
+         compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\dashboard\index.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:10351564a44349e1425_45907544%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'f75d8012a692c90c0dcbc50dee7205b960ffe3cb' => 
+    array (
+      0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\dashboard\\index.tpl',
+      1 => 1447707700,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '10351564a44349e1425_45907544',
+  'variables' => 
+  array (
+    'ns' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => '3.1.27',
+  'unifunc' => 'content_564a44349ffb93_14285872',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_564a44349ffb93_14285872')) {
+function content_564a44349ffb93_14285872 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '10351564a44349e1425_45907544';
+?>
 <div class="breadscrumb">
     <nav class="red darken-3" style="padding-left:10px;">
         <div class="nav-wrapper">
@@ -18,7 +48,8 @@
                             <i class="large material-icons">insert_chart</i>
                         </div>
                         <div class="col s6 m12 l8">
-                            countGroupByVoter : {$ns.countGroupByVoter}
+                            countGroupByVoter : <?php echo $_smarty_tpl->tpl_vars['ns']->value['countGroupByVoter'];?>
+
                         </div>
                     </div>
                 </div>
@@ -32,7 +63,8 @@
                             <i class="large material-icons">insert_chart</i>
                         </div>
                         <div class="col s6 m12 l8">
-                            nonParticipantCounts : {$ns.nonParticipantCounts}<br>
+                            nonParticipantCounts : <?php echo $_smarty_tpl->tpl_vars['ns']->value['nonParticipantCounts'];?>
+<br>
                         </div>
                     </div>
                 </div>
@@ -46,7 +78,8 @@
                             <i class="large material-icons">insert_chart</i>
                         </div>
                         <div class="col s6 m12 l8">
-                            ParticipantCounts : {$ns.participantCounts}<br>
+                            ParticipantCounts : <?php echo $_smarty_tpl->tpl_vars['ns']->value['participantCounts'];?>
+<br>
                         </div>
                     </div>
                 </div>
@@ -63,4 +96,6 @@
         
         
        
-</div>
+</div><?php }
+}
+?>

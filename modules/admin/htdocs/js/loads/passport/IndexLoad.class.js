@@ -14,6 +14,8 @@ NGS.createLoad("admin.loads.passport.index", {
     },
     initTableEdit: function () {
         $('#real_voters_table tr').click(function () {
+            $('#real_voters_table tr').removeClass('active');
+            $(this).addClass('active');
             var rowid = $(this).data('rowid');
             var firstName = $(this).data('first-name');
             var lastName = $(this).data('last-name');
