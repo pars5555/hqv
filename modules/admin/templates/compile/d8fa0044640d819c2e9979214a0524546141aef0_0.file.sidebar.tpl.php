@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-16 21:05:45
+<?php /* Smarty version 3.1.27, created on 2015-11-16 21:25:54
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\util\sidebar.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:32625564a3719b2cb62_67185377%%*/
+/*%%SmartyHeaderCode:18541564a3bd2b81e17_20477312%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd8fa0044640d819c2e9979214a0524546141aef0' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\util\\sidebar.tpl',
-      1 => 1447704210,
+      1 => 1447705552,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '32625564a3719b2cb62_67185377',
+  'nocache_hash' => '18541564a3bd2b81e17_20477312',
   'variables' => 
   array (
     'SITE_PATH' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564a3719c098e0_34363642',
+  'unifunc' => 'content_564a3bd2c0ead1_52153465',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564a3719c098e0_34363642')) {
-function content_564a3719c098e0_34363642 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564a3bd2c0ead1_52153465')) {
+function content_564a3bd2c0ead1_52153465 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '32625564a3719b2cb62_67185377';
+$_smarty_tpl->properties['nocache_hash'] = '18541564a3bd2b81e17_20477312';
 ?>
 
 <div id="slide-out" class="side-nav fixed">
@@ -38,14 +38,14 @@ $_smarty_tpl->properties['nocache_hash'] = '32625564a3719b2cb62_67185377';
     </div>
   </div>
   <ul >
-    <li>
-      <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='dashboard.index' id="sidebar_dashboard_a"><i class="material-icons left">language</i>Dashboard</a>
+    <li id="sidebar_dashboard_li">
+      <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='dashboard.index' ><i class="material-icons left">language</i>Dashboard</a>
     </li>
-    <li>
-      <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='voters.index' id="sidebar_voters_a"><i class="material-icons left">perm_identity</i>Voters Data</a>
+    <li id="sidebar_voters_li">
+      <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='voters.index' ><i class="material-icons left">perm_identity</i>Voters Data</a>
     </li>
-    <li>
-      <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='passport.index' id="sidebar_passport_a"><i class="material-icons left">perm_media</i>Passport</a>
+    <li id="sidebar_passport_li">
+      <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='passport.index'><i class="material-icons left">perm_media</i>Passport</a>
     </li>
     <li>
         <a class="waves-effect waves-light btn-flat le" href="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>

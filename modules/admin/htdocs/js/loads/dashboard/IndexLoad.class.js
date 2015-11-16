@@ -6,6 +6,7 @@ NGS.createLoad("admin.loads.dashboard.index", {
 
     },
     afterLoad: function () {
-        $('#slide-out ')
+        $('#slide-out li').removeClass('active');
+        $('#sidebar_dashboard_li').addClass('active');
     }
 });

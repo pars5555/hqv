@@ -6,5 +6,7 @@ NGS.createLoad("admin.loads.voters.index", {
 
     },
     afterLoad: function () {
+        $('#slide-out li').removeClass('active');
+        $('#sidebar_voters_li').addClass('active');
     }
 });
