@@ -11,3 +11,4 @@
  * @copyright Naghashyan Solutions LLC
  *
  */
+NGS()->define("SESSION_MANAGER", 'admin\managers\SessionManager');

@@ -41,6 +41,12 @@ namespace hqv\dal\mappers {
         public function getTableName() {
             return $this->tableName;
         }
+        public function getMaxAndMinBirthDates() {
+            $sql = "SELECT MAX(birth_date) AS max, MIN(birth_date) AS min FROM voters";
+            $row = $this->fetchRow($sql);
+            return [$row->min, $row->max];
+            
+        }
 
     }
 

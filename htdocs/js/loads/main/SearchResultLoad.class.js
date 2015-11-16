@@ -6,7 +6,7 @@ NGS.createLoad("hqv.loads.main.search_result", {
 
     },
     afterLoad: function () { 
-    console.log(this.params)  
+ 
         jQuery("#searchLoader").hide();
         jQuery("#searchResultWrapper").show();
         jQuery(".f_current_user").click(function(){

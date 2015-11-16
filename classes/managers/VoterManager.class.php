@@ -35,6 +35,10 @@ namespace hqv\managers {
             return self::$instance;
         }
 
+        public function getMaxAndMinBirthDates() {
+            return $this->mapper->getMaxAndMinBirthDates();
+        }
+        
         public function getByHash($hash) {
             $rows = $this->selectByField('hash', $hash);
             if (!empty($rows)) {

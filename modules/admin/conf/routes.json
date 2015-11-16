@@ -1,19 +1,34 @@
 {
+    "login": [
+        {
+            "action": "loads.index",
+            "nestedLoad": {
+                "content": {
+                    "action": "loads.login"
+                }
+            }
+        }
+    ],
+    "dologin": [
+        {
+            "action": "actions.login"
+        }
+    ],
     "home": [
         {
-            "action": "loads.main.get_exchange",
-            "route": "[:name][/:quantity]",
-            "constraints": {
-                "name": "[a-zA-Z]+",
-                "quantity": "[0-9]+"
+            "action": "loads.index",
+            "nestedLoad": {
+                "content": {
+                    "action": "loads.home"
+                }
             }
         }
     ],
     "default": {
-        "action": "loads.main.index",
+        "action": "loads.index",
         "nestedLoad": {
             "content": {
-                "action": "loads.main.home"
+                "action": "loads.home"
             }
         }
     }

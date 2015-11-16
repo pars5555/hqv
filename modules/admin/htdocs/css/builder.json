@@ -6,8 +6,9 @@
 			{
 				"output_file": "main.css",
 				"compress": false,
-				"files": ["demo.css",
-									"demo.less"]
+				"files": [
+                                    "main.css"
+				]
 			}
 		]
 	}

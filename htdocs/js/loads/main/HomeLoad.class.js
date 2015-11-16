@@ -5,8 +5,8 @@ NGS.createLoad("hqv.loads.main.home", {
     onError: function (params) {
 
     },
-    afterLoad: function () {
-        this.initBirthDate();
+    afterLoad: function (params) {
+        this.initBirthDate(params.minBirthDate, params.maxBirthDate);
         this.initArmKeyboard();
         this.initSearch();
         this.initParallax();
@@ -18,10 +18,10 @@ NGS.createLoad("hqv.loads.main.home", {
         text = text.toLowerCase();
         var find = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "7", "8", "[", "]", "=", "/", "0", "9"];
         var replace = ["ա", "բ", "ց", "դ", "ե", "ֆ", "գ", "հ", "ի", "յ", "կ", "լ", "մ", "ն", "օ", "փ", "ք", "ռ", "ս", "տ", "ւ", "վ", "ո", "ղ", "ը", "զ", "է", "թ", "փ", "ձ", "ջ", "և", "ր", "խ", "ծ", "ժ", "շ", "ճ", "չ"];
-        for (var i = 0; i < find.length; i++)  
+        for (var i = 0; i < find.length; i++)
         {
             text = text.replace(find[i], replace[i]);
-	    }
+        }
         return text.ucfirst();
     },
     initSearch: function () {
@@ -29,7 +29,7 @@ NGS.createLoad("hqv.loads.main.home", {
         $('#firstName, #lastName').on('input', function () {
             var text = $(this).val();
             text = thisInstance.convertEnCharsToArmChars(text);
-           $(this).val(text);            
+            $(this).val(text);
         });
 
         $('#searchVoters').click(function (e) {
@@ -93,7 +93,11 @@ NGS.createLoad("hqv.loads.main.home", {
         });
 
     },
-    initBirthDate: function () {
+    initBirthDate: function (minBirthDate, maxBirthDate) {
+        var minBirthDateParts = minBirthDate.split("-");
+        var maxBirthDateParts = maxBirthDate.split("-");
+        console.log(minBirthDateParts);
+        console.log(maxBirthDateParts);
         $('#birthDate').pickadate({
             format: 'd mmmm, yyyy',
             formatSubmit: 'yyyy-mm-dd',
@@ -104,11 +108,11 @@ NGS.createLoad("hqv.loads.main.home", {
             weekdaysFull: ['Կիրակի ', 'Երկուշաբթի', 'Երեքշաբթի', 'Չորեքշաբթի', 'Հինգշաբթի', 'Ուրբաթ', 'Շաբաթ'],
             weekdaysShort: ['կիր', 'երկ', 'երեք', 'չոր', 'հինգ', 'ուրբ', 'շաբ'],
             selectMonths: true,
-            selectYears: 70,
+            selectYears: 150,
             clear: null,
             today: null,
-            min: [1922, 11, 30],
-            max: [1990, 11, 15]
+            min: [parseInt(minBirthDateParts[0]), parseInt(minBirthDateParts[1]), parseInt(minBirthDateParts[2])],
+            max: [parseInt(maxBirthDateParts[0]), parseInt(maxBirthDateParts[1]), parseInt(maxBirthDateParts[2])]
         });
     }
 });

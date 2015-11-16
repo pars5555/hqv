@@ -7,8 +7,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
     },
     isSavable: false,
     afterLoad: function () {
-        console.log(this)
-        console.log(this.params)
+      
         jQuery("#currentUserModalBtn").addClass('disabled');
         this.isSavable = false;
         jQuery('#currentUserModal').openModal();
