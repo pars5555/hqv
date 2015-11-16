@@ -3,22 +3,22 @@
   <div class="section red darken-3 right-align">
     <div class="row">
       <div class="col">
-        <h5 class="white-text text-lighten-2 margin-right-5" >Gago Gago</h5>
+        <h5 class="white-text text-lighten-2 margin-right-5" >Հանրաքվե</h5>
       </div>
     </div>
   </div>
   <ul >
     <li>
-      <a class="waves-effect waves-light btn-flat le"><i class="material-icons left">language</i>Dashboard</a>
+      <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='dashboard.index'><i class="material-icons left">language</i>Dashboard</a>
     </li>
     <li>
-      <a class="waves-effect waves-light btn-flat le"><i class="material-icons left">perm_identity</i>Users</a>
+      <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='voters.index'><i class="material-icons left">perm_identity</i>Voters Data</a>
     </li>
     <li>
-      <a class="waves-effect waves-light btn-flat le"><i class="material-icons left">perm_media</i>Media</a>
+      <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='dashboard.index'><i class="material-icons left">perm_media</i>Media</a>
     </li>
     <li>
-      <a class="waves-effect waves-light btn-flat le"><i class="material-icons left">language</i>Profile</a>
+      <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='dashboard.index'><i class="material-icons left">language</i>Profile</a>
     </li>
     <li>
       <a class="waves-effect waves-light btn-flat le"><i class="material-icons left">input</i>Logout</a>

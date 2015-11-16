@@ -24,11 +24,21 @@
             }
         }
     ],
+    "dashboard": [
+        {
+            "action": "loads.index",
+            "nestedLoad": {
+                "content": {
+                    "action": "loads.dashboard.index"
+                }
+            }
+        }
+    ],
     "default": {
         "action": "loads.index",
         "nestedLoad": {
             "content": {
-                "action": "loads.home"
+                "action": "loads.dashboard.index"
             }
         }
     }

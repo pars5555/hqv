@@ -6,5 +6,9 @@ NGS.createLoad("admin.loads.index", {
 
     },
     afterLoad: function () {
+        $('.sidebar').click(function () {
+            var loadName = $(this).data('loadname');
+            NGS.load('admin.loads.' + loadName, {});
+        });
     }
 });

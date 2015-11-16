@@ -42,6 +42,11 @@ namespace hqv\dal\mappers {
             return $this->tableName;
         }
 
+        public function getDataCountGroupByVoterId() {
+            $sql = "SELECT COUNT(*) as `count` FROM (SELECT id FROM `%s` GROUP BY `voter_id`) AS aaa";
+            $sqlQuery = sprintf($sql, $this->getTableName());
+            return $this->fetchField($sqlQuery, 'count');
+        }
     }
 
 }

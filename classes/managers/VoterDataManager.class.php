@@ -34,6 +34,11 @@ namespace hqv\managers {
             }
             return self::$instance;
         }
+        
+        public function getDataCountGroupByVoterId()
+        {
+            return $this->mapper->getDataCountGroupByVoterId();
+        }
 
 
         public function addRow($voterId, $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os) {

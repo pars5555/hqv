@@ -1,4 +1,4 @@
-NGS.createLoad("admin.loads.home", {
+NGS.createLoad("admin.loads.dashboard.index", {
     getContainer: function () {
         return "indexRightContent";
     },
@@ -6,6 +6,5 @@ NGS.createLoad("admin.loads.home", {
 
     },
     afterLoad: function () {
-		$('select').material_select();
     }
 });

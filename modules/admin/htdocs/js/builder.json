@@ -57,7 +57,9 @@
         "files": [
           "loads/IndexLoad.class.js",
           "loads/LoginLoad.class.js",
-          "loads/HomeLoad.class.js"
+          "loads/HomeLoad.class.js",
+          "loads/dashboard/IndexLoad.class.js",
+          "loads/voters/IndexLoad.class.js"
         ]
       }
     ]

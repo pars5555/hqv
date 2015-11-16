@@ -10,8 +10,8 @@
             {include file="./util/header.tpl"}
         </header>
         <section class="wrapper">
+            {include file="./util/sidebar.tpl"}
             <div class="content" id="indexRightContent">
-                {include file="./util/sidebar.tpl"}
                 {nest ns=content}
             </div>
         </section>
