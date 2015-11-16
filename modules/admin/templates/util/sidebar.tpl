@@ -9,16 +9,19 @@
   </div>
   <ul >
     <li>
-      <a class="waves-effect waves-light btn-flat le"><i class="material-icons left">language</i>Profile</a>
+      <a class="waves-effect waves-light btn-flat le"><i class="material-icons left">language</i>Dashboard</a>
+    </li>
+    <li>
+      <a class="waves-effect waves-light btn-flat le"><i class="material-icons left">perm_identity</i>Users</a>
+    </li>
+    <li>
+      <a class="waves-effect waves-light btn-flat le"><i class="material-icons left">perm_media</i>Media</a>
     </li>
     <li>
       <a class="waves-effect waves-light btn-flat le"><i class="material-icons left">language</i>Profile</a>
     </li>
     <li>
-      <a class="waves-effect waves-light btn-flat le"><i class="material-icons left">language</i>Profile</a>
-    </li>
-    <li>
-      <a class="waves-effect waves-light btn-flat le"><i class="material-icons left">language</i>Profile</a>
+      <a class="waves-effect waves-light btn-flat le"><i class="material-icons left">input</i>Logout</a>
     </li>
   </ul>
   <a style="display:none;" href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons prefix">view_headline</i></a>
