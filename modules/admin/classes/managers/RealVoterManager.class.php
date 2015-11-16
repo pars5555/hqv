@@ -45,7 +45,7 @@ namespace admin\managers {
             $dto->setLastName($lastName);
             $dto->setFatherName($fatherName);
             $dto->setBirthDate($birthDate);
-            $dto->setCreateDatetime(date('Y-m-d H:i:s'));
+            $dto->setChangeDatetime(date('Y-m-d H:i:s'));
             $dto->setModeratorId($moderatorId);
             $listVoters = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', ['first_name', '=', "'$firstName'", 'and',
                 'last_name', '=', "'$lastName'", 'and', 'father_name', '=', "'$fatherName'", 'and', 'birth_date', '=', "'$birthDate'"]);

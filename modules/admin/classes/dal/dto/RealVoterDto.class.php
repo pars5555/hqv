@@ -25,7 +25,7 @@ namespace admin\dal\dto {
             "father_name" => "fatherName",
             "moderator_id" => "moderatorId",
             "create_datetime" => "createDatetime",
-            "change_datetime" => "cangeDatetime",
+            "change_datetime" => "changeDatetime",
             "birth_date" => "birthDate"
             );
 
