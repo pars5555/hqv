@@ -108,7 +108,7 @@ NGS.createLoad("hqv.loads.main.home", {
             clear: null,
             today: null,
             min: [1922, 11, 30],
-            max: [1990, 11, 15]
+            max: [1997, 11, 15]
         });
     }
 });

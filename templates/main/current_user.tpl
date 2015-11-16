@@ -9,7 +9,7 @@
                 {$ns.voter->getLastName()}
                 {$ns.voter->getFatherName()}
                 {$ns.voter->getBirthDate()}
-                {$ns.voter->getAddress()}
+                {$ns.area->getRegion()}, {$ns.area->getCommunity()}, {$ns.voter->getAddress()}
             </div>
             <div class="input-field col s12 m12 12 vote-text">
                 {$ns.area->getRegion()}, {$ns.area->getCommunity()}, {$ns.area->getAddress()}

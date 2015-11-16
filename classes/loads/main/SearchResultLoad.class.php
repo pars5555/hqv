@@ -12,6 +12,7 @@
 namespace hqv\loads\main {
 
     use hqv\loads\NgsLoad;
+    use hqv\managers\AreaManager;
     use hqv\managers\VoterManager;
     use hqv\security\RequestGroups;
     use NGS;
@@ -34,8 +35,14 @@ namespace hqv\loads\main {
                 $where[] = "'$lastName%'";
             }
             $voters = VoterManager::getInstance()->selectAdvance('*', $where, ['first_name']);
+            $areaIds = $this->getAreaIds($voters);
+            $areas = [];
+            if (!empty($areaIds)) {
+                $areaIdsString = implode(',', $areaIds);
+                $areas = AreaManager::getInstance()->selectAdvance('*', ['id', 'in', "($areaIdsString)"], null, null, null, null, true);
+            }
+            $this->addParam('areas', $areas);
             $this->addParam('voters', $voters);
-
         }
 
         public function validateParams() {
@@ -62,6 +69,14 @@ namespace hqv\loads\main {
 
         public function getRequestGroup() {
             RequestGroups::$guestRequest;
+        }
+
+        public function getAreaIds($voters) {
+            $ret = [];
+            foreach ($voters as $voter) {
+                $ret[] = $voter->getAreaId();
+            }
+            return $ret;
         }
 
     }
