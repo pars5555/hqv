@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-16 16:37:59
+<?php /* Smarty version 3.1.27, created on 2015-11-16 17:49:18
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\util\sidebar.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:250055649f8577d7b48_42704302%%*/
+/*%%SmartyHeaderCode:23904564a090ebac9c1_51069560%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd8fa0044640d819c2e9979214a0524546141aef0' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\util\\sidebar.tpl',
-      1 => 1447688268,
+      1 => 1447692555,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '250055649f8577d7b48_42704302',
+  'nocache_hash' => '23904564a090ebac9c1_51069560',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5649f8578046d3_14986348',
+  'unifunc' => 'content_564a090ec2fa29_61308402',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5649f8578046d3_14986348')) {
-function content_5649f8578046d3_14986348 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564a090ec2fa29_61308402')) {
+function content_564a090ec2fa29_61308402 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '250055649f8577d7b48_42704302';
+$_smarty_tpl->properties['nocache_hash'] = '23904564a090ebac9c1_51069560';
 ?>
 
 <div id="slide-out" class="side-nav fixed">
@@ -41,7 +41,7 @@ $_smarty_tpl->properties['nocache_hash'] = '250055649f8577d7b48_42704302';
       <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='voters.index'><i class="material-icons left">perm_identity</i>Voters Data</a>
     </li>
     <li>
-      <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='dashboard.index'><i class="material-icons left">perm_media</i>Media</a>
+      <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='passport.index'><i class="material-icons left">perm_media</i>Passport</a>
     </li>
     <li>
       <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='dashboard.index'><i class="material-icons left">language</i>Profile</a>

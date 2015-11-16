@@ -34,12 +34,18 @@ namespace hqv\managers {
             }
             return self::$instance;
         }
-        
-        public function getDataCountGroupByVoterId()
-        {
-            return $this->mapper->getDataCountGroupByVoterId();
+
+        public function getParticipantCounts() {
+            return $this->mapper->getParticipantCounts();
         }
 
+        public function getNonParticipantCounts() {
+            return $this->mapper->getNonParticipantCounts();
+        }
+
+        public function getDataCountGroupByVoterId() {
+            return $this->mapper->getDataCountGroupByVoterId();
+        }
 
         public function addRow($voterId, $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os) {
             $dto = $this->createDto();

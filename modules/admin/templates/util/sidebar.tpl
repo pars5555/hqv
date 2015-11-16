@@ -15,7 +15,7 @@
       <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='voters.index'><i class="material-icons left">perm_identity</i>Voters Data</a>
     </li>
     <li>
-      <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='dashboard.index'><i class="material-icons left">perm_media</i>Media</a>
+      <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='passport.index'><i class="material-icons left">perm_media</i>Passport</a>
     </li>
     <li>
       <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='dashboard.index'><i class="material-icons left">language</i>Profile</a>

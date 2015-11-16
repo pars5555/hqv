@@ -56,7 +56,7 @@ namespace admin\security\users {
      *
      * @return
      */
-    protected function getId() {
+    public function getId() {
       return $this->getCookieParam("ud");
     }
 

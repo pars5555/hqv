@@ -9,10 +9,9 @@
     </nav>
 </div>
 <div class="admin-content">
-    <div class="row">
-        <div class=" col s12 m6 6">
-        countGroupByVoter : {$ns.countGroupByVoter}
-        </div>
-
-    </div>
+  
+        countGroupByVoter : {$ns.countGroupByVoter}<br>
+        nonParticipantCounts : {$ns.nonParticipantCounts}<br>
+        ParticipantCounts : {$ns.participantCounts}<br>
+       
 </div>

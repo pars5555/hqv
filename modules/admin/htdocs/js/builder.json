@@ -59,6 +59,7 @@
           "loads/LoginLoad.class.js",
           "loads/HomeLoad.class.js",
           "loads/dashboard/IndexLoad.class.js",
+          "loads/passport/IndexLoad.class.js",
           "loads/voters/IndexLoad.class.js"
         ]
       }
@@ -73,13 +74,8 @@
         "compress": false,
         "files": [
           "actions/SiteAction.class.js",
-          "actions/main/LoginAction.class.js",
-          "actions/users/AddEditUserAction.class.js",
-          "actions/users/DeleteUserAction.class.js",
-          "actions/skinproblem/EditSkinProblemAction.class.js",
-          "actions/registers/DeleteImageAction.class.js",
-          "actions/registers/UpdateDescriptionAction.class.js",
-          "actions/skintype/EditSkinTypeAction.class.js"
+          "actions/passport/AddRealVoterAction.class.js",
+          "actions/main/LoginAction.class.js"
         ]
       }
     ]

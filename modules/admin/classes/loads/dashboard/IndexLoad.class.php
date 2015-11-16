@@ -23,7 +23,11 @@ namespace admin\loads\dashboard {
 
         public function load() {
             $dataCountGroupByVoter = \hqv\managers\VoterDataManager::getInstance()->getDataCountGroupByVoterId();
+            $nonParticipantCounts = \hqv\managers\VoterDataManager::getInstance()->getNonParticipantCounts();
+            $participantCounts = \hqv\managers\VoterDataManager::getInstance()->getParticipantCounts();
             $this->addParam('countGroupByVoter', $dataCountGroupByVoter);
+            $this->addParam('participantCounts', $participantCounts);
+            $this->addParam('nonParticipantCounts', $nonParticipantCounts);
         }
 
         public function getTemplate() {

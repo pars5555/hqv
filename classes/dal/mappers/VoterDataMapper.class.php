@@ -42,11 +42,36 @@ namespace hqv\dal\mappers {
             return $this->tableName;
         }
 
+        public function getNonParticipantCounts() {
+            $sql = "SELECT COUNT(will_vote) AS `count` FROM                 
+                            (SELECT `m1`.* 
+                            FROM `%s` m1 LEFT JOIN `%s` m2
+                             ON (m1.`voter_id` = m2.`voter_id` AND m1.id < m2.id)
+                            WHERE m2.id IS NULL AND m1.will_vote=0
+                             )  AS fff";
+            $sqlQuery = sprintf($sql, $this->getTableName(), $this->getTableName());
+            return $this->fetchField($sqlQuery, 'count');
+            
+        }
+        
+        public function getParticipantCounts() {
+            $sql = "SELECT COUNT(will_vote) AS `count` FROM                 
+                            (SELECT `m1`.* 
+                            FROM `%s` m1 LEFT JOIN `%s` m2
+                             ON (m1.`voter_id` = m2.`voter_id` AND m1.id < m2.id)
+                            WHERE m2.id IS NULL AND m1.will_vote=1
+                             )  AS fff";
+            $sqlQuery = sprintf($sql, $this->getTableName(), $this->getTableName());
+            return $this->fetchField($sqlQuery, 'count');
+            
+        }
+
         public function getDataCountGroupByVoterId() {
             $sql = "SELECT COUNT(*) as `count` FROM (SELECT id FROM `%s` GROUP BY `voter_id`) AS aaa";
             $sqlQuery = sprintf($sql, $this->getTableName());
             return $this->fetchField($sqlQuery, 'count');
         }
+
     }
 
 }

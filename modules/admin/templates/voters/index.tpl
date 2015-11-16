@@ -9,13 +9,10 @@
     </nav>
 </div>
 <div class="admin-content">
-    <div class="row">
-        <div class=" col s12 m6 6">
-        voters index
-        </div>
 
-    </div>
+    voters index
 </div>
+
 </div>
 <script type="text/javascript">
 </script>
