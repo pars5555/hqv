@@ -18,7 +18,9 @@ namespace hqv\loads\main {
     class HomeLoad extends NgsLoad {
 
         public function load() {
-            
+            list($minBirthDate, $maxBirthDate) = \hqv\managers\VoterManager::getInstance()->getMaxAndMinBirthDates();
+            $this->addJsonParam('minBirthDate', $minBirthDate);
+            $this->addJsonParam('maxBirthDate', $maxBirthDate);
         }
 
         public function getTemplate() {
