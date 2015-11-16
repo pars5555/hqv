@@ -6,6 +6,5 @@ NGS.createLoad("admin.loads.index", {
 
     },
     afterLoad: function () {
-       alert('admin index');
     }
 });

@@ -3,6 +3,5 @@ NGS.createLoad("admin.loads.login", {
         return "initialLoad";
     },
     afterLoad: function () {
-        alert('admin login');
     }
 });

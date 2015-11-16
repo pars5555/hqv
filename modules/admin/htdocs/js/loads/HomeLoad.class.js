@@ -6,6 +6,6 @@ NGS.createLoad("admin.loads.home", {
 
     },
     afterLoad: function () {
-        alert('admin home');
+    	console.log(111);
     }
 });

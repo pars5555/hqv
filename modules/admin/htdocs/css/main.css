@@ -1,0 +1,11 @@
+header, main, footer, .content {
+    padding-left: 240px;
+}
+.admin-content {
+	padding: 10px 10px 0px;
+}
+@media only screen and (max-width : 992px) {
+	header, main, footer, .content {
+	  padding-left: 0;
+	}
+}

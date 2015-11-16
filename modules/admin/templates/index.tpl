@@ -11,6 +11,7 @@
         </header>
         <section class="wrapper">
             <div class="content" id="indexRightContent">
+                {include file="./util/sidebar.tpl"}
                 {nest ns=content}
             </div>
         </section>
