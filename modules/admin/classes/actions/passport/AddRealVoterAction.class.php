@@ -16,12 +16,12 @@ namespace admin\actions\passport {
                 $this->addParam('message', $validateFields);
                 return;
             }
-            list($firstName, $lastName, $fatherName, $birthDate, $rowId ) = $validateFields;
+            list($firstName, $lastName, $fatherName, $birthDate, $rowId, $areaId ) = $validateFields;
             $moderatorId = NGS()->getSessionManager()->getUserId();
             if ($rowId == 0) {
-                RealVoterManager::getInstance()->addRow($firstName, $lastName, $fatherName, $birthDate, $moderatorId);
+                RealVoterManager::getInstance()->addRow($firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId);
             } else {
-                RealVoterManager::getInstance()->editRow($rowId, $firstName, $lastName, $fatherName, $birthDate, $moderatorId);
+                RealVoterManager::getInstance()->editRow($rowId, $firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId);
             }
         }
 
@@ -51,8 +51,12 @@ namespace admin\actions\passport {
             if (!isset(NGS()->args()->rowId)) {
                 return 'Missing Row Id';
             }
+            if (!isset(NGS()->args()->areaId)) {
+                return 'Missing Area Id';
+            }
             $birthDate = NGS()->args()->birthYear . '-' . NGS()->args()->birthMonth . '-' . NGS()->args()->birthDay;
-            return [NGS()->args()->firstName, NGS()->args()->lastName, NGS()->args()->fatherName, $birthDate, intval(NGS()->args()->rowId)];
+            return [NGS()->args()->firstName, NGS()->args()->lastName, NGS()->args()->fatherName, $birthDate, intval(NGS()->args()->rowId)
+                , intval(NGS()->args()->areaId)];
         }
 
     }

@@ -9,42 +9,18 @@ NGS.createLoad("admin.loads.passport.index", {
         $('#slide-out li').removeClass('active');
         $('#sidebar_passport_li').addClass('active');
         this.initAddRealVoter();
-        this.initPaging();
-        this.initTableEdit();
+        this.initAreaSelection();
     },
-    initTableEdit: function () {
-        $('#real_voters_table tr').click(function () {
-            $('#real_voters_table tr').removeClass('active');
-            $(this).addClass('active');
-            var rowid = $(this).data('rowid');
-            var firstName = $(this).data('first-name');
-            var lastName = $(this).data('last-name');
-            var fatherName = $(this).data('father-name');
-            var birthYear = $(this).data('birth-year');
-            var birthMonth = $(this).data('birth-month');
-            var birthDay = $(this).data('birth-day');
-            $('#editRowId').val(rowid);
-            $('#firstName').val(firstName);
-            $('#lastName').val(lastName);
-            $('#fatherName').val(fatherName);
-            $('#birthYear').val(birthYear);
-            $('#birthMonth').val(birthMonth);
-            $('#birthDay').val(birthDay);
+    initAreaSelection: function () {
+        $('#p_region').change(function () {
+            var selectedRegion = $('#p_region').val();
+            NGS.load('admin.loads.passport.index', {selectedRegion: selectedRegion});
         });
-    },
-    initPaging: function () {
-        $('#p_limit').change(function () {
-            $('#p_page').val(1);
+        $('#p_community').change(function () {
+            var selectedRegion = $('#p_region').val();
+            var selectedRegionCommunity = $('#p_community').val();
+            NGS.load('admin.loads.passport.index', {selectedRegion: selectedRegion, selectedRegionCommunity: selectedRegionCommunity});
         });
-        $('#p_page,#p_limit').change(function () {
-            this.reloadPageWithParams();
-        }.bind(this));
-    },
-    reloadPageWithParams: function ()
-    {
-        var page = $('#p_page').val();
-        var limit = $('#p_limit').val();
-        NGS.load('admin.loads.passport.index', {page: page, limit: limit})
     },
     initAddRealVoter: function () {
         $('#addRealVoterForm').submit(function () {
@@ -55,6 +31,7 @@ NGS.createLoad("admin.loads.passport.index", {
             var birthMonth = $('#birthMonth').val();
             var birthDay = $('#birthDay').val();
             var editRowId = $('#editRowId').val();
+            var areaId = $('#p_address').val();
             NGS.action('admin.actions.passport.add_real_voter', {
                 firstName: firstName,
                 lastName: lastName,
@@ -62,6 +39,7 @@ NGS.createLoad("admin.loads.passport.index", {
                 birthYear: birthYear,
                 birthMonth: birthMonth,
                 birthDay: birthDay,
+                areaId : areaId,
                 rowId: editRowId
             });
             return false;

@@ -27,6 +27,7 @@ namespace admin\dal\dto {
             "create_datetime" => "createDatetime",
             "change_datetime" => "changeDatetime",
             "birth_date" => "birthDate",
+            "area_id" => "areaId",
             
             "duplication_ids" => "duplicationIds",
             "vote_count" => "voteCount"

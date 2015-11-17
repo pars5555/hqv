@@ -35,6 +35,33 @@ namespace hqv\managers {
             return self::$instance;
         }
 
+        public function getRegionNamesArray() {
+            $ret = [];
+            $allGroupByRegion = $this->mapper->getAllGroupByRegion();
+            foreach ($allGroupByRegion as $row) {
+                $ret[] = $row->getRegion();
+            }
+            return $ret;
+        }
+
+        public function getRegionCommunitiesArray($region) {
+            $regionCommunities = $this->mapper->getRegionCommunities($region);
+            $ret = [];
+            foreach ($regionCommunities as $row) {
+                $ret[] = $row->getCommunity();
+            }
+            return $ret;
+        }
+
+        public function getByRegionAndCommunity($region, $community) {
+            $communityPlaces = $this->selectAdvance('*', ['region', '=', "'$region'", 'and', 'community', '=', "'$community'"], ['address']);
+            $ret = [];
+            foreach ($communityPlaces as $row) {
+                $ret[$row->getId()] = $row->getAddress();
+            }
+            return $ret;
+        }
+
     }
 
 }

@@ -23,23 +23,39 @@ namespace admin\loads\passport {
     class IndexLoad extends BaseAdminLoad {
 
         public function load() {
-            $moderatorId = NGS()->getSessionManager()->getUserId();
-            $limit = 20;
-            $page = 1;
-            if (isset(NGS()->args()->page)) {
-                $page = intval(NGS()->args()->page);
+            $regionNamesArray = \hqv\managers\AreaManager::getInstance()->getRegionNamesArray();
+            $selectedRegion = $regionNamesArray [0];
+            if (isset(NGS()->args()->selectedRegion))
+            {
+               $selectedRegion = NGS()->args()->selectedRegion;
             }
-            if (isset(NGS()->args()->limit)) {
-                $limit = intval(NGS()->args()->limit);
+            $this->addParam('selectedRegion', $selectedRegion );
+            $regionCommunities = \hqv\managers\AreaManager::getInstance()->getRegionCommunitiesArray($selectedRegion);
+            $selectedRegionCommunity = $regionCommunities[0];
+            if (isset(NGS()->args()->selectedRegionCommunity))
+            {
+               $selectedRegionCommunity = NGS()->args()->selectedRegionCommunity;
             }
-            $this->addParam('page', $page);
-            $this->addParam('limit', $limit);
-            $offset = ($page - 1) * $limit;
-            $rows = \admin\managers\RealVoterManager::getInstance()->selectAdvance('*', ['moderator_id', '=', $moderatorId], ['create_datetime'], 'DESC', $offset, $limit);
-            $count = \admin\managers\RealVoterManager::getInstance()->getLastSelectAdvanceRowsCount();
-            $pageCount = ceil($count / $limit);
-            $this->addParam('pageCount', $pageCount);
-            $this->addParam('rows', $rows);
+            $this->addParam('selectedRegionCommunity', $selectedRegionCommunity );
+            $areasMappedById = \hqv\managers\AreaManager::getInstance()->getByRegionAndCommunity($selectedRegion, $selectedRegionCommunity);
+            $this->addParam('regions', $regionNamesArray);
+            $this->addParam('regionCommunities', $regionCommunities);
+            $this->addParam('areas', $areasMappedById);
+            
+            reset($areasMappedById);
+            $selectedAreaId  = current($areasMappedById);
+            if (isset(NGS()->args()->selectedAreaId))
+            {
+               $selectedAreaId = NGS()->args()->selectedAreaId;
+            }
+            $this->addParam('selectedAreaId', $selectedAreaId );
+        }
+
+        public function getDefaultLoads() {
+            $loads = array();
+            $loads["list"]["action"] = "admin.loads.passport.list";
+            $loads["list"]["args"] = array();
+            return $loads;
         }
 
         public function getTemplate() {

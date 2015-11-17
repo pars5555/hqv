@@ -36,7 +36,7 @@ namespace admin\managers {
             return self::$instance;
         }
 
-        public function editRow($id, $firstName, $lastName, $fatherName, $birthDate, $moderatorId) {
+        public function editRow($id, $firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId) {
             $firstName = $this->mb_ucfirst($firstName);
             $lastName = $this->mb_ucfirst($lastName);
             $fatherName = $this->mb_ucfirst($fatherName);
@@ -46,7 +46,8 @@ namespace admin\managers {
             $dto->setFatherName($fatherName);
             $dto->setBirthDate($birthDate);
             $dto->setChangeDatetime(date('Y-m-d H:i:s'));
-            $dto->setModeratorId($moderatorId);
+            //$dto->setModeratorId($moderatorId);
+            $dto->setAreaId($areaId);
             $listVoters = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', ['first_name', '=', "'$firstName'", 'and',
                 'last_name', '=', "'$lastName'", 'and', 'father_name', '=', "'$fatherName'", 'and', 'birth_date', '=', "'$birthDate'"]);
             if (!empty($listVoters)) {
@@ -57,7 +58,7 @@ namespace admin\managers {
             return $this->updateByPk($dto);
         }
 
-        public function addRow($firstName, $lastName, $fatherName, $birthDate, $moderatorId) {
+        public function addRow($firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId) {
             $firstName = $this->mb_ucfirst($firstName);
             $lastName = $this->mb_ucfirst($lastName);
             $fatherName = $this->mb_ucfirst($fatherName);
@@ -68,6 +69,7 @@ namespace admin\managers {
             $dto->setBirthDate($birthDate);
             $dto->setCreateDatetime(date('Y-m-d H:i:s'));
             $dto->setModeratorId($moderatorId);
+            $dto->setAreaId($areaId);
             $listVoters = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', ['first_name', '=', "'$firstName'", 'and',
                 'last_name', '=', "'$lastName'", 'and', 'father_name', '=', "'$fatherName'", 'and', 'birth_date', '=', "'$birthDate'"]);
             if (!empty($listVoters)) {

@@ -42,6 +42,18 @@ namespace hqv\dal\mappers {
             return $this->tableName;
         }
 
+        public function getAllGroupByRegion() {
+            $sql = "SELECT * FROM `%s` GROUP BY region Order By `region`";
+            $sqlQuery = sprintf($sql, $this->getTableName());
+            return $this->fetchRows($sqlQuery);
+        }
+
+        public function getRegionCommunities($region) {
+            $sql = "SELECT * FROM `%s` WHERE `region` = '%s' GROUP BY `community` Order By `community`";
+            $sqlQuery = sprintf($sql, $this->getTableName(), $region);
+            return $this->fetchRows($sqlQuery);
+        }
+
     }
 
 }
