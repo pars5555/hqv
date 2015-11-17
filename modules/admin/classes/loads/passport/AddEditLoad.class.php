@@ -18,22 +18,44 @@
 namespace admin\loads\passport {
 
     use admin\loads\BaseAdminLoad;
+    use admin\managers\RealVoterManager;
     use NGS;
 
     class AddEditLoad extends BaseAdminLoad {
 
         public function load() {
+            $firstName = "";
+            $lastName = "";
+            $fatherName = "";
+            $birthYear = 1950;
+            $birthMonth = 1;
+            $birthDay = 1;
             if (isset(NGS()->args()->rowId)) {
                 $realVoter = RealVoterManager::getInstance()->selectByPK(NGS()->args()->rowId);
                 if (isset($realVoter)) {
-                    $this->addParam('row', $realVoter);
-                    $areaId = $realVoter->getAreaId();
-                    if (intval($areaId) > 0) {
-                        $area = \hqv\managers\AreaManager::getInstance()->selectByPK($areaId);
-                        $this->addParam('area', $area);
+                    $firstName = $realVoter->getFirstName();
+                    $lastName = $realVoter->getLastName();
+                    $fatherName = $realVoter->getFatherName();
+                    $birthDate = $realVoter->getBirthDate();
+                    if (!empty($birthDate)) {
+                        $dateParts = explode('-', $birthDate);
+                        $birthYear = $dateParts [0];
+                        $birthMonth = $dateParts [1];
+                        $birthDay = $dateParts [2];
                     }
+                    $this->addParam('edit', 1);
+                    $this->addParam('row_id', NGS()->args()->rowId);
                 }
+            } else {
+
+                $this->addParam('edit', 0);
             }
+            $this->addParam('first_name', $firstName);
+            $this->addParam('last_name', $lastName);
+            $this->addParam('father_name', $fatherName);
+            $this->addParam('birth_year', $birthYear);
+            $this->addParam('birth_month', $birthMonth);
+            $this->addParam('birth_day', $birthDay);
         }
 
         public function getTemplate() {
