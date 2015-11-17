@@ -23,36 +23,15 @@ namespace admin\loads\passport {
     class IndexLoad extends BaseAdminLoad {
 
         public function load() {
-            $regionNamesArray = \hqv\managers\AreaManager::getInstance()->getRegionNamesArray();
-            $selectedRegion = $regionNamesArray [0];
-            if (isset(NGS()->args()->selectedRegion))
-            {
-               $selectedRegion = NGS()->args()->selectedRegion;
-            }
-            $this->addParam('selectedRegion', $selectedRegion );
-            $regionCommunities = \hqv\managers\AreaManager::getInstance()->getRegionCommunitiesArray($selectedRegion);
-            $selectedRegionCommunity = $regionCommunities[0];
-            if (isset(NGS()->args()->selectedRegionCommunity))
-            {
-               $selectedRegionCommunity = NGS()->args()->selectedRegionCommunity;
-            }
-            $this->addParam('selectedRegionCommunity', $selectedRegionCommunity );
-            $areasMappedById = \hqv\managers\AreaManager::getInstance()->getByRegionAndCommunity($selectedRegion, $selectedRegionCommunity);
-            $this->addParam('regions', $regionNamesArray);
-            $this->addParam('regionCommunities', $regionCommunities);
-            $this->addParam('areas', $areasMappedById);
             
-            reset($areasMappedById);
-            $selectedAreaId  = current($areasMappedById);
-            if (isset(NGS()->args()->selectedAreaId))
-            {
-               $selectedAreaId = NGS()->args()->selectedAreaId;
-            }
-            $this->addParam('selectedAreaId', $selectedAreaId );
         }
 
         public function getDefaultLoads() {
             $loads = array();
+            $loads["region"]["action"] = "admin.loads.passport.region_selection";
+            $loads["region"]["args"] = array();
+            $loads["add_edit"]["action"] = "admin.loads.passport.add_edit";
+            $loads["add_edit"]["args"] = array();
             $loads["list"]["action"] = "admin.loads.passport.list";
             $loads["list"]["args"] = array();
             return $loads;

@@ -12,24 +12,10 @@ NGS.createLoad("admin.loads.passport.list", {
         $('#real_voters_table tr').click(function () {
             $('#real_voters_table tr').removeClass('active');
             $('html, body').animate({scrollTop: $("#addRealVoterForm").offset().top}, 300);
-            jQuery('body, html').scrollTop()
+            jQuery('body, html').scrollTop();
             $(this).addClass('active');
             var rowid = $(this).data('rowid');
-            var firstName = $(this).data('first-name');
-            var lastName = $(this).data('last-name');
-            var fatherName = $(this).data('father-name');
-            var birthYear = $(this).data('birth-year');
-            var birthMonth = $(this).data('birth-month');
-            var birthDay = $(this).data('birth-day');
-            $('#editRowId').val(rowid);
-            $('#firstName').val(firstName);
-            $('#lastName').val(lastName);
-            $('#fatherName').val(fatherName);
-            $('#birthYear').val(birthYear);
-            $('#birthMonth').val(birthMonth);
-            $('#birthDay').val(birthDay);
-            $('#addRealVoterForm input[type="submit"]').val('Save');
-            $('#cancelEditButton').removeClass('hide');
+            NGS.load('admin.loads.passport.add_edit', {rowId:rowid});
         });
         $('#cancelEditButton').click(function () {
             $('#cancelEditButton').addClass('hide');
