@@ -10,7 +10,7 @@
 </div>
 <div class="admin-content">
     <div class="row">
-        <div class="col s12 m6 6">
+        <div class="col s12 m6 6 offset-m3">
             <form id='addRealVoterForm' autocomplete="off">
                 <div class="row">
                     <div class="input-field col s12 m4 4">
@@ -83,12 +83,14 @@
                     <input type="hidden" id="editRowId"/>
                     <p id="addVoterError" class="red-text text-darken-4 center-align"></p>
                     <input class="btn col s12 m12 12" type="submit" value="add"/>
+                </div>
+                <div class="row">
                     <a class="btn col s12 m12 12 hide" id="cancelEditButton" href ="javascript:void(0);" >cancel</a>
                 </div>
             </form>
 
         </div>
-        <div class="col s12 m6 6" id='realVotersTableContainer'>
+        <div class="col s12 m12 12" id='realVotersTableContainer'>
             {nest ns=list}
         </div>
     </div>

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-17 10:12:05
+<?php /* Smarty version 3.1.27, created on 2015-11-17 10:32:25
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\passport\index.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:14501564aef652a1629_85619094%%*/
+/*%%SmartyHeaderCode:24034564af42953ebb5_90489577%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dcd8a8ed679e7f89e2f28c6686a46d00875b9303' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\passport\\index.tpl',
-      1 => 1447751523,
+      1 => 1447752742,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '14501564aef652a1629_85619094',
+  'nocache_hash' => '24034564af42953ebb5_90489577',
   'variables' => 
   array (
     'i' => 0,
@@ -25,14 +25,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564aef653055c5_69546966',
+  'unifunc' => 'content_564af42957b8a3_68362109',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564aef653055c5_69546966')) {
-function content_564aef653055c5_69546966 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564af42957b8a3_68362109')) {
+function content_564af42957b8a3_68362109 ($_smarty_tpl) {
 if (!is_callable('smarty_function_nest')) require_once 'D:\\xampp\\htdocs\\hqv\\classes\\framework\\lib\\smarty\\plugins\\function.nest.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '14501564aef652a1629_85619094';
+$_smarty_tpl->properties['nocache_hash'] = '24034564af42953ebb5_90489577';
 ?>
 <div class="breadscrumb">
     <nav class="red darken-3" style="padding-left:10px;">
@@ -46,7 +46,7 @@ $_smarty_tpl->properties['nocache_hash'] = '14501564aef652a1629_85619094';
 </div>
 <div class="admin-content">
     <div class="row">
-        <div class="col s12 m6 6">
+        <div class="col s12 m6 6 offset-m3">
             <form id='addRealVoterForm' autocomplete="off">
                 <div class="row">
                     <div class="input-field col s12 m4 4">
@@ -180,12 +180,14 @@ $_smarty_tpl->tpl_vars['address'] = $foreach_address_Sav;
                     <input type="hidden" id="editRowId"/>
                     <p id="addVoterError" class="red-text text-darken-4 center-align"></p>
                     <input class="btn col s12 m12 12" type="submit" value="add"/>
+                </div>
+                <div class="row">
                     <a class="btn col s12 m12 12 hide" id="cancelEditButton" href ="javascript:void(0);" >cancel</a>
                 </div>
             </form>
 
         </div>
-        <div class="col s12 m6 6" id='realVotersTableContainer'>
+        <div class="col s12 m12 12" id='realVotersTableContainer'>
             <?php echo smarty_function_nest(array('ns'=>'list'),$_smarty_tpl);?>
 
         </div>

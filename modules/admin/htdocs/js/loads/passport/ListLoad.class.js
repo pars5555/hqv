@@ -11,6 +11,8 @@ NGS.createLoad("admin.loads.passport.list", {
     initTableEdit: function () {
         $('#real_voters_table tr').click(function () {
             $('#real_voters_table tr').removeClass('active');
+            $('html, body').animate({scrollTop: $("#addRealVoterForm").offset().top}, 300);
+            jQuery('body, html').scrollTop()
             $(this).addClass('active');
             var rowid = $(this).data('rowid');
             var firstName = $(this).data('first-name');
