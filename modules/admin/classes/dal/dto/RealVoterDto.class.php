@@ -26,7 +26,11 @@ namespace admin\dal\dto {
             "moderator_id" => "moderatorId",
             "create_datetime" => "createDatetime",
             "change_datetime" => "changeDatetime",
-            "birth_date" => "birthDate"
+            "birth_date" => "birthDate",
+            
+            "duplication_ids" => "duplicationIds",
+            "vote_count" => "voteCount"
+            
             );
 
         // returns map array

@@ -73,6 +73,12 @@ namespace admin\dal\mappers {
         public function getTableName() {
             return $this->tableName;
         }
+        
+        public function getDuplicatedRealVoters() {
+            $sql = "SELECT *, COUNT(*)  AS vote_count, GROUP_CONCAT(id) AS duplication_ids  FROM `%s` GROUP BY first_name, last_name, father_name, birth_date HAVING vote_count > 1 ORDER BY vote_count DESC";
+            $sqlQuery = sprintf($sql, $this->getTableName());
+            return $this->fetchRows($sqlQuery);
+        }
 
     }
 

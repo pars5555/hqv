@@ -60,6 +60,8 @@
           "loads/HomeLoad.class.js",
           "loads/dashboard/IndexLoad.class.js",
           "loads/passport/IndexLoad.class.js",
+          "loads/analyze/IndexLoad.class.js",
+          "loads/analyze/DuplicatedRealVoterLoad.class.js",
           "loads/voters/IndexLoad.class.js"
         ]
       }

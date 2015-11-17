@@ -84,6 +84,10 @@ namespace admin\managers {
             $then = mb_substr($string, 1, $strlen - 1, $encoding);
             return mb_strtoupper($firstChar, $encoding) . $then;
         }
+        
+        public function getDuplicatedRealVoters() {
+            return $this->mapper->getDuplicatedRealVoters();
+        }
 
     }
 
