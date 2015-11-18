@@ -17,13 +17,18 @@ NGS.createLoad("admin.loads.dashboard.area_selection", {
             var selectedRegionCommunity = $('#p_community').val();
             NGS.load('admin.loads.dashboard.area_selection', {selectedRegion: selectedRegion, selectedRegionCommunity: selectedRegionCommunity});
         });
+        $('#p_address').change(function () {
+            this.loadStatistics();
+        }.bind(this));
+        this.loadStatistics();
+
+
+    },
+    loadStatistics: function () {
         var areaId = $('#p_address').val();
         if (areaId > 0)
         {
             NGS.load('admin.loads.dashboard.area_statistics', {areaId: areaId});
-
         }
-
-
     }
 });

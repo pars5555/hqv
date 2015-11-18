@@ -1,1 +1,1 @@
-as
+Voters Count: {$ns.areaPassportVotersCount}

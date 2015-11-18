@@ -18,6 +18,7 @@
 namespace admin\loads\dashboard {
 
     use admin\loads\ModeratorLoad;
+    use admin\managers\RealVoterPassportManager;
     use hqv\managers\AreaManager;
     use NGS;
 
@@ -25,7 +26,12 @@ namespace admin\loads\dashboard {
 
         public function load() {
             if (isset(NGS()->args()->areaId)) {
-                $area = AreaManager::getInstance()->selectByPK(NGS()->args()->areaId);
+                $areaId = intval(NGS()->args()->areaId);
+                $area = AreaManager::getInstance()->selectByPK($areaId);
+                if (isset($area)) {
+                    $areaPassportVoters = RealVoterPassportManager::getInstance()->selectAdvance('*', ['area_id', '=', $areaId]);
+                    $this->addParam('areaPassportVotersCount', count($areaPassportVoters));
+                }
             }
         }
 
