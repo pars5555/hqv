@@ -12,8 +12,8 @@
     <div class="row">
         <div class="col s12 m6 6 offset-m3" id="realVoterAddEditForm">
             <form id="addRealVoterForm" autocomplete="off">
-                <div class="row" id='addRealVoterRegionSelectionContainer'>
-                    {nest ns=region}
+                <div class="row" id='addRealVoterAreaSelectionContainer'>
+                    {nest ns=area}
                 </div>
                 <div class="row" id='addRealVoterAddEditContainer'>
                     {nest ns=add_edit}

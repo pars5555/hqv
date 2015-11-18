@@ -18,25 +18,19 @@
 namespace admin\loads\dashboard {
 
     use admin\loads\ModeratorLoad;
+    use hqv\managers\AreaManager;
     use NGS;
 
-    class IndexLoad extends ModeratorLoad {
+    class AreaStatisticsLoad extends ModeratorLoad {
 
         public function load() {
-            
-        }
-
-        public function getDefaultLoads() {
-            $loads = array();
-            $loads["area"]["action"] = "admin.loads.dashboard.area_selection";
-            $loads["area"]["args"] = array();
-            $loads["statistics"]["action"] = "admin.loads.dashboard.statistics";
-            $loads["statistics"]["args"] = array();
-            return $loads;
+            if (isset(NGS()->args()->areaId)) {
+                $area = AreaManager::getInstance()->selectByPK(NGS()->args()->areaId);
+            }
         }
 
         public function getTemplate() {
-            return NGS()->getTemplateDir() . "/dashboard/index.tpl";
+            return NGS()->getTemplateDir() . "/dashboard/area_statistics.tpl";
         }
 
     }

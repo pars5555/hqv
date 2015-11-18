@@ -15,11 +15,11 @@
 
 namespace admin\dal\mappers {
 
-    use admin\dal\dto\RealVoterDto;
+    use admin\dal\dto\RealVoterPassportDto;
     use hqv\dal\mappers\AdvancedAbstractMysqlMapper;
     use ngs\framework\dal\mappers\AbstractMapper;
 
-    class RealVoterMapper extends AdvancedAbstractMysqlMapper {
+    class RealVoterPassportMapper extends AdvancedAbstractMysqlMapper {
 
         /**
          * @var table name in DB
@@ -39,7 +39,7 @@ namespace admin\dal\mappers {
             parent::__construct();
 
             // Initialize table name.
-            $this->tableName = "real_voter";
+            $this->tableName = "real_voter_passport";
         }
 
         /**
@@ -48,7 +48,7 @@ namespace admin\dal\mappers {
          */
         public static function getInstance() {
             if (self::$instance == null) {
-                self::$instance = new RealVoterMapper();
+                self::$instance = new RealVoterPassportMapper();
             }
             return self::$instance;
         }
@@ -57,7 +57,7 @@ namespace admin\dal\mappers {
          * @see AbstractMapper::createDto()
          */
         public function createDto() {
-            return new RealVoterDto();
+            return new RealVoterPassportDto();
         }
 
         /**

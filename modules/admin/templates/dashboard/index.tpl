@@ -9,58 +9,12 @@
     </nav>
 </div>
 <div class="admin-content">
-    <div class="row">
-        <div class="col s4 m4 4">
-            <div class="row">
-                <div class="col s8 m8 l8 section green darken-3 white-text text-lighten-2">
-                    <div class="row">
-                        <div class="col s6 m12 l4">
-                            <i class="large material-icons">insert_chart</i>
-                        </div>
-                        <div class="col s6 m12 l8">
-                            countGroupByVoter : {$ns.countGroupByVoter}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col s4 m4 4">
-            <div class="row">
-                <div class="col s8 m8 l8 section green darken-3 white-text text-lighten-2">
-                    <div class="row">
-                        <div class="col s6 m12 l4">
-                            <i class="large material-icons">insert_chart</i>
-                        </div>
-                        <div class="col s6 m12 l8">
-                            nonParticipantCounts : {$ns.nonParticipantCounts}<br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col s4 m4 4">
-            <div class="row">
-                <div class="col s8 m8 l8 section green darken-3 white-text text-lighten-2">
-                    <div class="row">
-                        <div class="col s6 m12 l4">
-                            <i class="large material-icons">insert_chart</i>
-                        </div>
-                        <div class="col s6 m12 l8">
-                            ParticipantCounts : {$ns.participantCounts}<br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col s4 m4 4">
-            
-        </div>
-        <div class="col s4 m4 4">
-            
-        </div>
+    <div class="row" id='dashboardStatisticsContainer'>
+        {nest ns=statistics}
     </div>
-        <br>
-        
-        
-       
+    <div class="row" id='dashboardAreaSelectionContainer'>
+        {nest ns=area}
+    </div>
+    <div class="row" id='dashboardAreaStatisticsContainer'>
+    </div>
 </div>

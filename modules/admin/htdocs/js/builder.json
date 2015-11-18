@@ -59,10 +59,13 @@
           "loads/LoginLoad.class.js",
           "loads/HomeLoad.class.js",
           "loads/dashboard/IndexLoad.class.js",
+          "loads/dashboard/AreaSelectionLoad.class.js",
+          "loads/dashboard/AreaStatisticsLoad.class.js",
+          "loads/dashboard/StatisticsLoad.class.js",
           "loads/passport/IndexLoad.class.js",
           "loads/passport/ListLoad.class.js",
           "loads/passport/AddEditLoad.class.js",
-          "loads/passport/RegionSelectionLoad.class.js",
+          "loads/passport/AreaSelectionLoad.class.js",
           "loads/analyze/IndexLoad.class.js",
           "loads/analyze/DuplicatedRealVoterLoad.class.js",
           "loads/voters/IndexLoad.class.js"
@@ -79,8 +82,7 @@
         "compress": false,
         "files": [
           "actions/SiteAction.class.js",
-          "actions/passport/AddRealVoterAction.class.js",
-          "actions/passport/GetRealVoterDataAction.class.js"
+          "actions/passport/AddRealVoterAction.class.js"
         ]
       }
     ]

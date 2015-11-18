@@ -18,14 +18,14 @@
 namespace admin\loads\analyze {
 
     use admin\loads\AdminLoad;
-    use admin\managers\RealVoterManager;
+    use admin\managers\RealVoterPassportManager;
     use NGS;
 
     class DuplicatedRealVoterLoad extends AdminLoad {
 
         public function load() {
             $ids = NGS()->args()->ids;
-            $duplidatedRows = RealVoterManager::getInstance()->selectAdvance('*', ['id', 'in', "($ids)"], ['create_datetime'], 'asc');
+            $duplidatedRows = RealVoterPassportManager::getInstance()->selectAdvance('*', ['id', 'in', "($ids)"], ['create_datetime'], 'asc');
             $this->addParam('vote_count', count($duplidatedRows));
             $datetimesArray = $this->getDatetimesArray($duplidatedRows);
             $this->addParam('vote_datetimes', count($duplidatedRows));

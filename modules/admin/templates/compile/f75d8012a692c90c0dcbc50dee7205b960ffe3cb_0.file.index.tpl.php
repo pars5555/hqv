@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-17 08:02:52
+<?php /* Smarty version 3.1.27, created on 2015-11-18 16:24:55
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\dashboard\index.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:23087564ad11c3ce251_85710502%%*/
+/*%%SmartyHeaderCode:178564c984762c602_57279717%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f75d8012a692c90c0dcbc50dee7205b960ffe3cb' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\dashboard\\index.tpl',
-      1 => 1447743763,
+      1 => 1447860292,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '23087564ad11c3ce251_85710502',
-  'variables' => 
-  array (
-    'ns' => 0,
-  ),
+  'nocache_hash' => '178564c984762c602_57279717',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564ad11c3d8531_59533058',
+  'unifunc' => 'content_564c984765e579_72781424',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564ad11c3d8531_59533058')) {
-function content_564ad11c3d8531_59533058 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564c984765e579_72781424')) {
+function content_564c984765e579_72781424 ($_smarty_tpl) {
+if (!is_callable('smarty_function_nest')) require_once 'D:\\xampp\\htdocs\\hqv\\classes\\framework\\lib\\smarty\\plugins\\function.nest.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '23087564ad11c3ce251_85710502';
+$_smarty_tpl->properties['nocache_hash'] = '178564c984762c602_57279717';
 ?>
 <div class="breadscrumb">
     <nav class="red darken-3" style="padding-left:10px;">
@@ -39,63 +36,16 @@ $_smarty_tpl->properties['nocache_hash'] = '23087564ad11c3ce251_85710502';
     </nav>
 </div>
 <div class="admin-content">
-    <div class="row">
-        <div class="col s4 m4 4">
-            <div class="row">
-                <div class="col s8 m8 l8 section green darken-3 white-text text-lighten-2">
-                    <div class="row">
-                        <div class="col s6 m12 l4">
-                            <i class="large material-icons">insert_chart</i>
-                        </div>
-                        <div class="col s6 m12 l8">
-                            countGroupByVoter : <?php echo $_smarty_tpl->tpl_vars['ns']->value['countGroupByVoter'];?>
+    <div class="row" id='dashboardStatisticsContainer'>
+        <?php echo smarty_function_nest(array('ns'=>'statistics'),$_smarty_tpl);?>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col s4 m4 4">
-            <div class="row">
-                <div class="col s8 m8 l8 section green darken-3 white-text text-lighten-2">
-                    <div class="row">
-                        <div class="col s6 m12 l4">
-                            <i class="large material-icons">insert_chart</i>
-                        </div>
-                        <div class="col s6 m12 l8">
-                            nonParticipantCounts : <?php echo $_smarty_tpl->tpl_vars['ns']->value['nonParticipantCounts'];?>
-<br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col s4 m4 4">
-            <div class="row">
-                <div class="col s8 m8 l8 section green darken-3 white-text text-lighten-2">
-                    <div class="row">
-                        <div class="col s6 m12 l4">
-                            <i class="large material-icons">insert_chart</i>
-                        </div>
-                        <div class="col s6 m12 l8">
-                            ParticipantCounts : <?php echo $_smarty_tpl->tpl_vars['ns']->value['participantCounts'];?>
-<br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col s4 m4 4">
-            
-        </div>
-        <div class="col s4 m4 4">
-            
-        </div>
     </div>
-        <br>
-        
-        
-       
+    <div class="row" id='dashboardAreaSelectionContainer'>
+        <?php echo smarty_function_nest(array('ns'=>'area'),$_smarty_tpl);?>
+
+    </div>
+    <div class="row" id='dashboardAreaStatisticsContainer'>
+    </div>
 </div><?php }
 }
 ?>

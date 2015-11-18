@@ -1,6 +1,6 @@
-NGS.createLoad("admin.loads.passport.region_selection", {
+NGS.createLoad("admin.loads.passport.area_selection", {
     getContainer: function () {
-        return "addRealVoterRegionSelectionContainer";
+        return "addRealVoterAreaSelectionContainer";
     },
     onError: function (params) {
     },
@@ -10,12 +10,12 @@ NGS.createLoad("admin.loads.passport.region_selection", {
     initAreaSelection: function () {
         $('#p_region').change(function () {
             var selectedRegion = $('#p_region').val();
-            NGS.load('admin.loads.passport.region_selection', {selectedRegion: selectedRegion});
+            NGS.load('admin.loads.passport.area_selection', {selectedRegion: selectedRegion});
         });
         $('#p_community').change(function () {
             var selectedRegion = $('#p_region').val();
             var selectedRegionCommunity = $('#p_community').val();
-            NGS.load('admin.loads.passport.region_selection', {selectedRegion: selectedRegion, selectedRegionCommunity: selectedRegionCommunity});
+            NGS.load('admin.loads.passport.area_selection', {selectedRegion: selectedRegion, selectedRegionCommunity: selectedRegionCommunity});
         });
     },
 });

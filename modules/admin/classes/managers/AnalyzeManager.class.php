@@ -34,7 +34,7 @@ namespace admin\managers {
         }
 
         public function getDuplicatedRealVoters() {
-            return RealVoterManager::getInstance()->getDuplicatedRealVoters();
+            return RealVoterPassportManager::getInstance()->getDuplicatedRealVoters();
         }
 
     }

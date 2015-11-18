@@ -16,7 +16,7 @@ NGS.createLoad("admin.loads.passport.list", {
             $(this).addClass('active');
             var rowId = $(this).data('rowid');
             NGS.load('admin.loads.passport.add_edit', {rowId:rowId});
-            NGS.load('admin.loads.passport.region_selection', {rowId:rowId});
+            NGS.load('admin.loads.passport.area_selection', {rowId:rowId});
         });        
     },
     initPaging: function () {

@@ -18,7 +18,7 @@
 namespace admin\loads\passport {
 
     use admin\loads\ModeratorLoad;
-    use admin\managers\RealVoterManager;
+    use admin\managers\RealVoterPassportManager;
     use NGS;
 
     class ListLoad extends ModeratorLoad {
@@ -36,8 +36,8 @@ namespace admin\loads\passport {
             $this->addParam('page', $page);
             $this->addParam('limit', $limit);
             $offset = ($page - 1) * $limit;
-            $rows = RealVoterManager::getInstance()->selectAdvance('*', ['moderator_id', '=', $moderatorId], ['create_datetime'], 'DESC', $offset, $limit);
-            $count = RealVoterManager::getInstance()->getLastSelectAdvanceRowsCount();
+            $rows = RealVoterPassportManager::getInstance()->selectAdvance('*', ['moderator_id', '=', $moderatorId], ['create_datetime'], 'DESC', $offset, $limit);
+            $count = RealVoterPassportManager::getInstance()->getLastSelectAdvanceRowsCount();
             $pageCount = ceil($count / $limit);
             $this->addParam('pageCount', $pageCount);
             $this->addParam('rows', $rows);

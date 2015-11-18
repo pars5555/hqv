@@ -14,24 +14,15 @@ namespace admin\dal\dto {
 
     use ngs\framework\dal\dto\AbstractDto;
 
-    class RealVoterDto extends AbstractDto {
+    class RealVoterNumberDto extends AbstractDto {
 
         // Map of DB value to Field value
         protected $mapArray = array(
             "id" => "id",
             "voter_id" => "voterId",
-            "first_name" => "firstName",
-            "last_name" => "lastName",
-            "father_name" => "fatherName",
             "moderator_id" => "moderatorId",
             "create_datetime" => "createDatetime",
-            "change_datetime" => "changeDatetime",
-            "birth_date" => "birthDate",
             "area_id" => "areaId",
-            
-            "duplication_ids" => "duplicationIds",
-            "vote_count" => "voteCount"
-            
             );
 
         // returns map array

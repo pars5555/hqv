@@ -12,10 +12,10 @@
 
 namespace admin\managers {
 
-    use admin\dal\mappers\RealVoterMapper;
+    use admin\dal\mappers\RealVoterPassportMapper;
     use hqv\managers\AdvancedAbstractManager;
 
-    class RealVoterManager extends AdvancedAbstractManager {
+    class RealVoterPassportManager extends AdvancedAbstractManager {
 
         /**
          * @var singleton instance of class
@@ -31,7 +31,7 @@ namespace admin\managers {
          */
         public static function getInstance() {
             if (self::$instance == null) {
-                self::$instance = new RealVoterManager(RealVoterMapper::getInstance());
+                self::$instance = new RealVoterPassportManager(RealVoterPassportMapper::getInstance());
             }
             return self::$instance;
         }

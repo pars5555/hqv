@@ -2,7 +2,7 @@
 
 namespace admin\actions\passport {
 
-    use admin\managers\RealVoterManager;
+    use admin\managers\RealVoterPassportManager;
     use admin\security\RequestGroups;
     use NGS;
     use ngs\framework\AbstractAction;
@@ -19,9 +19,9 @@ namespace admin\actions\passport {
             list($firstName, $lastName, $fatherName, $birthDate, $rowId, $areaId ) = $validateFields;
             $moderatorId = NGS()->getSessionManager()->getUserId();
             if ($rowId == 0) {
-                RealVoterManager::getInstance()->addRow($firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId);
+                RealVoterPassportManager::getInstance()->addRow($firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId);
             } else {
-                RealVoterManager::getInstance()->editRow($rowId, $firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId);
+                RealVoterPassportManager::getInstance()->editRow($rowId, $firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId);
             }
         }
 

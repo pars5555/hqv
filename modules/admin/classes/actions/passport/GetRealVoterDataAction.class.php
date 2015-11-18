@@ -2,7 +2,7 @@
 
 namespace admin\actions\passport {
 
-    use admin\managers\RealVoterManager;
+    use admin\managers\RealVoterPassportManager;
     use admin\security\RequestGroups;
     use NGS;
     use ngs\framework\AbstractAction;
@@ -15,7 +15,7 @@ namespace admin\actions\passport {
                 $this->addParam('message', "Missing ID");
                 return;
             }
-            $row = RealVoterManager::getInstance()->selectByPK(NGS()->args()->rowId);
+            $row = RealVoterPassportManager::getInstance()->selectByPK(NGS()->args()->rowId);
             if (isset($row)) {
                 $this->addParam('row', $row);
                 $areaId = $row->getAreaId();

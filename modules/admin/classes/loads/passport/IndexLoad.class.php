@@ -28,8 +28,8 @@ namespace admin\loads\passport {
 
         public function getDefaultLoads() {
             $loads = array();
-            $loads["region"]["action"] = "admin.loads.passport.region_selection";
-            $loads["region"]["args"] = array();
+            $loads["area"]["action"] = "admin.loads.passport.area_selection";
+            $loads["area"]["args"] = array();
             $loads["add_edit"]["action"] = "admin.loads.passport.add_edit";
             $loads["add_edit"]["args"] = array();
             $loads["list"]["action"] = "admin.loads.passport.list";

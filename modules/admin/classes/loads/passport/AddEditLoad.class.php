@@ -18,7 +18,7 @@
 namespace admin\loads\passport {
 
     use admin\loads\ModeratorLoad;
-    use admin\managers\RealVoterManager;
+    use admin\managers\RealVoterPassportManager;
     use NGS;
 
     class AddEditLoad extends ModeratorLoad {
@@ -31,7 +31,7 @@ namespace admin\loads\passport {
             $birthMonth = 1;
             $birthDay = 1;
             if (isset(NGS()->args()->rowId)) {
-                $realVoter = RealVoterManager::getInstance()->selectByPK(NGS()->args()->rowId);
+                $realVoter = RealVoterPassportManager::getInstance()->selectByPK(NGS()->args()->rowId);
                 if (isset($realVoter)) {
                     $firstName = $realVoter->getFirstName();
                     $lastName = $realVoter->getLastName();

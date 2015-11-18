@@ -15,31 +15,22 @@
  *
  */
 
-namespace admin\loads\passport {
+namespace admin\loads\dashboard {
 
     use admin\loads\ModeratorLoad;
-    use admin\managers\RealVoterManager;
     use hqv\managers\AreaManager;
     use NGS;
 
-    class RegionSelectionLoad extends ModeratorLoad {
+    class AreaSelectionLoad extends ModeratorLoad {
 
         public function load() {
 
-            if (isset(NGS()->args()->rowId)) {
-                $row = RealVoterManager::getInstance()->selectByPK(NGS()->args()->rowId);
-                if (isset($row)) {
-                    $areaId = $row->getAreaId();
-                    if (intval($areaId) > 0) {
-                        $area = AreaManager::getInstance()->selectByPK($areaId);
-                        $selectedRegion = $area->getRegion();
-                        $selectedRegionCommunity = $area->getCommunity();
-                        $selectedAreaId = $area->getId();
-                    }
-                }
+            if (isset(NGS()->args()->areaId)) {
+                $area = AreaManager::getInstance()->selectByPK(NGS()->args()->areaId);
+                $selectedRegion = $area->getRegion();
+                $selectedRegionCommunity = $area->getCommunity();
+                $selectedAreaId = $area->getId();
             }
-
-
 
             $regionNamesArray = AreaManager::getInstance()->getRegionNamesArray();
             if (!isset($selectedRegion)) {
@@ -76,7 +67,7 @@ namespace admin\loads\passport {
         }
 
         public function getTemplate() {
-            return NGS()->getTemplateDir() . "/passport/region_selection.tpl";
+            return NGS()->getTemplateDir() . "/dashboard/area_selection.tpl";
         }
 
     }
