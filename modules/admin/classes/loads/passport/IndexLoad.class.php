@@ -17,10 +17,10 @@
 
 namespace admin\loads\passport {
 
-    use admin\loads\BaseAdminLoad;
+    use admin\loads\ModeratorLoad;
     use NGS;
 
-    class IndexLoad extends BaseAdminLoad {
+    class IndexLoad extends ModeratorLoad {
 
         public function load() {
             

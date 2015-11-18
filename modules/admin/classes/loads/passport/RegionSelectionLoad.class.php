@@ -17,36 +17,59 @@
 
 namespace admin\loads\passport {
 
-    use admin\loads\BaseAdminLoad;
+    use admin\loads\ModeratorLoad;
+    use admin\managers\RealVoterManager;
+    use hqv\managers\AreaManager;
     use NGS;
 
-    class RegionSelectionLoad extends BaseAdminLoad {
+    class RegionSelectionLoad extends ModeratorLoad {
 
         public function load() {
-            $regionNamesArray = \hqv\managers\AreaManager::getInstance()->getRegionNamesArray();
-            $selectedRegion = $regionNamesArray [0];
-            if (isset(NGS()->args()->selectedRegion)) {
-                $selectedRegion = NGS()->args()->selectedRegion;
+
+            if (isset(NGS()->args()->rowId)) {
+                $row = RealVoterManager::getInstance()->selectByPK(NGS()->args()->rowId);
+                if (isset($row)) {
+                    $areaId = $row->getAreaId();
+                    if (intval($areaId) > 0) {
+                        $area = AreaManager::getInstance()->selectByPK($areaId);
+                        $selectedRegion = $area->getRegion();
+                        $selectedRegionCommunity = $area->getCommunity();
+                        $selectedAreaId = $area->getId();
+                    }
+                }
             }
+
+
+
+            $regionNamesArray = AreaManager::getInstance()->getRegionNamesArray();
+            if (!isset($selectedRegion)) {
+                $selectedRegion = $regionNamesArray [0];
+                if (isset(NGS()->args()->selectedRegion)) {
+                    $selectedRegion = NGS()->args()->selectedRegion;
+                }
+            }
+            $regionCommunities = AreaManager::getInstance()->getRegionCommunitiesArray($selectedRegion);
+            if (!isset($selectedRegionCommunity)) {
+                $selectedRegionCommunity = $regionCommunities[0];
+                if (isset(NGS()->args()->selectedRegionCommunity)) {
+                    $selectedRegionCommunity = NGS()->args()->selectedRegionCommunity;
+                }
+            }
+
+            $areasMappedById = AreaManager::getInstance()->getByRegionAndCommunity($selectedRegion, $selectedRegionCommunity);
+            if (!isset($selectedAreaId)) {
+                $areaIds = array_keys($areasMappedById);
+                reset($areaIds);
+                $selectedAreaId = current($areaIds);
+                if (isset(NGS()->args()->selectedAreaId)) {
+                    $selectedAreaId = NGS()->args()->selectedAreaId;
+                }
+            }
+
+
             $this->addParam('selectedRegion', $selectedRegion);
-
-
-            $regionCommunities = \hqv\managers\AreaManager::getInstance()->getRegionCommunitiesArray($selectedRegion);
-            $selectedRegionCommunity = $regionCommunities[0];
-            if (isset(NGS()->args()->selectedRegionCommunity)) {
-                $selectedRegionCommunity = NGS()->args()->selectedRegionCommunity;
-            }
             $this->addParam('selectedRegionCommunity', $selectedRegionCommunity);
-
-
-            $areasMappedById = \hqv\managers\AreaManager::getInstance()->getByRegionAndCommunity($selectedRegion, $selectedRegionCommunity);
-            reset($areasMappedById);
-            $selectedAreaId = current($areasMappedById);
-            if (isset(NGS()->args()->selectedAreaId)) {
-                $selectedAreaId = NGS()->args()->selectedAreaId;
-            }
             $this->addParam('selectedAreaId', $selectedAreaId);
-
             $this->addParam('regions', $regionNamesArray);
             $this->addParam('regionCommunities', $regionCommunities);
             $this->addParam('areas', $areasMappedById);

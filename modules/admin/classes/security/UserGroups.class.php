@@ -20,6 +20,7 @@ namespace admin\security {
          * @var System administrator
          */
         public static $ADMIN = 1;
+        public static $MODERATOR = 3;
 
         /**
          * @var Non authorized user with minimum privileges

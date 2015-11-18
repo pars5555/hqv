@@ -16,10 +16,10 @@
  */
 
 namespace admin\loads\voters {
-    use admin\loads\BaseAdminLoad;
+    use admin\loads\AdminLoad;
     use NGS;
 
-    class IndexLoad extends BaseAdminLoad {
+    class IndexLoad extends AdminLoad {
 
         public function load() {
         }

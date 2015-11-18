@@ -26,7 +26,7 @@ namespace admin\actions\passport {
         }
 
         public function getRequestGroup() {
-            return RequestGroups::$adminRequest;
+            return RequestGroups::$moderatorRequest;
         }
 
         public function validateFields() {

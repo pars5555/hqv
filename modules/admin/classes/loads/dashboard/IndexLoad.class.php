@@ -16,15 +16,17 @@
  */
 
 namespace admin\loads\dashboard {
-    use admin\loads\BaseAdminLoad;
+
+    use admin\loads\ModeratorLoad;
+    use hqv\managers\VoterDataManager;
     use NGS;
 
-    class IndexLoad extends BaseAdminLoad {
+    class IndexLoad extends ModeratorLoad {
 
         public function load() {
-            $dataCountGroupByVoter = \hqv\managers\VoterDataManager::getInstance()->getDataCountGroupByVoterId();
-            $nonParticipantCounts = \hqv\managers\VoterDataManager::getInstance()->getNonParticipantCounts();
-            $participantCounts = \hqv\managers\VoterDataManager::getInstance()->getParticipantCounts();
+            $dataCountGroupByVoter = VoterDataManager::getInstance()->getDataCountGroupByVoterId();
+            $nonParticipantCounts = VoterDataManager::getInstance()->getNonParticipantCounts();
+            $participantCounts = VoterDataManager::getInstance()->getParticipantCounts();
             $this->addParam('countGroupByVoter', $dataCountGroupByVoter);
             $this->addParam('participantCounts', $participantCounts);
             $this->addParam('nonParticipantCounts', $nonParticipantCounts);

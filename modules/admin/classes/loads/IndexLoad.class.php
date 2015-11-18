@@ -18,12 +18,11 @@
 namespace admin\loads {
 
     use NGS;
-    use ngs\framework\AbstractLoad;
 
-    class IndexLoad extends AbstractLoad {
+    class IndexLoad extends BaseLoad {
 
         public function load() {
-            $this->addParam('userId', NGS()->getSessionManager()->getUserId());
+            
         }
 
         public function getTemplate() {

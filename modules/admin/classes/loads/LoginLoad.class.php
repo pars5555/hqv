@@ -15,22 +15,16 @@
 
 namespace admin\loads {
 
-    use hqv\security\RequestGroups;
+    use admin\security\UserGroups;
     use NGS;
-    use ngs\framework\AbstractLoad;
 
-    class LoginLoad extends AbstractLoad {
+    class LoginLoad extends BaseLoad {
 
         public function load() {
-            if (NGS()->getSessionManager()->getUser()->getLevel() == \admin\security\UserGroups::$ADMIN)
-            {
+            $userType = NGS()->getSessionManager()->getUserType();
+            if (isset($userType) && $userType != UserGroups::$GUEST) {
                 $this->redirect('');
             }
-            
-        }
-
-        public function getRequestGroup() {
-            return RequestGroups::$guestRequest;
         }
 
         public function getTemplate() {

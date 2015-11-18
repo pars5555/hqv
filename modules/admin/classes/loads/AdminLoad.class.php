@@ -15,10 +15,9 @@ namespace admin\loads {
 
     use admin\security\RequestGroups;
     use NGS;
-    use ngs\framework\AbstractLoad;
     use ngs\framework\exceptions\NgsErrorException;
 
-    abstract class BaseAdminLoad extends AbstractLoad {
+    abstract class AdminLoad extends BaseLoad {
 
         public function onNoAccess() {
             if (NGS()->getHttpUtils()->isAjaxRequest()) {

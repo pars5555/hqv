@@ -17,12 +17,12 @@
 
 namespace admin\loads {
 
-    use admin\loads\BaseAdminLoad;
     use NGS;
 
-    class HomeLoad extends BaseAdminLoad {
+    class HomeLoad extends BaseLoad {
 
         public function load() {
+            
         }
 
         public function getTemplate() {

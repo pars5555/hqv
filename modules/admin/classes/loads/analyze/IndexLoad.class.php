@@ -17,11 +17,11 @@
 
 namespace admin\loads\analyze {
 
-    use admin\loads\BaseAdminLoad;
+    use admin\loads\AdminLoad;
     use admin\managers\AnalyzeManager;
     use NGS;
 
-    class IndexLoad extends BaseAdminLoad {
+    class IndexLoad extends AdminLoad {
 
         public function load() {
             $duplicatedRealVoters = AnalyzeManager::getInstance()->getDuplicatedRealVoters();

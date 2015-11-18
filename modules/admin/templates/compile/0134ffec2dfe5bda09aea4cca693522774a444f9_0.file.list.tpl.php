@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-17 10:25:26
+<?php /* Smarty version 3.1.27, created on 2015-11-17 19:14:12
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\passport\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:25508564af2865fbdf5_16197399%%*/
+/*%%SmartyHeaderCode:29443564b6e741b2b90_61294090%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0134ffec2dfe5bda09aea4cca693522774a444f9' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\passport\\list.tpl',
-      1 => 1447752216,
+      1 => 1447784047,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '25508564af2865fbdf5_16197399',
+  'nocache_hash' => '29443564b6e741b2b90_61294090',
   'variables' => 
   array (
     'ns' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564af28664d5d3_88319064',
+  'unifunc' => 'content_564b6e742a4ca3_29594178',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564af28664d5d3_88319064')) {
-function content_564af28664d5d3_88319064 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564b6e742a4ca3_29594178')) {
+function content_564b6e742a4ca3_29594178 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '25508564af2865fbdf5_16197399';
+$_smarty_tpl->properties['nocache_hash'] = '29443564b6e741b2b90_61294090';
 ?>
 <div class="row">
     <div class="col s12 m6 6">
@@ -58,11 +58,12 @@ $_smarty_tpl->tpl_vars['page']->first = $_smarty_tpl->tpl_vars['page']->iteratio
 <table class="responsive-table real-voters">
     <thead>
         <tr>
-            <th data-field="id">First Name</th>
-            <th data-field="name">Last Name</th>
-            <th data-field="price">Father Price</th>
-            <th data-field="price">Birth Date</th>
-            <th data-field="price">In List</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Father Price</th>
+            <th>Birth Date</th>
+            <th>In List</th>
+            <th>All Ok</th>
         </tr>
     </thead>
     <tbody id="real_voters_table">
@@ -96,6 +97,7 @@ $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
 </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getBirthDate();?>
 </td>
+                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>yes<?php } else { ?>no<?php }?></td>
                 <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>yes<?php } else { ?>no<?php }?></td>
             </tr>
         <?php

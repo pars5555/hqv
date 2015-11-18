@@ -15,7 +15,13 @@ namespace admin\actions\login {
             if (!$adminDto) {
                 $this->redirect('login');
             }
+            if ($adminDto->getType() == 'admin'){
             NGS()->getSessionManager()->login(UserGroups::$ADMIN, $adminDto->getId());
+            }elseif ($adminDto->getType() == 'moderator')
+            {
+            NGS()->getSessionManager()->login(UserGroups::$MODERATOR, $adminDto->getId());
+                
+            }
             $this->redirect('');
         }
 

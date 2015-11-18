@@ -20,11 +20,12 @@
 <table class="responsive-table real-voters">
     <thead>
         <tr>
-            <th data-field="id">First Name</th>
-            <th data-field="name">Last Name</th>
-            <th data-field="price">Father Price</th>
-            <th data-field="price">Birth Date</th>
-            <th data-field="price">In List</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Father Price</th>
+            <th>Birth Date</th>
+            <th>In List</th>
+            <th>All Ok</th>
         </tr>
     </thead>
     <tbody id="real_voters_table">
@@ -37,6 +38,7 @@
                 <td>{$row->getLastName()}</td>
                 <td>{$row->getFatherName()}</td>
                 <td>{$row->getBirthDate()}</td>
+                <td>{if $row->getVoterId()>0}yes{else}no{/if}</td>
                 <td>{if $row->getVoterId()>0}yes{else}no{/if}</td>
             </tr>
         {/foreach}

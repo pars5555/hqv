@@ -46,6 +46,6 @@
 </div>
 {if $ns.edit==1}
     <div class="row">
-        <a class="btn col s12 m12 12 hide" id="cancelEditButton" href ="javascript:void(0);" >Cancel</a>
+        <a class="btn col s12 m12 12" id="cancelEditButton" href ="javascript:void(0);" >Cancel</a>
     </div>
 {/if}

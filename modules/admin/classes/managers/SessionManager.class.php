@@ -20,6 +20,7 @@ namespace admin\managers {
     use admin\security\UserGroups;
     use admin\security\users\GuestUser;
     use admin\security\users\NgsAdminUser;
+    use admin\security\users\NgsModeratorUser;
     use NGS;
     use ngs\framework\exceptions\InvalidUserException;
     use ngs\framework\session\NgsSessionManager;
@@ -82,13 +83,10 @@ namespace admin\managers {
             switch ($ut) {
                 case UserGroups::$ADMIN :
                     return new NgsAdminUser();
-                    break;
-                case UserGroups::$GUEST :
-                    return new GuestUser();
-                    break;
+                case UserGroups::$MODERATOR :
+                    return new NgsModeratorUser();
                 default :
                     return new GuestUser();
-                    break;
             }
         }
 
@@ -103,13 +101,12 @@ namespace admin\managers {
             switch ($userType) {
                 case UserGroups::$ADMIN:
                     return new NgsAdminUser();
-                    break;
+                case UserGroups::$MODERATOR:
+                    return new NgsModeratorUser();
                 case UserGroups::$GUEST :
                     return new GuestUser();
-                    break;
                 default :
                     throw new InvalidUserException("user not found");
-                    break;
             }
         }
 
@@ -118,6 +115,13 @@ namespace admin\managers {
                 return null;
             }
             return $this->getUser()->getId();
+        }
+
+        public function getUserType() {
+            if ($this->getUser() == null) {
+                return null;
+            }
+            return $this->getUser()->getLevel();
         }
 
         /**
@@ -138,11 +142,15 @@ namespace admin\managers {
                         return true;
                     }
                     break;
+                case RequestGroups::$moderatorRequest :
+                    if ($user->getLevel() == UserGroups::$MODERATOR || $user->getLevel() == UserGroups::$ADMIN) {
+                        return true;
+                    }
+                    break;
                 case RequestGroups::$guestRequest:
                     return true;
                     break;
             }
-
             return false;
         }
 

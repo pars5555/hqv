@@ -17,11 +17,11 @@
 
 namespace admin\loads\analyze {
 
-    use admin\loads\BaseAdminLoad;
+    use admin\loads\AdminLoad;
     use admin\managers\RealVoterManager;
     use NGS;
 
-    class DuplicatedRealVoterLoad extends BaseAdminLoad {
+    class DuplicatedRealVoterLoad extends AdminLoad {
 
         public function load() {
             $ids = NGS()->args()->ids;

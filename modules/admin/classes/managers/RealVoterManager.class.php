@@ -48,9 +48,16 @@ namespace admin\managers {
             $dto->setChangeDatetime(date('Y-m-d H:i:s'));
             //$dto->setModeratorId($moderatorId);
             $dto->setAreaId($areaId);
-            $listVoters = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', ['first_name', '=', "'$firstName'", 'and',
-                'last_name', '=', "'$lastName'", 'and', 'father_name', '=', "'$fatherName'", 'and', 'birth_date', '=', "'$birthDate'"]);
-            if (!empty($listVoters)) {
+            $where = ['birth_date', '=', "'$birthDate'", 'and', 'first_name', '=', "'$firstName'", 'and',
+                'last_name', '=', "'$lastName'"];
+            if (!empty($fatherName)) {
+                $where [] = 'and';
+                $where [] = 'father_name';
+                $where [] = '=';
+                $where [] = "'$fatherName'";
+            }
+            $listVoters = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', $where);
+            if (!empty($listVoters) && count($listVoters) === 1) {
                 $voter = $listVoters[0];
                 $dto->setVoterId($voter->getId());
             }
@@ -70,9 +77,16 @@ namespace admin\managers {
             $dto->setCreateDatetime(date('Y-m-d H:i:s'));
             $dto->setModeratorId($moderatorId);
             $dto->setAreaId($areaId);
-            $listVoters = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', ['first_name', '=', "'$firstName'", 'and',
-                'last_name', '=', "'$lastName'", 'and', 'father_name', '=', "'$fatherName'", 'and', 'birth_date', '=', "'$birthDate'"]);
-            if (!empty($listVoters)) {
+             $where = ['birth_date', '=', "'$birthDate'", 'and', 'first_name', '=', "'$firstName'", 'and',
+                'last_name', '=', "'$lastName'"];
+            if (!empty($fatherName)) {
+                $where [] = 'and';
+                $where [] = 'father_name';
+                $where [] = '=';
+                $where [] = "'$fatherName'";
+            }
+            $listVoters = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', $where);
+             if (!empty($listVoters) && count($listVoters) === 1) {
                 $voter = $listVoters[0];
                 $dto->setVoterId($voter->getId());
             }
@@ -86,7 +100,7 @@ namespace admin\managers {
             $then = mb_substr($string, 1, $strlen - 1, $encoding);
             return mb_strtoupper($firstChar, $encoding) . $then;
         }
-        
+
         public function getDuplicatedRealVoters() {
             return $this->mapper->getDuplicatedRealVoters();
         }

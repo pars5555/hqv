@@ -17,11 +17,11 @@
 
 namespace admin\loads\passport {
 
-    use admin\loads\BaseAdminLoad;
+    use admin\loads\ModeratorLoad;
     use admin\managers\RealVoterManager;
     use NGS;
 
-    class AddEditLoad extends BaseAdminLoad {
+    class AddEditLoad extends ModeratorLoad {
 
         public function load() {
             $firstName = "";

@@ -13,22 +13,15 @@
 
 namespace admin\loads {
 
-    use ngs\framework\AbstractLoad;
     use admin\security\RequestGroups;
 
-    abstract class GuestLoad extends AbstractLoad {
+    abstract class GuestLoad extends BaseLoad {
 
         public function load() {
+            
         }
 
-        public function getDefaultLoads() {
-            $loads = array();
-            return $loads;
-        }
-
-        public function isValidLoad($namespace, $load) {
-            return true;
-        }
+        
 
         public function getRequestGroup() {
             return RequestGroups::$guestRequest;
