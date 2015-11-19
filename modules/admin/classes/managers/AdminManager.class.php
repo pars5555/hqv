@@ -66,7 +66,7 @@ namespace admin\managers {
       $adminDto = AdminMapper::getInstance()->createDto();
       $adminDto->setId($userId);
       $adminDto->setHash($userHash);
-      $adminDto->setLastLogin("NOW()");
+      $adminDto->setLastLogin(date('Y-m-d H:i:s'));
       AdminMapper::getInstance()->updateByPK($adminDto);
       return $userHash;
     }

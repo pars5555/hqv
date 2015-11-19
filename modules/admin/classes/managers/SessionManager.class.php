@@ -21,6 +21,7 @@ namespace admin\managers {
     use admin\security\users\GuestUser;
     use admin\security\users\NgsAdminUser;
     use admin\security\users\NgsModeratorUser;
+    use admin\security\users\NgsObserverUser;
     use NGS;
     use ngs\framework\exceptions\InvalidUserException;
     use ngs\framework\session\NgsSessionManager;
@@ -85,6 +86,8 @@ namespace admin\managers {
                     return new NgsAdminUser();
                 case UserGroups::$MODERATOR :
                     return new NgsModeratorUser();
+                case UserGroups::$OBSERVER:
+                    return new NgsObserverUser();
                 default :
                     return new GuestUser();
             }
@@ -103,6 +106,8 @@ namespace admin\managers {
                     return new NgsAdminUser();
                 case UserGroups::$MODERATOR:
                     return new NgsModeratorUser();
+                case UserGroups::$OBSERVER:
+                    return new NgsObserverUser();
                 case UserGroups::$GUEST :
                     return new GuestUser();
                 default :
@@ -144,6 +149,11 @@ namespace admin\managers {
                     break;
                 case RequestGroups::$moderatorRequest :
                     if ($user->getLevel() == UserGroups::$MODERATOR || $user->getLevel() == UserGroups::$ADMIN) {
+                        return true;
+                    }
+                    break;
+                case RequestGroups::$observerRequest:
+                    if ($user->getLevel() == UserGroups::$OBSERVER) {
                         return true;
                     }
                     break;

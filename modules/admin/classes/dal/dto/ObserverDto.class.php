@@ -14,14 +14,12 @@ namespace admin\dal\dto {
 
     use ngs\framework\dal\dto\AbstractDto;
 
-    class AdminDto extends AbstractDto {
+    class ObserverDto extends AbstractDto {
 
         // Map of DB value to Field value
-        protected $mapArray = array("id" => "id", 
-            "username" => "username", "password" => "password", 
-            "hash" => "hash", "last_login" => "lastLogin",
-            "type" => "type"
-            );
+        protected $mapArray = array(
+            "id" => "id", "username" => "username", "password" => "password", 
+            "hash" => "hash", "last_login" => "lastLogin");
 
         // returns map array
         public function getMapArray() {

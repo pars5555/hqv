@@ -9,6 +9,12 @@
             }
         }
     ],    
+    "observer": [
+        {
+            "action": "actions.observer.login",
+            "route": "login"
+        }
+    ],    
     "home": [
         {
             "action": "loads.index",
