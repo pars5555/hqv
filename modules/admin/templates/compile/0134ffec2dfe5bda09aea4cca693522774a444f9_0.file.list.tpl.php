@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-19 07:47:10
+<?php /* Smarty version 3.1.27, created on 2015-11-19 20:28:48
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\passport\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:10057564d706e4ccc74_28609610%%*/
+/*%%SmartyHeaderCode:1462564e22f0597638_21548731%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0134ffec2dfe5bda09aea4cca693522774a444f9' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\passport\\list.tpl',
-      1 => 1447915618,
+      1 => 1447961324,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '10057564d706e4ccc74_28609610',
+  'nocache_hash' => '1462564e22f0597638_21548731',
   'variables' => 
   array (
     'ns' => 0,
@@ -22,13 +22,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564d706e542322_25724468',
+  'unifunc' => 'content_564e22f06d2ee2_18416320',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564d706e542322_25724468')) {
-function content_564d706e542322_25724468 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564e22f06d2ee2_18416320')) {
+function content_564e22f06d2ee2_18416320 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '10057564d706e4ccc74_28609610';
+$_smarty_tpl->properties['nocache_hash'] = '1462564e22f0597638_21548731';
 ?>
 <div class="row">
     <div class="col s12 m6 6">
@@ -78,7 +78,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->tpl_vars['row']->_loop = true;
 $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
 ?>
-            <?php $_smarty_tpl->tpl_vars['bd'] = new Smarty_Variable(explode("-",$_smarty_tpl->tpl_vars['row']->value->getBirthDate()), null, 0);?> 
             <tr data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
 ">
                 <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getFirstName();?>

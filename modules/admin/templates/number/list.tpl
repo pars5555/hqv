@@ -24,20 +24,23 @@
             <th>Last Name</th>
             <th>Father Price</th>
             <th>Birth Date</th>
-            <th>In List</th>
-            <th>All Ok</th>
+            <th>Exist In List</th>
             <th>invalid?</th>
         </tr>
     </thead>
     <tbody id="real_voters_table">
         {foreach from=$ns.rows item=row}
+            {if isset($ns.voters[$row->getVoterId()])}
+                {assign voter $ns.voters[$row->getVoterId()]}            
+            {else}
+                {assign voter 0}
+            {/if}
             <tr data-rowid="{$row->getId()}">
-                <td>{$row->getFirstName()}</td>
-                <td>{$row->getLastName()}</td>
-                <td>{$row->getFatherName()}</td>
-                <td>{$row->getBirthDate()}</td>
-                <td>{if $row->getVoterId()>0}yes{else}no{/if}</td>
-                <td>{if $row->getVoterId()>0}yes{else}no{/if}</td>
+                <td>{if !empty($voter)}{$voter->getFirstName()}{/if}</td>
+                <td>{if !empty($voter)}{$voter->getLastName()}{/if}</td>
+                <td>{if !empty($voter)}{$voter->getFatherName()}{/if}</td>
+                <td>{if !empty($voter)}{$voter->getBirthDate()}{/if}</td>
+                <td>{if $row->getExistInList()==1}yes{else}no{/if}</td>
                 <td>
                     <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="validVoteButton">+</a>
                     <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="invalidVoteButton">X</a>

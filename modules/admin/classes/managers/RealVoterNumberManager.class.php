@@ -14,6 +14,7 @@ namespace admin\managers {
 
     use admin\dal\mappers\RealVoterNumberMapper;
     use hqv\managers\AdvancedAbstractManager;
+    use hqv\managers\VoterManager;
 
     class RealVoterNumberManager extends AdvancedAbstractManager {
 
@@ -36,61 +37,35 @@ namespace admin\managers {
             return self::$instance;
         }
 
-        public function editRow($id, $firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId) {
-            $firstName = $this->mb_ucfirst($firstName);
-            $lastName = $this->mb_ucfirst($lastName);
-            $fatherName = $this->mb_ucfirst($fatherName);
+        public function editRow($id, $voterNumber, $moderatorId, $areaId) {
+
             $dto = $this->selectByPK($id);
-            $dto->setFirstName($firstName);
-            $dto->setLastName($lastName);
-            $dto->setFatherName($fatherName);
-            $dto->setBirthDate($birthDate);
-            $dto->setChangeDatetime(date('Y-m-d H:i:s'));
+            $dto->setVoterId($voterNumber);
             //$dto->setModeratorId($moderatorId);
             $dto->setAreaId($areaId);
-            $where = ['birth_date', '=', "'$birthDate'", 'and', 'first_name', '=', "'$firstName'", 'and',
-                'last_name', '=', "'$lastName'"];
-            if (!empty($fatherName)) {
-                $where [] = 'and';
-                $where [] = 'father_name';
-                $where [] = '=';
-                $where [] = "'$fatherName'";
-            }
-            $listVoters = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', $where);
+            $listVoters = VoterManager::getInstance()->selectAdvance('*', ['area_id', '=', $areaId, 'and', 'number', '=', $voterNumber]);
             if (!empty($listVoters) && count($listVoters) === 1) {
                 $voter = $listVoters[0];
-                $dto->setVoterId($voter->getId());
+                $dto->setExistInList(1);
+            } else {
+                $dto->setExistInList(0);
             }
-
             return $this->updateByPk($dto);
         }
 
-        public function addRow($firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId) {
-            $firstName = $this->mb_ucfirst($firstName);
-            $lastName = $this->mb_ucfirst($lastName);
-            $fatherName = $this->mb_ucfirst($fatherName);
+        public function addRow($voterNumber, $moderatorId, $areaId) {
             $dto = $this->createDto();
-            $dto->setFirstName($firstName);
-            $dto->setLastName($lastName);
-            $dto->setFatherName($fatherName);
-            $dto->setBirthDate($birthDate);
+            $dto->setVoterId($voterNumber);
             $dto->setCreateDatetime(date('Y-m-d H:i:s'));
             $dto->setModeratorId($moderatorId);
             $dto->setAreaId($areaId);
-             $where = ['birth_date', '=', "'$birthDate'", 'and', 'first_name', '=', "'$firstName'", 'and',
-                'last_name', '=', "'$lastName'"];
-            if (!empty($fatherName)) {
-                $where [] = 'and';
-                $where [] = 'father_name';
-                $where [] = '=';
-                $where [] = "'$fatherName'";
-            }
-            $listVoters = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', $where);
-             if (!empty($listVoters) && count($listVoters) === 1) {
+            $listVoters = VoterManager::getInstance()->selectAdvance('*', ['area_id', '=', $areaId, 'and', 'number', '=', $voterNumber]);
+            if (!empty($listVoters) && count($listVoters) === 1) {
                 $voter = $listVoters[0];
-                $dto->setVoterId($voter->getId());
+                $dto->setExistInList(1);
+            } else {
+                $dto->setExistInList(0);
             }
-
             return $this->insertDto($dto);
         }
 

@@ -1,14 +1,15 @@
-NGS.createLoad("admin.loads.passport.add_edit", {
+NGS.createLoad("admin.loads.number.add_edit", {
     getContainer: function () {
-        return "addRealVoterAddEditContainer";
+        return "addRealVoterNumberAddEditContainer";
     },
     onError: function (params) {
     },
     afterLoad: function () {
         $('#cancelEditButton').click(function () {
-            NGS.load('admin.loads.passport.add_edit', {});
+            NGS.load('admin.loads.number.add_edit', {});
             $('#real_voters_table tr').removeClass('active');
         });
-        $('#firstName').focus();
+        $('#voterNumber').focus();
+        
     }
 });

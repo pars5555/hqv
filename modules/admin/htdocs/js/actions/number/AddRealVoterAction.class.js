@@ -1,4 +1,4 @@
-NGS.createAction("admin.actions.passport.add_real_voter", {
+NGS.createAction("admin.actions.number.add_real_voter", {
     beforeAction: function (params) {
 
     },
@@ -10,8 +10,9 @@ NGS.createAction("admin.actions.passport.add_real_voter", {
         } else {
             jQuery("#addVoterError").text('');
         }
-        NGS.load('admin.loads.passport.list', {});
-        NGS.load('admin.loads.passport.add_edit', {});
+        NGS.load('admin.loads.number.list', {});
+        NGS.load('admin.loads.number.add_edit', {});
         $('#real_voters_table tr').removeClass('active');
+        
     }
 });

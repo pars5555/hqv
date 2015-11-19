@@ -19,6 +19,9 @@
         <li id="sidebar_passport_li">
             <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='passport.index'><i class="material-icons left">perm_media</i>Passport</a>
         </li>
+        <li id="sidebar_number_li">
+            <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='number.index'><i class="material-icons left">perm_media</i>Number</a>
+        </li>
         {if $ns.userType==$ns.userTypeAdmin}
             <li id="sidebar_analyze_li">
                 <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='analyze.index'><i class="material-icons left">perm_media</i>Analyze</a>

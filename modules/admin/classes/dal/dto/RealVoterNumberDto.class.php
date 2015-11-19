@@ -23,6 +23,8 @@ namespace admin\dal\dto {
             "moderator_id" => "moderatorId",
             "create_datetime" => "createDatetime",
             "area_id" => "areaId",
+            "invalid" => "invalid",
+            "exist_in_list" => "existInList"
             );
 
         // returns map array
