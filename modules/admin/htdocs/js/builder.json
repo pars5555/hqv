@@ -68,6 +68,7 @@
           "loads/passport/AreaSelectionLoad.class.js",
           "loads/analyze/IndexLoad.class.js",
           "loads/analyze/DuplicatedRealVoterLoad.class.js",
+          "loads/voters/ListLoad.class.js",
           "loads/voters/IndexLoad.class.js"
         ]
       }
@@ -82,7 +83,10 @@
         "compress": false,
         "files": [
           "actions/SiteAction.class.js",
-          "actions/passport/AddRealVoterAction.class.js"
+          "actions/passport/AddRealVoterAction.class.js",
+          "actions/passport/SetInvalidVoteAction.class.js",
+          "actions/prevote/UnblockIpAction.class.js",
+          "actions/prevote/SetInvalidVoteAction.class.js"
         ]
       }
     ]

@@ -13,7 +13,7 @@
         </li>
         {if $ns.userType==$ns.userTypeAdmin}
             <li id="sidebar_voters_li">
-                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='voters.index' ><i class="material-icons left">perm_identity</i>Voters Data</a>
+                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='voters.index' ><i class="material-icons left">perm_identity</i>Pre Vote Data</a>
             </li>
         {/if}
         <li id="sidebar_passport_li">

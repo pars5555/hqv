@@ -4,10 +4,10 @@ namespace admin\actions\passport {
 
     use admin\managers\RealVoterPassportManager;
     use admin\security\RequestGroups;
+    use hqv\actions\BaseAction;
     use NGS;
-    use ngs\framework\AbstractAction;
 
-    class AddRealVoterAction extends AbstractAction {
+    class AddRealVoterAction extends BaseAction {
 
         public function service() {
             $validateFields = $this->validateFields();

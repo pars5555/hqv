@@ -2,6 +2,7 @@
     {if !empty($ns.voter_data)}
         <p class="center-align red-text text-darken-4">You have already voted! call us if you were not</p>
     {/if}
+    <p id="ErrorMessage" class="red-text text-darken-4 center-align"></p>
     <form class="col s12">
         <div class="section row">
             <div class="input-field col s12 m12 12 vote-text">

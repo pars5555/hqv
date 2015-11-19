@@ -19,6 +19,7 @@ namespace admin\loads\analyze {
 
     use admin\loads\AdminLoad;
     use admin\managers\RealVoterPassportManager;
+    use hqv\managers\AreaManager;
     use NGS;
 
     class DuplicatedRealVoterLoad extends AdminLoad {
@@ -27,23 +28,22 @@ namespace admin\loads\analyze {
             $ids = NGS()->args()->ids;
             $duplidatedRows = RealVoterPassportManager::getInstance()->selectAdvance('*', ['id', 'in', "($ids)"], ['create_datetime'], 'asc');
             $this->addParam('vote_count', count($duplidatedRows));
-            $datetimesArray = $this->getDatetimesArray($duplidatedRows);
-            $this->addParam('vote_datetimes', count($duplidatedRows));
-            $this->addParam('datetimes', $datetimesArray);
-            
-            
+            $areaIdsArray = $this->getAreaIdsArray($duplidatedRows);
+            $areasMappedById = AreaManager::getInstance()->selectbyPKs($areaIdsArray, true);
+            $this->addParam('duplidatedRows', $duplidatedRows);
+            $this->addParam('areasMappedById', $areasMappedById);
         }
 
         public function getTemplate() {
             return NGS()->getTemplateDir() . "/analyze/duplicated_real_voter.tpl";
         }
 
-        public function getDatetimesArray($duplidatedRows) {
-            $ret=  [];
-            foreach ($duplidatedRows as $duplidatedRow) {
-                $ret[] = $duplidatedRow->getCreateDatetime();
-                
+        public function getAreaIdsArray($duplidatedRows) {
+            $ret = [];
+            foreach ($duplidatedRows as $row) {
+                $ret[] = $row->getAreaId();
             }
+            return $ret;
         }
 
     }

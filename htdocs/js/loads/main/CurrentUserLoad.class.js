@@ -21,32 +21,43 @@ NGS.createLoad("hqv.loads.main.current_user", {
             var email = $('#cu_email').val();
             var phone = $('#cu_telephone').val();
             var will_vote = $('#cu_will_vote').val();
-            var will_be_in_arm = $('#cu_will_be_in_armenia').is(':checked')?1:0;
+            var will_be_in_arm = $('#cu_will_be_in_armenia').is(':checked') ? 1 : 0;
             var voter_hash = $('#voterHash').val();
-            jQuery('#currentUserModal').closeModal();
             thisInstance.isSavable = false;
-            NGS.action('hqv.actions.main.set_data', {email: email, phone: phone, will_vote: will_vote, will_be_in_arm: will_be_in_arm,hash:voter_hash});
+            NGS.action('hqv.actions.main.set_data', {email: email, phone: phone, will_vote: will_vote, will_be_in_arm: will_be_in_arm, hash: voter_hash},
+            function (transport) {
+                thisInstance.isSavable = true;
+                var args = this.getArgs();
+                if (args.status == 'error') {
+                    jQuery("#ErrorMessage").text(args.message);
+                    return;
+                } else {
+                    jQuery("#ErrorMessage").text('');
+                    jQuery('#currentUserModal').closeModal();
+                    NGS.load("hqv.loads.main.thank_you", {hash: transport.hash});
+                }
+            });
             jQuery(this).removeClass('disabled');
         });
         this.votingBtn();
     },
-    isValidEmailAddress: function(emailAddress){
-        if(emailAddress){
+    isValidEmailAddress: function (emailAddress) {
+        if (emailAddress) {
             var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
             return regex.test(emailAddress);
         }
     },
-    validateEmail : function(){
+    validateEmail: function () {
         var thisInstance = this;
-        jQuery('#cu_email').on('input', function() {
-            if(thisInstance.isValidEmailAddress(jQuery(this).val())){
-                if(jQuery('.f_vote_btn').hasClass('active')){
+        jQuery('#cu_email').on('input', function () {
+            if (thisInstance.isValidEmailAddress(jQuery(this).val())) {
+                if (jQuery('.f_vote_btn').hasClass('active')) {
                     thisInstance.isSavable = true;
                     jQuery("#currentUserModalBtn").removeClass('disabled');
                 }
                 thisInstance.validEmail = true;
                 jQuery('#emailError').hide();
-            }else {
+            } else {
                 thisInstance.isSavable = false;
                 thisInstance.validEmail = false;
                 jQuery("#currentUserModalBtn").addClass('disabled');
@@ -60,8 +71,8 @@ NGS.createLoad("hqv.loads.main.current_user", {
             jQuery('.f_vote_btn').removeClass('active');
             jQuery(this).addClass('active');
             jQuery("#cu_will_vote").val(jQuery(this).data('ans'));
-            
-            if(thisInstance.validEmail){
+
+            if (thisInstance.validEmail) {
                 jQuery("#currentUserModalBtn").removeClass('disabled');
                 thisInstance.isSavable = true;
             }

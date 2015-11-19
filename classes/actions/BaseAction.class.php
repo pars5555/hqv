@@ -2,6 +2,7 @@
 
 namespace hqv\actions {
 
+    use hqv\managers\SettingManager;
     use hqv\security\RequestGroups;
     use ngs\framework\AbstractAction;
 
@@ -18,6 +19,10 @@ namespace hqv\actions {
         protected function redirectToReferer() {
             header("location: " . $_SERVER['HTTP_REFERER']);
             exit;
+        }
+
+        public function getSetting($varName) {
+            return SettingManager::getInstance()->getSetting($varName);
         }
 
     }

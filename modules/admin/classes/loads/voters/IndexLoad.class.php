@@ -16,12 +16,28 @@
  */
 
 namespace admin\loads\voters {
-    use admin\loads\AdminLoad;
-    use NGS;
+
+use admin\loads\AdminLoad;
+use hqv\managers\VoterDataManager;
+use NGS;
 
     class IndexLoad extends AdminLoad {
 
         public function load() {
+            $dataCountGroupByVoter = VoterDataManager::getInstance()->getDataCountGroupByVoterId();
+            $nonParticipantCounts = VoterDataManager::getInstance()->getNonParticipantCounts();
+            $participantCounts = VoterDataManager::getInstance()->getParticipantCounts();
+
+            $this->addParam('countGroupByVoter', $dataCountGroupByVoter);
+            $this->addParam('participantCounts', $participantCounts);
+            $this->addParam('nonParticipantCounts', $nonParticipantCounts);
+        }
+
+        public function getDefaultLoads() {
+            $loads = array();
+            $loads["list"]["action"] = "admin.loads.voters.list";
+            $loads["list"]["args"] = array();
+            return $loads;
         }
 
         public function getTemplate() {

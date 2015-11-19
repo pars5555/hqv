@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-18 08:15:15
+<?php /* Smarty version 3.1.27, created on 2015-11-18 21:49:28
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\passport\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:5179564c2583d0ea65_37521845%%*/
+/*%%SmartyHeaderCode:27430564ce4586ffcc7_61818972%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,31 +9,30 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0134ffec2dfe5bda09aea4cca693522774a444f9' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\passport\\list.tpl',
-      1 => 1447830893,
+      1 => 1447879652,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '5179564c2583d0ea65_37521845',
+  'nocache_hash' => '27430564ce4586ffcc7_61818972',
   'variables' => 
   array (
     'ns' => 0,
     'page' => 0,
     'row' => 0,
-    'bd' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564c2583d886a9_15601803',
+  'unifunc' => 'content_564ce458807325_57298543',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564c2583d886a9_15601803')) {
-function content_564c2583d886a9_15601803 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564ce458807325_57298543')) {
+function content_564ce458807325_57298543 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '5179564c2583d0ea65_37521845';
+$_smarty_tpl->properties['nocache_hash'] = '27430564ce4586ffcc7_61818972';
 ?>
 <div class="row">
     <div class="col s12 m6 6">
-        <label for="p_page">Per Page</label>
+        <label for="p_page">Page</label>
         <select id="p_page" class="browser-default" <?php if ($_smarty_tpl->tpl_vars['ns']->value['pageCount'] <= 1) {?>disabled<?php }?>>
             <?php $_smarty_tpl->tpl_vars['page'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['page']->step = 1;$_smarty_tpl->tpl_vars['page']->total = (int) ceil(($_smarty_tpl->tpl_vars['page']->step > 0 ? $_smarty_tpl->tpl_vars['ns']->value['pageCount']+1 - (1) : 1-($_smarty_tpl->tpl_vars['ns']->value['pageCount'])+1)/abs($_smarty_tpl->tpl_vars['page']->step));
 if ($_smarty_tpl->tpl_vars['page']->total > 0) {
@@ -64,6 +63,7 @@ $_smarty_tpl->tpl_vars['page']->first = $_smarty_tpl->tpl_vars['page']->iteratio
             <th>Birth Date</th>
             <th>In List</th>
             <th>All Ok</th>
+            <th>invalid?</th>
         </tr>
     </thead>
     <tbody id="real_voters_table">
@@ -80,14 +80,6 @@ $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
 ?>
             <?php $_smarty_tpl->tpl_vars['bd'] = new Smarty_Variable(explode("-",$_smarty_tpl->tpl_vars['row']->value->getBirthDate()), null, 0);?> 
             <tr data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
-" data-first-name="<?php echo $_smarty_tpl->tpl_vars['row']->value->getFirstName();?>
-" data-last-name="<?php echo $_smarty_tpl->tpl_vars['row']->value->getLastName();?>
-"
-                data-father-name="<?php echo $_smarty_tpl->tpl_vars['row']->value->getFatherName();?>
-" data-birth-year="<?php echo intval($_smarty_tpl->tpl_vars['bd']->value[0]);?>
-" data-birth-month="<?php echo intval($_smarty_tpl->tpl_vars['bd']->value[1]);?>
-"
-                data-birth-day="<?php echo intval($_smarty_tpl->tpl_vars['bd']->value[2]);?>
 ">
                 <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getFirstName();?>
 </td>
@@ -99,6 +91,12 @@ $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
 </td>
                 <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>yes<?php } else { ?>no<?php }?></td>
                 <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>yes<?php } else { ?>no<?php }?></td>
+                <td>
+                    <a data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
+" href="javascript:void(0);" class="validVoteButton">+</a>
+                    <a data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
+" href="javascript:void(0);" class="invalidVoteButton">X</a>
+                </td>
             </tr>
         <?php
 $_smarty_tpl->tpl_vars['row'] = $foreach_row_Sav;

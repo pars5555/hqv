@@ -5,6 +5,7 @@ NGS.createLoad("admin.loads.passport.list", {
     onError: function (params) {
     },
     afterLoad: function () {
+        this.initInvalidVotes();
         this.initPaging();
         this.initTableEdit();
     },
@@ -15,9 +16,9 @@ NGS.createLoad("admin.loads.passport.list", {
             jQuery('body, html').scrollTop();
             $(this).addClass('active');
             var rowId = $(this).data('rowid');
-            NGS.load('admin.loads.passport.add_edit', {rowId:rowId});
-            NGS.load('admin.loads.passport.area_selection', {rowId:rowId});
-        });        
+            NGS.load('admin.loads.passport.add_edit', {rowId: rowId});
+            NGS.load('admin.loads.passport.area_selection', {rowId: rowId});
+        });
     },
     initPaging: function () {
         $('#p_limit').change(function () {
@@ -26,6 +27,20 @@ NGS.createLoad("admin.loads.passport.list", {
         $('#p_page,#p_limit').change(function () {
             this.reloadPageWithParams();
         }.bind(this));
+    },
+    initInvalidVotes: function () {
+        $('.invalidVoteButton').click(function (event) {
+            var rowId = $(this).data('rowid');
+            NGS.action('admin.actions.passport.set_invalid_vote', {rowId: rowId, invalid: 1});
+            event.preventDefault();
+            return false;
+        });
+        $('.validVoteButton').click(function (event) {
+            var rowId = $(this).data('rowid');
+            NGS.action('admin.actions.passport.set_invalid_vote', {rowId: rowId, invalid: 0});
+            event.preventDefault();
+            return false;
+        });
     },
     reloadPageWithParams: function ()
     {

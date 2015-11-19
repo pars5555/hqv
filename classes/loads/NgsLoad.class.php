@@ -15,9 +15,11 @@
 
 namespace hqv\loads {
 
-    use hqv\managers\TranslationManager;
-    use hqv\security\RequestGroups;
-    use ngs\framework\AbstractLoad;
+use hqv\managers\SettingManager;
+use hqv\managers\TranslationManager;
+use hqv\security\RequestGroups;
+use NGS;
+use ngs\framework\AbstractLoad;
 
     abstract class NgsLoad extends AbstractLoad {
 
@@ -54,6 +56,10 @@ namespace hqv\loads {
 
         public function getRequestGroup() {
             return RequestGroups::$guestRequest;
+        }
+
+        public function getSetting($varName) {
+            return SettingManager::getInstance()->getSetting($varName);
         }
 
     }

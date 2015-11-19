@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-16 21:52:33
+<?php /* Smarty version 3.1.27, created on 2015-11-18 22:50:56
          compiled from "D:\xampp\htdocs\hqv\templates\main\current_user.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:18081564a4211c60d29_17707021%%*/
+/*%%SmartyHeaderCode:27229564cf2c08957b6_82455537%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,28 +9,29 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b7d845e2abf9ef1dcca359ccb19e0be7a9e5185e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\current_user.tpl',
-      1 => 1447668655,
+      1 => 1447883440,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '18081564a4211c60d29_17707021',
+  'nocache_hash' => '27229564cf2c08957b6_82455537',
   'variables' => 
   array (
     'ns' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564a4211cb68e3_40261441',
+  'unifunc' => 'content_564cf2c09b4754_90161578',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564a4211cb68e3_40261441')) {
-function content_564a4211cb68e3_40261441 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564cf2c09b4754_90161578')) {
+function content_564cf2c09b4754_90161578 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '18081564a4211c60d29_17707021';
+$_smarty_tpl->properties['nocache_hash'] = '27229564cf2c08957b6_82455537';
 if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
     <?php if (!empty($_smarty_tpl->tpl_vars['ns']->value['voter_data'])) {?>
         <p class="center-align red-text text-darken-4">You have already voted! call us if you were not</p>
     <?php }?>
+    <p id="ErrorMessage" class="red-text text-darken-4 center-align"></p>
     <form class="col s12">
         <div class="section row">
             <div class="input-field col s12 m12 12 vote-text">

@@ -28,8 +28,6 @@ namespace admin\loads\dashboard {
             $nonParticipantCounts = VoterDataManager::getInstance()->getNonParticipantCounts();
             $participantCounts = VoterDataManager::getInstance()->getParticipantCounts();
             
-            $dataCountGroupByVoter = rand(0, 5000);
-            
             $this->addParam('countGroupByVoter', $dataCountGroupByVoter);
             $this->addParam('participantCounts', $participantCounts);
             $this->addParam('nonParticipantCounts', $nonParticipantCounts);

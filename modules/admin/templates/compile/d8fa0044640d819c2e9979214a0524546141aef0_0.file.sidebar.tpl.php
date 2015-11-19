@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-18 08:15:11
+<?php /* Smarty version 3.1.27, created on 2015-11-18 21:34:46
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\util\sidebar.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:24904564c257fe3c3c8_65268098%%*/
+/*%%SmartyHeaderCode:26966564ce0e6543ff1_24741827%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd8fa0044640d819c2e9979214a0524546141aef0' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\util\\sidebar.tpl',
-      1 => 1447830893,
+      1 => 1447878878,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '24904564c257fe3c3c8_65268098',
+  'nocache_hash' => '26966564ce0e6543ff1_24741827',
   'variables' => 
   array (
     'ns' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564c257fe84262_33483932',
+  'unifunc' => 'content_564ce0e6612406_47511845',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564c257fe84262_33483932')) {
-function content_564c257fe84262_33483932 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564ce0e6612406_47511845')) {
+function content_564ce0e6612406_47511845 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '24904564c257fe3c3c8_65268098';
+$_smarty_tpl->properties['nocache_hash'] = '26966564ce0e6543ff1_24741827';
 ?>
 
 <div id="slide-out" class="side-nav fixed">
@@ -44,7 +44,7 @@ $_smarty_tpl->properties['nocache_hash'] = '24904564c257fe3c3c8_65268098';
         </li>
         <?php if ($_smarty_tpl->tpl_vars['ns']->value['userType'] == $_smarty_tpl->tpl_vars['ns']->value['userTypeAdmin']) {?>
             <li id="sidebar_voters_li">
-                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='voters.index' ><i class="material-icons left">perm_identity</i>Voters Data</a>
+                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='voters.index' ><i class="material-icons left">perm_identity</i>Pre Vote Data</a>
             </li>
         <?php }?>
         <li id="sidebar_passport_li">

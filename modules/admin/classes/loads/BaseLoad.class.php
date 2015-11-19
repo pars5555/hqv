@@ -14,6 +14,7 @@
 namespace admin\loads {
 
     use admin\security\UserGroups;
+    use hqv\managers\SettingManager;
     use hqv\security\RequestGroups;
     use NGS;
     use ngs\framework\AbstractLoad;
@@ -40,6 +41,10 @@ namespace admin\loads {
 
         public function isValidLoad($namespace, $load) {
             return true;
+        }
+
+        public function getSetting($varName) {
+            return SettingManager::getInstance()->getSetting($varName);
         }
 
     }

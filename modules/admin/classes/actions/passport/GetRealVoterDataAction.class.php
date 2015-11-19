@@ -4,10 +4,11 @@ namespace admin\actions\passport {
 
     use admin\managers\RealVoterPassportManager;
     use admin\security\RequestGroups;
+    use hqv\actions\BaseAction;
+    use hqv\managers\AreaManager;
     use NGS;
-    use ngs\framework\AbstractAction;
 
-    class GetRealVoterDataAction extends AbstractAction {
+    class GetRealVoterDataAction extends BaseAction {
 
         public function service() {
             if (!isset(NGS()->args()->rowId)) {
@@ -20,7 +21,7 @@ namespace admin\actions\passport {
                 $this->addParam('row', $row);
                 $areaId = $row->getAreaId();
                 if (intval($areaId) > 0) {
-                    $area = \hqv\managers\AreaManager::getInstance()->selectByPK($areaId);
+                    $area = AreaManager::getInstance()->selectByPK($areaId);
                     $this->addParam('area', $area);
                 }
             }

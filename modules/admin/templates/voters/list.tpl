@@ -1,4 +1,8 @@
 <div class="row">
+    <label for="total">Total</label>
+    {$ns.total_count}
+</div>
+<div class="row">
     <div class="col s12 m6 6">
         <label for="p_page">Page</label>
         <select id="p_page" class="browser-default" {if $ns.pageCount<=1}disabled{/if}>
@@ -24,25 +28,28 @@
             <th>Last Name</th>
             <th>Father Price</th>
             <th>Birth Date</th>
-            <th>In List</th>
-            <th>All Ok</th>
-            <th>invalid?</th>
+            <th>Will Vote</th>
+            <th>Invalid</th>
+            <th>Unblock IP</th>
         </tr>
     </thead>
     <tbody id="real_voters_table">
         {foreach from=$ns.rows item=row}
-            {assign bd "-"|explode:$row->getBirthDate()} 
-            <tr data-rowid="{$row->getId()}">
-                <td>{$row->getFirstName()}</td>
-                <td>{$row->getLastName()}</td>
-                <td>{$row->getFatherName()}</td>
-                <td>{$row->getBirthDate()}</td>
-                <td>{if $row->getVoterId()>0}yes{else}no{/if}</td>
-                <td>{if $row->getVoterId()>0}yes{else}no{/if}</td>
+            {assign voter $ns.voters[$row->getVoterId()]}
+            <tr data-rowid="{$voter->getId()}">
+                <td>{$voter->getFirstName()}</td>
+                <td>{$voter->getLastName()}</td>
+                <td>{$voter->getFatherName()}</td>
+                <td>{$voter->getBirthDate()}</td>
+                <td>{$row->getWillVote()}</td>
                 <td>
-                    <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="validVoteButton">+</a>
-                    <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="invalidVoteButton">X</a>
+                    <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="validVoteButton btn">valid</a>
+                    <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="invalidVoteButton btn">invalid</a>
                 </td>
+                <td>
+                    <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="unblockIPButton btn">Unblock IP</a>
+                </td>
+                    
             </tr>
         {/foreach}
     </tbody>
