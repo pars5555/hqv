@@ -41,7 +41,7 @@
                 <td>{if !empty($voter)}{$voter->getLastName()}{/if}</td>
                 <td>{if !empty($voter)}{$voter->getFatherName()}{/if}</td>
                 <td>{if !empty($voter)}{$voter->getBirthDate()}{/if}</td>
-                <td>{if $row->getExistInList()==1}yes{else}no{/if}</td>
+                <td>{if $row->getExistInList()==1}ok{else}error{/if}</td>
                 <td>
                     <div class="switch">
                         <label>

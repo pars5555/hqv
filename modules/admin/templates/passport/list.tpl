@@ -41,8 +41,8 @@
                 <td>{$row->getLastName()}</td>
                 <td>{$row->getFatherName()}</td>
                 <td>{$row->getBirthDate()}</td>
-                <td>{if $row->getVoterId()>0}error{else}ok{/if}</td>
-                <td>{if $row->getVoterId()>0 && $voter ->getAreaId() == $row->getVoterId()}error{else}ok{/if}</td>
+                <td>{if $row->getVoterId()>0}ok{else}error{/if}</td>
+                <td>{if $row->getVoterId()>0 && $voter ->getAreaId() == $row->getVoterId()}ok{else}error{/if}</td>
                 <td>{if $row->getVoterId()>0 && isset($ns.duplicatedInListMappedByVoterId[$row->getVoterId()])}error{else}ok{/if}</td>
                 <td>
                     <div class="switch">
