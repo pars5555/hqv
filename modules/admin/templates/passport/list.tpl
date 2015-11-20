@@ -25,20 +25,23 @@
             <th>Father Price</th>
             <th>Birth Date</th>
             <th>In List</th>
-            <th>All Ok</th>
+            <th>In Area List</th>
             <th>invalid?</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody id="real_voters_table">
         {foreach from=$ns.rows item=row}
+            {if $row->getVoterId()>0}
+            {assign voter $ns.voters[$row->getVoterId()]}
+            {/if}
             <tr data-rowid="{$row->getId()}">
                 <td>{$row->getFirstName()}</td>
                 <td>{$row->getLastName()}</td>
                 <td>{$row->getFatherName()}</td>
                 <td>{$row->getBirthDate()}</td>
                 <td>{if $row->getVoterId()>0}yes{else}no{/if}</td>
-                <td>{if $row->getVoterId()>0}yes{else}no{/if}</td>
+                <td>{if $row->getVoterId()>0 && $voter ->getAreaId() == $row->getVoterId()}yes{else}no{/if}</td>
                 <td>
                     <div class="switch">
                         <label class="active"> 

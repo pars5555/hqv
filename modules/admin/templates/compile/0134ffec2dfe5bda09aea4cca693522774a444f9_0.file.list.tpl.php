@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-20 18:56:45
+<?php /* Smarty version 3.1.27, created on 2015-11-20 19:59:54
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\passport\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:30245564f5eddc43f68_91470316%%*/
+/*%%SmartyHeaderCode:19883564f6daa6cc4a6_25302603%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,26 +9,27 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0134ffec2dfe5bda09aea4cca693522774a444f9' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\passport\\list.tpl',
-      1 => 1448041893,
+      1 => 1448045980,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '30245564f5eddc43f68_91470316',
+  'nocache_hash' => '19883564f6daa6cc4a6_25302603',
   'variables' => 
   array (
     'ns' => 0,
     'page' => 0,
     'row' => 0,
+    'voter' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564f5eddd98198_80615216',
+  'unifunc' => 'content_564f6daa81da64_11860451',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564f5eddd98198_80615216')) {
-function content_564f5eddd98198_80615216 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564f6daa81da64_11860451')) {
+function content_564f6daa81da64_11860451 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '30245564f5eddc43f68_91470316';
+$_smarty_tpl->properties['nocache_hash'] = '19883564f6daa6cc4a6_25302603';
 ?>
 <div class="row">
     <div class="col s12 m6 6">
@@ -62,7 +63,7 @@ $_smarty_tpl->tpl_vars['page']->first = $_smarty_tpl->tpl_vars['page']->iteratio
             <th>Father Price</th>
             <th>Birth Date</th>
             <th>In List</th>
-            <th>All Ok</th>
+            <th>In Area List</th>
             <th>invalid?</th>
             <th>Actions</th>
         </tr>
@@ -79,6 +80,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->tpl_vars['row']->_loop = true;
 $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
 ?>
+            <?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>
+            <?php $_smarty_tpl->tpl_vars['voter'] = new Smarty_Variable($_smarty_tpl->tpl_vars['ns']->value['voters'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()], null, 0);?>
+            <?php }?>
             <tr data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
 ">
                 <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getFirstName();?>
@@ -90,7 +94,7 @@ $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
                 <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getBirthDate();?>
 </td>
                 <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>yes<?php } else { ?>no<?php }?></td>
-                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>yes<?php } else { ?>no<?php }?></td>
+                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0 && $_smarty_tpl->tpl_vars['voter']->value->getAreaId() == $_smarty_tpl->tpl_vars['row']->value->getVoterId()) {?>yes<?php } else { ?>no<?php }?></td>
                 <td>
                     <div class="switch">
                         <label class="active"> 

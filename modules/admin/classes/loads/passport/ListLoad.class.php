@@ -19,6 +19,7 @@ namespace admin\loads\passport {
 
     use admin\loads\ModeratorLoad;
     use admin\managers\RealVoterPassportManager;
+    use hqv\managers\VoterManager;
     use NGS;
 
     class ListLoad extends ModeratorLoad {
@@ -37,10 +38,24 @@ namespace admin\loads\passport {
             $this->addParam('limit', $limit);
             $offset = ($page - 1) * $limit;
             $rows = RealVoterPassportManager::getInstance()->selectAdvance('*', ['moderator_id', '=', $moderatorId], ['create_datetime'], 'DESC', $offset, $limit);
+            $voterIdsArray = $this->getVoterIdsArray($rows);
+            $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
             $count = RealVoterPassportManager::getInstance()->getLastSelectAdvanceRowsCount();
             $pageCount = ceil($count / $limit);
             $this->addParam('pageCount', $pageCount);
             $this->addParam('rows', $rows);
+            $this->addParam('voters', $voters);
+        }
+
+        private function getVoterIdsArray($rows) {
+            $ret = [];
+            foreach ($rows as $row) {
+                $voterId = trim($row->getVoterId());
+                if (!empty($voterId)) {
+                    $ret[] = $voterId;
+                }
+            }
+            return $ret;
         }
 
         public function getTemplate() {
