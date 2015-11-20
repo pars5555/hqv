@@ -14,6 +14,7 @@ namespace admin\managers {
 
     use admin\dal\mappers\RealVoterPassportMapper;
     use hqv\managers\AdvancedAbstractManager;
+    use hqv\managers\VoterManager;
 
     class RealVoterPassportManager extends AdvancedAbstractManager {
 
@@ -56,7 +57,7 @@ namespace admin\managers {
                 $where [] = '=';
                 $where [] = "'$fatherName'";
             }
-            $listVoters = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', $where);
+            $listVoters = VoterManager::getInstance()->selectAdvance('*', $where);
             if (!empty($listVoters) && count($listVoters) === 1) {
                 $voter = $listVoters[0];
                 $dto->setVoterId($voter->getId());
@@ -77,7 +78,7 @@ namespace admin\managers {
             $dto->setCreateDatetime(date('Y-m-d H:i:s'));
             $dto->setModeratorId($moderatorId);
             $dto->setAreaId($areaId);
-             $where = ['birth_date', '=', "'$birthDate'", 'and', 'first_name', '=', "'$firstName'", 'and',
+            $where = ['birth_date', '=', "'$birthDate'", 'and', 'first_name', '=', "'$firstName'", 'and',
                 'last_name', '=', "'$lastName'"];
             if (!empty($fatherName)) {
                 $where [] = 'and';
@@ -85,8 +86,8 @@ namespace admin\managers {
                 $where [] = '=';
                 $where [] = "'$fatherName'";
             }
-            $listVoters = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', $where);
-             if (!empty($listVoters) && count($listVoters) === 1) {
+            $listVoters = VoterManager::getInstance()->selectAdvance('*', $where);
+            if (!empty($listVoters) && count($listVoters) === 1) {
                 $voter = $listVoters[0];
                 $dto->setVoterId($voter->getId());
             }
@@ -99,6 +100,15 @@ namespace admin\managers {
             $firstChar = mb_substr($string, 0, 1, $encoding);
             $then = mb_substr($string, 1, $strlen - 1, $encoding);
             return mb_strtoupper($firstChar, $encoding) . $then;
+        }
+
+        public function getDuplicatedInListRealVoters($voterIds) {
+            $duplicatedInListRealVoters = $this->mapper->getDuplicatedInListRealVoters($voterIds);
+            $ret = [];
+            foreach ($duplicatedInListRealVoters as $duplicatedInListRealVoter) {
+                $ret[$duplicatedInListRealVoter->getVoterId()] = $duplicatedInListRealVoter;
+            }
+            return $ret;
         }
 
         public function getDuplicatedRealVoters() {

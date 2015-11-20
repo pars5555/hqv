@@ -40,11 +40,15 @@ namespace admin\loads\passport {
             $rows = RealVoterPassportManager::getInstance()->selectAdvance('*', ['moderator_id', '=', $moderatorId], ['create_datetime'], 'DESC', $offset, $limit);
             $voterIdsArray = $this->getVoterIdsArray($rows);
             $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
+
+            $duplicatedInListRealVoters = RealVoterPassportManager::getInstance()->getDuplicatedInListRealVoters($voterIdsArray);
+
             $count = RealVoterPassportManager::getInstance()->getLastSelectAdvanceRowsCount();
             $pageCount = ceil($count / $limit);
             $this->addParam('pageCount', $pageCount);
             $this->addParam('rows', $rows);
             $this->addParam('voters', $voters);
+            $this->addParam('duplicatedInListMappedByVoterId', $duplicatedInListRealVoters);
         }
 
         private function getVoterIdsArray($rows) {
