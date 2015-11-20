@@ -91,6 +91,7 @@
           "actions/number/AddRealVoterAction.class.js",
           "actions/passport/SetInvalidVoteAction.class.js",
           "actions/number/SetInvalidVoteAction.class.js",
+          "actions/number/DeleteVoteAction.class.js",
           "actions/prevote/UnblockIpAction.class.js",
           "actions/prevote/SetInvalidVoteAction.class.js"
         ]

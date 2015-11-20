@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-20 20:26:10
+<?php /* Smarty version 3.1.27, created on 2015-11-20 20:31:52
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\passport\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:6535564f73d2edcca0_66221297%%*/
+/*%%SmartyHeaderCode:12468564f7528684562_76837379%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0134ffec2dfe5bda09aea4cca693522774a444f9' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\passport\\list.tpl',
-      1 => 1448047567,
+      1 => 1448047667,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '6535564f73d2edcca0_66221297',
+  'nocache_hash' => '12468564f7528684562_76837379',
   'variables' => 
   array (
     'ns' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564f73d3139322_87858676',
+  'unifunc' => 'content_564f75287dacb9_38551233',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564f73d3139322_87858676')) {
-function content_564f73d3139322_87858676 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564f75287dacb9_38551233')) {
+function content_564f75287dacb9_38551233 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '6535564f73d2edcca0_66221297';
+$_smarty_tpl->properties['nocache_hash'] = '12468564f7528684562_76837379';
 ?>
 <div class="row">
     <div class="col s12 m6 6">
@@ -94,8 +94,8 @@ $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
 </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getBirthDate();?>
 </td>
-                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>error<?php } else { ?>ok<?php }?></td>
-                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0 && $_smarty_tpl->tpl_vars['voter']->value->getAreaId() == $_smarty_tpl->tpl_vars['row']->value->getVoterId()) {?>error<?php } else { ?>ok<?php }?></td>
+                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>ok<?php } else { ?>error<?php }?></td>
+                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0 && $_smarty_tpl->tpl_vars['voter']->value->getAreaId() == $_smarty_tpl->tpl_vars['row']->value->getVoterId()) {?>ok<?php } else { ?>error<?php }?></td>
                 <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0 && isset($_smarty_tpl->tpl_vars['ns']->value['duplicatedInListMappedByVoterId'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()])) {?>error<?php } else { ?>ok<?php }?></td>
                 <td>
                     <div class="switch">

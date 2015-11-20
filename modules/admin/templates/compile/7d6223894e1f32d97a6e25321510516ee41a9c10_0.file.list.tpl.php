@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-20 19:18:25
+<?php /* Smarty version 3.1.27, created on 2015-11-20 22:33:02
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\number\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:17402564f63f1d4a289_20466016%%*/
+/*%%SmartyHeaderCode:4074564f918eba6767_63501287%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7d6223894e1f32d97a6e25321510516ee41a9c10' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\number\\list.tpl',
-      1 => 1448043432,
+      1 => 1448055162,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '17402564f63f1d4a289_20466016',
+  'nocache_hash' => '4074564f918eba6767_63501287',
   'variables' => 
   array (
     'ns' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564f63f2095606_48127956',
+  'unifunc' => 'content_564f918ed3fe17_77507133',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564f63f2095606_48127956')) {
-function content_564f63f2095606_48127956 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564f918ed3fe17_77507133')) {
+function content_564f918ed3fe17_77507133 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '17402564f63f1d4a289_20466016';
+$_smarty_tpl->properties['nocache_hash'] = '4074564f918eba6767_63501287';
 ?>
 <div class="row">
     <div class="col s12 m6 6">
@@ -98,14 +98,14 @@ echo $_smarty_tpl->tpl_vars['voter']->value->getFatherName();
                 <td><?php if (!empty($_smarty_tpl->tpl_vars['voter']->value)) {
 echo $_smarty_tpl->tpl_vars['voter']->value->getBirthDate();
 }?></td>
-                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getExistInList() == 1) {?>yes<?php } else { ?>no<?php }?></td>
+                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getExistInList() == 1) {?>ok<?php } else { ?>error<?php }?></td>
                 <td>
                     <div class="switch">
                         <label>
                             invalid
-                        <input data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
+                            <input data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
 " <?php if ($_smarty_tpl->tpl_vars['row']->value->getInvalid() == 0) {?>checked<?php }?>  class="f_validationBtn" type="checkbox" />
-                        <span class="lever"></span>
+                            <span class="lever"></span>
                             valid
                         </label>
                     </div>
@@ -117,6 +117,8 @@ echo $_smarty_tpl->tpl_vars['voter']->value->getBirthDate();
                 <td>
                     <a data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
 " class="f_edit waves-effect waves-light btn">Edit<i class="material-icons left">mode_edit</i></a>
+                    <a data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
+" class="f_delete waves-effect waves-light btn">Delete<i class="material-icons left">mode_delete</i></a>
                 </td>
             </tr>
         <?php
@@ -125,7 +127,7 @@ $_smarty_tpl->tpl_vars['row'] = $foreach_row_Sav;
 ?>
     </tbody>
 </table>    
-    <div id="caseInvalidModel" class="modal">
+<div id="caseInvalidModel" class="modal">
     <div class="modal-content">
         <h4>Why do you want to set Invalid</h4>
         <p>Describe below</p>
@@ -139,6 +141,15 @@ $_smarty_tpl->tpl_vars['row'] = $foreach_row_Sav;
     </div>
     <div class="modal-footer">
         <a href="#!" id="setInvalidBtn" class="modal-action waves-effect btn" style="margin-left:10px;">Confirm</a>
+        <a href="#!" class="modal-action modal-close waves-effect btn">Cancel</a>
+    </div>
+</div>
+<div id="caseDeleteModel" class="modal">
+    <div class="modal-content">
+        <h4>Why do you want to delete?</h4>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" id="deleteBtn" class="modal-action waves-effect btn" style="margin-left:10px;">Confirm</a>
         <a href="#!" class="modal-action modal-close waves-effect btn">Cancel</a>
     </div>
 </div>

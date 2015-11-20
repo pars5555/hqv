@@ -46,8 +46,8 @@
                     <div class="switch">
                         <label>
                             invalid
-                        <input data-rowid="{$row->getId()}" {if $row->getInvalid() == 0}checked{/if}  class="f_validationBtn" type="checkbox" />
-                        <span class="lever"></span>
+                            <input data-rowid="{$row->getId()}" {if $row->getInvalid() == 0}checked{/if}  class="f_validationBtn" type="checkbox" />
+                            <span class="lever"></span>
                             valid
                         </label>
                     </div>
@@ -56,12 +56,13 @@
                 </td>
                 <td>
                     <a data-rowid="{$row->getId()}" class="f_edit waves-effect waves-light btn">Edit<i class="material-icons left">mode_edit</i></a>
+                    <a data-rowid="{$row->getId()}" class="f_delete waves-effect waves-light btn">Delete<i class="material-icons left">mode_delete</i></a>
                 </td>
             </tr>
         {/foreach}
     </tbody>
 </table>    
-    <div id="caseInvalidModel" class="modal">
+<div id="caseInvalidModel" class="modal">
     <div class="modal-content">
         <h4>Why do you want to set Invalid</h4>
         <p>Describe below</p>
@@ -75,6 +76,15 @@
     </div>
     <div class="modal-footer">
         <a href="#!" id="setInvalidBtn" class="modal-action waves-effect btn" style="margin-left:10px;">Confirm</a>
+        <a href="#!" class="modal-action modal-close waves-effect btn">Cancel</a>
+    </div>
+</div>
+<div id="caseDeleteModel" class="modal">
+    <div class="modal-content">
+        <h4>Why do you want to delete?</h4>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" id="deleteBtn" class="modal-action waves-effect btn" style="margin-left:10px;">Confirm</a>
         <a href="#!" class="modal-action modal-close waves-effect btn">Cancel</a>
     </div>
 </div>
