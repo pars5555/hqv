@@ -1,34 +1,35 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-20 10:43:49
-         compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\passport\list.tpl" */ ?>
+<?php /* Smarty version 3.1.27, created on 2015-11-20 10:48:43
+         compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\number\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2798564eeb55a03546_08253451%%*/
+/*%%SmartyHeaderCode:17313564eec7bdcb7b1_04364095%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '0134ffec2dfe5bda09aea4cca693522774a444f9' => 
+    '7d6223894e1f32d97a6e25321510516ee41a9c10' => 
     array (
-      0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\passport\\list.tpl',
-      1 => 1448012590,
+      0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\number\\list.tpl',
+      1 => 1448012920,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2798564eeb55a03546_08253451',
+  'nocache_hash' => '17313564eec7bdcb7b1_04364095',
   'variables' => 
   array (
     'ns' => 0,
     'page' => 0,
     'row' => 0,
+    'voter' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564eeb55a42489_25400654',
+  'unifunc' => 'content_564eec7be15888_97875692',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564eeb55a42489_25400654')) {
-function content_564eeb55a42489_25400654 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564eec7be15888_97875692')) {
+function content_564eec7be15888_97875692 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2798564eeb55a03546_08253451';
+$_smarty_tpl->properties['nocache_hash'] = '17313564eec7bdcb7b1_04364095';
 ?>
 <div class="row">
     <div class="col s12 m6 6">
@@ -61,8 +62,7 @@ $_smarty_tpl->tpl_vars['page']->first = $_smarty_tpl->tpl_vars['page']->iteratio
             <th>Last Name</th>
             <th>Father Price</th>
             <th>Birth Date</th>
-            <th>In List</th>
-            <th>All Ok</th>
+            <th>Exist In List</th>
             <th>invalid?</th>
             <th>Actions</th>
         </tr>
@@ -79,18 +79,26 @@ foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->tpl_vars['row']->_loop = true;
 $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
 ?>
+            <?php if (isset($_smarty_tpl->tpl_vars['ns']->value['voters'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()])) {?>
+                <?php $_smarty_tpl->tpl_vars['voter'] = new Smarty_Variable($_smarty_tpl->tpl_vars['ns']->value['voters'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()], null, 0);?>            
+            <?php } else { ?>
+                <?php $_smarty_tpl->tpl_vars['voter'] = new Smarty_Variable(0, null, 0);?>
+            <?php }?>
             <tr data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
 ">
-                <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getFirstName();?>
-</td>
-                <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getLastName();?>
-</td>
-                <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getFatherName();?>
-</td>
-                <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getBirthDate();?>
-</td>
-                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>yes<?php } else { ?>no<?php }?></td>
-                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>yes<?php } else { ?>no<?php }?></td>
+                <td><?php if (!empty($_smarty_tpl->tpl_vars['voter']->value)) {
+echo $_smarty_tpl->tpl_vars['voter']->value->getFirstName();
+}?></td>
+                <td><?php if (!empty($_smarty_tpl->tpl_vars['voter']->value)) {
+echo $_smarty_tpl->tpl_vars['voter']->value->getLastName();
+}?></td>
+                <td><?php if (!empty($_smarty_tpl->tpl_vars['voter']->value)) {
+echo $_smarty_tpl->tpl_vars['voter']->value->getFatherName();
+}?></td>
+                <td><?php if (!empty($_smarty_tpl->tpl_vars['voter']->value)) {
+echo $_smarty_tpl->tpl_vars['voter']->value->getBirthDate();
+}?></td>
+                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getExistInList() == 1) {?>yes<?php } else { ?>no<?php }?></td>
                 <td>
                     <div class="switch">
                         <label>

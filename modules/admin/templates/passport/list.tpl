@@ -27,6 +27,7 @@
             <th>In List</th>
             <th>All Ok</th>
             <th>invalid?</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody id="real_voters_table">
@@ -39,8 +40,19 @@
                 <td>{if $row->getVoterId()>0}yes{else}no{/if}</td>
                 <td>{if $row->getVoterId()>0}yes{else}no{/if}</td>
                 <td>
-                    <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="validVoteButton">+</a>
-                    <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="invalidVoteButton">X</a>
+                    <div class="switch">
+                        <label>
+                            invalid
+                        <input data-rowid="{$row->getId()}" {if $row->getInvalid() == 0}checked{/if}  class="f_validationBtn" type="checkbox" />
+                        <span class="lever"></span>
+                            valid
+                        </label>
+                    </div>
+                    <!-- <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="validVoteButton">+</a>
+                    <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="invalidVoteButton">X</a> -->
+                </td>
+                <td>
+                    <a data-rowid="{$row->getId()}" class="f_edit waves-effect waves-light btn">Edit<i class="material-icons left">mode_edit</i></a>
                 </td>
             </tr>
         {/foreach}

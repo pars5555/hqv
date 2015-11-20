@@ -1,35 +1,42 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-20 10:43:49
-         compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\passport\list.tpl" */ ?>
+<?php /* Smarty version 3.1.27, created on 2015-11-20 10:46:02
+         compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\voters\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2798564eeb55a03546_08253451%%*/
+/*%%SmartyHeaderCode:10789564eebda9e5f08_24510667%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '0134ffec2dfe5bda09aea4cca693522774a444f9' => 
+    '75cfb1f8b95d544941f8aebe76001f7f4006bfc7' => 
     array (
-      0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\passport\\list.tpl',
-      1 => 1448012590,
+      0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\voters\\list.tpl',
+      1 => 1448012756,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2798564eeb55a03546_08253451',
+  'nocache_hash' => '10789564eebda9e5f08_24510667',
   'variables' => 
   array (
     'ns' => 0,
     'page' => 0,
     'row' => 0,
+    'voter' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564eeb55a42489_25400654',
+  'unifunc' => 'content_564eebdaa281f3_30676492',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564eeb55a42489_25400654')) {
-function content_564eeb55a42489_25400654 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564eebdaa281f3_30676492')) {
+function content_564eebdaa281f3_30676492 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2798564eeb55a03546_08253451';
+$_smarty_tpl->properties['nocache_hash'] = '10789564eebda9e5f08_24510667';
 ?>
+<div class="row">
+    <blockquote>
+      <h5>Total:  <?php echo $_smarty_tpl->tpl_vars['ns']->value['total_count'];?>
+</h5>
+    </blockquote>
+</div>
 <div class="row">
     <div class="col s12 m6 6">
         <label for="p_page">Page</label>
@@ -61,9 +68,9 @@ $_smarty_tpl->tpl_vars['page']->first = $_smarty_tpl->tpl_vars['page']->iteratio
             <th>Last Name</th>
             <th>Father Price</th>
             <th>Birth Date</th>
-            <th>In List</th>
-            <th>All Ok</th>
-            <th>invalid?</th>
+            <th>Will Vote</th>
+            <th>Invalid</th>
+            <th>Unblock IP</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -79,32 +86,37 @@ foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->tpl_vars['row']->_loop = true;
 $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
 ?>
-            <tr data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
+            <?php $_smarty_tpl->tpl_vars['voter'] = new Smarty_Variable($_smarty_tpl->tpl_vars['ns']->value['voters'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()], null, 0);?>
+            <tr data-rowid="<?php echo $_smarty_tpl->tpl_vars['voter']->value->getId();?>
 ">
-                <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getFirstName();?>
+                <td><?php echo $_smarty_tpl->tpl_vars['voter']->value->getFirstName();?>
 </td>
-                <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getLastName();?>
+                <td><?php echo $_smarty_tpl->tpl_vars['voter']->value->getLastName();?>
 </td>
-                <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getFatherName();?>
+                <td><?php echo $_smarty_tpl->tpl_vars['voter']->value->getFatherName();?>
 </td>
-                <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getBirthDate();?>
+                <td><?php echo $_smarty_tpl->tpl_vars['voter']->value->getBirthDate();?>
 </td>
-                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>yes<?php } else { ?>no<?php }?></td>
-                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>yes<?php } else { ?>no<?php }?></td>
+                <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getWillVote();?>
+</td>
                 <td>
                     <div class="switch">
                         <label>
                             invalid
-                        <input data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
-" <?php if ($_smarty_tpl->tpl_vars['row']->value->getInvalid() == 0) {?>checked<?php }?>  class="f_validationBtn" type="checkbox" />
+                        <input data-rowid="<?php echo $_smarty_tpl->tpl_vars['voter']->value->getId();?>
+" <?php if ($_smarty_tpl->tpl_vars['voter']->value->getInvalid() == 0) {?>checked<?php }?>  class="f_validationBtn" type="checkbox" />
                         <span class="lever"></span>
                             valid
                         </label>
                     </div>
                     <!-- <a data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
-" href="javascript:void(0);" class="validVoteButton">+</a>
+" href="javascript:void(0);" class="validVoteButton btn">valid</a>
                     <a data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
-" href="javascript:void(0);" class="invalidVoteButton">X</a> -->
+" href="javascript:void(0);" class="invalidVoteButton btn">invalid</a> -->
+                </td>
+                <td>
+                    <a data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
+" href="javascript:void(0);" class="unblockIPButton btn">Unblock IP</a>
                 </td>
                 <td>
                     <a data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>

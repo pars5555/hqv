@@ -10,25 +10,54 @@
 </div>
 <div class="admin-content">
     <div class="row">
-        <div class="row">
-            unique voters : {$ns.countGroupByVoter}<br>
-            unique Participants : {$ns.nonParticipantCounts}<br>
-            unique Non Participants  : {$ns.participantCounts}<br>
-            
+        <div class="col s12">
             <div class="row">
-    <div class="input-field col s12 m4 4">
-        <input placeholder="First Name" type="text" id="firstName"/>
-        <label class="active" for="firstName">First Name</label>
-    </div>  
-    <div class="input-field col s12 m4 4">
-        <input placeholder="Last Name" type="text" id="lastName" />
-        <label class="active" for="lastName">Last Name</label>
-    </div>
-    <div class="input-field col s12 m4 4">
-        <input placeholder="Father Name" type="text" id="fatherName" />
-        <label class="active" for="fatherName">Father Name</label>
-    </div>
-</div>
+                <div class="col s12 m4 l4">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">unique voters: <span class="orange-text text-accent-2">{$ns.countGroupByVoter}</span></span>
+                        </div>
+                        <div class="card-action">
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4 l4">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">unique Participants: <span class="orange-text text-accent-2">{$ns.nonParticipantCounts}</span></span>
+                        </div>
+                        <div class="card-action">
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4 l4">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">unique Non Participants: <span class="orange-text text-accent-2">{$ns.participantCounts}</span></span>
+                        </div>
+                        <div class="card-action">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s6 offset-s3">
+            <div class="row">
+                <div class="input-field col s12 m4 4">
+                    <input placeholder="First Name" type="text" id="firstName"/>
+                    <label class="active" for="firstName">First Name</label>
+                </div>  
+                <div class="input-field col s12 m4 4">
+                    <input placeholder="Last Name" type="text" id="lastName" />
+                    <label class="active" for="lastName">Last Name</label>
+                </div>
+                <div class="input-field col s12 m4 4">
+                    <input placeholder="Father Name" type="text" id="fatherName" />
+                    <label class="active" for="fatherName">Father Name</label>
+                </div>
+            </div>
+        </div>
+        <div class='col s6 offset-s3'>
             <div class="row">
                 <div class="col s4 m4 4">
                     <label for="birthYear">Year</label>

@@ -10,11 +10,11 @@ NGS.createLoad("admin.loads.passport.list", {
         this.initTableEdit();
     },
     initTableEdit: function () {
-        $('#real_voters_table tr').click(function () {
+        $('#real_voters_table .f_edit').click(function () {
             $('#real_voters_table tr').removeClass('active');
             $('html, body').animate({scrollTop: $("#addRealVoterForm").offset().top}, 300);
             jQuery('body, html').scrollTop();
-            $(this).addClass('active');
+            $(this).parents('tr').addClass('active');
             var rowId = $(this).data('rowid');
             NGS.load('admin.loads.passport.add_edit', {rowId: rowId});
             NGS.load('admin.loads.passport.area_selection', {rowId: rowId});
@@ -29,6 +29,15 @@ NGS.createLoad("admin.loads.passport.list", {
         }.bind(this));
     },
     initInvalidVotes: function () {
+        jQuery('.f_validationBtn').click(function(event){
+            if(jQuery(this).prop('checked')){
+                var rowId = $(this).data('rowid');
+                NGS.action('admin.actions.passport.set_invalid_vote', {rowId: rowId, invalid: 0});
+            }else {
+                var rowId = $(this).data('rowid');
+                NGS.action('admin.actions.passport.set_invalid_vote', {rowId: rowId, invalid: 1});
+            }
+        });
         $('.invalidVoteButton').click(function (event) {
             var rowId = $(this).data('rowid');
             NGS.action('admin.actions.passport.set_invalid_vote', {rowId: rowId, invalid: 1});

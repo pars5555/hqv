@@ -1,6 +1,7 @@
 <div class="row">
-    <label for="total">Total</label>
-    {$ns.total_count}
+    <blockquote>
+      <h5>Total:  {$ns.total_count}</h5>
+    </blockquote>
 </div>
 <div class="row">
     <div class="col s12 m6 6">
@@ -31,6 +32,7 @@
             <th>Will Vote</th>
             <th>Invalid</th>
             <th>Unblock IP</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody id="real_voters_table">
@@ -43,13 +45,23 @@
                 <td>{$voter->getBirthDate()}</td>
                 <td>{$row->getWillVote()}</td>
                 <td>
-                    <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="validVoteButton btn">valid</a>
-                    <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="invalidVoteButton btn">invalid</a>
+                    <div class="switch">
+                        <label>
+                            invalid
+                        <input data-rowid="{$voter->getId()}" {if $voter->getInvalid() == 0}checked{/if}  class="f_validationBtn" type="checkbox" />
+                        <span class="lever"></span>
+                            valid
+                        </label>
+                    </div>
+                    <!-- <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="validVoteButton btn">valid</a>
+                    <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="invalidVoteButton btn">invalid</a> -->
                 </td>
                 <td>
                     <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="unblockIPButton btn">Unblock IP</a>
                 </td>
-                    
+                <td>
+                    <a data-rowid="{$row->getId()}" class="f_edit waves-effect waves-light btn">Edit<i class="material-icons left">mode_edit</i></a>
+                </td>
             </tr>
         {/foreach}
     </tbody>

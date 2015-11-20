@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-19 07:47:06
+<?php /* Smarty version 3.1.27, created on 2015-11-20 10:24:20
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\voters\index.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:25363564d706ac2ca00_00694713%%*/
+/*%%SmartyHeaderCode:22265564ee6c45ff5f6_80648510%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9712acc06a5bab9f5025477231729da4fe520ab7' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\voters\\index.tpl',
-      1 => 1447915618,
+      1 => 1448011458,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '25363564d706ac2ca00_00694713',
+  'nocache_hash' => '22265564ee6c45ff5f6_80648510',
   'variables' => 
   array (
     'ns' => 0,
@@ -21,14 +21,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564d706ac77812_57233419',
+  'unifunc' => 'content_564ee6c462b4d1_01034651',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564d706ac77812_57233419')) {
-function content_564d706ac77812_57233419 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564ee6c462b4d1_01034651')) {
+function content_564ee6c462b4d1_01034651 ($_smarty_tpl) {
 if (!is_callable('smarty_function_nest')) require_once 'D:\\xampp\\htdocs\\hqv\\classes\\framework\\lib\\smarty\\plugins\\function.nest.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '25363564d706ac2ca00_00694713';
+$_smarty_tpl->properties['nocache_hash'] = '22265564ee6c45ff5f6_80648510';
 ?>
 <div class="breadscrumb">
     <nav class="red darken-3" style="padding-left:10px;">
@@ -42,28 +42,57 @@ $_smarty_tpl->properties['nocache_hash'] = '25363564d706ac2ca00_00694713';
 </div>
 <div class="admin-content">
     <div class="row">
-        <div class="row">
-            unique voters : <?php echo $_smarty_tpl->tpl_vars['ns']->value['countGroupByVoter'];?>
-<br>
-            unique Participants : <?php echo $_smarty_tpl->tpl_vars['ns']->value['nonParticipantCounts'];?>
-<br>
-            unique Non Participants  : <?php echo $_smarty_tpl->tpl_vars['ns']->value['participantCounts'];?>
-<br>
-            
+        <div class="col s12">
             <div class="row">
-    <div class="input-field col s12 m4 4">
-        <input placeholder="First Name" type="text" id="firstName"/>
-        <label class="active" for="firstName">First Name</label>
-    </div>  
-    <div class="input-field col s12 m4 4">
-        <input placeholder="Last Name" type="text" id="lastName" />
-        <label class="active" for="lastName">Last Name</label>
-    </div>
-    <div class="input-field col s12 m4 4">
-        <input placeholder="Father Name" type="text" id="fatherName" />
-        <label class="active" for="fatherName">Father Name</label>
-    </div>
-</div>
+                <div class="col s12 m4 l4">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">unique voters: <span class="orange-text text-accent-2"><?php echo $_smarty_tpl->tpl_vars['ns']->value['countGroupByVoter'];?>
+</span></span>
+                        </div>
+                        <div class="card-action">
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4 l4">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">unique Participants: <span class="orange-text text-accent-2"><?php echo $_smarty_tpl->tpl_vars['ns']->value['nonParticipantCounts'];?>
+</span></span>
+                        </div>
+                        <div class="card-action">
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4 l4">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">unique Non Participants: <span class="orange-text text-accent-2"><?php echo $_smarty_tpl->tpl_vars['ns']->value['participantCounts'];?>
+</span></span>
+                        </div>
+                        <div class="card-action">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s6 offset-s3">
+            <div class="row">
+                <div class="input-field col s12 m4 4">
+                    <input placeholder="First Name" type="text" id="firstName"/>
+                    <label class="active" for="firstName">First Name</label>
+                </div>  
+                <div class="input-field col s12 m4 4">
+                    <input placeholder="Last Name" type="text" id="lastName" />
+                    <label class="active" for="lastName">Last Name</label>
+                </div>
+                <div class="input-field col s12 m4 4">
+                    <input placeholder="Father Name" type="text" id="fatherName" />
+                    <label class="active" for="fatherName">Father Name</label>
+                </div>
+            </div>
+        </div>
+        <div class='col s6 offset-s3'>
             <div class="row">
                 <div class="col s4 m4 4">
                     <label for="birthYear">Year</label>
