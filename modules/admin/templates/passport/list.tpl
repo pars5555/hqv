@@ -41,7 +41,7 @@
                 <td>{if $row->getVoterId()>0}yes{else}no{/if}</td>
                 <td>
                     <div class="switch">
-                        <label>
+                        <label class="active"> 
                             invalid
                         <input data-rowid="{$row->getId()}" {if $row->getInvalid() == 0}checked{/if}  class="f_validationBtn" type="checkbox" />
                         <span class="lever"></span>
@@ -58,3 +58,20 @@
         {/foreach}
     </tbody>
 </table>    
+<div id="caseInvalidModel" class="modal">
+    <div class="modal-content">
+        <h4>Why do you want to set Invalid</h4>
+        <p>Describe below</p>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="setInvalidDescr" class="materialize-textarea"></textarea>
+                <label for="textarea1">Textarea</label>
+            </div>
+            <p id="setInvalidDescrErr" class="red-text darken-2">Please fill up</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" id="setInvalidBtn" class="modal-action waves-effect btn" style="margin-left:10px;">Confirm</a>
+        <a href="#!" class="modal-action modal-close waves-effect btn">Cancel</a>
+    </div>
+</div>

@@ -28,14 +28,34 @@ NGS.createLoad("admin.loads.passport.list", {
             this.reloadPageWithParams();
         }.bind(this));
     },
+    showModalForInvalid: function(){
+        jQuery('#caseInvalidModel').openModal();
+        jQuery('#setInvalidDescr').val('');
+        jQuery('#setInvalidDescrErr').hide();
+    },
+    setInvalid: function(rowId){
+        NGS.action('admin.actions.passport.set_invalid_vote', {rowId: rowId, invalid: 1});
+    },
     initInvalidVotes: function () {
+        var thisInstance = this;
         jQuery('.f_validationBtn').click(function(event){
             if(jQuery(this).prop('checked')){
                 var rowId = $(this).data('rowid');
                 NGS.action('admin.actions.passport.set_invalid_vote', {rowId: rowId, invalid: 0});
             }else {
+                event.preventDefault();
                 var rowId = $(this).data('rowid');
-                NGS.action('admin.actions.passport.set_invalid_vote', {rowId: rowId, invalid: 1});
+                thisInstance.showModalForInvalid();
+                jQuery('#setInvalidBtn').off('click').on('click', function(event){
+                    event.preventDefault();
+                    if(jQuery('#setInvalidDescr').val()){
+                        thisInstance.setInvalid(rowId);
+                        jQuery(this).prop('checked', false);
+                        return;
+                    }
+                    // Show error
+                    jQuery('#setInvalidDescrErr').show();
+                }.bind(this));
             }
         });
         $('.invalidVoteButton').click(function (event) {

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-20 10:43:49
+<?php /* Smarty version 3.1.27, created on 2015-11-20 11:17:02
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\passport\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2798564eeb55a03546_08253451%%*/
+/*%%SmartyHeaderCode:17318564ef31ed6e8c7_19551757%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0134ffec2dfe5bda09aea4cca693522774a444f9' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\passport\\list.tpl',
-      1 => 1448012590,
+      1 => 1448014618,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2798564eeb55a03546_08253451',
+  'nocache_hash' => '17318564ef31ed6e8c7_19551757',
   'variables' => 
   array (
     'ns' => 0,
@@ -22,13 +22,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564eeb55a42489_25400654',
+  'unifunc' => 'content_564ef31edaf092_73608302',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564eeb55a42489_25400654')) {
-function content_564eeb55a42489_25400654 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564ef31edaf092_73608302')) {
+function content_564ef31edaf092_73608302 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2798564eeb55a03546_08253451';
+$_smarty_tpl->properties['nocache_hash'] = '17318564ef31ed6e8c7_19551757';
 ?>
 <div class="row">
     <div class="col s12 m6 6">
@@ -93,7 +93,7 @@ $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
                 <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>yes<?php } else { ?>no<?php }?></td>
                 <td>
                     <div class="switch">
-                        <label>
+                        <label class="active"> 
                             invalid
                         <input data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
 " <?php if ($_smarty_tpl->tpl_vars['row']->value->getInvalid() == 0) {?>checked<?php }?>  class="f_validationBtn" type="checkbox" />
@@ -117,6 +117,22 @@ $_smarty_tpl->tpl_vars['row'] = $foreach_row_Sav;
 ?>
     </tbody>
 </table>    
-<?php }
+<div id="caseInvalidModel" class="modal">
+    <div class="modal-content">
+        <h4>Why do you want to set Invalid</h4>
+        <p>Describe below</p>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="setInvalidDescr" class="materialize-textarea"></textarea>
+                <label for="textarea1">Textarea</label>
+            </div>
+            <p id="setInvalidDescrErr" class="red-text darken-2">Please fill up</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" id="setInvalidBtn" class="modal-action waves-effect btn" style="margin-left:10px;">Confirm</a>
+        <a href="#!" class="modal-action modal-close waves-effect btn">Cancel</a>
+    </div>
+</div><?php }
 }
 ?>

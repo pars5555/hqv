@@ -3,6 +3,6 @@ NGS.createAction("admin.actions.passport.set_invalid_vote", {
 
     },
     afterAction: function () {
-       
+        jQuery('#caseInvalidModel').closeModal();
     }
 });
