@@ -18,6 +18,9 @@ namespace admin\actions\number {
             $rowId = intval(NGS()->args()->rowId);
             $invalid = intval(NGS()->args()->invalid);
             RealVoterNumberManager::getInstance()->updateField($rowId, 'invalid', $invalid);
+            if (NGS()->args()->note) {
+                RealVoterNumberManager::getInstance()->updateField($rowId, 'invalid_note', NGS()->args()->note);
+            }
         }
 
         public function getRequestGroup() {

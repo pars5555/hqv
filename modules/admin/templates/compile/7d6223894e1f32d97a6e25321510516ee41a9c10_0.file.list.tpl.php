@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-20 10:48:43
+<?php /* Smarty version 3.1.27, created on 2015-11-20 19:18:25
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\number\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:17313564eec7bdcb7b1_04364095%%*/
+/*%%SmartyHeaderCode:17402564f63f1d4a289_20466016%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7d6223894e1f32d97a6e25321510516ee41a9c10' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\number\\list.tpl',
-      1 => 1448012920,
+      1 => 1448043432,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '17313564eec7bdcb7b1_04364095',
+  'nocache_hash' => '17402564f63f1d4a289_20466016',
   'variables' => 
   array (
     'ns' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564eec7be15888_97875692',
+  'unifunc' => 'content_564f63f2095606_48127956',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564eec7be15888_97875692')) {
-function content_564eec7be15888_97875692 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564f63f2095606_48127956')) {
+function content_564f63f2095606_48127956 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '17313564eec7bdcb7b1_04364095';
+$_smarty_tpl->properties['nocache_hash'] = '17402564f63f1d4a289_20466016';
 ?>
 <div class="row">
     <div class="col s12 m6 6">
@@ -125,6 +125,23 @@ $_smarty_tpl->tpl_vars['row'] = $foreach_row_Sav;
 ?>
     </tbody>
 </table>    
+    <div id="caseInvalidModel" class="modal">
+    <div class="modal-content">
+        <h4>Why do you want to set Invalid</h4>
+        <p>Describe below</p>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="setInvalidDescr" class="materialize-textarea"></textarea>
+                <label for="textarea1">Textarea</label>
+            </div>
+            <p id="setInvalidDescrErr" class="red-text darken-2">Please fill up</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" id="setInvalidBtn" class="modal-action waves-effect btn" style="margin-left:10px;">Confirm</a>
+        <a href="#!" class="modal-action modal-close waves-effect btn">Cancel</a>
+    </div>
+</div>
 <?php }
 }
 ?>

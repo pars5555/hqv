@@ -18,6 +18,9 @@ namespace admin\actions\passport {
             $rowId = intval(NGS()->args()->rowId);
             $invalid = intval(NGS()->args()->invalid);
             RealVoterPassportManager::getInstance()->updateField($rowId, 'invalid', $invalid);
+            if (NGS()->args()->note) {
+                RealVoterPassportManager::getInstance()->updateField($rowId, 'invalid_note', NGS()->args()->note);
+            }
         }
 
         public function getRequestGroup() {

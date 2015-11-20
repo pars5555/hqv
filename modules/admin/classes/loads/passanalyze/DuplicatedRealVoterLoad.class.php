@@ -15,7 +15,7 @@
  *
  */
 
-namespace admin\loads\analyze {
+namespace admin\loads\passanalyze {
 
     use admin\loads\AdminLoad;
     use admin\managers\RealVoterPassportManager;
@@ -35,7 +35,7 @@ namespace admin\loads\analyze {
         }
 
         public function getTemplate() {
-            return NGS()->getTemplateDir() . "/analyze/duplicated_real_voter.tpl";
+            return NGS()->getTemplateDir() . "/passanalyze/duplicated_real_voter.tpl";
         }
 
         public function getAreaIdsArray($duplidatedRows) {

@@ -1,4 +1,4 @@
-NGS.createLoad("admin.loads.analyze.index", {
+NGS.createLoad("admin.loads.passanalyze.index", {
     getContainer: function () {
         return "indexRightContent";
     },
@@ -7,7 +7,7 @@ NGS.createLoad("admin.loads.analyze.index", {
     },
     afterLoad: function () {
         $('#slide-out li').removeClass('active');
-        $('#sidebar_analyze_li').addClass('active');
+        $('#sidebar_passanalyze_li').addClass('active');
         this.initRowClickFunctionaliny();
     },
     initRowClickFunctionaliny: function () {
@@ -15,7 +15,7 @@ NGS.createLoad("admin.loads.analyze.index", {
             $('#real_duplicated_voters_table tr').removeClass('active');
             $(this).addClass('active');
             var rowids = $(this).data('rowids');
-            NGS.load('admin.loads.analyze.duplicated_real_voter', {ids: rowids});
+            NGS.load('admin.loads.passanalyze.duplicated_real_voter', {ids: rowids});
         });
     }
 });

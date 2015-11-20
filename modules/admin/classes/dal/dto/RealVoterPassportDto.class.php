@@ -29,6 +29,7 @@ namespace admin\dal\dto {
             "birth_date" => "birthDate",
             "area_id" => "areaId",
             "invalid" => "invalid",
+            "invalid_note" => "invalidNote",
             
             "duplication_ids" => "duplicationIds",
             "vote_count" => "voteCount"

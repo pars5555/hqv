@@ -23,8 +23,14 @@
             <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='number.index'><i class="material-icons left">perm_media</i>Number</a>
         </li>
         {if $ns.userType==$ns.userTypeAdmin}
-            <li id="sidebar_analyze_li">
-                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='analyze.index'><i class="material-icons left">perm_media</i>Analyze</a>
+            <li id="sidebar_passanalyze_li">
+                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='passanalyze.index'><i class="material-icons left">perm_media</i>Passport Analyze</a>
+            </li>
+            <li id="sidebar_passanalyze_li">
+                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='numanalyze.index'><i class="material-icons left">perm_media</i>Numbers Analyze</a>
+            </li>
+            <li id="sidebar_prevoteanalyze_li">
+                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='prevoteanalyze.index'><i class="material-icons left">perm_media</i>Prevote Analyze</a>
             </li>
         {/if}
         <li>

@@ -70,8 +70,8 @@
           "loads/number/ListLoad.class.js",
           "loads/number/AddEditLoad.class.js",
           "loads/number/AreaSelectionLoad.class.js",
-          "loads/analyze/IndexLoad.class.js",
-          "loads/analyze/DuplicatedRealVoterLoad.class.js",
+          "loads/passanalyze/IndexLoad.class.js",
+          "loads/passanalyze/DuplicatedRealVoterLoad.class.js",
           "loads/voters/ListLoad.class.js",
           "loads/voters/IndexLoad.class.js"
         ]

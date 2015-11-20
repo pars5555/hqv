@@ -35,6 +35,8 @@ namespace hqv\dal\dto {
             "address" => "address",
             "birth_date" => "birthDate",
             "area_id" => "areaId",
+            "invalid" => "invalid",
+            "invalid_note" => "invalidNote",
             "hash" => "hash"
             );
 

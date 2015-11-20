@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-20 11:41:58
+<?php /* Smarty version 3.1.27, created on 2015-11-20 19:35:38
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\util\sidebar.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:29746564ef8f6448610_24437448%%*/
+/*%%SmartyHeaderCode:24388564f67fac9b8e6_60743168%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd8fa0044640d819c2e9979214a0524546141aef0' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\util\\sidebar.tpl',
-      1 => 1448016117,
+      1 => 1448044535,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '29746564ef8f6448610_24437448',
+  'nocache_hash' => '24388564f67fac9b8e6_60743168',
   'variables' => 
   array (
     'ns' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564ef8f6467c92_91498352',
+  'unifunc' => 'content_564f67fad370c9_50929337',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564ef8f6467c92_91498352')) {
-function content_564ef8f6467c92_91498352 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564f67fad370c9_50929337')) {
+function content_564f67fad370c9_50929337 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '29746564ef8f6448610_24437448';
+$_smarty_tpl->properties['nocache_hash'] = '24388564f67fac9b8e6_60743168';
 ?>
 
 <div id="slide-out" class="side-nav fixed">
@@ -54,8 +54,14 @@ $_smarty_tpl->properties['nocache_hash'] = '29746564ef8f6448610_24437448';
             <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='number.index'><i class="material-icons left">perm_media</i>Number</a>
         </li>
         <?php if ($_smarty_tpl->tpl_vars['ns']->value['userType'] == $_smarty_tpl->tpl_vars['ns']->value['userTypeAdmin']) {?>
-            <li id="sidebar_analyze_li">
-                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='analyze.index'><i class="material-icons left">perm_media</i>Analyze</a>
+            <li id="sidebar_passanalyze_li">
+                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='passanalyze.index'><i class="material-icons left">perm_media</i>Passport Analyze</a>
+            </li>
+            <li id="sidebar_passanalyze_li">
+                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='numanalyze.index'><i class="material-icons left">perm_media</i>Numbers Analyze</a>
+            </li>
+            <li id="sidebar_prevoteanalyze_li">
+                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='prevoteanalyze.index'><i class="material-icons left">perm_media</i>Prevote Analyze</a>
             </li>
         <?php }?>
         <li>

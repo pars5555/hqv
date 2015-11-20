@@ -24,6 +24,7 @@ namespace admin\dal\dto {
             "create_datetime" => "createDatetime",
             "area_id" => "areaId",
             "invalid" => "invalid",
+            "invalid_note" => "invalidNote",
             "exist_in_list" => "existInList"
             );
 

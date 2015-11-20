@@ -15,7 +15,7 @@
  *
  */
 
-namespace admin\loads\analyze {
+namespace admin\loads\passanalyze {
 
     use admin\loads\AdminLoad;
     use admin\managers\AnalyzeManager;
@@ -29,7 +29,7 @@ namespace admin\loads\analyze {
         }
 
         public function getTemplate() {
-            return NGS()->getTemplateDir() . "/analyze/index.tpl";
+            return NGS()->getTemplateDir() . "/passanalyze/index.tpl";
         }
 
     }

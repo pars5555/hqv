@@ -18,6 +18,9 @@ namespace admin\actions\prevote {
             $rowId = intval(NGS()->args()->rowId);
             $invalid = intval(NGS()->args()->invalid);
             VoterDataManager::getInstance()->updateField($rowId, 'invalid', $invalid);
+            if (NGS()->args()->note) {
+                VoterDataManager::getInstance()->updateField($rowId, 'invalid_note', NGS()->args()->note);
+            }
         }
 
         public function getRequestGroup() {
