@@ -93,27 +93,34 @@ input.ui-widget-content {
     color: #999999;
 }
 .modal .vote-btn {
-    color: #fff;
+    border: 7px solid;
+    border-radius: 50%;
     cursor: pointer;
     font-size: 18px;
-    height: 80px;
-    line-height: 80px;
+    height: 120px;
+    line-height: 107px;
     text-align: center;
     width: 120px;
 }
 .modal .vote-btn.no{
-    background-color: #ee6e73;
+    background-color: transparent;
+    border-color: #fe7e83;
+    color: #fe7e83;
 }
 .modal .vote-btn.no:hover,
 .modal .vote-btn.no.active {
     background-color: #fe7e83;
+    color: #fff;
 }
 .modal .vote-btn.yes {
-    background-color: #26a69a;
+    border-color: #26a69a;
+    background-color: transparent;
+    color: #26a69a;
 }
 .modal .vote-btn.yes:hover,
 .modal .vote-btn.yes.active {
-    background-color: #46c6ba;
+    background-color: #26a69a;
+    color: #fff;
 }
 .modal.modal-fixed-footer .modal-content {
    margin-top: 40px !important; 
