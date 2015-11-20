@@ -16,8 +16,18 @@ header, main, footer, .content {
 	background-color: #ccc;
 	color: #fff;
 }
+.hamburger-btn {
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	top: 0px;
+	display: none;
+}
 @media only screen and (max-width : 992px) {
 	header, main, footer, .content {
 	  padding-left: 0;
+	}
+	.hamburger-btn {
+		display: block;
 	}
 }

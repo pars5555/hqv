@@ -10,5 +10,7 @@ NGS.createLoad("admin.loads.index", {
             var loadName = $(this).data('loadname');
             NGS.load('admin.loads.' + loadName, {});
         });
+        jQuery('#hamburgerMenuBtn').sideNav();
+        $(".button-collapse").sideNav();
     }
 });

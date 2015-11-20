@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-20 09:26:52
+<?php /* Smarty version 3.1.27, created on 2015-11-20 11:41:58
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\util\sidebar.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:24827564ed94c3db8f9_31509947%%*/
+/*%%SmartyHeaderCode:29746564ef8f6448610_24437448%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd8fa0044640d819c2e9979214a0524546141aef0' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\util\\sidebar.tpl',
-      1 => 1448007876,
+      1 => 1448016117,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '24827564ed94c3db8f9_31509947',
+  'nocache_hash' => '29746564ef8f6448610_24437448',
   'variables' => 
   array (
     'ns' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564ed94c3e6552_14801113',
+  'unifunc' => 'content_564ef8f6467c92_91498352',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564ed94c3e6552_14801113')) {
-function content_564ed94c3e6552_14801113 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564ef8f6467c92_91498352')) {
+function content_564ef8f6467c92_91498352 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '24827564ed94c3db8f9_31509947';
+$_smarty_tpl->properties['nocache_hash'] = '29746564ef8f6448610_24437448';
 ?>
 
 <div id="slide-out" class="side-nav fixed">
@@ -63,7 +63,7 @@ $_smarty_tpl->properties['nocache_hash'] = '24827564ed94c3db8f9_31509947';
 /dyn/login/do_logout"><i class="material-icons left">input</i>Logout</a>
         </li>
     </ul>
-    <a style="display:none;" href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons prefix">view_headline</i></a>
+    <!-- <a style="" href="#"  class="button-collapse"><i class="material-icons prefix">view_headline</i></a> -->
 </div><?php }
 }
 ?>

@@ -1,3 +1,4 @@
+
 <div class="breadscrumb">
     <nav class="red darken-3" style="padding-left:10px;">
         <div class="nav-wrapper">
@@ -5,6 +6,9 @@
                 <a href="#!" class="breadcrumb">Admin</a>
                 <a href="#!" class="breadcrumb">Dashboard</a>
             </div>
+            <span class='hamburger-btn'>
+                <i data-activates="slide-out" id="hamburgerMenuBtn" class="material-icons hamburger-btn">reorder</i>
+            </span>
         </div>
     </nav>
 </div>

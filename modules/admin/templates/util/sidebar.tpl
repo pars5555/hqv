@@ -31,5 +31,5 @@
             <a class="waves-effect waves-light btn-flat le" href="{$SITE_PATH}/dyn/login/do_logout"><i class="material-icons left">input</i>Logout</a>
         </li>
     </ul>
-    <a style="display:none;" href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons prefix">view_headline</i></a>
+    <!-- <a style="" href="#"  class="button-collapse"><i class="material-icons prefix">view_headline</i></a> -->
 </div>
