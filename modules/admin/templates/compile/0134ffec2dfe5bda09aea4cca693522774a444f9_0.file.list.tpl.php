@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-20 20:31:52
+<?php /* Smarty version 3.1.27, created on 2015-11-21 11:33:11
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\passport\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:12468564f7528684562_76837379%%*/
+/*%%SmartyHeaderCode:112815650486791e550_22260222%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0134ffec2dfe5bda09aea4cca693522774a444f9' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\passport\\list.tpl',
-      1 => 1448047667,
+      1 => 1448101828,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12468564f7528684562_76837379',
+  'nocache_hash' => '112815650486791e550_22260222',
   'variables' => 
   array (
     'ns' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564f75287dacb9_38551233',
+  'unifunc' => 'content_56504867a74ef4_89154148',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564f75287dacb9_38551233')) {
-function content_564f75287dacb9_38551233 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56504867a74ef4_89154148')) {
+function content_56504867a74ef4_89154148 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '12468564f7528684562_76837379';
+$_smarty_tpl->properties['nocache_hash'] = '112815650486791e550_22260222';
 ?>
 <div class="row">
     <div class="col s12 m6 6">
@@ -65,6 +65,7 @@ $_smarty_tpl->tpl_vars['page']->first = $_smarty_tpl->tpl_vars['page']->iteratio
             <th>In List</th>
             <th>In Area List</th>
             <th>Duplication</th>
+            <th>PreVote Match</th>
             <th>invalid?</th>
             <th>Actions</th>
         </tr>
@@ -82,7 +83,7 @@ $_smarty_tpl->tpl_vars['row']->_loop = true;
 $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
 ?>
             <?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>
-            <?php $_smarty_tpl->tpl_vars['voter'] = new Smarty_Variable($_smarty_tpl->tpl_vars['ns']->value['voters'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()], null, 0);?>
+                <?php $_smarty_tpl->tpl_vars['voter'] = new Smarty_Variable($_smarty_tpl->tpl_vars['ns']->value['voters'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()], null, 0);?>
             <?php }?>
             <tr data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
 ">
@@ -98,12 +99,20 @@ $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
                 <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0 && $_smarty_tpl->tpl_vars['voter']->value->getAreaId() == $_smarty_tpl->tpl_vars['row']->value->getVoterId()) {?>ok<?php } else { ?>error<?php }?></td>
                 <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0 && isset($_smarty_tpl->tpl_vars['ns']->value['duplicatedInListMappedByVoterId'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()])) {?>error<?php } else { ?>ok<?php }?></td>
                 <td>
+                    <?php if (!isset($_smarty_tpl->tpl_vars['ns']->value['preVoteData'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()])) {?>-<?php } else { ?>
+                        <?php if ($_smarty_tpl->tpl_vars['ns']->value['preVoteData'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()]->getWillVote() == 1) {?>
+                            OK
+                        <?php } else { ?>
+                            Error
+                        <?php }?>
+                    <?php }?></td>
+                <td>
                     <div class="switch">
                         <label class="active"> 
                             invalid
-                        <input data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
+                            <input data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
 " <?php if ($_smarty_tpl->tpl_vars['row']->value->getInvalid() == 0) {?>checked<?php }?>  class="f_validationBtn" type="checkbox" />
-                        <span class="lever"></span>
+                            <span class="lever"></span>
                             valid
                         </label>
                     </div>

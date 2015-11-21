@@ -76,6 +76,15 @@ namespace admin\managers {
             return mb_strtoupper($firstChar, $encoding) . $then;
         }
 
+        public function getDuplicatedInListRealVoters($voterIds) {
+            $duplicatedInListRealVoters = $this->mapper->getDuplicatedInListRealVoters($voterIds);
+            $ret = [];
+            foreach ($duplicatedInListRealVoters as $duplicatedInListRealVoter) {
+                $ret[$duplicatedInListRealVoter->getVoterId()] = $duplicatedInListRealVoter;
+            }
+            return $ret;
+        }
+
         public function getDuplicatedRealVoters() {
             return $this->mapper->getDuplicatedRealVoters();
         }

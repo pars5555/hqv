@@ -25,6 +25,8 @@
             <th>Father Price</th>
             <th>Birth Date</th>
             <th>Exist In List</th>
+            <th>Duplication</th>
+            <th>PreVote Match</th>
             <th>invalid?</th>
             <th>Actions</th>
         </tr>
@@ -42,6 +44,17 @@
                 <td>{if !empty($voter)}{$voter->getFatherName()}{/if}</td>
                 <td>{if !empty($voter)}{$voter->getBirthDate()}{/if}</td>
                 <td>{if $row->getExistInList()==1}ok{else}error{/if}</td>
+                <td>{if $row->getVoterId()>0 && isset($ns.duplicatedInListMappedByVoterId[$row->getVoterId()])}error{else}ok{/if}</td>
+                <td>
+                    {if !isset($ns.preVoteData[$row->getVoterId()])}-{else}
+                        {if $ns.preVoteData[$row->getVoterId()]->getWillVote()==1}
+                            OK
+                        {else}
+                            Error
+                        {/if}
+                    {/if}
+                </td>
+
                 <td>
                     <div class="switch">
                         <label>

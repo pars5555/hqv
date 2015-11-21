@@ -27,6 +27,7 @@
             <th>In List</th>
             <th>In Area List</th>
             <th>Duplication</th>
+            <th>PreVote Match</th>
             <th>invalid?</th>
             <th>Actions</th>
         </tr>
@@ -34,7 +35,7 @@
     <tbody id="real_voters_table">
         {foreach from=$ns.rows item=row}
             {if $row->getVoterId()>0}
-            {assign voter $ns.voters[$row->getVoterId()]}
+                {assign voter $ns.voters[$row->getVoterId()]}
             {/if}
             <tr data-rowid="{$row->getId()}">
                 <td>{$row->getFirstName()}</td>
@@ -45,11 +46,19 @@
                 <td>{if $row->getVoterId()>0 && $voter ->getAreaId() == $row->getVoterId()}ok{else}error{/if}</td>
                 <td>{if $row->getVoterId()>0 && isset($ns.duplicatedInListMappedByVoterId[$row->getVoterId()])}error{else}ok{/if}</td>
                 <td>
+                    {if !isset($ns.preVoteData[$row->getVoterId()])}-{else}
+                        {if $ns.preVoteData[$row->getVoterId()]->getWillVote()==1}
+                            OK
+                        {else}
+                            Error
+                        {/if}
+                    {/if}</td>
+                <td>
                     <div class="switch">
                         <label class="active"> 
                             invalid
-                        <input data-rowid="{$row->getId()}" {if $row->getInvalid() == 0}checked{/if}  class="f_validationBtn" type="checkbox" />
-                        <span class="lever"></span>
+                            <input data-rowid="{$row->getId()}" {if $row->getInvalid() == 0}checked{/if}  class="f_validationBtn" type="checkbox" />
+                            <span class="lever"></span>
                             valid
                         </label>
                     </div>

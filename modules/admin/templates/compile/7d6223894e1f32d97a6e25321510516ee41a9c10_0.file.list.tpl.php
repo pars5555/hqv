@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-20 22:33:02
+<?php /* Smarty version 3.1.27, created on 2015-11-21 11:31:24
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\number\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:4074564f918eba6767_63501287%%*/
+/*%%SmartyHeaderCode:17868565047fc0fb719_34466902%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7d6223894e1f32d97a6e25321510516ee41a9c10' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\number\\list.tpl',
-      1 => 1448055162,
+      1 => 1448101880,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '4074564f918eba6767_63501287',
+  'nocache_hash' => '17868565047fc0fb719_34466902',
   'variables' => 
   array (
     'ns' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564f918ed3fe17_77507133',
+  'unifunc' => 'content_565047fc298994_89195404',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564f918ed3fe17_77507133')) {
-function content_564f918ed3fe17_77507133 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_565047fc298994_89195404')) {
+function content_565047fc298994_89195404 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '4074564f918eba6767_63501287';
+$_smarty_tpl->properties['nocache_hash'] = '17868565047fc0fb719_34466902';
 ?>
 <div class="row">
     <div class="col s12 m6 6">
@@ -63,6 +63,8 @@ $_smarty_tpl->tpl_vars['page']->first = $_smarty_tpl->tpl_vars['page']->iteratio
             <th>Father Price</th>
             <th>Birth Date</th>
             <th>Exist In List</th>
+            <th>Duplication</th>
+            <th>PreVote Match</th>
             <th>invalid?</th>
             <th>Actions</th>
         </tr>
@@ -99,6 +101,17 @@ echo $_smarty_tpl->tpl_vars['voter']->value->getFatherName();
 echo $_smarty_tpl->tpl_vars['voter']->value->getBirthDate();
 }?></td>
                 <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getExistInList() == 1) {?>ok<?php } else { ?>error<?php }?></td>
+                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0 && isset($_smarty_tpl->tpl_vars['ns']->value['duplicatedInListMappedByVoterId'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()])) {?>error<?php } else { ?>ok<?php }?></td>
+                <td>
+                    <?php if (!isset($_smarty_tpl->tpl_vars['ns']->value['preVoteData'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()])) {?>-<?php } else { ?>
+                        <?php if ($_smarty_tpl->tpl_vars['ns']->value['preVoteData'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()]->getWillVote() == 1) {?>
+                            OK
+                        <?php } else { ?>
+                            Error
+                        <?php }?>
+                    <?php }?>
+                </td>
+
                 <td>
                     <div class="switch">
                         <label>

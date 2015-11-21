@@ -80,6 +80,14 @@ namespace admin\dal\mappers {
             return $this->fetchRows($sqlQuery);
         }
 
+        public function getDuplicatedInListRealVoters($voterIds) {
+
+            $sql = "SELECT *, COUNT(*)  AS vote_count, GROUP_CONCAT(id) AS duplication_ids  FROM `%s` "
+                    . "WHERE voter_id IN (%s) GROUP BY voter_id  HAVING vote_count > 1 ORDER BY vote_count DESC";
+            $sqlQuery = sprintf($sql, $this->getTableName(), implode(',', $voterIds));
+            return $this->fetchRows($sqlQuery);
+        }
+
     }
 
 }

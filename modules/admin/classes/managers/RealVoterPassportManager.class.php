@@ -61,6 +61,8 @@ namespace admin\managers {
             if (!empty($listVoters) && count($listVoters) === 1) {
                 $voter = $listVoters[0];
                 $dto->setVoterId($voter->getId());
+            } else {
+                $dto->setVoterId(0);
             }
 
             return $this->updateByPk($dto);

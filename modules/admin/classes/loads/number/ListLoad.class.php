@@ -19,6 +19,8 @@ namespace admin\loads\number {
 
     use admin\loads\ModeratorLoad;
     use admin\managers\RealVoterNumberManager;
+    use admin\managers\RealVoterPassportManager;
+    use hqv\managers\VoterDataManager;
     use hqv\managers\VoterManager;
     use NGS;
 
@@ -39,12 +41,26 @@ namespace admin\loads\number {
             $offset = ($page - 1) * $limit;
             $rows = RealVoterNumberManager::getInstance()->selectAdvance('*', ['moderator_id', '=', $moderatorId], ['create_datetime'], 'DESC', $offset, $limit);
             $voterIdsArray = $this->getVoterIdsArray($rows);
-            $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
+
+            $duplicatedInListRealVoters = [];
+            $voters = [];
+            $preVoteData = [];
+            if (!empty($voterIdsArray)) {
+                $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
+                $duplicatedInListRealVoters = RealVoterNumberManager::getInstance()->getDuplicatedInListRealVoters($voterIdsArray);
+                $voterIdsSqlString = "(" . implode(',', $voterIdsArray) . ")";
+                $preVoteData = VoterDataManager::getInstance()->selectAdvance('*', ['voter_id', 'in', $voterIdsSqlString]);
+                $preVoteData = $this->MapByVoterId($preVoteData);
+            }
+
+
             $count = RealVoterNumberManager::getInstance()->getLastSelectAdvanceRowsCount();
             $pageCount = ceil($count / $limit);
             $this->addParam('pageCount', $pageCount);
             $this->addParam('rows', $rows);
             $this->addParam('voters', $voters);
+            $this->addParam('duplicatedInListMappedByVoterId', $duplicatedInListRealVoters);
+            $this->addParam('preVoteData', $preVoteData);
         }
 
         public function getTemplate() {
@@ -58,6 +74,14 @@ namespace admin\loads\number {
                 if (!empty($voterId)) {
                     $ret[] = $voterId;
                 }
+            }
+            return $ret;
+        }
+
+        public function MapByVoterId($dtos) {
+            $ret = [];
+            foreach ($dtos as $dto) {
+                $ret[$dto->getVoterId()] = $dto;
             }
             return $ret;
         }
