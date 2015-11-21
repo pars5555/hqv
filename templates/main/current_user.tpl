@@ -13,7 +13,7 @@
                 {$ns.area->getRegion()}, {$ns.area->getCommunity()}, {$ns.voter->getAddress()}
             </div>
             <div class="input-field col s12 m12 12 vote-text">
-                {$ns.area->getRegion()}, {$ns.area->getCommunity()}, {$ns.area->getAddress()}
+                {$ns.area->getRegion()}, {$ns.area->getCommunity()}, {$ns.area->getAddress()}, {$ns.area->getTerritoryId()}/{$ns.area->getAreaId()}
             </div>
             <div class="input-field col s12 m6 6">
                 <i class="material-icons prefix">phone</i>
@@ -61,4 +61,4 @@
     </form>
 {else}
     <h4>Wrong Voter Data!<h4>
-{/if}
+        {/if}

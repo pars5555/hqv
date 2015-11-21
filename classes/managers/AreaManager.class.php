@@ -57,7 +57,7 @@ namespace hqv\managers {
             $communityPlaces = $this->selectAdvance('*', ['region', '=', "'$region'", 'and', 'community', '=', "'$community'"], ['address']);
             $ret = [];
             foreach ($communityPlaces as $row) {
-                $ret[$row->getId()] = $row->getAddress();
+                $ret[$row->getId()] = $row->getAddress()."(".$row->getTerritoryId()."/".$row->getAreaId().")";
             }
             return $ret;
         }
