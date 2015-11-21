@@ -13,7 +13,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
         this.isSavable = false;
         jQuery('#currentUserModal').openModal();
         var thisInstance = this;
-        jQuery("#currentUserModalBtn").click(function (e) {
+        jQuery("#currentUserModalBtn").off('click').on('click',function (e) {
             e.preventDefault();
             if (!thisInstance.isSavable) {
                 return false;

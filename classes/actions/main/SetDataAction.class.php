@@ -14,13 +14,12 @@
 
 namespace hqv\actions\main {
 
-    use hqv\actions\BaseAction;
-    use hqv\managers\MailgunEmailSenderManager;
-    use hqv\managers\TranslationManager;
-    use hqv\managers\VoterDataManager;
-    use hqv\managers\VoterManager;
-    use NGS;
-    use ngs\framework\templater\NgsTemplater;
+use hqv\actions\BaseAction;
+use hqv\managers\TranslationManager;
+use hqv\managers\VoterDataManager;
+use hqv\managers\VoterManager;
+use NGS;
+use ngs\framework\templater\NgsTemplater;
 
     class SetDataAction extends BaseAction {
 
@@ -28,26 +27,25 @@ namespace hqv\actions\main {
             $validateData = $this->validateData();
             if ($validateData) {
                 list($hash, $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os) = $validateData;
-                    
-                
+
                 $rows = VoterDataManager::getInstance()->selectAdvance('*', ['ip_address', '=', "'$ip_address'"], ['datetime'], 'DESC');
-                if (!empty($rows)  && count($rows >5))
-                {
+                if (!empty($rows) && count($rows) > 5) {
+                    $this->addParam('status', 'error');
                     $this->addParam('status', 'error');
                     $supportPhoneNumber = $this->getSetting('support_phone_number');
-                    $this->addParam('message', 'Sorry, you tried to vote for many peaple, please call us on ' . $supportPhoneNumber , ' for support.');
+                    $this->addParam('message', 'Sorry, you tried to vote for many peaple, please call us on ' . $supportPhoneNumber, ' for support.');
                     return;
                 }
-                
-                
+
+
                 $voter = VoterManager::getInstance()->getByHash($hash);
                 if (isset($voter)) {
                     $this->addParam('hash', $hash);
                     VoterDataManager::getInstance()->addRow($voter->getId(), $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os);
-                   /* if (!empty($email)) {
-                        $mailgunManager = MailgunEmailSenderManager::getInstance();
-                        $mailgunManager->sendSingleHtmlEmail('pars5555@yahoo.com', 'Hi!!!', $this->getEmailHtml(), 'hanraqve@gmail.com', 'Հանրաքվե');
-                    }*/
+                    /* if (!empty($email)) {
+                      $mailgunManager = MailgunEmailSenderManager::getInstance();
+                      $mailgunManager->sendSingleHtmlEmail('pars5555@yahoo.com', 'Hi!!!', $this->getEmailHtml(), 'hanraqve@gmail.com', 'Հանրաքվե');
+                      } */
                 }
             }
         }
