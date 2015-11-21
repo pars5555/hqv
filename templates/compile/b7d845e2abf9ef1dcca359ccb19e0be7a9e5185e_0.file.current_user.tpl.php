@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-20 11:21:52
+<?php /* Smarty version 3.1.27, created on 2015-11-21 14:08:51
          compiled from "D:\xampp\htdocs\hqv\templates\main\current_user.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:26862564ef440910928_20097214%%*/
+/*%%SmartyHeaderCode:796356506ce32f60b9_58421904%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b7d845e2abf9ef1dcca359ccb19e0be7a9e5185e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\current_user.tpl',
-      1 => 1448007876,
+      1 => 1448111276,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '26862564ef440910928_20097214',
+  'nocache_hash' => '796356506ce32f60b9_58421904',
   'variables' => 
   array (
     'ns' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_564ef440941593_08560797',
+  'unifunc' => 'content_56506ce3325ed2_24809182',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564ef440941593_08560797')) {
-function content_564ef440941593_08560797 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56506ce3325ed2_24809182')) {
+function content_56506ce3325ed2_24809182 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '26862564ef440910928_20097214';
+$_smarty_tpl->properties['nocache_hash'] = '796356506ce32f60b9_58421904';
 if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
     <?php if (!empty($_smarty_tpl->tpl_vars['ns']->value['voter_data'])) {?>
         <p class="center-align red-text text-darken-4">You have already voted! call us if you were not</p>
@@ -70,7 +70,7 @@ if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
                     <div class="col s12 m6 6">
                         <p>
                             <input type="checkbox" id="cu_will_be_in_armenia" checked="checked" />
-                            <label for="cu_will_be_in_armenia">I will be in Armenia at 6th</label>	
+                            <label for="cu_will_be_in_armenia">I will be in Armenia at 6th </label>	
                         </p>
                     </div>
                 </div>
@@ -78,12 +78,18 @@ if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
             <div class="col s12 m12 12">
                 <div class="row">
                     <div class="col s6 m8 8 offset-m2">
-                        <div class="f_vote_btn yes vote-btn left" data-ans='1'>
+                        <i class="f_vote_btn vote-btn yes fa fa-square-o left" data-ans='1'>
+                            <i class="fa fa-check"></i>
+                        </i>
+                        <i class="f_vote_btn vote-btn no fa fa-square-o right" data-ans='0'>
+                            <i class="fa fa-close"></i>
+                        </i>
+                        <!-- <div class="f_vote_btn yes vote-btn left" data-ans='1'>
                             Yes
-                        </div>
-                        <div class="f_vote_btn no vote-btn right" data-ans='0'>
+                        </div> -->
+                        <!-- <div class="f_vote_btn no vote-btn right" data-ans='0'>
                             No
-                        </div>
+                        </div> -->
                         <input id="cu_will_vote" type="hidden" />
                         <div class="clearfix"></div>
                     </div>

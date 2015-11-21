@@ -8,7 +8,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
     isSavable: false,
     validEmail: false,
     afterLoad: function () {
-        this.validateEmail()
+        // this.validateEmail();
         jQuery("#currentUserModalBtn").addClass('disabled');
         this.isSavable = false;
         jQuery('#currentUserModal').openModal();
@@ -72,10 +72,10 @@ NGS.createLoad("hqv.loads.main.current_user", {
             jQuery(this).addClass('active');
             jQuery("#cu_will_vote").val(jQuery(this).data('ans'));
 
-            if (thisInstance.validEmail) {
+            // if (thisInstance.validEmail) {
                 jQuery("#currentUserModalBtn").removeClass('disabled');
                 thisInstance.isSavable = true;
-            }
+            // }
         });
     }
 });

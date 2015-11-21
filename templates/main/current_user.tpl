@@ -31,7 +31,7 @@
                     <div class="col s12 m6 6">
                         <p>
                             <input type="checkbox" id="cu_will_be_in_armenia" checked="checked" />
-                            <label for="cu_will_be_in_armenia">I will be in Armenia at 6th</label>	
+                            <label for="cu_will_be_in_armenia">I will be in Armenia at 6th </label>	
                         </p>
                     </div>
                 </div>
@@ -39,12 +39,18 @@
             <div class="col s12 m12 12">
                 <div class="row">
                     <div class="col s6 m8 8 offset-m2">
-                        <div class="f_vote_btn yes vote-btn left" data-ans='1'>
+                        <i class="f_vote_btn vote-btn yes fa fa-square-o left" data-ans='1'>
+                            <i class="fa fa-check"></i>
+                        </i>
+                        <i class="f_vote_btn vote-btn no fa fa-square-o right" data-ans='0'>
+                            <i class="fa fa-close"></i>
+                        </i>
+                        <!-- <div class="f_vote_btn yes vote-btn left" data-ans='1'>
                             Yes
-                        </div>
-                        <div class="f_vote_btn no vote-btn right" data-ans='0'>
+                        </div> -->
+                        <!-- <div class="f_vote_btn no vote-btn right" data-ans='0'>
                             No
-                        </div>
+                        </div> -->
                         <input id="cu_will_vote" type="hidden" />
                         <div class="clearfix"></div>
                     </div>

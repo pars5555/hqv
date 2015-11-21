@@ -93,35 +93,53 @@ input.ui-widget-content {
     color: #999999;
 }
 .modal .vote-btn {
-    border: 7px solid;
+    position: relative;
+    font-size: 140px;
+    cursor: pointer;
+    /*border: 7px solid;
     border-radius: 50%;
     cursor: pointer;
     font-size: 18px;
     height: 120px;
     line-height: 107px;
     text-align: center;
-    width: 120px;
+    width: 120px;*/
+}
+.modal .vote-btn i {
+    display: none;
+    font-size: 90px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 20px;
 }
 .modal .vote-btn.no{
     background-color: transparent;
     border-color: #fe7e83;
     color: #fe7e83;
 }
-.modal .vote-btn.no:hover,
+.modal .vote-btn.no.active i {
+    display: inline-block;
+}
+/*.modal .vote-btn.no:hover,
 .modal .vote-btn.no.active {
     background-color: #fe7e83;
     color: #fff;
-}
+}*/
 .modal .vote-btn.yes {
     border-color: #26a69a;
     background-color: transparent;
     color: #26a69a;
 }
-.modal .vote-btn.yes:hover,
+.modal .vote-btn.yes.active i {
+    display: inline-block;
+}
+/*.modal .vote-btn.yes:hover,
 .modal .vote-btn.yes.active {
     background-color: #26a69a;
     color: #fff;
-}
+}*/
 .modal.modal-fixed-footer .modal-content {
    margin-top: 40px !important; 
 }
