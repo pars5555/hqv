@@ -14,7 +14,10 @@
         </div>
     </nav>
 </div>
-<div id="columnchart_material" style="width: 200px; height: 300px;"></div>
+<div>
+    <div id="passport_chart" style="width: 200px; height: 300px;"></div>
+    <div id="number_chart" style="width: 200px; height: 300px;"></div>
+</div>
 <div class="admin-content">
     <div class="row" id='dashboardStatisticsContainer'>
         {nest ns=statistics}

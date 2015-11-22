@@ -6,13 +6,21 @@ NGS.createLoad("admin.loads.dashboard.statistics", {
     },
     afterLoad: function (params) {
         this.initAreaSelection(params);
-    },
-    initAreaSelection: function (params) {
-        var dashboradChartData = google.visualization.arrayToDataTable([
-            ['', 'Արդար', 'Խախտում'],
-            ['Քվե', params.aaa, params.aaa/2]
+        
+        var dashboradPassportChartData = google.visualization.arrayToDataTable([
+            ['', 'Ընդհանուր', 'Խախտում'],
+            ['Քվե', parseInt(params.passportTotal), parseInt(params.passportFake)]
         ]);
-        NGS.dashboradChart.draw(dashboradChartData, NGS.dashboradChartOptions);
+        NGS.dashboradPassportChart.draw(dashboradPassportChartData, NGS.dashboradChartOptions);
+        
+        var dashboradNumberChartData = google.visualization.arrayToDataTable([
+            ['', 'Ընդհանուր', 'Խախտում'],
+            ['Քվե', parseInt(params.numberTotal), parseInt(params.numberFake)]
+        ]);
+        NGS.dashboradNumberChart.draw(dashboradNumberChartData, NGS.dashboradChartOptions);
+    },
+    initAreaSelection: function () {
+        
         
         if (NGS.dashboardStatisticsTimoutId) {
             clearTimeout(NGS.dashboardStatisticsTimoutId);

@@ -19,6 +19,8 @@ namespace admin\loads\dashboard {
 
 use admin\loads\ModeratorLoad;
 use admin\managers\AnalyzeManager;
+use admin\managers\RealVoterNumberManager;
+use admin\managers\RealVoterPassportManager;
 use hqv\managers\VoterDataManager;
 use NGS;
 
@@ -28,9 +30,16 @@ use NGS;
             $dataCountGroupByVoter = VoterDataManager::getInstance()->getDataCountGroupByVoterId();
             $nonParticipantCounts = VoterDataManager::getInstance()->getNonParticipantCounts();
             $participantCounts = VoterDataManager::getInstance()->getParticipantCounts();
-            $totalDuplicationVotes = AnalyzeManager::getInstance()->getTotalDuplicationVotes();
-              $this->addJsonParam("aaa", rand(0, 5000));
-            
+            $totalPassportDuplicationVotes = AnalyzeManager::getInstance()->getTotalPassportDuplicationVotes();
+            $totalValidPassportVotesCount = RealVoterPassportManager::getInstance()->getTotalValidVotesCount();
+            $totalNumberDuplicationVotes = AnalyzeManager::getInstance()->getTotalNumberDuplicationVotes();
+            $totalValidNumberVotesCount = RealVoterNumberManager::getInstance()->getTotalValidVotesCount();
+
+            $this->addJsonParam("passportFake", $totalPassportDuplicationVotes );
+            $this->addJsonParam("passportTotal", $totalValidPassportVotesCount );
+            $this->addJsonParam("numberFake", $totalNumberDuplicationVotes );
+            $this->addJsonParam("numberTotal", $totalValidNumberVotesCount );
+
             $this->addParam('countGroupByVoter', $dataCountGroupByVoter);
             $this->addParam('participantCounts', $participantCounts);
             $this->addParam('nonParticipantCounts', $nonParticipantCounts);

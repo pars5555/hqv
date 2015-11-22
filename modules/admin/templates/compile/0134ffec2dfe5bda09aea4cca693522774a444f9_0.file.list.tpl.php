@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-22 16:04:18
+<?php /* Smarty version 3.1.27, created on 2015-11-22 17:25:51
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\passport\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:53645651d972787269_72642906%%*/
+/*%%SmartyHeaderCode:35955651ec8f721971_11609437%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0134ffec2dfe5bda09aea4cca693522774a444f9' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\passport\\list.tpl',
-      1 => 1448204653,
+      1 => 1448209548,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '53645651d972787269_72642906',
+  'nocache_hash' => '35955651ec8f721971_11609437',
   'variables' => 
   array (
     'ns' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5651d9727d6910_90801701',
+  'unifunc' => 'content_5651ec8f89a309_56712441',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5651d9727d6910_90801701')) {
-function content_5651d9727d6910_90801701 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5651ec8f89a309_56712441')) {
+function content_5651ec8f89a309_56712441 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '53645651d972787269_72642906';
+$_smarty_tpl->properties['nocache_hash'] = '35955651ec8f721971_11609437';
 ?>
 <div class="row">
     <div class="col s12 m6 6">
@@ -84,6 +84,8 @@ $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
 ?>
             <?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>
                 <?php $_smarty_tpl->tpl_vars['voter'] = new Smarty_Variable($_smarty_tpl->tpl_vars['ns']->value['voters'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()], null, 0);?>
+            <?php } else { ?>
+                <?php $_smarty_tpl->tpl_vars['voter'] = new Smarty_Variable(0, null, 0);?>
             <?php }?>
             <tr data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
 ">
@@ -95,9 +97,9 @@ $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
 </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getBirthDate();?>
 </td>
-                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>ok<?php } else { ?>error<?php }?></td>
-                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0 && $_smarty_tpl->tpl_vars['voter']->value->getAreaId() == $_smarty_tpl->tpl_vars['row']->value->getVoterId()) {?>ok<?php } else { ?>error<?php }?></td>
-                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0 && isset($_smarty_tpl->tpl_vars['ns']->value['duplicatedInListMappedByVoterId'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()])) {?>error<?php } else { ?>ok<?php }?></td>
+                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?><i class="fa fa-check action-btn"></i><?php } else { ?><i class="fa fa-close action-btn delete"></i><?php }?></td>
+                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0 && $_smarty_tpl->tpl_vars['voter']->value->getAreaId() == $_smarty_tpl->tpl_vars['row']->value->getAreaId()) {?><i class="fa fa-check action-btn"></i><?php } else { ?><i class="fa fa-close action-btn delete"></i><?php }?></td>
+                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0 && isset($_smarty_tpl->tpl_vars['ns']->value['duplicatedInListMappedByVoterId'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()])) {?><i class="fa fa-close action-btn delete"></i><?php } else { ?><i class="fa fa-check action-btn"></i><?php }?></td>
                 <td>
                     <?php if (!isset($_smarty_tpl->tpl_vars['ns']->value['preVoteData'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()])) {?>-<?php } else { ?>
                         <?php if ($_smarty_tpl->tpl_vars['ns']->value['preVoteData'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()]->getWillVote() == 1) {?>
@@ -124,15 +126,10 @@ $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
                 <td>
                     <a data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
 " class="f_edit waves-effect waves-light btn">Edit<i class="material-icons left">mode_edit</i></a>
+                    <a data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
+" class="f_delete waves-effect waves-light btn">Delete<i class="material-icons left">mode_delete</i></a>
                 </td>
-                <td>
-                    <a href="">
-                        <i class="fa fa-check action-btn"></i>
-                    </a>
-                    <a href="">
-                        <i class="fa fa-close action-btn delete"></i>
-                    </a>
-                </td>
+               
             </tr>
         <?php
 $_smarty_tpl->tpl_vars['row'] = $foreach_row_Sav;
@@ -156,6 +153,16 @@ $_smarty_tpl->tpl_vars['row'] = $foreach_row_Sav;
         <a href="#!" id="setInvalidBtn" class="modal-action waves-effect btn" style="margin-left:10px;">Confirm</a>
         <a href="#!" class="modal-action modal-close waves-effect btn">Cancel</a>
     </div>
-</div><?php }
+</div>
+    <div id="caseDeleteModel" class="modal">
+    <div class="modal-content">
+        <h4>Why do you want to delete?</h4>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" id="deleteBtn" class="modal-action waves-effect btn" style="margin-left:10px;">Confirm</a>
+        <a href="#!" class="modal-action modal-close waves-effect btn">Cancel</a>
+    </div>
+</div>
+<?php }
 }
 ?>

@@ -85,8 +85,39 @@ namespace admin\managers {
             return $ret;
         }
 
-        public function getDuplicatedRealVoters() {
-            return $this->mapper->getDuplicatedRealVoters();
+        /**
+         * For PassAnalyze Page
+         */
+        public function getDuplicatedRealVotersCount() {
+            return $this->mapper->getDuplicatedRealVotersCount();
+        }
+
+        /**
+         * For PassAnalyze Page
+         */
+        public function getDuplicatedRealVoters($offset, $limit) {
+            return $this->mapper->getDuplicatedRealVoters($offset, $limit);
+        }
+
+        /**
+         * For Dashboard Page
+         */
+        public function getDuplicationVotesVoterIdCount() {
+            return $this->mapper->getDuplicationVotesVoterIdCount();
+        }
+
+        /**
+         * For Dashboard Page
+         */
+        public function getTotalValidVotesCount() {
+            return $this->countAdvance(['invalid', '=', 0]);
+        }
+
+        /**
+         * For Dashboard Page
+         */
+        public function getTotalDuplicationVotes() {
+            return $this->mapper->getTotalDuplicationVotes();
         }
 
     }

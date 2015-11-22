@@ -109,6 +109,10 @@ namespace hqv\managers {
             return $this->mapper->deleteAdvance($where);
         }
 
+        public function countAdvance($filters = null) {
+            $where = $this->getWhereSubQueryByFilters($filters);
+            return $this->mapper->countAdvance($where);
+        }
         public function selectAdvance($fieldsArray = '*', $filters = null, $orderByFieldsArray = null, $orderByAscDesc = "ASC", $offset = null, $limit = null, $mapByIds = False) {
 
             $where = $this->getWhereSubQueryByFilters($filters);

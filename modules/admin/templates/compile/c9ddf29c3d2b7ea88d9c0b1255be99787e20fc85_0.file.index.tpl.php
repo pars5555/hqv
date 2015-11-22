@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-22 16:04:34
+<?php /* Smarty version 3.1.27, created on 2015-11-22 17:26:02
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\numanalyze\index.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:135935651d982159e65_99979986%%*/
+/*%%SmartyHeaderCode:327435651ec9aca59d1_87828003%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c9ddf29c3d2b7ea88d9c0b1255be99787e20fc85' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\numanalyze\\index.tpl',
-      1 => 1448204556,
+      1 => 1448209549,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '135935651d982159e65_99979986',
+  'nocache_hash' => '327435651ec9aca59d1_87828003',
   'variables' => 
   array (
     'ns' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5651d9821fd8e7_33680067',
+  'unifunc' => 'content_5651ec9add4017_83065775',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5651d9821fd8e7_33680067')) {
-function content_5651d9821fd8e7_33680067 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5651ec9add4017_83065775')) {
+function content_5651ec9add4017_83065775 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '135935651d982159e65_99979986';
+$_smarty_tpl->properties['nocache_hash'] = '327435651ec9aca59d1_87828003';
 ?>
 <div class="breadscrumb">
     <nav class="red darken-3" style="padding-left:10px;">
@@ -80,7 +80,7 @@ $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
 </td>
                         <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getVoteCount();?>
 </td>
-                        <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>ok<?php } else { ?>error<?php }?></td>
+                        <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?><i class="fa fa-check action-btn"></i><?php } else { ?><i class="fa fa-close action-btn delete"></i><?php }?></td>
                     </tr>
                 <?php
 $_smarty_tpl->tpl_vars['row'] = $foreach_row_Sav;

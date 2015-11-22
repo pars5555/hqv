@@ -74,7 +74,7 @@ namespace admin\dal\mappers {
             return $this->tableName;
         }
 
-        public function getDuplicatedRealVoters() {
+        public function getDuplicatedRealVotersCount() {
             $sql = "SELECT *, COUNT(*)  AS vote_count, "
                     . "GROUP_CONCAT(id) AS duplication_ids  "
                     . "FROM `%s` "
@@ -89,6 +89,33 @@ namespace admin\dal\mappers {
             $sqlQuery = sprintf($sql, $this->getTableName(), implode(',', $voterIds));
             return $this->fetchRows($sqlQuery);
         }
+        
+        
+         public function getDuplicatedRealVoters($offset, $limit) {
+            $sql = "SELECT *, COUNT(*)  AS vote_count, "
+                    . "GROUP_CONCAT(id) AS duplication_ids  FROM `%s` "
+                    . "GROUP BY voter_id "
+                    . "HAVING vote_count > 1 ORDER BY vote_count DESC "
+                    . "LIMIT %d, %d";
+            $sqlQuery = sprintf($sql, $this->getTableName(), $offset, $limit);
+            return $this->fetchRows($sqlQuery);
+        }
+        public function getTotalDuplicationVotes() {
+            $sql = "SELECT SUM(vote_count) as `sum` FROM "
+                    . "(SELECT COUNT(*) AS vote_count  FROM  `%s` GROUP BY voter_id HAVING vote_count > 1 ) AS al";
+            $sqlQuery = sprintf($sql, $this->getTableName());
+            return $this->fetchField($sqlQuery, 'sum');
+        }
+        public function getDuplicationVotesVoterIdCount() {
+            $sql = "SELECT COUNT(*) as `count` FROM "
+                    . "(SELECT COUNT(*) AS vote_count FROM  `%s`   "
+                    . "WHERE voter_id >0 GROUP BY voter_id HAVING vote_count > 1 ) AS al";
+            $sqlQuery = sprintf($sql, $this->getTableName());
+            return $this->fetchField($sqlQuery, 'count');
+        }
+      
+        
+       
 
     }
 

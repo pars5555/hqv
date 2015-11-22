@@ -33,7 +33,7 @@
                         <td>{$row->getFatherName()}</td>
                         <td>{$row->getBirthDate()}</td>
                         <td>{$row->getVoteCount()}</td>
-                        <td>{if $row->getVoterId()>0}ok{else}error{/if}</td>
+                        <td>{if $row->getVoterId()>0}<i class="fa fa-check action-btn"></i>{else}<i class="fa fa-close action-btn delete"></i>{/if}</td>
                     </tr>
                 {/foreach}
             </tbody>

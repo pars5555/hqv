@@ -14,18 +14,8 @@ namespace admin\managers {
 
     class AnalyzeManager {
 
-        /**
-         * @var singleton instance of class
-         */
         private static $instance = null;
 
-        /**
-         * Returns an singleton instance of this class
-         *
-         * @param object $config
-         * @param object $args
-         * @return
-         */
         public static function getInstance() {
             if (self::$instance == null) {
                 self::$instance = new AnalyzeManager();
@@ -33,21 +23,51 @@ namespace admin\managers {
             return self::$instance;
         }
 
+        /**
+         * For PassAnalyze Page
+         * @param type $offset
+         * @param type $limit
+         * @return type
+         */
         public function getDuplicatedPassportRealVoters($offset, $limit) {
             return RealVoterPassportManager::getInstance()->getDuplicatedRealVoters($offset, $limit);
         }
 
+        /**
+         * For PassAnalyze Page
+         * @param type $offset
+         * @param type $limit
+         * @return type
+         */
         public function getDuplicatedPassportRealVotersCount() {
             return RealVoterPassportManager::getInstance()->getDuplicatedRealVotersCount();
         }
 
+        /**
+         * For NumAnalyze Page
+         * @param type $offset
+         * @param type $limit
+         * @return type
+         */
         public function getDuplicatedNumberRealVoters() {
             return RealVoterNumberManager::getInstance()->getDuplicatedRealVoters();
         }
 
-        public function getTotalDuplicationVotes() {
+        /**
+         * For Dashboard Page
+         */
+        public function getTotalPassportDuplicationVotes() {
             $totalDuplicationVotes = RealVoterPassportManager::getInstance()->getTotalDuplicationVotes();
             $duplicationVotesVoterIdCount = RealVoterPassportManager::getInstance()->getDuplicationVotesVoterIdCount();
+            return intval($totalDuplicationVotes) - intval($duplicationVotesVoterIdCount);
+        }
+
+        /**
+         * For Dashboard Page
+         */
+        public function getTotalNumberDuplicationVotes() {
+            $totalDuplicationVotes = RealVoterNumberManager::getInstance()->getTotalDuplicationVotes();
+            $duplicationVotesVoterIdCount = RealVoterNumberManager::getInstance()->getDuplicationVotesVoterIdCount();
             return intval($totalDuplicationVotes) - intval($duplicationVotesVoterIdCount);
         }
 

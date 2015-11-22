@@ -43,8 +43,8 @@
                 <td>{if !empty($voter)}{$voter->getLastName()}{/if}</td>
                 <td>{if !empty($voter)}{$voter->getFatherName()}{/if}</td>
                 <td>{if !empty($voter)}{$voter->getBirthDate()}{/if}</td>
-                <td>{if $row->getExistInList()==1}ok{else}error{/if}</td>
-                <td>{if $row->getVoterId()>0 && isset($ns.duplicatedInListMappedByVoterId[$row->getVoterId()])}error{else}ok{/if}</td>
+                <td>{if $row->getExistInList()==1}<i class="fa fa-check action-btn"></i>{else}<i class="fa fa-close action-btn delete"></i>{/if}</td>
+                <td>{if $row->getVoterId()>0 && isset($ns.duplicatedInListMappedByVoterId[$row->getVoterId()])}<i class="fa fa-close action-btn delete"></i>{else}<i class="fa fa-check action-btn"></i>{/if}</td>
                 <td>
                     {if !isset($ns.preVoteData[$row->getVoterId()])}-{else}
                         {if $ns.preVoteData[$row->getVoterId()]->getWillVote()==1}

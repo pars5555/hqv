@@ -12,9 +12,16 @@ NGS.createLoad("admin.loads.dashboard.index", {
 
     },
     initChart: function () {
-        NGS.dashboradChart = new google.visualization.ColumnChart(document.getElementById('columnchart_material'));
+        NGS.dashboradPassportChart = new google.visualization.ColumnChart(document.getElementById('passport_chart'));
+        NGS.dashboradNumberChart = new google.visualization.ColumnChart(document.getElementById('number_chart'));
         NGS.dashboradChartOptions = {
-            legend: {position: 'none'},
+            legend: {
+                position: 'none'
+            },
+            sliceVisibilityThreshold: 0,
+            vAxis: {
+                minValue: 0
+            },
             animation: {
                 duration: 1000,
                 easing: 'out'

@@ -45,6 +45,11 @@ namespace hqv\dal\mappers {
             return $this->fetchField($sqlQuery, 'count');
         }
 
+        public function countAdvance($where) {
+            $sqlQuery = sprintf("SELECT count(id) as `count` FROM `%s` %s ", $this->getTableName(), $where);
+            return intval($this->fetchField($sqlQuery, 'count'));
+        }
+
         public function selectAdvance($fields, $where, $order, $offset, $limit) {
             $sqlQuery = sprintf("SELECT %s FROM `%s` %s %s ", $fields, $this->getTableName(), $where, $order);
             if (isset($limit) && $limit > 0) {
