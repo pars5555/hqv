@@ -30,6 +30,7 @@ namespace admin\dal\dto {
             "area_id" => "areaId",
             "invalid" => "invalid",
             "invalid_note" => "invalidNote",
+            "in_area_list" => "inAreaList",
             
             "duplication_ids" => "duplicationIds",
             "vote_count" => "voteCount"

@@ -62,8 +62,10 @@ namespace admin\managers {
                 $voter = $listVoters[0];
                 $dto->setVoterId($voter->getId());
                 $dto->setFatherName($voter->getFatherName());
+                $dto->setInAreaList($voter->getAreaId() == $areaId ? 1 : 0 );
             } else {
                 $dto->setVoterId(0);
+                $dto->setInAreaList(0);
             }
 
             return $this->updateByPk($dto);
@@ -94,6 +96,10 @@ namespace admin\managers {
                 $voter = $listVoters[0];
                 $dto->setVoterId($voter->getId());
                 $dto->setFatherName($voter->getFatherName());
+                $dto->setInAreaList($voter->getAreaId() == $areaId ? 1 : 0 );
+            } else {
+                $dto->setVoterId(0);
+                $dto->setInAreaList(0);
             }
 
             return $this->insertDto($dto);
@@ -106,11 +112,14 @@ namespace admin\managers {
             return mb_strtoupper($firstChar, $encoding) . $then;
         }
 
-        public function getDuplicatedInListRealVoters($voterIds) {
+        public function getDuplicatedInListRealVotersRowIds($voterIds) {
             $duplicatedInListRealVoters = $this->mapper->getDuplicatedInListRealVoters($voterIds);
             $ret = [];
             foreach ($duplicatedInListRealVoters as $duplicatedInListRealVoter) {
-                $ret[$duplicatedInListRealVoter->getVoterId()] = $duplicatedInListRealVoter;
+                $duplicationIds = explode(',', $duplicatedInListRealVoter->getDuplicationIds());
+                foreach ($duplicationIds as $duplicationId) {
+                    $ret[] = $duplicationId;
+                }
             }
             return $ret;
         }
@@ -146,8 +155,12 @@ namespace admin\managers {
         /**
          * For Dashboard Page
          */
-        public function getTotalDuplicationVotes() {
-            return $this->mapper->getTotalDuplicationVotes();
+        public function getTotalDuplicationVotesSum() {
+            return $this->mapper->getTotalDuplicationVotesSum();
+        }
+
+        public function getTotalNonDuplicationButFakeVotesCount() {
+            return $this->mapper->getTotalNonDuplicationButFakeVotesCount();
         }
 
     }

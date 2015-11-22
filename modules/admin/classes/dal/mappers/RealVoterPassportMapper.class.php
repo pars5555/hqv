@@ -19,7 +19,7 @@ namespace admin\dal\mappers {
     use hqv\dal\mappers\AdvancedAbstractMysqlMapper;
     use ngs\framework\dal\mappers\AbstractMapper;
 
-    class RealVoterPassportMapper extends AdvancedAbstractMysqlMapper{
+    class RealVoterPassportMapper extends AdvancedAbstractMysqlMapper {
 
         /**
          * @var table name in DB
@@ -73,44 +73,58 @@ namespace admin\dal\mappers {
         public function getTableName() {
             return $this->tableName;
         }
-        
+
         public function getDuplicatedRealVoters($offset, $limit) {
-            $sql = "SELECT *, COUNT(*)  AS vote_count, "
-                    . "GROUP_CONCAT(id) AS duplication_ids  FROM `%s` "
-                    . "GROUP BY first_name, last_name, father_name, birth_date "
-                    . "HAVING vote_count > 1 ORDER BY vote_count DESC "
-                    . "LIMIT %d, %d";
-            $sqlQuery = sprintf($sql, $this->getTableName(), $offset, $limit);
+            $sql = "SELECT   * FROM (
+                SELECT   *,  COUNT(*) AS vote_count, GROUP_CONCAT(id) AS duplication_ids  FROM  `%s` WHERE invalid = 0 GROUP BY first_name,  last_name,  father_name,  birth_date HAVING vote_count > 1 
+                UNION 
+                SELECT     *,    COUNT(*) AS vote_count, GROUP_CONCAT(id) AS duplication_ids  FROM    `%s`   WHERE (voter_id = 0       OR in_area_list = 0)     AND invalid = 0   GROUP BY first_name,    last_name,    father_name,    birth_date   HAVING vote_count = 1
+                ) AS sss
+                ORDER BY vote_count DESC LIMIT %d, %d";
+            $sqlQuery = sprintf($sql, $this->getTableName(), $this->getTableName(), $offset, $limit);
             return $this->fetchRows($sqlQuery);
         }
-        public function getTotalDuplicationVotes() {
-            $sql = "SELECT SUM(vote_count) as `sum` FROM "
-                    . "(SELECT COUNT(*) AS vote_count  FROM  `%s` GROUP BY first_name,  last_name,  father_name,  birth_date HAVING vote_count > 1 ) AS al";
-            $sqlQuery = sprintf($sql, $this->getTableName());
-            return $this->fetchField($sqlQuery, 'sum');
+
+        public function getDuplicatedRealVotersCount() {
+            $sql = "SELECT  count(*) as `count` FROM (
+                SELECT   *,  COUNT(*) AS vote_count FROM  `%s` WHERE invalid = 0 GROUP BY first_name,  last_name,  father_name,  birth_date HAVING vote_count > 1 
+                UNION 
+                SELECT     *,    COUNT(*) AS vote_count   FROM    `%s`   WHERE (voter_id = 0       OR in_area_list = 0)     AND invalid = 0   GROUP BY first_name,    last_name,    father_name,    birth_date   HAVING vote_count = 1
+                ) AS sss    ";
+            $sqlQuery = sprintf($sql, $this->getTableName(),$this->getTableName());
+            return intval($this->fetchField($sqlQuery, 'count'));
         }
+
+        public function getTotalDuplicationVotesSum() {
+            $sql = "SELECT SUM(vote_count) as `sum` FROM "
+                    . "(SELECT COUNT(*) AS vote_count  FROM  `%s`  WHERE invalid=0 GROUP BY first_name,  last_name,  father_name,  birth_date HAVING vote_count > 1 ) AS al";
+            $sqlQuery = sprintf($sql, $this->getTableName());
+            return intval($this->fetchField($sqlQuery, 'sum'));
+        }
+
+        public function getTotalNonDuplicationButFakeVotesCount() {
+            $sql = "SELECT COUNT(*) as count FROM (SELECT  *,  COUNT(*) AS vote_count  FROM  `%s`   "
+                    . "WHERE (voter_id = 0 OR in_area_list = 0) AND invalid=0 GROUP BY first_name,  last_name,  father_name,  birth_date HAVING vote_count = 1) as al";
+            $sqlQuery = sprintf($sql, $this->getTableName());
+            return intval($this->fetchField($sqlQuery, 'count'));
+        }
+
         public function getDuplicationVotesVoterIdCount() {
             $sql = "SELECT COUNT(*) as `count` FROM "
                     . "(SELECT COUNT(*) AS vote_count FROM  `%s`   "
-                    . "WHERE voter_id >0 GROUP BY first_name,  last_name,  father_name,  birth_date HAVING vote_count > 1 ) AS al";
+                    . "WHERE voter_id >0  AND invalid=0 GROUP BY first_name,  last_name,  father_name,  birth_date HAVING vote_count > 1 ) AS al";
             $sqlQuery = sprintf($sql, $this->getTableName());
-            return $this->fetchField($sqlQuery, 'count');
+            return intval($this->fetchField($sqlQuery, 'count'));
         }
-        
-        public function getDuplicatedRealVotersCount() {
-            $sql = "SELECT COUNT(*) as `count` FROM (SELECT COUNT(*) AS vote_count  FROM `%s` GROUP BY first_name,  last_name,  father_name,  birth_date HAVING vote_count > 1) AS al";
-            $sqlQuery = sprintf($sql, $this->getTableName());
-            return $this->fetchField($sqlQuery, 'count');
-        }
-        
+
         public function getDuplicatedInListRealVoters($voterIds) {
-            
+            $voterIds[] = 0;
             $sql = "SELECT *, COUNT(*)  AS vote_count, GROUP_CONCAT(id) AS duplication_ids  FROM `%s` "
-                    . "WHERE voter_id IN (%s) GROUP BY voter_id  HAVING vote_count > 1 ORDER BY vote_count DESC";
+                    . "WHERE voter_id IN (%s) AND invalid=0 GROUP BY voter_id, first_name, last_name, father_name, birth_date HAVING vote_count > 1 ORDER BY vote_count DESC";
             $sqlQuery = sprintf($sql, $this->getTableName(), implode(',', $voterIds));
             return $this->fetchRows($sqlQuery);
         }
-        
+
     }
 
 }

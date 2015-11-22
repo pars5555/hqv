@@ -19,13 +19,17 @@ namespace admin\dal\dto {
         // Map of DB value to Field value
         protected $mapArray = array(
             "id" => "id",
+            "area_voter_id" => "areaVoterId",
             "voter_id" => "voterId",
             "moderator_id" => "moderatorId",
             "create_datetime" => "createDatetime",
             "area_id" => "areaId",
             "invalid" => "invalid",
             "invalid_note" => "invalidNote",
-            "exist_in_list" => "existInList"
+           
+            
+            "duplication_ids" => "duplicationIds",
+            "vote_count" => "voteCount"
             );
 
         // returns map array

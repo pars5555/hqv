@@ -15,10 +15,11 @@
  *
  */
 
-namespace admin\loads\passport {
+namespace admin\loads\numanalyze {
 
     use admin\loads\ModeratorLoad;
-    use admin\managers\RealVoterPassportManager;
+    use admin\managers\AnalyzeManager;
+    use hqv\managers\VoterDataManager;
     use hqv\managers\VoterManager;
     use NGS;
 
@@ -37,26 +38,23 @@ namespace admin\loads\passport {
             $this->addParam('page', $page);
             $this->addParam('limit', $limit);
             $offset = ($page - 1) * $limit;
-            $rows = RealVoterPassportManager::getInstance()->selectAdvance('*', ['moderator_id', '=', $moderatorId], ['create_datetime'], 'DESC', $offset, $limit);
-            $voterIdsArray = $this->getVoterIdsArray($rows);
-
-            $duplicatedInListRealVoters = [];
+            $duplicatedRealVoters = AnalyzeManager::getInstance()->getDuplicatedNumberRealVoters($offset, $limit);
+            $this->addParam('duplicatedRealVoters', $duplicatedRealVoters);
+            $voterIdsArray = $this->getVoterIdsArray($duplicatedRealVoters);
             $voters = [];
             $preVoteData = [];
             if (!empty($voterIdsArray)) {
                 $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
-                $duplicatedInListRealVoters = RealVoterPassportManager::getInstance()->getDuplicatedInListRealVotersRowIds($voterIdsArray);
                 $voterIdsSqlString = "(" . implode(',', $voterIdsArray) . ")";
-                $preVoteData = \hqv\managers\VoterDataManager::getInstance()->selectAdvance('*', ['voter_id', 'in', $voterIdsSqlString]);
+                $preVoteData = VoterDataManager::getInstance()->selectAdvance('*', ['voter_id', 'in', $voterIdsSqlString]);
                 $preVoteData = $this->MapByVoterId($preVoteData);
             }
 
-            $count = RealVoterPassportManager::getInstance()->getLastSelectAdvanceRowsCount();
+            $count = AnalyzeManager::getInstance()->getDuplicatedNumberRealVotersCount();
             $pageCount = ceil($count / $limit);
             $this->addParam('pageCount', $pageCount);
-            $this->addParam('rows', $rows);
+            $this->addParam('rows', $duplicatedRealVoters);
             $this->addParam('voters', $voters);
-            $this->addParam('duplicatedInListMappedById', $duplicatedInListRealVoters);
             $this->addParam('preVoteData', $preVoteData);
         }
 
@@ -72,7 +70,7 @@ namespace admin\loads\passport {
         }
 
         public function getTemplate() {
-            return NGS()->getTemplateDir() . "/passport/list.tpl";
+            return NGS()->getTemplateDir() . "/numanalyze/list.tpl";
         }
 
         public function MapByVoterId($dtos) {

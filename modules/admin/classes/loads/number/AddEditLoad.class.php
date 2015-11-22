@@ -28,7 +28,7 @@ namespace admin\loads\number {
             if (isset(NGS()->args()->rowId)) {
                 $realVoter = RealVoterNumberManager::getInstance()->selectByPK(NGS()->args()->rowId);
                 if (!empty($realVoter)) {
-                    $voterNumber = $realVoter->getVoterId();
+                    $voterNumber = $realVoter->getAreaVoterId();
                     $this->addParam('edit', 1);
                     $this->addParam('row_id', NGS()->args()->rowId);
                 }

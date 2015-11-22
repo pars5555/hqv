@@ -30,6 +30,7 @@ use NGS;
             $dataCountGroupByVoter = VoterDataManager::getInstance()->getDataCountGroupByVoterId();
             $nonParticipantCounts = VoterDataManager::getInstance()->getNonParticipantCounts();
             $participantCounts = VoterDataManager::getInstance()->getParticipantCounts();
+            
             $totalPassportDuplicationVotes = AnalyzeManager::getInstance()->getTotalPassportDuplicationVotes();
             $totalValidPassportVotesCount = RealVoterPassportManager::getInstance()->getTotalValidVotesCount();
             $totalNumberDuplicationVotes = AnalyzeManager::getInstance()->getTotalNumberDuplicationVotes();

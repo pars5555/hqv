@@ -59,7 +59,6 @@ NGS.createLoad("admin.loads.number.list", {
                     if ($('#setInvalidDescr').val()) {
                         var note = $('#setInvalidDescr').val();
                         NGS.action('admin.actions.number.set_invalid_vote', {rowId: rowId, invalid: 1, note: note});
-                        $(this).prop('checked', false);
                         return;
                     }
                     // Show error

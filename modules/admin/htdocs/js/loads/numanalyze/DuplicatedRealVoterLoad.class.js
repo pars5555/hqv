@@ -1,4 +1,4 @@
-NGS.createLoad("admin.loads.numanalyze.number", {
+NGS.createLoad("admin.loads.numanalyze.duplicated_real_voter", {
     getContainer: function () {
         return "duplicatedVoterContainer";
     },

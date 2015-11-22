@@ -37,34 +37,36 @@ namespace admin\managers {
             return self::$instance;
         }
 
-        public function editRow($id, $voterNumber, $moderatorId, $areaId) {
+        public function editRow($id, $voterNumberInArea, $moderatorId, $areaId) {
 
             $dto = $this->selectByPK($id);
-            $dto->setVoterId($voterNumber);
+            $dto->setAreaVoterId($voterNumberInArea);
             //$dto->setModeratorId($moderatorId);
             $dto->setAreaId($areaId);
-            $listVoters = VoterManager::getInstance()->selectAdvance('*', ['area_id', '=', $areaId, 'and', 'number', '=', $voterNumber]);
+            $listVoters = VoterManager::getInstance()->selectAdvance('*', ['area_id', '=', $areaId, 'and', 'number', '=', $voterNumberInArea]);
             if (!empty($listVoters) && count($listVoters) === 1) {
-                $voter = $listVoters[0];
-                $dto->setExistInList(1);
+                $voter = $listVoters[0];               
+                $dto->setVoterId($voter->getId());
             } else {
-                $dto->setExistInList(0);
+               
+                $dto->setVoterId(0);
             }
             return $this->updateByPk($dto);
         }
 
-        public function addRow($voterNumber, $moderatorId, $areaId) {
+        public function addRow($voterNumberInArea, $moderatorId, $areaId) {
             $dto = $this->createDto();
-            $dto->setVoterId($voterNumber);
+            $dto->setAreaVoterId($voterNumberInArea);
             $dto->setCreateDatetime(date('Y-m-d H:i:s'));
             $dto->setModeratorId($moderatorId);
             $dto->setAreaId($areaId);
-            $listVoters = VoterManager::getInstance()->selectAdvance('*', ['area_id', '=', $areaId, 'and', 'number', '=', $voterNumber]);
+            $listVoters = VoterManager::getInstance()->selectAdvance('*', ['area_id', '=', $areaId, 'and', 'number', '=', $voterNumberInArea]);
             if (!empty($listVoters) && count($listVoters) === 1) {
-                $voter = $listVoters[0];
-                $dto->setExistInList(1);
+                $voter = $listVoters[0];              
+                $dto->setVoterId($voter->getId());
             } else {
-                $dto->setExistInList(0);
+           
+                $dto->setVoterId(0);
             }
             return $this->insertDto($dto);
         }
@@ -76,11 +78,14 @@ namespace admin\managers {
             return mb_strtoupper($firstChar, $encoding) . $then;
         }
 
-        public function getDuplicatedInListRealVoters($voterIds) {
+        public function getDuplicatedInListRealVotersRowIds($voterIds) {
             $duplicatedInListRealVoters = $this->mapper->getDuplicatedInListRealVoters($voterIds);
             $ret = [];
             foreach ($duplicatedInListRealVoters as $duplicatedInListRealVoter) {
-                $ret[$duplicatedInListRealVoter->getVoterId()] = $duplicatedInListRealVoter;
+                $duplicationIds = explode(',', $duplicatedInListRealVoter->getDuplicationIds());
+                foreach ($duplicationIds as $duplicationId) {
+                    $ret[] = $duplicationId;
+                }
             }
             return $ret;
         }
@@ -116,8 +121,16 @@ namespace admin\managers {
         /**
          * For Dashboard Page
          */
-        public function getTotalDuplicationVotes() {
-            return $this->mapper->getTotalDuplicationVotes();
+        public function getTotalDuplicationVotesSum() {
+            return $this->mapper->getTotalDuplicationVotesSum();
+        }
+
+        
+        /**
+         * For Dashboard Page
+         */
+        public function getTotalNonDuplicationButFakeVotesCount() {
+            return $this->mapper->getTotalNonDuplicationButFakeVotesCount();
         }
 
     }

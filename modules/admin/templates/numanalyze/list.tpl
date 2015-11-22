@@ -26,8 +26,10 @@
             <th>Birth Date</th>
             <th>Vote Count</th>
             <th>In List</th>
-            <th>In Area List</th>           
-            <th>PreVote Match</th>          
+            <th>In Area List</th>
+          
+            <th>PreVote Match</th>
+          
         </tr>
     </thead>
     <tbody id="real_duplicated_voters_table">
@@ -38,13 +40,14 @@
                 {assign voter 0}
             {/if}
             <tr data-rowids="{$row->getDuplicationIds()}">
-                <td>{$row->getFirstName()}</td>
-                <td>{$row->getLastName()}</td>
-                <td>{$row->getFatherName()}</td>
-                <td>{$row->getBirthDate()}</td>
+                <td>{if $row->getVoterId()>0}{$voter->getFirstName()}{/if}</td>
+                <td>{if $row->getVoterId()>0}{$voter->getLastName()}{/if}</td>
+                <td>{if $row->getVoterId()>0}{$voter->getFatherName()}{/if}</td>
+                <td>{if $row->getVoterId()>0}{$voter->getBirthDate()}{/if}</td>
                 <td>{$row->getVoteCount()}</td>
                 <td>{if $row->getVoterId()>0}<i class="fa fa-check action-btn"></i>{else}<i class="fa fa-close action-btn delete"></i>{/if}</td>
-                <td>{if $row->getInAreaList()>0}<i class="fa fa-check action-btn"></i>{else}<i class="fa fa-close action-btn delete"></i>{/if}</td>
+                <td>{if $row->getVoterId()>0 && $voter ->getAreaId() == $row->getAreaId()}<i class="fa fa-check action-btn"></i>{else}<i class="fa fa-close action-btn delete"></i>{/if}</td>
+                
                 <td>
                     {if !isset($ns.preVoteData[$row->getVoterId()])}-{else}
                         {if $ns.preVoteData[$row->getVoterId()]->getWillVote()==1}

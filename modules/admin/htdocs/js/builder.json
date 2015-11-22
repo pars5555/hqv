@@ -74,6 +74,7 @@
           "loads/passanalyze/ListLoad.class.js",
           "loads/passanalyze/DuplicatedRealVoterLoad.class.js",
           "loads/numanalyze/IndexLoad.class.js",
+          "loads/numanalyze/ListLoad.class.js",
           "loads/numanalyze/DuplicatedRealVoterLoad.class.js",
           "loads/voters/ListLoad.class.js",
           "loads/voters/IndexLoad.class.js"

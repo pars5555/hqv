@@ -18,14 +18,19 @@
 namespace admin\loads\numanalyze {
 
     use admin\loads\AdminLoad;
-    use admin\managers\AnalyzeManager;
     use NGS;
 
     class IndexLoad extends AdminLoad {
 
         public function load() {
-            $duplicatedRealVoters = AnalyzeManager::getInstance()->getDuplicatedNumberRealVoters();
-            $this->addParam('duplicatedRealVoters', $duplicatedRealVoters);
+            
+        }
+
+        public function getDefaultLoads() {
+            $loads = array();
+            $loads["list"]["action"] = "admin.loads.numanalyze.list";
+            $loads["list"]["args"] = array();
+            return $loads;
         }
 
         public function getTemplate() {

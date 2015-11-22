@@ -47,7 +47,7 @@ namespace admin\loads\number {
             $preVoteData = [];
             if (!empty($voterIdsArray)) {
                 $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
-                $duplicatedInListRealVoters = RealVoterNumberManager::getInstance()->getDuplicatedInListRealVoters($voterIdsArray);
+                $duplicatedInListRealVoters = RealVoterNumberManager::getInstance()->getDuplicatedInListRealVotersRowIds($voterIdsArray);
                 $voterIdsSqlString = "(" . implode(',', $voterIdsArray) . ")";
                 $preVoteData = VoterDataManager::getInstance()->selectAdvance('*', ['voter_id', 'in', $voterIdsSqlString]);
                 $preVoteData = $this->MapByVoterId($preVoteData);
@@ -59,7 +59,7 @@ namespace admin\loads\number {
             $this->addParam('pageCount', $pageCount);
             $this->addParam('rows', $rows);
             $this->addParam('voters', $voters);
-            $this->addParam('duplicatedInListMappedByVoterId', $duplicatedInListRealVoters);
+            $this->addParam('duplicatedInListMappedById', $duplicatedInListRealVoters);
             $this->addParam('preVoteData', $preVoteData);
         }
 

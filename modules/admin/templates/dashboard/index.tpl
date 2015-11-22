@@ -18,9 +18,11 @@
     <div class="col s12">
         <div class="row">
             <div class='col s12 m6 l3'>
+                Passport Chart
                 <div id="passport_chart" style="width: 200px; height: 300px;"></div>
             </div>
             <div class='col s12 m6 l3'>
+                Number Chart
                 <div id="number_chart" style="width: 200px; height: 300px;"></div>
             </div>
             <div class='col s12 m6 l3'>

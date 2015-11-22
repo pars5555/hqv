@@ -49,26 +49,39 @@ namespace admin\managers {
          * @param type $limit
          * @return type
          */
-        public function getDuplicatedNumberRealVoters() {
-            return RealVoterNumberManager::getInstance()->getDuplicatedRealVoters();
+        public function getDuplicatedNumberRealVotersCount() {
+            return RealVoterNumberManager::getInstance()->getDuplicatedRealVotersCount();
+        }
+
+        /**
+         * For NumAnalyze Page
+         * @param type $offset
+         * @param type $limit
+         * @return type
+         */
+        public function getDuplicatedNumberRealVoters($offset, $limit) {
+           
+            return RealVoterNumberManager::getInstance()->getDuplicatedRealVoters($offset, $limit);
         }
 
         /**
          * For Dashboard Page
          */
         public function getTotalPassportDuplicationVotes() {
-            $totalDuplicationVotes = RealVoterPassportManager::getInstance()->getTotalDuplicationVotes();
+            $totalDuplicationVotes = RealVoterPassportManager::getInstance()->getTotalDuplicationVotesSum();
             $duplicationVotesVoterIdCount = RealVoterPassportManager::getInstance()->getDuplicationVotesVoterIdCount();
-            return intval($totalDuplicationVotes) - intval($duplicationVotesVoterIdCount);
+            $totalNonDuplicationButFakeVotesCount = RealVoterPassportManager::getInstance()->getTotalNonDuplicationButFakeVotesCount();
+            return ($totalDuplicationVotes - $duplicationVotesVoterIdCount) + $totalNonDuplicationButFakeVotesCount;
         }
 
         /**
          * For Dashboard Page
          */
         public function getTotalNumberDuplicationVotes() {
-            $totalDuplicationVotes = RealVoterNumberManager::getInstance()->getTotalDuplicationVotes();
+            $totalDuplicationVotes = RealVoterNumberManager::getInstance()->getTotalDuplicationVotesSum();
             $duplicationVotesVoterIdCount = RealVoterNumberManager::getInstance()->getDuplicationVotesVoterIdCount();
-            return intval($totalDuplicationVotes) - intval($duplicationVotesVoterIdCount);
+            $totalNonDuplicationButFakeVotesCount = RealVoterNumberManager::getInstance()->getTotalNonDuplicationButFakeVotesCount();
+            return ($totalDuplicationVotes - $duplicationVotesVoterIdCount) + $totalNonDuplicationButFakeVotesCount;
         }
 
     }
