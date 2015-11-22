@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-22 17:28:11
+<?php /* Smarty version 3.1.27, created on 2015-11-22 17:33:31
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\dashboard\index.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:199985651ed1b48ab14_55969420%%*/
+/*%%SmartyHeaderCode:63705651ee5bb19c85_82956013%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,21 +9,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f75d8012a692c90c0dcbc50dee7205b960ffe3cb' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\dashboard\\index.tpl',
-      1 => 1448209688,
+      1 => 1448210009,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '199985651ed1b48ab14_55969420',
+  'nocache_hash' => '63705651ee5bb19c85_82956013',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5651ed1b519065_79804610',
+  'unifunc' => 'content_5651ee5bb37db2_44147357',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5651ed1b519065_79804610')) {
-function content_5651ed1b519065_79804610 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5651ee5bb37db2_44147357')) {
+function content_5651ee5bb37db2_44147357 ($_smarty_tpl) {
 if (!is_callable('smarty_function_nest')) require_once 'D:\\xampp\\htdocs\\hqv\\classes\\framework\\lib\\smarty\\plugins\\function.nest.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '199985651ed1b48ab14_55969420';
+$_smarty_tpl->properties['nocache_hash'] = '63705651ee5bb19c85_82956013';
 ?>
  
     <?php echo '<script'; ?>
@@ -43,9 +43,21 @@ $_smarty_tpl->properties['nocache_hash'] = '199985651ed1b48ab14_55969420';
         </div>
     </nav>
 </div>
-<div>
-    <div id="passport_chart" style="width: 200px; height: 300px;"></div>
-    <div id="number_chart" style="width: 200px; height: 300px;"></div>
+<div class="row">
+    <div class="col s12">
+        <div class="row">
+            <div class='col s12 m6 l3'>
+                <div id="passport_chart" style="width: 200px; height: 300px;"></div>
+            </div>
+            <div class='col s12 m6 l3'>
+                <div id="number_chart" style="width: 200px; height: 300px;"></div>
+            </div>
+            <div class='col s12 m6 l3'>
+            </div>
+            <div class='col s12 m6 l3'>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="admin-content">
     <div class="row" id='dashboardStatisticsContainer'>

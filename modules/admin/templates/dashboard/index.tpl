@@ -14,9 +14,21 @@
         </div>
     </nav>
 </div>
-<div>
-    <div id="passport_chart" style="width: 200px; height: 300px;"></div>
-    <div id="number_chart" style="width: 200px; height: 300px;"></div>
+<div class="row">
+    <div class="col s12">
+        <div class="row">
+            <div class='col s12 m6 l3'>
+                <div id="passport_chart" style="width: 200px; height: 300px;"></div>
+            </div>
+            <div class='col s12 m6 l3'>
+                <div id="number_chart" style="width: 200px; height: 300px;"></div>
+            </div>
+            <div class='col s12 m6 l3'>
+            </div>
+            <div class='col s12 m6 l3'>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="admin-content">
     <div class="row" id='dashboardStatisticsContainer'>
