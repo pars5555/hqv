@@ -73,7 +73,7 @@
                         <i class="fa fa-check action-btn"></i>
                     </a>
                     <a href="">
-                        <i class="fa fa-close action-btn"></i>
+                        <i class="fa fa-close action-btn delete"></i>
                     </a>
                 </td>
             </tr>

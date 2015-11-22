@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-21 13:42:59
+<?php /* Smarty version 3.1.27, created on 2015-11-22 16:04:33
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\passanalyze\index.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:9673565066d36f7556_13579524%%*/
+/*%%SmartyHeaderCode:103395651d9813776c5_60192361%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,25 +9,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bf74a7e92cbac0ce27e9be7bd3cf97755aef130a' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\passanalyze\\index.tpl',
-      1 => 1448109715,
+      1 => 1448204556,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '9673565066d36f7556_13579524',
-  'variables' => 
-  array (
-    'ns' => 0,
-    'row' => 0,
-  ),
+  'nocache_hash' => '103395651d9813776c5_60192361',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_565066d375f7f7_67237907',
+  'unifunc' => 'content_5651d9813971a3_64050822',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_565066d375f7f7_67237907')) {
-function content_565066d375f7f7_67237907 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5651d9813971a3_64050822')) {
+function content_5651d9813971a3_64050822 ($_smarty_tpl) {
+if (!is_callable('smarty_function_nest')) require_once 'D:\\xampp\\htdocs\\hqv\\classes\\framework\\lib\\smarty\\plugins\\function.nest.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '9673565066d36f7556_13579524';
+$_smarty_tpl->properties['nocache_hash'] = '103395651d9813776c5_60192361';
 ?>
 <div class="breadscrumb">
     <nav class="red darken-3" style="padding-left:10px;">
@@ -44,50 +40,11 @@ $_smarty_tpl->properties['nocache_hash'] = '9673565066d36f7556_13579524';
         
     </div>
     <div class="row">
-        <table class="responsive-table real-voters">
-            <thead>
-                <tr>
-                    <th data-field="id">First Name</th>
-                    <th data-field="name">Last Name</th>
-                    <th data-field="price">Father Price</th>
-                    <th data-field="price">Birth Date</th>
-                    <th data-field="price">Vote Count</th>
-                    <th data-field="price">In List</th>
-                </tr>
-            </thead>
-            <tbody id="real_duplicated_voters_table">
-                <?php
-$_from = $_smarty_tpl->tpl_vars['ns']->value['duplicatedRealVoters'];
-if (!is_array($_from) && !is_object($_from)) {
-settype($_from, 'array');
-}
-$_smarty_tpl->tpl_vars['row'] = new Smarty_Variable;
-$_smarty_tpl->tpl_vars['row']->_loop = false;
-foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
-$_smarty_tpl->tpl_vars['row']->_loop = true;
-$foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
-?>
-                    <?php $_smarty_tpl->tpl_vars['bd'] = new Smarty_Variable(explode("-",$_smarty_tpl->tpl_vars['row']->value->getBirthDate()), null, 0);?> 
-                    <tr data-rowids="<?php echo $_smarty_tpl->tpl_vars['row']->value->getDuplicationIds();?>
-">
-                        <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getFirstName();?>
-</td>
-                        <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getLastName();?>
-</td>
-                        <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getFatherName();?>
-</td>
-                        <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getBirthDate();?>
-</td>
-                        <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getVoteCount();?>
-</td>
-                        <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>ok<?php } else { ?>error<?php }?></td>
-                    </tr>
-                <?php
-$_smarty_tpl->tpl_vars['row'] = $foreach_row_Sav;
-}
-?>
-            </tbody>
-        </table> 
+        <div class="col s12 m12 12" id='passanalyzeTableContainer'>
+            <?php echo smarty_function_nest(array('ns'=>'list'),$_smarty_tpl);?>
+
+        </div>
+        
     </div>
 </div><?php }
 }

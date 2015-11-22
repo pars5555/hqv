@@ -27,8 +27,14 @@ header, main, footer, .content {
 	font-size: 26px;
 	color: #26a69a;
 }
+.action-btn.delete {
+	color: #fe7e83;
+}
 .action-btn:hover {
 	color: #2bbbad;
+}
+.action-btn.delete:hover {
+	color: #ef8e93;
 }
 @media only screen and (max-width : 992px) {
 	header, main, footer, .content {
