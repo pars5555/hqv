@@ -23,6 +23,13 @@ header, main, footer, .content {
 	top: 0px;
 	display: none;
 }
+.action-btn {
+	font-size: 26px;
+	color: #26a69a;
+}
+.action-btn:hover {
+	color: #2bbbad;
+}
 @media only screen and (max-width : 992px) {
 	header, main, footer, .content {
 	  padding-left: 0;

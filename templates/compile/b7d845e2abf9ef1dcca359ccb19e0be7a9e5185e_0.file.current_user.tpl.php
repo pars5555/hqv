@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-21 14:08:51
+<?php /* Smarty version 3.1.27, created on 2015-11-22 14:45:32
          compiled from "D:\xampp\htdocs\hqv\templates\main\current_user.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:796356506ce32f60b9_58421904%%*/
+/*%%SmartyHeaderCode:230985651c6fcb4b201_54259062%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b7d845e2abf9ef1dcca359ccb19e0be7a9e5185e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\current_user.tpl',
-      1 => 1448111276,
+      1 => 1448199737,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '796356506ce32f60b9_58421904',
+  'nocache_hash' => '230985651c6fcb4b201_54259062',
   'variables' => 
   array (
     'ns' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56506ce3325ed2_24809182',
+  'unifunc' => 'content_5651c6fcc583d6_42684676',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56506ce3325ed2_24809182')) {
-function content_56506ce3325ed2_24809182 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5651c6fcc583d6_42684676')) {
+function content_5651c6fcc583d6_42684676 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '796356506ce32f60b9_58421904';
+$_smarty_tpl->properties['nocache_hash'] = '230985651c6fcb4b201_54259062';
 if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
     <?php if (!empty($_smarty_tpl->tpl_vars['ns']->value['voter_data'])) {?>
         <p class="center-align red-text text-darken-4">You have already voted! call us if you were not</p>
@@ -52,6 +52,8 @@ if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
                 <?php echo $_smarty_tpl->tpl_vars['ns']->value['area']->getRegion();?>
 , <?php echo $_smarty_tpl->tpl_vars['ns']->value['area']->getCommunity();?>
 , <?php echo $_smarty_tpl->tpl_vars['ns']->value['area']->getAddress();?>
+, <?php echo $_smarty_tpl->tpl_vars['ns']->value['area']->getTerritoryId();?>
+/<?php echo $_smarty_tpl->tpl_vars['ns']->value['area']->getAreaId();?>
 
             </div>
             <div class="input-field col s12 m6 6">
@@ -101,7 +103,7 @@ if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
     </form>
 <?php } else { ?>
     <h4>Wrong Voter Data!<h4>
-<?php }
+        <?php }
 }
 }
 ?>

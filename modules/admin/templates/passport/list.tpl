@@ -68,6 +68,14 @@
                 <td>
                     <a data-rowid="{$row->getId()}" class="f_edit waves-effect waves-light btn">Edit<i class="material-icons left">mode_edit</i></a>
                 </td>
+                <td>
+                    <a href="">
+                        <i class="fa fa-check action-btn"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-close action-btn"></i>
+                    </a>
+                </td>
             </tr>
         {/foreach}
     </tbody>

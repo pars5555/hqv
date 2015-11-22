@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-21 13:42:02
+<?php /* Smarty version 3.1.27, created on 2015-11-22 14:47:23
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\passport\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:90605650669ac8f204_19818468%%*/
+/*%%SmartyHeaderCode:181555651c76b9b4aa7_67991271%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0134ffec2dfe5bda09aea4cca693522774a444f9' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\passport\\list.tpl',
-      1 => 1448109715,
+      1 => 1448199980,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '90605650669ac8f204_19818468',
+  'nocache_hash' => '181555651c76b9b4aa7_67991271',
   'variables' => 
   array (
     'ns' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5650669acbdf41_19217360',
+  'unifunc' => 'content_5651c76ba027d6_95319199',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5650669acbdf41_19217360')) {
-function content_5650669acbdf41_19217360 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5651c76ba027d6_95319199')) {
+function content_5651c76ba027d6_95319199 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '90605650669ac8f204_19818468';
+$_smarty_tpl->properties['nocache_hash'] = '181555651c76b9b4aa7_67991271';
 ?>
 <div class="row">
     <div class="col s12 m6 6">
@@ -124,6 +124,14 @@ $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
                 <td>
                     <a data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
 " class="f_edit waves-effect waves-light btn">Edit<i class="material-icons left">mode_edit</i></a>
+                </td>
+                <td>
+                    <a href="">
+                        <i class="fa fa-check action-btn"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-close action-btn"></i>
+                    </a>
                 </td>
             </tr>
         <?php
