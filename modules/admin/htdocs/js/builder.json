@@ -71,7 +71,10 @@
           "loads/number/AddEditLoad.class.js",
           "loads/number/AreaSelectionLoad.class.js",
           "loads/passanalyze/IndexLoad.class.js",
+          "loads/passanalyze/ListLoad.class.js",
           "loads/passanalyze/DuplicatedRealVoterLoad.class.js",
+          "loads/numanalyze/IndexLoad.class.js",
+          "loads/numanalyze/DuplicatedRealVoterLoad.class.js",
           "loads/voters/ListLoad.class.js",
           "loads/voters/IndexLoad.class.js"
         ]
@@ -90,6 +93,7 @@
           "actions/passport/AddRealVoterAction.class.js",
           "actions/number/AddRealVoterAction.class.js",
           "actions/passport/SetInvalidVoteAction.class.js",
+          "actions/passport/DeleteVoteAction.class.js",
           "actions/number/SetInvalidVoteAction.class.js",
           "actions/number/DeleteVoteAction.class.js",
           "actions/prevote/UnblockIpAction.class.js",

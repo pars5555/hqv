@@ -33,8 +33,22 @@ namespace admin\managers {
             return self::$instance;
         }
 
-        public function getDuplicatedRealVoters() {
-            return RealVoterPassportManager::getInstance()->getDuplicatedRealVoters();
+        public function getDuplicatedPassportRealVoters($offset, $limit) {
+            return RealVoterPassportManager::getInstance()->getDuplicatedRealVoters($offset, $limit);
+        }
+
+        public function getDuplicatedPassportRealVotersCount() {
+            return RealVoterPassportManager::getInstance()->getDuplicatedRealVotersCount();
+        }
+
+        public function getDuplicatedNumberRealVoters() {
+            return RealVoterNumberManager::getInstance()->getDuplicatedRealVoters();
+        }
+
+        public function getTotalDuplicationVotes() {
+            $totalDuplicationVotes = RealVoterPassportManager::getInstance()->getTotalDuplicationVotes();
+            $duplicationVotesVoterIdCount = RealVoterPassportManager::getInstance()->getDuplicationVotesVoterIdCount();
+            return intval($totalDuplicationVotes) - intval($duplicationVotesVoterIdCount);
         }
 
     }

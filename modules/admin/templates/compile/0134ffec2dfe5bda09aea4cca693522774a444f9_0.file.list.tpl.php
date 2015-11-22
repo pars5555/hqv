@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-22 14:47:23
+<?php /* Smarty version 3.1.27, created on 2015-11-22 15:12:58
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\passport\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:181555651c76b9b4aa7_67991271%%*/
+/*%%SmartyHeaderCode:71955651cd6ab7ae43_49719370%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0134ffec2dfe5bda09aea4cca693522774a444f9' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\passport\\list.tpl',
-      1 => 1448199980,
+      1 => 1448201560,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '181555651c76b9b4aa7_67991271',
+  'nocache_hash' => '71955651cd6ab7ae43_49719370',
   'variables' => 
   array (
     'ns' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5651c76ba027d6_95319199',
+  'unifunc' => 'content_5651cd6acb1588_04613323',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5651c76ba027d6_95319199')) {
-function content_5651c76ba027d6_95319199 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5651cd6acb1588_04613323')) {
+function content_5651cd6acb1588_04613323 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '181555651c76b9b4aa7_67991271';
+$_smarty_tpl->properties['nocache_hash'] = '71955651cd6ab7ae43_49719370';
 ?>
 <div class="row">
     <div class="col s12 m6 6">
@@ -84,6 +84,8 @@ $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
 ?>
             <?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>
                 <?php $_smarty_tpl->tpl_vars['voter'] = new Smarty_Variable($_smarty_tpl->tpl_vars['ns']->value['voters'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()], null, 0);?>
+            <?php } else { ?>
+                <?php $_smarty_tpl->tpl_vars['voter'] = new Smarty_Variable(0, null, 0);?>
             <?php }?>
             <tr data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
 ">
@@ -96,7 +98,7 @@ $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
                 <td><?php echo $_smarty_tpl->tpl_vars['row']->value->getBirthDate();?>
 </td>
                 <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?>ok<?php } else { ?>error<?php }?></td>
-                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0 && $_smarty_tpl->tpl_vars['voter']->value->getAreaId() == $_smarty_tpl->tpl_vars['row']->value->getVoterId()) {?>ok<?php } else { ?>error<?php }?></td>
+                <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0 && $_smarty_tpl->tpl_vars['voter']->value->getAreaId() == $_smarty_tpl->tpl_vars['row']->value->getAreaId()) {?>ok<?php } else { ?>error<?php }?></td>
                 <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0 && isset($_smarty_tpl->tpl_vars['ns']->value['duplicatedInListMappedByVoterId'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()])) {?>error<?php } else { ?>ok<?php }?></td>
                 <td>
                     <?php if (!isset($_smarty_tpl->tpl_vars['ns']->value['preVoteData'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()])) {?>-<?php } else { ?>
@@ -124,6 +126,8 @@ $foreach_row_Sav = $_smarty_tpl->tpl_vars['row'];
                 <td>
                     <a data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
 " class="f_edit waves-effect waves-light btn">Edit<i class="material-icons left">mode_edit</i></a>
+                    <a data-rowid="<?php echo $_smarty_tpl->tpl_vars['row']->value->getId();?>
+" class="f_delete waves-effect waves-light btn">Delete<i class="material-icons left">mode_delete</i></a>
                 </td>
                 <td>
                     <a href="">
@@ -156,6 +160,16 @@ $_smarty_tpl->tpl_vars['row'] = $foreach_row_Sav;
         <a href="#!" id="setInvalidBtn" class="modal-action waves-effect btn" style="margin-left:10px;">Confirm</a>
         <a href="#!" class="modal-action modal-close waves-effect btn">Cancel</a>
     </div>
-</div><?php }
+</div>
+    <div id="caseDeleteModel" class="modal">
+    <div class="modal-content">
+        <h4>Why do you want to delete?</h4>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" id="deleteBtn" class="modal-action waves-effect btn" style="margin-left:10px;">Confirm</a>
+        <a href="#!" class="modal-action modal-close waves-effect btn">Cancel</a>
+    </div>
+</div>
+<?php }
 }
 ?>

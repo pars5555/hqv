@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-22 14:45:26
+<?php /* Smarty version 3.1.27, created on 2015-11-22 15:12:48
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\dashboard\index.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:24725651c6f6273bf1_92276610%%*/
+/*%%SmartyHeaderCode:258585651cd60aba153_74766233%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,23 +9,27 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f75d8012a692c90c0dcbc50dee7205b960ffe3cb' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\dashboard\\index.tpl',
-      1 => 1448110496,
+      1 => 1448200925,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '24725651c6f6273bf1_92276610',
+  'nocache_hash' => '258585651cd60aba153_74766233',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5651c6f64b6029_47792958',
+  'unifunc' => 'content_5651cd60ade7f2_76149169',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5651c6f64b6029_47792958')) {
-function content_5651c6f64b6029_47792958 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5651cd60ade7f2_76149169')) {
+function content_5651cd60ade7f2_76149169 ($_smarty_tpl) {
 if (!is_callable('smarty_function_nest')) require_once 'D:\\xampp\\htdocs\\hqv\\classes\\framework\\lib\\smarty\\plugins\\function.nest.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '24725651c6f6273bf1_92276610';
+$_smarty_tpl->properties['nocache_hash'] = '258585651cd60aba153_74766233';
 ?>
-
+ 
+    <?php echo '<script'; ?>
+ type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['bar','corechart']}]}"><?php echo '</script'; ?>
+>
+ 
 <div class="breadscrumb">
     <nav class="red darken-3" style="padding-left:10px;">
         <div class="nav-wrapper">
@@ -39,6 +43,7 @@ $_smarty_tpl->properties['nocache_hash'] = '24725651c6f6273bf1_92276610';
         </div>
     </nav>
 </div>
+<div id="columnchart_material" style="width: 200px; height: 300px;"></div>
 <div class="admin-content">
     <div class="row" id='dashboardStatisticsContainer'>
         <?php echo smarty_function_nest(array('ns'=>'statistics'),$_smarty_tpl);?>

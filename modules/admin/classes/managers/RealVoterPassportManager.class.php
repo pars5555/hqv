@@ -61,6 +61,7 @@ namespace admin\managers {
             if (!empty($listVoters) && count($listVoters) === 1) {
                 $voter = $listVoters[0];
                 $dto->setVoterId($voter->getId());
+                $dto->setFatherName($voter->getFatherName());
             } else {
                 $dto->setVoterId(0);
             }
@@ -92,6 +93,7 @@ namespace admin\managers {
             if (!empty($listVoters) && count($listVoters) === 1) {
                 $voter = $listVoters[0];
                 $dto->setVoterId($voter->getId());
+                $dto->setFatherName($voter->getFatherName());
             }
 
             return $this->insertDto($dto);
@@ -113,8 +115,18 @@ namespace admin\managers {
             return $ret;
         }
 
-        public function getDuplicatedRealVoters() {
-            return $this->mapper->getDuplicatedRealVoters();
+        public function getDuplicatedRealVotersCount() {
+            return $this->mapper->getDuplicatedRealVotersCount();
+        }
+        public function getTotalDuplicationVotes() {
+            return $this->mapper->getTotalDuplicationVotes();
+        }
+
+        public function getDuplicatedRealVoters($offset, $limit) {
+            return $this->mapper->getDuplicatedRealVoters($offset, $limit);
+        }
+        public function getDuplicationVotesVoterIdCount() {
+            return $this->mapper->getDuplicationVotesVoterIdCount();
         }
 
     }

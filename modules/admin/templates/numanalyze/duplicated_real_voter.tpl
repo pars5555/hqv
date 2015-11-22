@@ -13,7 +13,6 @@
 {/if}
 <br>
 
-
 {foreach from=$ns.duplidatedRows item=row}
     {assign areaId $row->getAreaId()}
     {assign area $ns.areasMappedById[$areaId]}

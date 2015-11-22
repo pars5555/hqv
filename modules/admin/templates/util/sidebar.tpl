@@ -26,7 +26,7 @@
             <li id="sidebar_passanalyze_li">
                 <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='passanalyze.index'><i class="material-icons left">perm_media</i>Passport Analyze</a>
             </li>
-            <li id="sidebar_passanalyze_li">
+            <li id="sidebar_numanalyze_li">
                 <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='numanalyze.index'><i class="material-icons left">perm_media</i>Numbers Analyze</a>
             </li>
             <li id="sidebar_prevoteanalyze_li">

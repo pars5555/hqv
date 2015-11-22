@@ -75,13 +75,15 @@ namespace admin\dal\mappers {
         }
 
         public function getDuplicatedRealVoters() {
-            $sql = "SELECT *, COUNT(*)  AS vote_count, GROUP_CONCAT(id) AS duplication_ids  FROM `%s` GROUP BY first_name, last_name, father_name, birth_date HAVING vote_count > 1 ORDER BY vote_count DESC";
+            $sql = "SELECT *, COUNT(*)  AS vote_count, "
+                    . "GROUP_CONCAT(id) AS duplication_ids  "
+                    . "FROM `%s` "
+                    . "GROUP BY voter_id HAVING vote_count > 1 ORDER BY vote_count DESC";
             $sqlQuery = sprintf($sql, $this->getTableName());
             return $this->fetchRows($sqlQuery);
         }
 
         public function getDuplicatedInListRealVoters($voterIds) {
-
             $sql = "SELECT *, COUNT(*)  AS vote_count, GROUP_CONCAT(id) AS duplication_ids  FROM `%s` "
                     . "WHERE voter_id IN (%s) GROUP BY voter_id  HAVING vote_count > 1 ORDER BY vote_count DESC";
             $sqlQuery = sprintf($sql, $this->getTableName(), implode(',', $voterIds));

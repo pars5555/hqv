@@ -15,26 +15,21 @@
  *
  */
 
-namespace admin\loads\passanalyze {
+namespace admin\loads\numanalyze {
 
-use admin\loads\AdminLoad;
-use NGS;
+    use admin\loads\AdminLoad;
+    use admin\managers\AnalyzeManager;
+    use NGS;
 
     class IndexLoad extends AdminLoad {
 
         public function load() {
-            
-        }
-
-        public function getDefaultLoads() {
-            $loads = array();
-            $loads["list"]["action"] = "admin.loads.passanalyze.list";
-            $loads["list"]["args"] = array();
-            return $loads;
+            $duplicatedRealVoters = AnalyzeManager::getInstance()->getDuplicatedNumberRealVoters();
+            $this->addParam('duplicatedRealVoters', $duplicatedRealVoters);
         }
 
         public function getTemplate() {
-            return NGS()->getTemplateDir() . "/passanalyze/index.tpl";
+            return NGS()->getTemplateDir() . "/numanalyze/index.tpl";
         }
 
     }

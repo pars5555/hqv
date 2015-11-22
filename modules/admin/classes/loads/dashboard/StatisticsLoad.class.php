@@ -17,9 +17,10 @@
 
 namespace admin\loads\dashboard {
 
-    use admin\loads\ModeratorLoad;
-    use hqv\managers\VoterDataManager;
-    use NGS;
+use admin\loads\ModeratorLoad;
+use admin\managers\AnalyzeManager;
+use hqv\managers\VoterDataManager;
+use NGS;
 
     class StatisticsLoad extends ModeratorLoad {
 
@@ -27,6 +28,8 @@ namespace admin\loads\dashboard {
             $dataCountGroupByVoter = VoterDataManager::getInstance()->getDataCountGroupByVoterId();
             $nonParticipantCounts = VoterDataManager::getInstance()->getNonParticipantCounts();
             $participantCounts = VoterDataManager::getInstance()->getParticipantCounts();
+            $totalDuplicationVotes = AnalyzeManager::getInstance()->getTotalDuplicationVotes();
+              $this->addJsonParam("aaa", rand(0, 5000));
             
             $this->addParam('countGroupByVoter', $dataCountGroupByVoter);
             $this->addParam('participantCounts', $participantCounts);

@@ -1,4 +1,6 @@
-
+{literal} 
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['bar','corechart']}]}"></script>
+{/literal} 
 <div class="breadscrumb">
     <nav class="red darken-3" style="padding-left:10px;">
         <div class="nav-wrapper">
@@ -12,6 +14,7 @@
         </div>
     </nav>
 </div>
+<div id="columnchart_material" style="width: 200px; height: 300px;"></div>
 <div class="admin-content">
     <div class="row" id='dashboardStatisticsContainer'>
         {nest ns=statistics}

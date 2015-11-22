@@ -8,6 +8,21 @@ NGS.createLoad("admin.loads.passport.list", {
         this.initInvalidVotes();
         this.initPaging();
         this.initTableEdit();
+        this.initTableDelete();
+    },
+    initTableDelete: function () {
+        $('#real_voters_table .f_delete').click(function (event) {
+            $('#real_voters_table tr').removeClass('active');
+            $(this).parents('tr').addClass('active');
+            event.preventDefault();
+            var rowId = $(this).data('rowid');
+            $('#caseDeleteModel').openModal();
+            $('#deleteBtn').off('click').on('click', function (event) {
+                event.preventDefault();
+                NGS.action('admin.actions.passport.delete_vote', {rowId: rowId});
+            }.bind(this));
+        });
+
     },
     initTableEdit: function () {
         $('#real_voters_table .f_edit').click(function () {

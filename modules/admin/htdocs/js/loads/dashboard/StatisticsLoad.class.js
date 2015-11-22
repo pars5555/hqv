@@ -4,10 +4,16 @@ NGS.createLoad("admin.loads.dashboard.statistics", {
     },
     onError: function (params) {
     },
-    afterLoad: function () {
-        this.initAreaSelection();
+    afterLoad: function (params) {
+        this.initAreaSelection(params);
     },
-    initAreaSelection: function () {
+    initAreaSelection: function (params) {
+        var dashboradChartData = google.visualization.arrayToDataTable([
+            ['', 'Արդար', 'Խախտում'],
+            ['Քվե', params.aaa, params.aaa/2]
+        ]);
+        NGS.dashboradChart.draw(dashboradChartData, NGS.dashboradChartOptions);
+        
         if (NGS.dashboardStatisticsTimoutId) {
             clearTimeout(NGS.dashboardStatisticsTimoutId);
         }

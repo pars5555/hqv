@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-21 13:41:59
+<?php /* Smarty version 3.1.27, created on 2015-11-22 15:12:48
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\util\sidebar.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2978556506697463524_86513352%%*/
+/*%%SmartyHeaderCode:220935651cd609eb418_84680782%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd8fa0044640d819c2e9979214a0524546141aef0' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\util\\sidebar.tpl',
-      1 => 1448109715,
+      1 => 1448181482,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2978556506697463524_86513352',
+  'nocache_hash' => '220935651cd609eb418_84680782',
   'variables' => 
   array (
     'ns' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5650669746b0c7_60860979',
+  'unifunc' => 'content_5651cd60a9a925_36522101',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5650669746b0c7_60860979')) {
-function content_5650669746b0c7_60860979 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5651cd60a9a925_36522101')) {
+function content_5651cd60a9a925_36522101 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2978556506697463524_86513352';
+$_smarty_tpl->properties['nocache_hash'] = '220935651cd609eb418_84680782';
 ?>
 
 <div id="slide-out" class="side-nav fixed">
@@ -57,7 +57,7 @@ $_smarty_tpl->properties['nocache_hash'] = '2978556506697463524_86513352';
             <li id="sidebar_passanalyze_li">
                 <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='passanalyze.index'><i class="material-icons left">perm_media</i>Passport Analyze</a>
             </li>
-            <li id="sidebar_passanalyze_li">
+            <li id="sidebar_numanalyze_li">
                 <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='numanalyze.index'><i class="material-icons left">perm_media</i>Numbers Analyze</a>
             </li>
             <li id="sidebar_prevoteanalyze_li">
