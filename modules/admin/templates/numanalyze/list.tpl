@@ -47,13 +47,12 @@
                 <td>{$row->getVoteCount()}</td>
                 <td>{if $row->getVoterId()>0}<i class="fa fa-check action-btn"></i>{else}<i class="fa fa-close action-btn delete"></i>{/if}</td>
                 <td>{if $row->getVoterId()>0 && $voter ->getAreaId() == $row->getAreaId()}<i class="fa fa-check action-btn"></i>{else}<i class="fa fa-close action-btn delete"></i>{/if}</td>
-                
                 <td>
                     {if !isset($ns.preVoteData[$row->getVoterId()])}-{else}
                         {if $ns.preVoteData[$row->getVoterId()]->getWillVote()==1}
-                            OK
+                           <i class="fa fa-check action-btn"></i>
                         {else}
-                            Error
+                            <i class="fa fa-close action-btn delete"></i>
                         {/if}
                     {/if}</td>
                

@@ -46,11 +46,13 @@
                 <td>{if $row->getAreaVoterId()>0}<i class="fa fa-check action-btn"></i>{else}<i class="fa fa-close action-btn delete"></i>{/if}</td>
                 <td>{if in_array($row->getId(), $ns.duplicatedInListMappedById)}<i class="fa fa-close action-btn delete"></i>{else}<i class="fa fa-check action-btn"></i>{/if}</td>
                 <td>
-                    {if !isset($ns.preVoteData[$row->getVoterId()])}-{else}
+                    {if !isset($ns.preVoteData[$row->getVoterId()])}
+                        -
+                    {else}
                         {if $ns.preVoteData[$row->getVoterId()]->getWillVote()==1}
-                            OK
+                            <i class="fa fa-check action-btn"></i>
                         {else}
-                            Error
+                            <i class="fa fa-close action-btn delete"></i>
                         {/if}
                     {/if}
                 </td>
