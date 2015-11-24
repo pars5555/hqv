@@ -15,7 +15,7 @@
  *
  */
 
-namespace admin\loads\dashboard {
+namespace admin\loads\prevote {
 
     use admin\loads\ModeratorLoad;
     use NGS;
@@ -23,23 +23,21 @@ namespace admin\loads\dashboard {
     class IndexLoad extends ModeratorLoad {
 
         public function load() {
-             $allAreaIdsMappedByTerritoryId = \hqv\managers\AreaManager::getInstance()->getAllAreaIdsMappedByTerritoryId();
-             $allTerritoriesIds = array_keys($allAreaIdsMappedByTerritoryId);
-             asort($allTerritoriesIds );
-             $this->addParam('allTerritoryIds', $allTerritoriesIds  );
+            
         }
 
         public function getDefaultLoads() {
             $loads = array();
-            $loads["area"]["action"] = "admin.loads.dashboard.area_selection";
-            $loads["area"]["args"] = array();
-            $loads["statistics"]["action"] = "admin.loads.dashboard.statistics";
-            $loads["statistics"]["args"] = array();
+            
+            $loads["add_edit"]["action"] = "admin.loads.passport.add_edit";
+            $loads["add_edit"]["args"] = array();
+            $loads["list"]["action"] = "admin.loads.passport.list";
+            $loads["list"]["args"] = array();
             return $loads;
         }
 
         public function getTemplate() {
-            return NGS()->getTemplateDir() . "/dashboard/index.tpl";
+            return NGS()->getTemplateDir() . "/prevote/index.tpl";
         }
 
     }

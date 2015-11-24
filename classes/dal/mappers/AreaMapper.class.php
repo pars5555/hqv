@@ -47,6 +47,12 @@ namespace hqv\dal\mappers {
             $sqlQuery = sprintf($sql, $this->getTableName());
             return $this->fetchRows($sqlQuery);
         }
+        
+        public function getAllGroupByTerritoryId() {
+            $sql = "SELECT *, GROUP_CONCAT(id) as area_ids FROM `%s` GROUP BY territory_id Order By `community`";
+            $sqlQuery = sprintf($sql, $this->getTableName());
+            return $this->fetchRows($sqlQuery);
+        }
 
         public function getRegionCommunities($region) {
             $sql = "SELECT * FROM `%s` WHERE `region` = '%s' GROUP BY `community` Order By `community`";

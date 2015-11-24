@@ -155,6 +155,14 @@ namespace admin\managers {
         /**
          * For Dashboard Page
          */
+        public function getTotalValidVotesCountInAreaIds($areaIds) {
+            $areaIdsForSql = '(' . implode(',', $areaIds) . ')';
+            return $this->countAdvance(['invalid', '=', 0, 'and', 'area_id', 'in', $areaIdsForSql]);
+        }
+
+        /**
+         * For Dashboard Page
+         */
         public function getTotalDuplicationVotesSum() {
             return $this->mapper->getTotalDuplicationVotesSum();
         }
