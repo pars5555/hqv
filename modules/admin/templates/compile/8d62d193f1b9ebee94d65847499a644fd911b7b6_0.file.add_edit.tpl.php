@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-21 13:42:02
+<?php /* Smarty version 3.1.27, created on 2015-11-24 20:39:14
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\passport\add_edit.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:268715650669ac20414_35892616%%*/
+/*%%SmartyHeaderCode:173115654bce2e77382_38102227%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8d62d193f1b9ebee94d65847499a644fd911b7b6' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\passport\\add_edit.tpl',
-      1 => 1448007876,
+      1 => 1448393947,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '268715650669ac20414_35892616',
+  'nocache_hash' => '173115654bce2e77382_38102227',
   'variables' => 
   array (
     'ns' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5650669ac53029_89153154',
+  'unifunc' => 'content_5654bce2eb1358_30678895',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5650669ac53029_89153154')) {
-function content_5650669ac53029_89153154 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5654bce2eb1358_30678895')) {
+function content_5654bce2eb1358_30678895 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '268715650669ac20414_35892616';
+$_smarty_tpl->properties['nocache_hash'] = '173115654bce2e77382_38102227';
 ?>
 <div class="row">
     <div class="input-field col s12 m4 4">
@@ -87,7 +87,26 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
         </select>
     </div>
 </div>
-
+<div class="row">
+    <div class="col s4 m4 l4">
+        <p>
+          <input name="group1" type="radio" id="passportRadio" />
+          <label for="passportRadio">Passport</label>
+        </p>
+    </div>
+    <div class="col s4 m4 l4">
+        <p>
+          <input name="group1" type="radio" id="idRadio" />
+          <label for="idRadio">Id</label>
+        </p>
+    </div>
+    <div class="col s4 m4 l4">
+        <p>
+          <input name="group1" type="radio" id="militaryRadio" />
+          <label for="militaryRadio">Military</label>
+        </p>
+    </div>
+</div>
 <div class="row">
     <input type="hidden" id="editRowId" value="<?php if ($_smarty_tpl->tpl_vars['ns']->value['edit'] == 1) {
 echo $_smarty_tpl->tpl_vars['ns']->value['row_id'];

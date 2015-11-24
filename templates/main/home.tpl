@@ -2,7 +2,7 @@
 		<div class="no-pad-bot row center valign">
 			<div class="col s12">
 		      	<h1 class="header center white-text text-lighten-2">Website</h1>
-		      	<h5 class="header light white-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</h5>
+		      	<h5 class="header light white-text">Թու՛յլ մի տուր, որ քո փոխարեն քվեարկեն:</h5>
 			</div>
 			<div class="col s12">
 				<a href="#searchDashboard" class="btn">
@@ -57,7 +57,7 @@
 		</div>
 	</div>
 </div>
-<div class="parallax-container valign-wrapper">
+<div class="hide parallax-container valign-wrapper">
 	<div class="section no-pad-bot row center">
       	<h3 class="header col s12 light white-text">Who we are ?</h3>
       	<p class="white-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
@@ -66,7 +66,7 @@
 		<img src="{$SITE_PATH}/img/parallax2.jpg">
 	</div>
 </div>
-<div class="section row container">
+<div class="hide section row container">
     <div class="col s12 m4 4">
       <div class="center promo promo-example">
         <i class="material-icons large">flash_on</i>
@@ -89,7 +89,7 @@
       </div>
     </div>
 </div>
-<div class="parallax-container valign-wrapper">
+<div class="hide parallax-container valign-wrapper">
 	<div class="section no-pad-bot row center">
       	<h3 class="header col s12 light white-text">Articles</h3>
       	<p class="white-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
@@ -98,7 +98,7 @@
 		<img src="{$SITE_PATH}/img/parallax1.jpg">
 	</div>
 </div>
-<div class="section row container">
+<div class="hide section row container">
 	<div class="col s12 m6 6">
 		<div class="card">
 			<div class="card-image waves-effect waves-block waves-light">
@@ -163,7 +163,7 @@
 <div class="parallax-container valign-wrapper">
 	<div class="section no-pad-bot row center">
       	<h3 class="header col s12 light white-text">Our Parters</h3>
-      	<p class="white-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+      	<p class="white-text"></p>
     </div>
 	<div class="parallax">
 		<img src="{$SITE_PATH}/img/parallax2.jpg">
@@ -171,20 +171,28 @@
 </div>
 <div class="section row container">
 	<div class="col s12 m3 3 center">
-		<img src="" />
-		<p>Partner name</p>
+		<a href="http://www.asparez.am/">
+			<img width="150" src="{$SITE_PATH}/img/Asparez_logo.jpg" />
+			<p class="black-text">Ժուռնալիստների «Ասպարեզ» ակումբ</p>
+		</a>
 	</div>
 	<div class="col s12 m3 3 center">
-		<img src="" />
-		<p>Partner name</p>
+		<a href="http://transparency.am/">
+			<img width="150" src="{$SITE_PATH}/img/citizen observer.jpg" />
+			<p class="black-text">Թրանսփարենսի Ինթերնեշնլ հակակոռուպցիոն կենտրոն</p>
+		</a>
 	</div>
 	<div class="col s12 m3 3 center">
-		<img src="" />
-		<p>Partner name</p>
+		<a href="http://hcav.am/">
+			<img width="150" src="{$SITE_PATH}/img/HCAV.png" />
+			<p class="black-text">Հելսինկյան քաղաքացիական ասամբլեայի Վանաձորի գրասենյակ</p>
+		</a>
 	</div>
 	<div class="col s12 m3 3 center">
-		<img src="" />
-		<p>Partner name</p>
+		<a href="http://ela.am/">
+			<img width="150" src="{$SITE_PATH}/img/Logo_ELA.png" />
+			<p class="black-text">Իրավունքի Եվրոպա միավորում</p>
+		</a>
 	</div>
 </div>
 <div id="searchResultModal" class="modal current-user-modal modal-fixed-footer">

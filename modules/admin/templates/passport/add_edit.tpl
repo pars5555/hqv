@@ -38,7 +38,26 @@
         </select>
     </div>
 </div>
-
+<div class="row">
+    <div class="col s4 m4 l4">
+        <p>
+          <input name="group1" type="radio" id="passportRadio" />
+          <label for="passportRadio">Passport</label>
+        </p>
+    </div>
+    <div class="col s4 m4 l4">
+        <p>
+          <input name="group1" type="radio" id="idRadio" />
+          <label for="idRadio">Id</label>
+        </p>
+    </div>
+    <div class="col s4 m4 l4">
+        <p>
+          <input name="group1" type="radio" id="militaryRadio" />
+          <label for="militaryRadio">Military</label>
+        </p>
+    </div>
+</div>
 <div class="row">
     <input type="hidden" id="editRowId" value="{if $ns.edit==1}{$ns.row_id}{/if}"/>
     <p id="addVoterError" class="red-text text-darken-4 center-align"></p>
