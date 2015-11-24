@@ -1,5 +1,5 @@
 <div class="breadscrumb">
-    <nav class="red darken-3" style="padding-left:10px;">
+    <nav class="grey darken-4" style="padding-left:10px;">
         <div class="nav-wrapper">
             <div class="col s12">
                 <a href="#!" class="breadcrumb">Admin</a>

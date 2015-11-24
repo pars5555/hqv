@@ -4,7 +4,7 @@
     {/if}
     <p id="ErrorMessage" class="red-text text-darken-4 center-align"></p>
     <form class="col s12">
-        <div class="section row">
+        <div class="row">
             <div class="input-field col s12 m12 12 vote-text">
                 {$ns.voter->getFirstName()}
                 {$ns.voter->getLastName()}
@@ -18,20 +18,20 @@
             <div class="input-field col s12 m6 6">
                 <i class="material-icons prefix">phone</i>
                 <input id="cu_telephone" type="text" class="validate">
-                <label for="cu_telephone">Telephone</label>
+                <label for="cu_telephone">Մուտքագրեք հեռախոսահամար</label>
             </div>
             <div class="input-field col s12 m6 6">
                 <i class="material-icons prefix">mailbox</i>
                 <input id="cu_email" type="text" class="">
-                <div id="emailError" class="red-text text-darken-4 error-message" style="display:none;">please provide valid email</div>
-                <label for="cu_email">Email</label>
+                <div id="emailError" class="red-text text-darken-4 error-message" style="display:none;">Մուտքագրեք էլեկտրոնային փոստի հասցե</div>
+                <label for="cu_email">Մուտքագրեք էլեկտրոնային փոստի հասցե</label>
             </div>
-            <div class="col s12 m6 6">
+            <div class="col s12 m12 12">
                 <div class="row">                   
-                    <div class="col s12 m6 6">
+                    <div class="col s12 m12 12">
                         <p>
                             <input type="checkbox" id="cu_will_be_in_armenia" checked="checked" />
-                            <label for="cu_will_be_in_armenia">I will be in Armenia at 6th </label>	
+                            <label for="cu_will_be_in_armenia">Դեկտեմբերի 6-ին ես լինելու եմ Հայաստանի Հանրապետությունում</label>	
                         </p>
                     </div>
                 </div>

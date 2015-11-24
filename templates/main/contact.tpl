@@ -24,6 +24,11 @@
 		      <label for="textarea1">Textarea</label>
 		    </div>
 		  </div>
+		  <div class="row">
+		  	<button class="btn col s12 m12 12">
+		  		contact
+		  	</button>
+		  </div>
 		</form>
 	</div>	
 </div>

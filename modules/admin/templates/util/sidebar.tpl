@@ -1,6 +1,6 @@
 
 <div id="slide-out" class="side-nav fixed">
-    <div class="section red darken-3 right-align">
+    <div class="section grey darken-4 right-align">
         <div class="row">
             <div class="col">
                 <h5 class="white-text text-lighten-2 margin-right-5" >Հանրաքվե</h5>

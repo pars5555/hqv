@@ -2,7 +2,7 @@
     <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['bar','corechart']}]}"></script>
 {/literal} 
 <div class="breadscrumb">
-    <nav class="red darken-3" style="padding-left:10px;">
+    <nav class="grey darken-4" style="padding-left:10px;">
         <div class="nav-wrapper">
             <div class="col s12">
                 <a href="#!" class="breadcrumb">Admin</a>
@@ -46,7 +46,7 @@
 </div>
 <div class="row">
     {foreach from=$ns.allTerritoryIds item=territoryId}
-        <div class="row">{$territoryId}: 
+        <div class="col s12">{$territoryId}: 
             Passport(<span id='dashboardPassportTerritoryVotersCountContainer_{$territoryId}'></span>), 
             Number (<span id='dashboardNumberTerritoryVotersCountContainer_{$territoryId}'></span>)</div>
         {/foreach}

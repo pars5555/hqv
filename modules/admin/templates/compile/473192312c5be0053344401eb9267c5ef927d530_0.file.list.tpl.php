@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-22 22:17:47
+<?php /* Smarty version 3.1.27, created on 2015-11-24 21:32:56
          compiled from "D:\xampp\htdocs\hqv\modules\admin\templates\numanalyze\list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:14535565230fb384bd3_56460287%%*/
+/*%%SmartyHeaderCode:276165654c97875a924_06061763%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '473192312c5be0053344401eb9267c5ef927d530' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\modules\\admin\\templates\\numanalyze\\list.tpl',
-      1 => 1448226937,
+      1 => 1448394308,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '14535565230fb384bd3_56460287',
+  'nocache_hash' => '276165654c97875a924_06061763',
   'variables' => 
   array (
     'ns' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_565230fb3b8fc6_27333979',
+  'unifunc' => 'content_5654c9787968e2_81684221',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_565230fb3b8fc6_27333979')) {
-function content_565230fb3b8fc6_27333979 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5654c9787968e2_81684221')) {
+function content_5654c9787968e2_81684221 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '14535565230fb384bd3_56460287';
+$_smarty_tpl->properties['nocache_hash'] = '276165654c97875a924_06061763';
 ?>
 <div class="row">
     <div class="col s12 m6 6">
@@ -105,13 +105,12 @@ echo $_smarty_tpl->tpl_vars['voter']->value->getBirthDate();
 </td>
                 <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0) {?><i class="fa fa-check action-btn"></i><?php } else { ?><i class="fa fa-close action-btn delete"></i><?php }?></td>
                 <td><?php if ($_smarty_tpl->tpl_vars['row']->value->getVoterId() > 0 && $_smarty_tpl->tpl_vars['voter']->value->getAreaId() == $_smarty_tpl->tpl_vars['row']->value->getAreaId()) {?><i class="fa fa-check action-btn"></i><?php } else { ?><i class="fa fa-close action-btn delete"></i><?php }?></td>
-                
                 <td>
                     <?php if (!isset($_smarty_tpl->tpl_vars['ns']->value['preVoteData'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()])) {?>-<?php } else { ?>
                         <?php if ($_smarty_tpl->tpl_vars['ns']->value['preVoteData'][$_smarty_tpl->tpl_vars['row']->value->getVoterId()]->getWillVote() == 1) {?>
-                            OK
+                           <i class="fa fa-check action-btn"></i>
                         <?php } else { ?>
-                            Error
+                            <i class="fa fa-close action-btn delete"></i>
                         <?php }?>
                     <?php }?></td>
                

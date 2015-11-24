@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-22 14:45:32
+<?php /* Smarty version 3.1.27, created on 2015-11-24 21:05:13
          compiled from "D:\xampp\htdocs\hqv\templates\main\current_user.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:230985651c6fcb4b201_54259062%%*/
+/*%%SmartyHeaderCode:24135654c2f9c72f52_16179778%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,31 +9,31 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b7d845e2abf9ef1dcca359ccb19e0be7a9e5185e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\current_user.tpl',
-      1 => 1448199737,
+      1 => 1448395506,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '230985651c6fcb4b201_54259062',
+  'nocache_hash' => '24135654c2f9c72f52_16179778',
   'variables' => 
   array (
     'ns' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5651c6fcc583d6_42684676',
+  'unifunc' => 'content_5654c2f9ca5a10_40358684',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5651c6fcc583d6_42684676')) {
-function content_5651c6fcc583d6_42684676 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5654c2f9ca5a10_40358684')) {
+function content_5654c2f9ca5a10_40358684 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '230985651c6fcb4b201_54259062';
+$_smarty_tpl->properties['nocache_hash'] = '24135654c2f9c72f52_16179778';
 if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
     <?php if (!empty($_smarty_tpl->tpl_vars['ns']->value['voter_data'])) {?>
         <p class="center-align red-text text-darken-4">You have already voted! call us if you were not</p>
     <?php }?>
     <p id="ErrorMessage" class="red-text text-darken-4 center-align"></p>
     <form class="col s12">
-        <div class="section row">
+        <div class="row">
             <div class="input-field col s12 m12 12 vote-text">
                 <?php echo $_smarty_tpl->tpl_vars['ns']->value['voter']->getFirstName();?>
 
@@ -59,20 +59,20 @@ if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
             <div class="input-field col s12 m6 6">
                 <i class="material-icons prefix">phone</i>
                 <input id="cu_telephone" type="text" class="validate">
-                <label for="cu_telephone">Telephone</label>
+                <label for="cu_telephone">Մուտքագրեք հեռախոսահամար</label>
             </div>
             <div class="input-field col s12 m6 6">
                 <i class="material-icons prefix">mailbox</i>
                 <input id="cu_email" type="text" class="">
-                <div id="emailError" class="red-text text-darken-4 error-message" style="display:none;">please provide valid email</div>
-                <label for="cu_email">Email</label>
+                <div id="emailError" class="red-text text-darken-4 error-message" style="display:none;">Մուտքագրեք էլեկտրոնային փոստի հասցե</div>
+                <label for="cu_email">Մուտքագրեք էլեկտրոնային փոստի հասցե</label>
             </div>
-            <div class="col s12 m6 6">
+            <div class="col s12 m12 12">
                 <div class="row">                   
-                    <div class="col s12 m6 6">
+                    <div class="col s12 m12 12">
                         <p>
                             <input type="checkbox" id="cu_will_be_in_armenia" checked="checked" />
-                            <label for="cu_will_be_in_armenia">I will be in Armenia at 6th </label>	
+                            <label for="cu_will_be_in_armenia">Դեկտեմբերի 6-ին ես լինելու եմ Հայաստանի Հանրապետությունում</label>	
                         </p>
                     </div>
                 </div>

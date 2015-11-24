@@ -1,5 +1,5 @@
  <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper grey darken-4">
       <a href="#!" class="brand-logo">Logo</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       
