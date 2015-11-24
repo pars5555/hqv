@@ -14,9 +14,9 @@ namespace admin\managers {
 
     use admin\dal\mappers\AdminMapper;
     use admin\dal\mappers\ObserverMapper;
-    use ngs\framework\AbstractManager;
+    use hqv\managers\AdvancedAbstractManager;
 
-    class ObserverManager extends AbstractManager {
+    class ObserverManager extends AdvancedAbstractManager {
 
         /**
          * @var singleton instance of class
@@ -32,7 +32,7 @@ namespace admin\managers {
          */
         public static function getInstance() {
             if (self::$instance == null) {
-                self::$instance = new ObserverManager();
+                self::$instance = new ObserverManager(ObserverMapper::getInstance());
             }
             return self::$instance;
         }
@@ -45,6 +45,10 @@ namespace admin\managers {
          */
         public function getByUsernamePassword($username, $password) {
             return ObserverMapper::getInstance()->getByUsernamePassword($username, md5($password));
+        }
+
+        public function getByHash($hash) {
+            return $this->selectByField('hash', $hash);
         }
 
         /**

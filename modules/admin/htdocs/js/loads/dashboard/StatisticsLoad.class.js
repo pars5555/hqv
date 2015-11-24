@@ -24,7 +24,13 @@ NGS.createLoad("admin.loads.dashboard.statistics", {
         
         for (var i=0;i<params.allTerritoryIds.length;i++)
         {
-            $('#dashboardPassportTerritoryVotersCountContainer_'+params.allTerritoryIds[i]).html(params.passportTotalVotersCountByTerritoryId['t'+params.allTerritoryIds[i]]);
+            $('#dashboardPassportTerritoryVotersCountContainer_'+ params.allTerritoryIds[i]).html(
+                    params.passportTotalVotersCountByTerritoryId['t'+params.allTerritoryIds[i]]
+                    );
+            $('#dashboardNumberTerritoryVotersCountContainer_'+ params.allTerritoryIds[i]).html(
+                    params.numberTotalVotersCountByTerritoryId['t'+params.allTerritoryIds[i]]
+                    );
+            
         }
         //dashboardPassportTerritoryVotersCountContainer
     },

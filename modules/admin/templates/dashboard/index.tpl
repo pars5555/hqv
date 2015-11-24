@@ -46,6 +46,8 @@
 </div>
 <div class="row">
     {foreach from=$ns.allTerritoryIds item=territoryId}
-        <div class="row">{$territoryId}: <span id='dashboardPassportTerritoryVotersCountContainer_{$territoryId}'></span></div>
+        <div class="row">{$territoryId}: 
+            Passport(<span id='dashboardPassportTerritoryVotersCountContainer_{$territoryId}'></span>), 
+            Number (<span id='dashboardNumberTerritoryVotersCountContainer_{$territoryId}'></span>)</div>
         {/foreach}
 </div>

@@ -13,6 +13,10 @@
         {
             "action": "actions.observer.login",
             "route": "login"
+        },
+        {
+            "action": "actions.observer.add",
+            "route": "add"
         }
     ],    
     "home": [

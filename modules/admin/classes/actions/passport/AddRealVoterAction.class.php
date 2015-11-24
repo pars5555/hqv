@@ -16,12 +16,12 @@ namespace admin\actions\passport {
                 $this->addParam('message', $validateFields);
                 return;
             }
-            list($firstName, $lastName, $fatherName, $birthDate, $rowId, $areaId ) = $validateFields;
+            list($firstName, $lastName, $fatherName, $birthDate, $rowId, $areaId ,$passportType) = $validateFields;
             $moderatorId = NGS()->getSessionManager()->getUserId();
             if ($rowId == 0) {
-                RealVoterPassportManager::getInstance()->addRow($firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId);
+                RealVoterPassportManager::getInstance()->addRow($firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId, $passportType);
             } else {
-                RealVoterPassportManager::getInstance()->editRow($rowId, $firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId);
+                RealVoterPassportManager::getInstance()->editRow($rowId, $firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId, $passportType);
             }
         }
 
@@ -54,9 +54,12 @@ namespace admin\actions\passport {
             if (!isset(NGS()->args()->areaId)) {
                 return 'Missing Area Id';
             }
+            if (!isset(NGS()->args()->passportType)) {
+                return 'Missing Passport Type';
+            }
             $birthDate = NGS()->args()->birthYear . '-' . NGS()->args()->birthMonth . '-' . NGS()->args()->birthDay;
             return [NGS()->args()->firstName, NGS()->args()->lastName, NGS()->args()->fatherName, $birthDate, intval(NGS()->args()->rowId)
-                , intval(NGS()->args()->areaId)];
+                , intval(NGS()->args()->areaId), NGS()->args()->passportType];
         }
 
     }

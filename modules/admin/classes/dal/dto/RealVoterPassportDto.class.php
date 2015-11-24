@@ -27,6 +27,7 @@ namespace admin\dal\dto {
             "create_datetime" => "createDatetime",
             "change_datetime" => "changeDatetime",
             "birth_date" => "birthDate",
+            "passport_type" => "passportType",
             "area_id" => "areaId",
             "invalid" => "invalid",
             "invalid_note" => "invalidNote",
