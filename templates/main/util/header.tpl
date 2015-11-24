@@ -4,9 +4,9 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       
       <ul class="right hide-on-med-and-down">
-        <li {if $ns.loadName=='default'}class="active"{/if}><a href="{$SITE_PATH}">Home</a></li>
+        <li {if $ns.loadName=='default'}class="active"{/if}><a href="{$SITE_PATH}">Գլխավոր </a></li>
         <li {if $ns.loadName=='contact'}class="active"{/if}><a href="{$SITE_PATH}/contact">Contact us</a></li>
-        <li {if $ns.loadName=='about'}class="active"{/if}><a href="{$SITE_PATH}/about">About us</a></li>
+        <li {if $ns.loadName=='about'}class="active"{/if}><a href="{$SITE_PATH}/about">Մեր մասին</a></li>
         <li>
           <a id="lanBtn" class="f_lan_drop_down dropdown-button" href="javascript:void(0);" data-activates="dropdown1">Language<i class="material-icons right">arrow_drop_down</i></a>
           <ul id="dropdown1" class="dropdown-content">
