@@ -48,9 +48,9 @@
                 <td>
                     {if !isset($ns.preVoteData[$row->getVoterId()])}-{else}
                         {if $ns.preVoteData[$row->getVoterId()]->getWillVote()==1}
-                            OK
+                           <i class="fa fa-check action-btn"></i>
                         {else}
-                            Error
+                            <i class="fa fa-close action-btn delete"></i>
                         {/if}
                     {/if}</td>
                

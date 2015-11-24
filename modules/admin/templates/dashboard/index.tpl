@@ -20,10 +20,12 @@
             <div class='col s12 m6 l3'>
                 Passport Chart
                 <div id="passport_chart" style="width: 200px; height: 300px;"></div>
+                Passport Voters Count: <span id="passport_total_voters_count"></span>
             </div>
             <div class='col s12 m6 l3'>
                 Number Chart
                 <div id="number_chart" style="width: 200px; height: 300px;"></div>
+                Number Voters Count: <span id="number_total_voters_count"></span>
             </div>
             <div class='col s12 m6 l3'>
             </div>
@@ -41,4 +43,11 @@
     </div>
     <div class="row" id='dashboardAreaStatisticsContainer'>
     </div>
+</div>
+<div class="row">
+    {foreach from=$ns.allTerritoryIds item=territoryId}
+        <div class="row">{$territoryId}: 
+            Passport(<span id='dashboardPassportTerritoryVotersCountContainer_{$territoryId}'></span>), 
+            Number (<span id='dashboardNumberTerritoryVotersCountContainer_{$territoryId}'></span>)</div>
+        {/foreach}
 </div>

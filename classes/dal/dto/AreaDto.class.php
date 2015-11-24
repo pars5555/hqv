@@ -33,7 +33,9 @@ namespace hqv\dal\dto {
             "area_id" => "areaId",
             "father_name" => "fatherName",
             "territory_id" => "territoryId",
-            "address" => "address"
+            "address" => "address",
+            
+            "area_ids" => "areaIds"
             );
 
         // returns map array

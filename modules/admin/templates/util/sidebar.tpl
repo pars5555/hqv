@@ -22,6 +22,9 @@
         <li id="sidebar_number_li">
             <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='number.index'><i class="material-icons left">perm_media</i>Number</a>
         </li>
+        <li id="sidebar_prevote_li">
+            <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='prevote.index'><i class="material-icons left">perm_media</i>Prevote</a>
+        </li>
         {if $ns.userType==$ns.userTypeAdmin}
             <li id="sidebar_passanalyze_li">
                 <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='passanalyze.index'><i class="material-icons left">perm_media</i>Passport Analyze</a>

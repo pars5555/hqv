@@ -16,10 +16,10 @@
 namespace admin\dal\mappers {
 
     use admin\dal\dto\ObserverDto;
+    use hqv\dal\mappers\AdvancedAbstractMysqlMapper;
     use ngs\framework\dal\mappers\AbstractMapper;
-    use ngs\framework\dal\mappers\AbstractMysqlMapper;
 
-    class ObserverMapper extends AbstractMysqlMapper {
+    class ObserverMapper extends AdvancedAbstractMysqlMapper {
 
         /**
          * @var table name in DB

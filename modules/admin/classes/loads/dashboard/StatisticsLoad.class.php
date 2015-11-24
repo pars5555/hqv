@@ -17,12 +17,12 @@
 
 namespace admin\loads\dashboard {
 
-use admin\loads\ModeratorLoad;
-use admin\managers\AnalyzeManager;
-use admin\managers\RealVoterNumberManager;
-use admin\managers\RealVoterPassportManager;
-use hqv\managers\VoterDataManager;
-use NGS;
+    use admin\loads\ModeratorLoad;
+    use admin\managers\AnalyzeManager;
+    use admin\managers\RealVoterNumberManager;
+    use admin\managers\RealVoterPassportManager;
+    use hqv\managers\VoterDataManager;
+    use NGS;
 
     class StatisticsLoad extends ModeratorLoad {
 
@@ -30,16 +30,33 @@ use NGS;
             $dataCountGroupByVoter = VoterDataManager::getInstance()->getDataCountGroupByVoterId();
             $nonParticipantCounts = VoterDataManager::getInstance()->getNonParticipantCounts();
             $participantCounts = VoterDataManager::getInstance()->getParticipantCounts();
-            
+
             $totalPassportDuplicationVotes = AnalyzeManager::getInstance()->getTotalPassportDuplicationVotes();
             $totalValidPassportVotesCount = RealVoterPassportManager::getInstance()->getTotalValidVotesCount();
             $totalNumberDuplicationVotes = AnalyzeManager::getInstance()->getTotalNumberDuplicationVotes();
             $totalValidNumberVotesCount = RealVoterNumberManager::getInstance()->getTotalValidVotesCount();
 
-            $this->addJsonParam("passportFake", $totalPassportDuplicationVotes );
-            $this->addJsonParam("passportTotal", $totalValidPassportVotesCount );
-            $this->addJsonParam("numberFake", $totalNumberDuplicationVotes );
-            $this->addJsonParam("numberTotal", $totalValidNumberVotesCount );
+
+            $allAreaIdsMappedByTerritoryId = \hqv\managers\AreaManager::getInstance()->getAllAreaIdsMappedByTerritoryId();
+            $allTerritoriesIds = array_keys($allAreaIdsMappedByTerritoryId);
+            asort($allTerritoriesIds);
+            $this->addJsonParam('allTerritoryIds', array_values($allTerritoriesIds)  );
+            
+            
+            $passportTotalVotersCountByTerritoryId = [];
+            $numberTotalVotersCountByTerritoryId = [];
+            foreach ($allAreaIdsMappedByTerritoryId as $territoryId => $areaIdsArray) {
+                $passportTotalVotersCountByTerritoryId ['t'.$territoryId] = RealVoterPassportManager::getInstance()->getTotalValidVotesCountInAreaIds($areaIdsArray);
+                $numberTotalVotersCountByTerritoryId ['t'.$territoryId] = RealVoterNumberManager::getInstance()->getTotalValidVotesCountInAreaIds($areaIdsArray);
+            }
+            $this->addJsonParam('passportTotalVotersCountByTerritoryId', $passportTotalVotersCountByTerritoryId);
+            $this->addJsonParam('numberTotalVotersCountByTerritoryId', $numberTotalVotersCountByTerritoryId);
+            
+
+            $this->addJsonParam("passportFake", $totalPassportDuplicationVotes);
+            $this->addJsonParam("passportTotal", $totalValidPassportVotesCount);
+            $this->addJsonParam("numberFake", $totalNumberDuplicationVotes);
+            $this->addJsonParam("numberTotal", $totalValidNumberVotesCount);
 
             $this->addParam('countGroupByVoter', $dataCountGroupByVoter);
             $this->addParam('participantCounts', $participantCounts);

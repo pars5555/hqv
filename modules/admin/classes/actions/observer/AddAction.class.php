@@ -4,29 +4,26 @@ namespace admin\actions\observer {
 
     use admin\managers\ObserverManager;
     use admin\security\RequestGroups;
-    use admin\security\UserGroups;
     use NGS;
     use ngs\framework\AbstractAction;
     use stdClass;
 
-    class LoginAction extends AbstractAction {
+    class AddAction extends AbstractAction {
 
         public function service() {
-            $observerDto = ObserverManager::getInstance()->getByUsernamePassword(NGS()->args()->getUsername(), NGS()->args()->getPassword());
+            $observerDto = ObserverManager::getInstance()->getByHash(NGS()->args()->getHash());
             if (!$observerDto) {
                 $ret = new stdClass();
                 $ret->status = 'error';
-                $ret->message = 'Wrong login/pass!';
+                $ret->message = 'Wrong hash!';
                 echo json_encode($ret);
                 exit;
             }
-           
-		$ret = new stdClass();
+            $ret = new stdClass();
                 $ret->status = 'ok';
-                $ret->hash = $observerDto ->getHash();
+               
                 echo json_encode($ret);
                 exit;
-
         }
 
         public function getRequestGroup() {

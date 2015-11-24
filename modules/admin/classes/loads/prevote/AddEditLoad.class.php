@@ -15,7 +15,7 @@
  *
  */
 
-namespace admin\loads\passport {
+namespace admin\loads\prevote {
 
     use admin\loads\ModeratorLoad;
     use admin\managers\RealVoterPassportManager;
@@ -30,7 +30,6 @@ namespace admin\loads\passport {
             $birthYear = 1950;
             $birthMonth = 1;
             $birthDay = 1;
-            $passportType = 'passport';
             if (isset(NGS()->args()->rowId)) {
                 $realVoter = RealVoterPassportManager::getInstance()->selectByPK(NGS()->args()->rowId);
                 if (isset($realVoter)) {
@@ -38,7 +37,6 @@ namespace admin\loads\passport {
                     $lastName = $realVoter->getLastName();
                     $fatherName = $realVoter->getFatherName();
                     $birthDate = $realVoter->getBirthDate();
-                    $passportType = $realVoter->getPassportType();
                     if (!empty($birthDate)) {
                         $dateParts = explode('-', $birthDate);
                         $birthYear = $dateParts [0];
@@ -58,11 +56,10 @@ namespace admin\loads\passport {
             $this->addParam('birth_year', $birthYear);
             $this->addParam('birth_month', $birthMonth);
             $this->addParam('birth_day', $birthDay);
-            $this->addParam('passport_type', $passportType);
         }
 
         public function getTemplate() {
-            return NGS()->getTemplateDir() . "/passport/add_edit.tpl";
+            return NGS()->getTemplateDir() . "/prevote/add_edit.tpl";
         }
 
     }

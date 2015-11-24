@@ -45,10 +45,10 @@ namespace admin\managers {
             $dto->setAreaId($areaId);
             $listVoters = VoterManager::getInstance()->selectAdvance('*', ['area_id', '=', $areaId, 'and', 'number', '=', $voterNumberInArea]);
             if (!empty($listVoters) && count($listVoters) === 1) {
-                $voter = $listVoters[0];               
+                $voter = $listVoters[0];
                 $dto->setVoterId($voter->getId());
             } else {
-               
+
                 $dto->setVoterId(0);
             }
             return $this->updateByPk($dto);
@@ -62,10 +62,10 @@ namespace admin\managers {
             $dto->setAreaId($areaId);
             $listVoters = VoterManager::getInstance()->selectAdvance('*', ['area_id', '=', $areaId, 'and', 'number', '=', $voterNumberInArea]);
             if (!empty($listVoters) && count($listVoters) === 1) {
-                $voter = $listVoters[0];              
+                $voter = $listVoters[0];
                 $dto->setVoterId($voter->getId());
             } else {
-           
+
                 $dto->setVoterId(0);
             }
             return $this->insertDto($dto);
@@ -121,11 +121,18 @@ namespace admin\managers {
         /**
          * For Dashboard Page
          */
+        public function getTotalValidVotesCountInAreaIds($areaIds) {
+            $areaIdsForSql = '(' . implode(',', $areaIds) . ')';
+            return $this->countAdvance(['invalid', '=', 0, 'and', 'area_id', 'in', $areaIdsForSql]);
+        }
+
+        /**
+         * For Dashboard Page
+         */
         public function getTotalDuplicationVotesSum() {
             return $this->mapper->getTotalDuplicationVotesSum();
         }
 
-        
         /**
          * For Dashboard Page
          */

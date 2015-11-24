@@ -43,6 +43,15 @@ namespace hqv\managers {
             }
             return $ret;
         }
+        
+        public function getAllAreaIdsMappedByTerritoryId() {
+            $ret = [];
+            $dtos = $this->mapper->getAllGroupByTerritoryId();
+            foreach ($dtos as $row) {
+                $ret[$row->getTerritoryId()] = explode(',', $row->getAreaIds());
+            }
+            return $ret;
+        }
 
         public function getRegionCommunitiesArray($region) {
             $regionCommunities = $this->mapper->getRegionCommunities($region);

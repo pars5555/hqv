@@ -37,7 +37,7 @@ namespace admin\managers {
             return self::$instance;
         }
 
-        public function editRow($id, $firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId) {
+        public function editRow($id, $firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId, $passportType) {
             $firstName = $this->mb_ucfirst($firstName);
             $lastName = $this->mb_ucfirst($lastName);
             $fatherName = $this->mb_ucfirst($fatherName);
@@ -46,6 +46,7 @@ namespace admin\managers {
             $dto->setLastName($lastName);
             $dto->setFatherName($fatherName);
             $dto->setBirthDate($birthDate);
+            $dto->setPassportType($passportType);
             $dto->setChangeDatetime(date('Y-m-d H:i:s'));
             //$dto->setModeratorId($moderatorId);
             $dto->setAreaId($areaId);
@@ -71,7 +72,7 @@ namespace admin\managers {
             return $this->updateByPk($dto);
         }
 
-        public function addRow($firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId) {
+        public function addRow($firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId, $passportType) {
             $firstName = $this->mb_ucfirst($firstName);
             $lastName = $this->mb_ucfirst($lastName);
             $fatherName = $this->mb_ucfirst($fatherName);
@@ -80,6 +81,7 @@ namespace admin\managers {
             $dto->setLastName($lastName);
             $dto->setFatherName($fatherName);
             $dto->setBirthDate($birthDate);
+            $dto->setPassportType($passportType);
             $dto->setCreateDatetime(date('Y-m-d H:i:s'));
             $dto->setModeratorId($moderatorId);
             $dto->setAreaId($areaId);
@@ -150,6 +152,14 @@ namespace admin\managers {
          */
         public function getTotalValidVotesCount() {
             return $this->countAdvance(['invalid', '=', 0]);
+        }
+
+        /**
+         * For Dashboard Page
+         */
+        public function getTotalValidVotesCountInAreaIds($areaIds) {
+            $areaIdsForSql = '(' . implode(',', $areaIds) . ')';
+            return $this->countAdvance(['invalid', '=', 0, 'and', 'area_id', 'in', $areaIdsForSql]);
         }
 
         /**
