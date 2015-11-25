@@ -59,6 +59,7 @@
           "loads/LoginLoad.class.js",
           "loads/HomeLoad.class.js",
           "loads/dashboard/IndexLoad.class.js",
+          "loads/snippets/IndexLoad.class.js",
           "loads/dashboard/AreaSelectionLoad.class.js",
           "loads/dashboard/AreaStatisticsLoad.class.js",
           "loads/dashboard/StatisticsLoad.class.js",

@@ -35,6 +35,9 @@
             <li id="sidebar_prevoteanalyze_li">
                 <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='prevoteanalyze.index'><i class="material-icons left">perm_media</i>Prevote Analyze</a>
             </li>
+            <li id="sidebar_snippets_li">
+                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='snippets.index'><i class="material-icons left">perm_media</i>Snippets</a>
+            </li>
         {/if}
         <li>
             <a class="waves-effect waves-light btn-flat le" href="{$SITE_PATH}/dyn/login/do_logout"><i class="material-icons left">input</i>Logout</a>
