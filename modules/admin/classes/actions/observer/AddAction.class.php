@@ -21,7 +21,6 @@ namespace admin\actions\observer {
             }
             $ret = new stdClass();
                 $ret->status = 'ok';
-               
                 echo json_encode($ret);
                 exit;
         }
