@@ -1,6 +1,6 @@
 {if isset($ns.voter)}
     {if !empty($ns.voter_data)}
-        <p class="center-align red-text text-darken-4">You have already voted! call us if you were not</p>
+        <p class="center-align red-text text-darken-4">{$ns.lm->getPhrase(30)}</p>
     {/if}
     <p id="ErrorMessage" class="red-text text-darken-4 center-align"></p>
     <form class="col s12">
@@ -18,20 +18,20 @@
             <div class="input-field col s12 m6 6">
                 <i class="material-icons prefix">phone</i>
                 <input id="cu_telephone" type="text" class="validate">
-                <label for="cu_telephone">Մուտքագրեք հեռախոսահամար</label>
+                <label for="cu_telephone">{$ns.lm->getPhrase(27)}</label>
             </div>
             <div class="input-field col s12 m6 6">
                 <i class="material-icons prefix">mailbox</i>
                 <input id="cu_email" type="text" class="">
-                <div id="emailError" class="red-text text-darken-4 error-message" style="display:none;">Մուտքագրեք էլեկտրոնային փոստի հասցե</div>
-                <label for="cu_email">Մուտքագրեք էլեկտրոնային փոստի հասցե</label>
+                <div id="emailError" class="red-text text-darken-4 error-message" style="display:none;">{$ns.lm->getPhrase(28)}</div>
+                <label for="cu_email">{$ns.lm->getPhrase(28)}</label>
             </div>
             <div class="col s12 m12 12">
                 <div class="row">                   
                     <div class="col s12 m12 12">
                         <p>
                             <input type="checkbox" id="cu_will_be_in_armenia" checked="checked" />
-                            <label for="cu_will_be_in_armenia">Դեկտեմբերի 6-ին ես լինելու եմ Հայաստանի Հանրապետությունում</label>	
+                            <label for="cu_will_be_in_armenia">{$ns.lm->getPhrase(29)}</label>	
                         </p>
                     </div>
                 </div>

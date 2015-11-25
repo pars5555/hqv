@@ -9,22 +9,22 @@
         <ul>
           <li>
             <p class="grey-text text-lighten-3">
-              «Իրավունքի Եվրոպա միավորում» իրավապաշտպան հասարակական կազմակերպություն
+              {$ns.lm->getPhrase(24)}
             </p>
             <p class="grey-text text-lighten-3">
-              Email:- <a href="mailto:europeinlaw@gmail.com">europeinlaw@gmail.com</a>
+              {$ns.lm->getPhrase(22)}:-<a href="mailto:europeinlaw@gmail.com">europeinlaw@gmail.com</a>
             </p>
             <p class="grey-text text-lighten-3">
-              Հեռախոս- <a href="tel:(+37410) 500665">(+37410) 500665</a>,
+              {$ns.lm->getPhrase(23)}-<a href="tel:(+37410) 500665">(+37410) 500665</a>,
               <a href="tel:099 588 576">099 588 576</a>
             </p>
           </li>
           <li>
-            <p class="grey-text text-lighten-3">«Թրանսփարենսի Ինթերնեշնլ հակակոռուպցիոն կենտրոն»  հասարակական կազմակերպություն</p>
-            <p class="grey-text text-lighten-3">Email:- <a href="mailto:info@transparency.am">info@transparency.am</a></p>
-            <p class="grey-text text-lighten-3">Հեռախոս- <a href="tel:(+37410)569589">(+37410)569589</a></p>
-            <p class="grey-text text-lighten-3">«Ժուռնալիստների «Ասպարեզ» ակումբ»</p>
-            <p class="grey-text text-lighten-3">«Հելսինկյան քաղաքացիական ասամբլեայի Վանաձորի գրասենյակ» </p>
+            <p class="grey-text text-lighten-3">{$ns.lm->getPhrase(21)}</p>
+            <p class="grey-text text-lighten-3">{$ns.lm->getPhrase(22)}:-<a href="mailto:info@transparency.am">info@transparency.am</a></p>
+            <p class="grey-text text-lighten-3">{$ns.lm->getPhrase(23)}-<a href="tel:(+37410)569589">(+37410)569589</a></p>
+            <p class="grey-text text-lighten-3">{$ns.lm->getPhrase(25)}</p>
+            <p class="grey-text text-lighten-3">{$ns.lm->getPhrase(26)}</p>
           </li>
         </ul>
       </div>

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-25 14:05:42
+<?php /* Smarty version 3.1.27, created on 2015-11-25 15:42:21
          compiled from "D:\xampp\htdocs\hqv\templates\main\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:122565655b2263ebae9_37783175%%*/
+/*%%SmartyHeaderCode:172495655c8cd1e7923_84781697%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,36 +9,41 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5453d8b4442e6d5beb34c809368d9cb2e372f1f5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\home.tpl',
-      1 => 1448456737,
+      1 => 1448462537,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '122565655b2263ebae9_37783175',
+  'nocache_hash' => '172495655c8cd1e7923_84781697',
   'variables' => 
   array (
+    'ns' => 0,
     'SITE_PATH' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5655b226415ed7_69645509',
+  'unifunc' => 'content_5655c8cd23f333_56617022',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5655b226415ed7_69645509')) {
-function content_5655b226415ed7_69645509 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5655c8cd23f333_56617022')) {
+function content_5655c8cd23f333_56617022 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '122565655b2263ebae9_37783175';
+$_smarty_tpl->properties['nocache_hash'] = '172495655c8cd1e7923_84781697';
 ?>
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row center valign">
 			<div class="col s12">
-		      	<h1 class="header center black-text text-lighten-2">Վերահսկիր հանրաքվեն</h1>
-		      	<h5 class="hide header light black-text">Թու՛յլ մի տուր, որ քո փոխարեն քվեարկեն</h5>
-		      	<h5 class="hide header light black-text">Պաշտպանի՛ր ընտրությունդ</h5>
-		      	<h5 class="hide header light black-text">Տե՛ր կանգնիր քվեիդ</h5>
+		      	<h1 class="header center black-text text-lighten-2"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(2);?>
+</h1>
+		      	<h5 class="header light black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(3);?>
+</h5>
+		      	<h5 class="header light black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(4);?>
+</h5>
+		      	<h5 class="header light black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(5);?>
+</h5>
 			</div>
 			<div class="col s12 hide">
 				<a href="#searchDashboard" class="btn">
-		          	Get Started
+		          	Get Started 
 	          	</a>
 			</div>
 	    </div>
@@ -50,9 +55,11 @@ $_smarty_tpl->properties['nocache_hash'] = '122565655b2263ebae9_37783175';
 <div id="searchDashboard" class="section white scrollspy">
 	<div class="row container">
 		<div class="col s12 center-align">
-			<h2 class="header">Որոնում,</h2>
+			<h2 class="header"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(6);?>
+,</h2>
 			<p class="grey-text text-darken-3 lighten-3">
-				Լրացրեք համապատասխան դաշտերը՝ ընտրողների ցուցակներում ձեր անուն-ազգանունը գտնելու համար
+				<?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(7);?>
+
 			</p>
 		</div>
 		<div class="col s12">
@@ -62,23 +69,27 @@ $_smarty_tpl->properties['nocache_hash'] = '122565655b2263ebae9_37783175';
 			        <div class="input-field col s12 m6 6">
 			          <i class="material-icons prefix">account_circle</i>
 			          <input id="firstName" type="text" class="keyboard">
-			          <label for="firstName">Անուն</label>
+			          <label for="firstName"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(8);?>
+</label>
 			        </div>
 			        <div class="input-field col s12 m6 6">
 			          <i class="material-icons prefix">account_circle</i>
 			          <input id="lastName" type="tel" class="keyboard">
-			          <label for="lastName">Ազգանուն</label>
+			          <label for="lastName"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(9);?>
+</label>
 			        </div>
 			      </div>
 			      <div class="row">
 			        <div class="input-field col s12">
 						<i class="material-icons prefix">perm_contact_calendar</i>
-						<input placeholder="Ծննդյան ամսաթիվ" id="birthDate" type="date" class="datepicker">
+						<input placeholder="<?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(11);?>
+" id="birthDate" type="date" class="datepicker">
 			      	</div>
 			      </div>
 			      <div class="row">
 		      		<button id="searchVoters" class="btn waves-effect waves-light col s12">
-		      			Հաստատել
+		      			<?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(10);?>
+
 				    </button>
 			      </div>
 			    </form>
@@ -89,114 +100,10 @@ $_smarty_tpl->properties['nocache_hash'] = '122565655b2263ebae9_37783175';
 		</div>
 	</div>
 </div>
-<div class="hide parallax-container valign-wrapper">
-	<div class="section no-pad-bot row center">
-      	<h3 class="header col s12 light white-text">Who we are ?</h3>
-      	<p class="white-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
-    </div>
-	<div class="parallax">
-		<img src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
-/img/parallax2.jpg">
-	</div>
-</div>
-<div class="hide section row container">
-    <div class="col s12 m4 4">
-      <div class="center promo promo-example">
-        <i class="material-icons large">flash_on</i>
-        <p class="promo-caption">Speeds up development</p>
-        <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
-      </div>
-    </div>
-    <div class="col s12 m4 4">
-      <div class="center promo promo-example">
-        <i class="material-icons large">group</i>
-        <p class="promo-caption">User Experience Focused</p>
-        <p class="light center">By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
-      </div>
-    </div>
-    <div class="col s12 m4 4">
-      <div class="center promo promo-example">
-        <i class="material-icons large">settings</i>
-        <p class="promo-caption">Easy to work with</p>
-        <p class="light center">We have provided detailed documentation as well as specific code examples to help new users get started.</p>
-      </div>
-    </div>
-</div>
-<div class="hide parallax-container valign-wrapper">
-	<div class="section no-pad-bot row center">
-      	<h3 class="header col s12 light white-text">Articles</h3>
-      	<p class="white-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
-    </div>
-	<div class="parallax">
-		<img src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
-/img/parallax1.jpg">
-	</div>
-</div>
-<div class="hide section row container">
-	<div class="col s12 m6 6">
-		<div class="card">
-			<div class="card-image waves-effect waves-block waves-light">
-				<img class="activator" src="img/office.jpg">
-			</div>
-			<div class="card-content">
-				<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-				<p><a href="#">This is a link</a></p>
-			</div>
-			<div class="card-reveal">
-				<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-				<p>Here is some more information about this product that is only revealed once clicked on.</p>
-			</div>
-		</div>
-	</div>
-	<div class="col s12 m6 6">
-		<div class="card">
-			<div class="card-image waves-effect waves-block waves-light">
-				<img class="activator" src="img/office.jpg">
-			</div>
-			<div class="card-content">
-				<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-				<p><a href="#">This is a link</a></p>
-			</div>
-			<div class="card-reveal">
-				<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-				<p>Here is some more information about this product that is only revealed once clicked on.</p>
-			</div>
-		</div>
-	</div>
-	<div class="col s12 m6 6">
-		<div class="card">
-			<div class="card-image waves-effect waves-block waves-light">
-				<img class="activator" src="img/office.jpg">
-			</div>
-			<div class="card-content">
-				<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-				<p><a href="#">This is a link</a></p>
-			</div>
-			<div class="card-reveal">
-				<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-				<p>Here is some more information about this product that is only revealed once clicked on.</p>
-			</div>
-		</div>
-	</div>
-	<div class="col s12 m6 6">
-		<div class="card">
-			<div class="card-image waves-effect waves-block waves-light">
-				<img class="activator" src="img/office.jpg">
-			</div>
-			<div class="card-content">
-				<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-				<p><a href="#">This is a link</a></p>
-			</div>
-			<div class="card-reveal">
-				<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-				<p>Here is some more information about this product that is only revealed once clicked on.</p>
-			</div>
-		</div>
-	</div>
-</div>
 <div class="parallax-container valign-wrapper">
 	<div class="section no-pad-bot row center">
-      	<h3 class="header col s12 light white-text">Մեր թիմը</h3>
+      	<h3 class="header col s12 light white-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(12);?>
+</h3>
       	<p class="white-text"></p>
     </div>
 	<div class="parallax">
@@ -209,28 +116,32 @@ $_smarty_tpl->properties['nocache_hash'] = '122565655b2263ebae9_37783175';
 		<a href="http://www.asparez.am/">
 			<img width="150" src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
 /img/Asparez_logo.jpg" />
-			<p class="black-text">Ժուռնալիստների «Ասպարեզ» ակումբ</p>
+			<p class="black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(13);?>
+</p>
 		</a>
 	</div>
 	<div class="col s12 m3 3 center">
 		<a href="http://transparency.am/">
 			<img width="150" src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
 /img/citizen observer.jpg" />
-			<p class="black-text">Թրանսփարենսի Ինթերնեշնլ հակակոռուպցիոն կենտրոն</p>
+			<p class="black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(14);?>
+</p>
 		</a>
 	</div>
 	<div class="col s12 m3 3 center">
 		<a href="http://hcav.am/">
 			<img width="150" src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
 /img/HCAV.png" />
-			<p class="black-text">Հելսինկյան քաղաքացիական ասամբլեայի Վանաձորի գրասենյակ</p>
+			<p class="black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(15);?>
+</p>
 		</a>
 	</div>
 	<div class="col s12 m3 3 center">
 		<a href="http://ela.am/">
 			<img width="150" src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
 /img/Logo_ELA.png" />
-			<p class="black-text">Իրավունքի Եվրոպա միավորում</p>
+			<p class="black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(16);?>
+</p>
 		</a>
 	</div>
 </div>
@@ -267,7 +178,8 @@ $_smarty_tpl->properties['nocache_hash'] = '122565655b2263ebae9_37783175';
 	<div id="currentUser" class="modal-content row">
 	</div>
 	<div class="modal-footer">
-		<a id="currentUserModalBtn" href="#!" class="btn disabled">Save</a>
+		<a id="currentUserModalBtn" href="#!" class="btn disabled"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(10);?>
+</a>
 	</div>
 </div>
 <div id="thankModal" class="modal thankyou-modal current-user-modal modal-fixed-footer">
