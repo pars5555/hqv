@@ -20,6 +20,7 @@ NGS.createLoad("admin.loads.passport.index", {
             var birthDay = $('#birthDay').val();
             var editRowId = $('#editRowId').val();
             var areaId = $('#p_address').val();
+            var passportType = $('input[name=passportType]:checked', '#addRealVoterForm').val();
             NGS.action('admin.actions.passport.add_real_voter', {
                 firstName: firstName,
                 lastName: lastName,
@@ -28,6 +29,7 @@ NGS.createLoad("admin.loads.passport.index", {
                 birthMonth: birthMonth,
                 birthDay: birthDay,
                 areaId: areaId,
+                passportType: passportType,
                 rowId: editRowId
             });
             return false;

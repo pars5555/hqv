@@ -41,19 +41,19 @@
 <div class="row">
     <div class="col s4 m4 l4">
         <p>
-          <input name="group1" type="radio" id="passportRadio" />
+            <input name="passportType" type="radio" value="passport" id="passportRadio" {if $ns.passport_type== 'passport'}checked{/if}/>
           <label for="passportRadio">Passport</label>
         </p>
     </div>
     <div class="col s4 m4 l4">
         <p>
-          <input name="group1" type="radio" id="idRadio" />
+          <input name="passportType" type="radio" value="id"  id="idRadio" {if $ns.passport_type== 'id'}checked{/if}/>
           <label for="idRadio">Id</label>
         </p>
     </div>
     <div class="col s4 m4 l4">
         <p>
-          <input name="group1" type="radio" id="militaryRadio" />
+          <input name="passportType" type="radio" value="military" id="militaryRadio" {if $ns.passport_type== 'military'}checked{/if}/>
           <label for="militaryRadio">Military</label>
         </p>
     </div>
