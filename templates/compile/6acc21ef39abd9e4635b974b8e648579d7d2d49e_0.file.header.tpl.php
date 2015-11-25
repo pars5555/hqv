@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-24 21:40:26
+<?php /* Smarty version 3.1.27, created on 2015-11-25 14:10:58
          compiled from "D:\xampp\htdocs\hqv\templates\main\util\header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:274035654cb3a2586e3_22341009%%*/
+/*%%SmartyHeaderCode:256025655b3621da929_44652306%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,36 +9,39 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6acc21ef39abd9e4635b974b8e648579d7d2d49e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\util\\header.tpl',
-      1 => 1448397625,
+      1 => 1448457057,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '274035654cb3a2586e3_22341009',
+  'nocache_hash' => '256025655b3621da929_44652306',
   'variables' => 
   array (
-    'ns' => 0,
     'SITE_PATH' => 0,
+    'ns' => 0,
+    'lm' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5654cb3a27cd49_18361907',
+  'unifunc' => 'content_5655b362214f33_10270674',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5654cb3a27cd49_18361907')) {
-function content_5654cb3a27cd49_18361907 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5655b362214f33_10270674')) {
+function content_5655b362214f33_10270674 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '274035654cb3a2586e3_22341009';
+$_smarty_tpl->properties['nocache_hash'] = '256025655b3621da929_44652306';
 ?>
  <nav>
     <div class="nav-wrapper grey darken-4">
-      <a href="#!" class="brand-logo">Logo</a>
+      <a href="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
+" class="brand-logo">Logo</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       
       <ul class="right hide-on-med-and-down">
         <li <?php if ($_smarty_tpl->tpl_vars['ns']->value['loadName'] == 'default') {?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
-">Գլխավոր </a></li>
+"><?php echo $_smarty_tpl->tpl_vars['lm']->value;?>
+Գլխավոր </a></li>
         <li <?php if ($_smarty_tpl->tpl_vars['ns']->value['loadName'] == 'contact') {?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
-/contact">Contact us</a></li>
+/contact">ԿԱՊ</a></li>
         <li <?php if ($_smarty_tpl->tpl_vars['ns']->value['loadName'] == 'about') {?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
 /about">Մեր մասին</a></li>
         <li>
@@ -56,9 +59,12 @@ $_smarty_tpl->properties['nocache_hash'] = '274035654cb3a2586e3_22341009';
         </li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="">Home</a></li>
-        <li><a href="">Contact us</a></li>
-        <li><a href="">About us</a></li>
+        <li><a href="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
+">Գլխավոր </a></li>
+        <li><a href="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
+/contact">ԿԱՊ</a></li>
+        <li><a href="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
+/about">Մեր մասին</a></li>
         <!-- <li><a class="f_lan_drop_down dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li> -->
       </ul>
     </div>

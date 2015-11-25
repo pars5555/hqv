@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-24 21:37:04
+<?php /* Smarty version 3.1.27, created on 2015-11-25 14:05:42
          compiled from "D:\xampp\htdocs\hqv\templates\main\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:154935654ca70018700_48299908%%*/
+/*%%SmartyHeaderCode:122565655b2263ebae9_37783175%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,30 +9,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5453d8b4442e6d5beb34c809368d9cb2e372f1f5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\home.tpl',
-      1 => 1448397421,
+      1 => 1448456737,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '154935654ca70018700_48299908',
+  'nocache_hash' => '122565655b2263ebae9_37783175',
   'variables' => 
   array (
     'SITE_PATH' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5654ca70045502_82415620',
+  'unifunc' => 'content_5655b226415ed7_69645509',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5654ca70045502_82415620')) {
-function content_5654ca70045502_82415620 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5655b226415ed7_69645509')) {
+function content_5655b226415ed7_69645509 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '154935654ca70018700_48299908';
+$_smarty_tpl->properties['nocache_hash'] = '122565655b2263ebae9_37783175';
 ?>
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row center valign">
 			<div class="col s12">
-		      	<h1 class="header center black-text text-lighten-2">Պաշտպանի՛ր ընտրությունդ</h1>
-		      	<h5 class="header light black-text">Թու՛յլ մի տուր, որ քո փոխարեն քվեարկեն:</h5>
+		      	<h1 class="header center black-text text-lighten-2">Վերահսկիր հանրաքվեն</h1>
+		      	<h5 class="hide header light black-text">Թու՛յլ մի տուր, որ քո փոխարեն քվեարկեն</h5>
+		      	<h5 class="hide header light black-text">Պաշտպանի՛ր ընտրությունդ</h5>
+		      	<h5 class="hide header light black-text">Տե՛ր կանգնիր քվեիդ</h5>
 			</div>
 			<div class="col s12 hide">
 				<a href="#searchDashboard" class="btn">
@@ -48,7 +50,7 @@ $_smarty_tpl->properties['nocache_hash'] = '154935654ca70018700_48299908';
 <div id="searchDashboard" class="section white scrollspy">
 	<div class="row container">
 		<div class="col s12 center-align">
-			<h2 class="header">Որոնում</h2>
+			<h2 class="header">Որոնում,</h2>
 			<p class="grey-text text-darken-3 lighten-3">
 				Լրացրեք համապատասխան դաշտերը՝ ընտրողների ցուցակներում ձեր անուն-ազգանունը գտնելու համար
 			</p>
@@ -194,7 +196,7 @@ $_smarty_tpl->properties['nocache_hash'] = '154935654ca70018700_48299908';
 </div>
 <div class="parallax-container valign-wrapper">
 	<div class="section no-pad-bot row center">
-      	<h3 class="header col s12 light white-text">Մեր Գործընկերները</h3>
+      	<h3 class="header col s12 light white-text">Մեր թիմը</h3>
       	<p class="white-text"></p>
     </div>
 	<div class="parallax">

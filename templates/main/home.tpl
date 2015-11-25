@@ -1,8 +1,10 @@
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row center valign">
 			<div class="col s12">
-		      	<h1 class="header center black-text text-lighten-2">Պաշտպանի՛ր ընտրությունդ</h1>
-		      	<h5 class="header light black-text">Թու՛յլ մի տուր, որ քո փոխարեն քվեարկեն:</h5>
+		      	<h1 class="header center black-text text-lighten-2">Վերահսկիր հանրաքվեն</h1>
+		      	<h5 class="hide header light black-text">Թու՛յլ մի տուր, որ քո փոխարեն քվեարկեն</h5>
+		      	<h5 class="hide header light black-text">Պաշտպանի՛ր ընտրությունդ</h5>
+		      	<h5 class="hide header light black-text">Տե՛ր կանգնիր քվեիդ</h5>
 			</div>
 			<div class="col s12 hide">
 				<a href="#searchDashboard" class="btn">
@@ -17,7 +19,7 @@
 <div id="searchDashboard" class="section white scrollspy">
 	<div class="row container">
 		<div class="col s12 center-align">
-			<h2 class="header">Որոնում</h2>
+			<h2 class="header">Որոնում,</h2>
 			<p class="grey-text text-darken-3 lighten-3">
 				Լրացրեք համապատասխան դաշտերը՝ ընտրողների ցուցակներում ձեր անուն-ազգանունը գտնելու համար
 			</p>
@@ -161,7 +163,7 @@
 </div>
 <div class="parallax-container valign-wrapper">
 	<div class="section no-pad-bot row center">
-      	<h3 class="header col s12 light white-text">Մեր Գործընկերները</h3>
+      	<h3 class="header col s12 light white-text">Մեր թիմը</h3>
       	<p class="white-text"></p>
     </div>
 	<div class="parallax">

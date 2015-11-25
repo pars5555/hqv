@@ -1,11 +1,11 @@
  <nav>
     <div class="nav-wrapper grey darken-4">
-      <a href="#!" class="brand-logo">Logo</a>
+      <a href="{$SITE_PATH}" class="brand-logo">Logo</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       
       <ul class="right hide-on-med-and-down">
         <li {if $ns.loadName=='default'}class="active"{/if}><a href="{$SITE_PATH}">Գլխավոր </a></li>
-        <li {if $ns.loadName=='contact'}class="active"{/if}><a href="{$SITE_PATH}/contact">Contact us</a></li>
+        <li {if $ns.loadName=='contact'}class="active"{/if}><a href="{$SITE_PATH}/contact">ԿԱՊ</a></li>
         <li {if $ns.loadName=='about'}class="active"{/if}><a href="{$SITE_PATH}/about">Մեր մասին</a></li>
         <li>
           <a id="lanBtn" class="f_lan_drop_down dropdown-button" href="javascript:void(0);" data-activates="dropdown1">Language<i class="material-icons right">arrow_drop_down</i></a>
@@ -19,9 +19,9 @@
         </li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="">Home</a></li>
-        <li><a href="">Contact us</a></li>
-        <li><a href="">About us</a></li>
+        <li><a href="{$SITE_PATH}">Գլխավոր </a></li>
+        <li><a href="{$SITE_PATH}/contact">ԿԱՊ</a></li>
+        <li><a href="{$SITE_PATH}/about">Մեր մասին</a></li>
         <!-- <li><a class="f_lan_drop_down dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li> -->
       </ul>
     </div>

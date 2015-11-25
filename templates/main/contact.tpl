@@ -1,21 +1,21 @@
 <div class="container">
-	<h4>Contact us</h4>
+	<h4>ԿԱՊ</h4>
 	<div class="row">
 		<form class="col s12">
 		  <div class="row">
 		    <div class="input-field col s6">
 		      <input id="first_name" type="text" class="validate">
-		      <label for="first_name">First Name</label>
+		      <label for="first_name">Անուն</label>
 		    </div>
 		    <div class="input-field col s6">
 		      <input id="last_name" type="text" class="validate">
-		      <label for="last_name">Last Name</label>
+		      <label for="last_name">Ազգանուն</label>
 		    </div>
 		  </div>
 		  <div class="row">
 		    <div class="input-field col s12">
 		      <input id="email" type="email" class="validate">
-		      <label for="email">Email</label>
+		      <label for="email">էլեկտրոնային փոստի հասցե</label>
 		    </div>
 		  </div>
 		  <div class="row">
