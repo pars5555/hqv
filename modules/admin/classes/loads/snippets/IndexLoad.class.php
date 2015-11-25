@@ -18,14 +18,15 @@
 namespace admin\loads\snippets {
 
     use admin\loads\ModeratorLoad;
+    use hqv\managers\TranslationManager;
     use NGS;
 
     class IndexLoad extends ModeratorLoad {
 
         public function load() {
-            
+            $selectAll = TranslationManager::getInstance()->selectAll();
+            $this->addParam('rows', $selectAll);
         }
-
 
         public function getTemplate() {
             return NGS()->getTemplateDir() . "/snippets/index.tpl";
