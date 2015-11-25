@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-25 15:42:21
+<?php /* Smarty version 3.1.27, created on 2015-11-25 16:02:09
          compiled from "D:\xampp\htdocs\hqv\templates\main\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:172495655c8cd1e7923_84781697%%*/
+/*%%SmartyHeaderCode:109645655cd71a79586_88398278%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5453d8b4442e6d5beb34c809368d9cb2e372f1f5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\home.tpl',
-      1 => 1448462537,
+      1 => 1448463728,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '172495655c8cd1e7923_84781697',
+  'nocache_hash' => '109645655cd71a79586_88398278',
   'variables' => 
   array (
     'ns' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5655c8cd23f333_56617022',
+  'unifunc' => 'content_5655cd71ab20d9_33647517',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5655c8cd23f333_56617022')) {
-function content_5655c8cd23f333_56617022 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5655cd71ab20d9_33647517')) {
+function content_5655cd71ab20d9_33647517 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '172495655c8cd1e7923_84781697';
+$_smarty_tpl->properties['nocache_hash'] = '109645655cd71a79586_88398278';
 ?>
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row center valign">
@@ -100,17 +100,8 @@ $_smarty_tpl->properties['nocache_hash'] = '172495655c8cd1e7923_84781697';
 		</div>
 	</div>
 </div>
-<div class="parallax-container valign-wrapper">
-	<div class="section no-pad-bot row center">
-      	<h3 class="header col s12 light white-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(12);?>
+<h3 class="header col s12 light black-text center-align"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(12);?>
 </h3>
-      	<p class="white-text"></p>
-    </div>
-	<div class="parallax">
-		<img src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
-/img/bg_img_2.jpg">
-	</div>
-</div>
 <div class="section row container">
 	<div class="col s12 m3 3 center">
 		<a href="http://www.asparez.am/">

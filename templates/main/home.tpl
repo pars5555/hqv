@@ -58,15 +58,7 @@
 		</div>
 	</div>
 </div>
-<div class="parallax-container valign-wrapper">
-	<div class="section no-pad-bot row center">
-      	<h3 class="header col s12 light white-text">{$ns.lm->getPhrase(12)}</h3>
-      	<p class="white-text"></p>
-    </div>
-	<div class="parallax">
-		<img src="{$SITE_PATH}/img/bg_img_2.jpg">
-	</div>
-</div>
+<h3 class="header col s12 light black-text center-align">{$ns.lm->getPhrase(12)}</h3>
 <div class="section row container">
 	<div class="col s12 m3 3 center">
 		<a href="http://www.asparez.am/">
