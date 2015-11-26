@@ -59,6 +59,7 @@
           "loads/LoginLoad.class.js",
           "loads/HomeLoad.class.js",
           "loads/dashboard/IndexLoad.class.js",
+          "loads/snippets/IndexLoad.class.js",
           "loads/dashboard/AreaSelectionLoad.class.js",
           "loads/dashboard/AreaStatisticsLoad.class.js",
           "loads/dashboard/StatisticsLoad.class.js",
@@ -95,6 +96,7 @@
         "files": [
           "actions/SiteAction.class.js",
           "actions/passport/AddRealVoterAction.class.js",
+          "actions/snippets/SetSnippetValueAction.class.js",
           "actions/number/AddRealVoterAction.class.js",
           "actions/passport/SetInvalidVoteAction.class.js",
           "actions/passport/DeleteVoteAction.class.js",

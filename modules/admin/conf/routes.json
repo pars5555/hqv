@@ -40,11 +40,6 @@
         }
     ],
     "default": {
-        "action": "loads.index",
-        "nestedLoad": {
-            "content": {
-                "action": "loads.dashboard.index"
-            }
-        }
+        "action": "loads.index"
     }
 }

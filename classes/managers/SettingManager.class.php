@@ -12,7 +12,7 @@
 
 namespace hqv\managers {
 
-use hqv\dal\mappers\SettingMapper;
+    use hqv\dal\mappers\SettingMapper;
 
     class SettingManager extends AdvancedAbstractManager {
 
@@ -39,6 +39,21 @@ use hqv\dal\mappers\SettingMapper;
                 self::$instance = new SettingManager(SettingMapper::getInstance());
             }
             return self::$instance;
+        }
+
+        public function setSetting($var, $value, $description = "") {
+            $dto = $this->selectByField('var', $var);
+            if ($dto) {
+                $dto[0]->setValue($value);
+                $dto[0]->setDescription($description);
+                return $this->updateByPk($dto[0]);
+            } else {
+                $dto = $this->createDto();
+                $dto->setVar($var);
+                $dto->setValue($value);
+                $dto->setDescription($description);
+                return $this->insertDto($dto);
+            }
         }
 
         public function getSetting($var) {

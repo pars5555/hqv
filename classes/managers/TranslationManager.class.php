@@ -12,7 +12,7 @@
 
 namespace hqv\managers {
 
-use hqv\dal\mappers\TranslationMapper;
+    use hqv\dal\mappers\TranslationMapper;
 
     class TranslationManager extends AdvancedAbstractManager {
 
@@ -121,6 +121,18 @@ use hqv\dal\mappers\TranslationMapper;
                 $this->allPhrasesDtosMappedByPhraseEn[$pdto->getPhraseEn()] = $pdto;
                 $this->allPhrasesDtosMappedById[$pdto->getId()] = $pdto->toArray();
             }
+        }
+
+        public function updateRow($id, $en, $am, $ru) {
+            $dto = $this->selectByPK($id);
+            if ($dto) {
+                $dto->setPhraseEn($en);
+                $dto->setPhraseAm($am);
+                $dto->setPhraseRu($ru);
+                $this->updateByPk($dto);
+                return true;
+            }
+            return false;
         }
 
         public function getPhraseIdByPhraseEn($phraseEn) {

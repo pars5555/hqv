@@ -47,13 +47,33 @@ namespace hqv\managers {
             return $this->mapper->getDataCountGroupByVoterId();
         }
 
-        public function addRow($voterId, $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os) {
+        public function addSystemRow($id, $voterId, $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os, $datetime) {
             $dto = $this->createDto();
+            $dto->setId($id);
             $dto->setVoterId($voterId);
             $dto->setEmail($email);
             $dto->setPhone($phone);
             $dto->setWillVote($will_vote);
             $dto->setBeWillInArm($will_be_in_arm);
+            $dto->setIpAddress($ip_address);
+            $dto->setCountry($country);
+            $dto->setBrowser($browser);
+            $dto->setBrowserVersion($version);
+            $dto->setPlatform($os);
+            $dto->setDatetime($datetime);
+            return $this->insertDto($dto);
+        }
+
+        public function addRow($voterId, $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os, $id = null) {
+            $dto = $this->createDto();
+            if (isset($id)) {
+                $dto->setId($id);
+            }
+            $dto->setVoterId($voterId);
+            $dto->setEmail($email);
+            $dto->setPhone($phone);
+            $dto->setWillVote($will_vote);
+            $dto->setWillBeInArm($will_be_in_arm);
             $dto->setIpAddress($ip_address);
             $dto->setCountry($country);
             $dto->setBrowser($browser);
