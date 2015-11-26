@@ -23,9 +23,9 @@ namespace hqv\actions\cron {
         public function service() {
             $lastRowId = $this->getSetting('prevote_data_last_row_id');
             if (!empty($lastRowId)) {
-                $json = file_get_contents('http://hanraqve.com/sync/getSyncData?pasphrase=P@rs1985&row_id=' . $lastRowId);
+                $json = @file_get_contents('http://hanraqve.com/sync/getSyncData?pasphrase=P@rs1985&row_id=' . $lastRowId);
             } else {
-                $json = file_get_contents('http://hanraqve.com/sync/getSyncData?pasphrase=P@rs1985');
+                $json = @file_get_contents('http://hanraqve.com/sync/getSyncData?pasphrase=P@rs1985');
             }
             $data = json_decode($json);
             $lastRowId = null;
