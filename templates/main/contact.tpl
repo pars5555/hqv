@@ -21,7 +21,7 @@
 		  <div class="row">
 		    <div class="input-field col s12">
 		      <textarea id="textarea1" class="materialize-textarea"></textarea>
-		      <label for="textarea1">{$ns.lm->getPhrase(34)}</label>
+		      <label for="textarea1">{$ns.lm->getPhrase(46)}</label>
 		    </div>
 		  </div>
 		  <div class="row">

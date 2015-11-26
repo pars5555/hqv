@@ -1,10 +1,10 @@
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row center valign">
 			<div class="col s12">
-		      	<h1 class="header center black-text text-lighten-2">{$ns.lm->getPhrase(2)}</h1>
-		      	<h5 class="header light black-text">{$ns.lm->getPhrase(3)}</h5>
-		      	<h5 class="header light black-text">{$ns.lm->getPhrase(4)}</h5>
-		      	<h5 class="header light black-text">{$ns.lm->getPhrase(5)}</h5>
+		      	<h1 class="header center white-text text-lighten-2">{$ns.lm->getPhrase(2)}</h1>
+		      	<h5 class="header light white-text">{$ns.lm->getPhrase(3)}</h5>
+		      	<h5 class="header light white-text">{$ns.lm->getPhrase(4)}</h5>
+		      	<h5 class="header light white-text">{$ns.lm->getPhrase(5)}</h5>
 			</div>
 			<div class="col s12 hide">
 				<a href="#searchDashboard" class="btn">
@@ -13,7 +13,7 @@
 			</div>
 	    </div>
 	<div class="parallax">
-		<img src="{$SITE_PATH}/img/bg_img_1.jpg">
+		<img src="{$SITE_PATH}/img/bg_img_3.png">
 	</div>
 </div>
 <div id="searchDashboard" class="section white scrollspy">
@@ -65,7 +65,7 @@
 <div class="section row container">
 	<div class="col s12 m3 3 center">
         <a href="http://www.asparez.am/" target="_blank">
-			<img width="150" src="{$SITE_PATH}/img/Asparez_logo.jpg" />
+			<img width="150" src="{$SITE_PATH}/img/asparez_logo.jpg" />
 			<p class="black-text">{$ns.lm->getPhrase(13)}</p>
 		</a>
 	</div>
@@ -77,13 +77,13 @@
 	</div>
 	<div class="col s12 m3 3 center">
 		<a href="http://hcav.am/" target="_blank">
-			<img width="150" src="{$SITE_PATH}/img/HCAV.png" />
+			<img width="150" src="{$SITE_PATH}/img/hcav.png" />
 			<p class="black-text">{$ns.lm->getPhrase(15)}</p>
 		</a>
 	</div>
 	<div class="col s12 m3 3 center">
 		<a href="http://ela.am/" target="_blank">
-			<img width="150" src="{$SITE_PATH}/img/Logo_ELA.png" />
+			<img width="150" src="{$SITE_PATH}/img/logo_ela.png" />
 			<p class="black-text">{$ns.lm->getPhrase(16)}</p>
 		</a>
 	</div>
@@ -152,7 +152,7 @@
 		</div>
 	</div>
 	<div class="modal-footer">
-		<a  href="#!" class="modal-action modal-close btn">Ok</a>
+		<a  href="#!" class="modal-action modal-close btn">{$ns.lm->getPhrase(10)}</a>
 	</div>
 </div>
 

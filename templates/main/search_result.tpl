@@ -8,6 +8,6 @@
 		<div class="divider"></div>
 	{/foreach}
 	{if count($ns.voters) eq 0}
-		<h5 class="center-align">No users</h5>
+		<h5 class="center-align">{$ns.lm->getPhrase(45)}</h5>
 	{/if}
 </div>

@@ -19,8 +19,8 @@
             <p class="grey-text text-lighten-3">{$ns.lm->getPhrase(21)}</p>
             <p class="grey-text text-lighten-3">{$ns.lm->getPhrase(22)}:-<a href="mailto:info@transparency.am">info@transparency.am</a></p>
             <p class="grey-text text-lighten-3">{$ns.lm->getPhrase(23)}-<a href="tel:(+37410)569589">(+37410)569589</a></p>
-            <p class="grey-text text-lighten-3">{$ns.lm->getPhrase(25)}</p>
-            <p class="grey-text text-lighten-3">{$ns.lm->getPhrase(26)}</p>
+            {*<p class="grey-text text-lighten-3">{$ns.lm->getPhrase(25)}</p>
+            <p class="grey-text text-lighten-3">{$ns.lm->getPhrase(26)}</p>*}
           </li>
         </ul>
       </div>

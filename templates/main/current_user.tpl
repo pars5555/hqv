@@ -64,4 +64,4 @@
     </form>
 {else}
     <h4>Wrong Voter Data!<h4>
-        {/if}
+{/if}
