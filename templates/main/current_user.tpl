@@ -26,16 +26,6 @@
                 <div id="emailError" class="red-text text-darken-4 error-message" style="display:none;">{$ns.lm->getPhrase(28)}</div>
                 <label for="cu_email">{$ns.lm->getPhrase(28)}</label>
             </div>
-            <div class="col s12 m12 12 hide">
-                <div class="row">                   
-                    <div class="col s12 m12 12">
-                        <p>
-                            <input type="checkbox" id="cu_will_be_in_armenia" checked="checked" />
-                            <label for="cu_will_be_in_armenia">{$ns.lm->getPhrase(29)}</label>	
-                        </p>
-                    </div>
-                </div>
-            </div>
             <div class="col s12 m12 12">
                 <div class="row">
                     <div class="col s12 m12 l12 ">
@@ -67,24 +57,6 @@
                     </div>
                     <input type="hidden" id="voteAnswer" id="cu_will_vote" value="" />
                     <input type="hidden" id="appearAnswer" id="cu_will_be_in_armenia" value="" />
-                </div>
-                <div class="row hide">
-                    <div class="col s6 m8 8 offset-m2">
-                        <i class="f_vote_btn vote-btn yes fa fa-square-o left" data-ans='1'>
-                            <i class="fa fa-check"></i>
-                        </i>
-                        <i class="f_vote_btn vote-btn no fa fa-square-o right" data-ans='0'>
-                            <i class="fa fa-close"></i>
-                        </i>
-                        <!-- <div class="f_vote_btn yes vote-btn left" data-ans='1'>
-                            Yes
-                        </div> -->
-                        <!-- <div class="f_vote_btn no vote-btn right" data-ans='0'>
-                            No
-                        </div> -->
-                        <input id="cu_will_vote" type="hidden" />
-                        <div class="clearfix"></div>
-                    </div>
                 </div>
             </div>
         </div>
