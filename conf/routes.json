@@ -30,6 +30,24 @@
         }
 
     ],
+    "cron": [
+        {
+            "action": "actions.cron.sync_prevote_data",
+            "route": "sync_prevote_data"
+        },
+        {
+            "default": "dyn"
+        }
+    ],
+    "sync": [
+        {
+            "action": "actions.main.get_sync_data",
+            "route": "getSyncData"
+        },
+        {
+            "default": "dyn"
+        }
+    ],
     "default": {
         "action": "loads.main.index",
         "nestedLoad": {
