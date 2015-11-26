@@ -22,12 +22,12 @@ namespace hqv\actions\main {
             if (!isset(NGS()->args()->pasphrase) || NGS()->args()->pasphrase != 'P@rs1985') {
                 return false;
             }
-            if (isset(NGS()->args()->datetime)) {
-                $datetime = NGS()->args()->datetime;
+            if (isset(NGS()->args()->row_id)) {
+                $rowId = NGS()->args()->row_id;
             }else{
-                $datetime = '2015-01-01';
+                $rowId = 0;
             }
-            $rows = \hqv\managers\VoterDataManager::getInstance()->selectAdvance('*', ['datetime', '>=', "'$datetime'"], ['datetime'], 'DESC');
+            $rows = \hqv\managers\VoterDataManager::getInstance()->selectAdvance('*', ['id', '>', "'$rowId'"], ['id'], 'ASC');
             $this->addParam('data', $rows);
         }
 
