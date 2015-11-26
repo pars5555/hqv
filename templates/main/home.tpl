@@ -18,8 +18,11 @@
 </div>
 <div id="searchDashboard" class="section white scrollspy">
 	<div class="row container">
+        <div class="col s12 center-align">
+            <p>{$ns.lm->getPhrase(42)}</p>
+        </div>
 		<div class="col s12 center-align">
-			<h2 class="header">{$ns.lm->getPhrase(6)},</h2>
+			<h2 class="header">{$ns.lm->getPhrase(6)}</h2>
 			<p class="grey-text text-darken-3 lighten-3">
 				{$ns.lm->getPhrase(7)}
 			</p>
@@ -61,25 +64,25 @@
 <h3 class="header col s12 light black-text center-align">{$ns.lm->getPhrase(12)}</h3>
 <div class="section row container">
 	<div class="col s12 m3 3 center">
-		<a href="http://www.asparez.am/">
+        <a href="http://www.asparez.am/" target="_blank">
 			<img width="150" src="{$SITE_PATH}/img/Asparez_logo.jpg" />
 			<p class="black-text">{$ns.lm->getPhrase(13)}</p>
 		</a>
 	</div>
 	<div class="col s12 m3 3 center">
-		<a href="http://transparency.am/">
+		<a href="http://transparency.am/" target="_blank">
 			<img width="150" src="{$SITE_PATH}/img/tr.jpg" />
 			<p class="black-text">{$ns.lm->getPhrase(14)}</p>
 		</a>
 	</div>
 	<div class="col s12 m3 3 center">
-		<a href="http://hcav.am/">
+		<a href="http://hcav.am/" target="_blank">
 			<img width="150" src="{$SITE_PATH}/img/HCAV.png" />
 			<p class="black-text">{$ns.lm->getPhrase(15)}</p>
 		</a>
 	</div>
 	<div class="col s12 m3 3 center">
-		<a href="http://ela.am/">
+		<a href="http://ela.am/" target="_blank">
 			<img width="150" src="{$SITE_PATH}/img/Logo_ELA.png" />
 			<p class="black-text">{$ns.lm->getPhrase(16)}</p>
 		</a>

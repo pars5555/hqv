@@ -1,6 +1,6 @@
  <nav>
   <div class="nav-wrapper grey darken-4">
-    <a href="{$SITE_PATH}" class="brand-logo"><!-- <img width="" src="{$SITE_PATH}/img/cb.jpg" /> --></a>
+    <a href="{$SITE_PATH}" class="brand-logo"><img class="logo" src="{$SITE_PATH}/img/logo_wh.png" /></a>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     
     

@@ -1,10 +1,6 @@
 <footer class="page-footer grey darken-4">
   <div class="container">
-    <div class="row">
-      <div class="col l6 s12 hide">
-        <h5 class="white-text">Footer Content</h5>
-        <p class="grey-text text-lighten-4">Test Test Test Test Test Test Test Test Test Test Test Test.</p>
-      </div>
+    <div class="row">     
       <div class="col l6 offset-l6 s12">
         <ul>
           <li>
