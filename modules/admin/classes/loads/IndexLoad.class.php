@@ -25,6 +25,19 @@ namespace admin\loads {
             
         }
 
+        public function getDefaultLoads() {
+            $loads = array();
+            if (NGS()->getSessionManager()->getUserType() == \admin\security\UserGroups::$ADMIN) {
+                $loads["content"]["action"] = "admin.loads.dashboard.index";
+                $loads["content"]["args"] = array();
+            } else {
+                $loads["content"]["action"] = "admin.loads.passport.index";
+                $loads["content"]["args"] = array();
+            }
+
+            return $loads;
+        }
+
         public function getTemplate() {
             return NGS()->getTemplateDir() . "/index.tpl";
         }
