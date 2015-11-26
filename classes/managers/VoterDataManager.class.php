@@ -73,7 +73,7 @@ namespace hqv\managers {
             $dto->setEmail($email);
             $dto->setPhone($phone);
             $dto->setWillVote($will_vote);
-            $dto->setBeWillInArm($will_be_in_arm);
+            $dto->setWillBeInArm($will_be_in_arm);
             $dto->setIpAddress($ip_address);
             $dto->setCountry($country);
             $dto->setBrowser($browser);
