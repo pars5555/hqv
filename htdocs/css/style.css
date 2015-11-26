@@ -152,6 +152,15 @@ input.ui-widget-content {
 .error-message {
     padding-left: 45px;
 }
+.choose-btn{
+    font-size:20px;
+}
+.modal-title-abs {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
 /**************************************************************************************/
 /*                                        CALENDAR                                    */
 /**************************************************************************************/

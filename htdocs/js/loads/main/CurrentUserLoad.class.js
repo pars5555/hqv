@@ -8,7 +8,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
     isSavable: false,
     validEmail: false,
     afterLoad: function () {
-        // this.validateEmail();
+        this.chooseAnswer();
         jQuery("#currentUserModalBtn").addClass('disabled');
         this.isSavable = false;
         jQuery('#currentUserModal').openModal();
@@ -41,29 +41,40 @@ NGS.createLoad("hqv.loads.main.current_user", {
         });
         this.votingBtn();
     },
-    isValidEmailAddress: function (emailAddress) {
-        if (emailAddress) {
-            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            return regex.test(emailAddress);
+    chooseAnswer: function(){
+        if(jQuery(".f_choose_btn").length > 0){
+            var thisInstance = this;
+            jQuery('.f_choose_btn').click(function(){
+                var answerVal = jQuery(this).data('ans'); 
+                var answerId = jQuery(this).data('to');
+                var group = jQuery(this).data('group');
+                // Set Value
+                jQuery("#" + answerId).val(answerVal);
+                console.log(answerId)
+                console.log(jQuery("#" + answerId))
+                // Mark as Checked
+                jQuery(this).find('i').removeClass('hide');
+                
+                thisInstance.checkIsSavable();
+                // Make Sure that the other is unchecked
+                if(answerVal == 0){
+                    jQuery('.f_choose_btn[data-group=' + group + '][data-ans=1]').find('i').addClass('hide');
+                    return;
+                }
+                jQuery('.f_choose_btn[data-group=' + group + '][data-ans=0]').find('i').addClass('hide');
+            });
         }
     },
-    validateEmail: function () {
-        var thisInstance = this;
-        jQuery('#cu_email').on('input', function () {
-            if (thisInstance.isValidEmailAddress(jQuery(this).val())) {
-                if (jQuery('.f_vote_btn').hasClass('active')) {
-                    thisInstance.isSavable = true;
-                    jQuery("#currentUserModalBtn").removeClass('disabled');
-                }
-                thisInstance.validEmail = true;
-                jQuery('#emailError').hide();
-            } else {
-                thisInstance.isSavable = false;
-                thisInstance.validEmail = false;
-                jQuery("#currentUserModalBtn").addClass('disabled');
-                jQuery('#emailError').show();
-            }
-        });
+    checkIsSavable: function(){
+        console.log(jQuery('#voteAnswer').val())
+        console.log(jQuery('#appearAnswer').val())
+        if(jQuery('#voteAnswer').val() && jQuery('#appearAnswer').val()){
+            jQuery("#currentUserModalBtn").removeClass('disabled');
+            this.isSavable = true;
+        }else {
+            jQuery("#currentUserModalBtn").addClass('disabled');
+            this.isSavable = false;
+        }
     },
     votingBtn: function () {
         var thisInstance = this;

@@ -68,7 +68,7 @@
 	</div>
 	<div class="col s12 m3 3 center">
 		<a href="http://transparency.am/">
-			<img width="150" src="{$SITE_PATH}/img/citizen observer.jpg" />
+			<img width="150" src="{$SITE_PATH}/img/tr.jpg" />
 			<p class="black-text">{$ns.lm->getPhrase(14)}</p>
 		</a>
 	</div>
@@ -87,6 +87,9 @@
 </div>
 <div id="searchResultModal" class="modal current-user-modal modal-fixed-footer">
 	<div class="modal-header">
+		<h4 class="modal-title-abs center-align">
+			{$ns.lm->getPhrase(36)}
+		</h4>
 		<i class="fa fa-times close-btn modal-action modal-close"></i>
 	</div>
 	<div id="" class="modal-content row">

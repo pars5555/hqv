@@ -26,7 +26,7 @@
                 <div id="emailError" class="red-text text-darken-4 error-message" style="display:none;">{$ns.lm->getPhrase(28)}</div>
                 <label for="cu_email">{$ns.lm->getPhrase(28)}</label>
             </div>
-            <div class="col s12 m12 12">
+            <div class="col s12 m12 12 hide">
                 <div class="row">                   
                     <div class="col s12 m12 12">
                         <p>
@@ -38,6 +38,37 @@
             </div>
             <div class="col s12 m12 12">
                 <div class="row">
+                    <div class="col s12 m12 l12 ">
+                        <h5 class="center-align">{$ns.lm->getPhrase(37)}</h5>
+                    </div>
+                    <div class="col s12 m6 l6 center-align">
+                        <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="vote" data-ans="1" data-to='voteAnswer'>
+                            <i class="hide fa fa-check green-text"></i>
+                            <span class="black-text">{$ns.lm->getPhrase(38)}</span>
+                        </a>
+                    </div>
+                    <div class="col s12 m6 l6 center-align" >
+                        <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="vote" data-ans="0" data-to='voteAnswer'>
+                            <i class="hide fa fa-check green-text"></i>
+                            <span class="black-text">{$ns.lm->getPhrase(39)}</span>
+                        </a>
+                    </div>
+                    <div class="col s12 m6 l6 center-align">
+                        <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="appear" data-ans="1" data-to='appearAnswer'>
+                            <i class="hide fa fa-check green-text"></i>
+                            <span class="black-text">{$ns.lm->getPhrase(39)}</span>
+                        </a>
+                    </div>
+                    <div class="col s12 m6 l6 center-align">
+                        <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="appear" data-ans="0" data-to='appearAnswer'>
+                            <i class="hide fa fa-check green-text"></i>
+                            <span class="black-text">{$ns.lm->getPhrase(40)}</span>
+                        </a>
+                    </div>
+                    <input type="hidden" id="voteAnswer" value="" />
+                    <input type="hidden" id="appearAnswer" value="" />
+                </div>
+                <div class="row hide">
                     <div class="col s6 m8 8 offset-m2">
                         <i class="f_vote_btn vote-btn yes fa fa-square-o left" data-ans='1'>
                             <i class="fa fa-check"></i>

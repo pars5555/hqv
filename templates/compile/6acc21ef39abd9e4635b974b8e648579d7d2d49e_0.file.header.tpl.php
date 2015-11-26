@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-25 15:44:42
+<?php /* Smarty version 3.1.27, created on 2015-11-26 10:49:34
          compiled from "D:\xampp\htdocs\hqv\templates\main\util\header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:282945655c95a71a3d2_85524607%%*/
+/*%%SmartyHeaderCode:198105656d5aeade125_02362488%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6acc21ef39abd9e4635b974b8e648579d7d2d49e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\util\\header.tpl',
-      1 => 1448462669,
+      1 => 1448531374,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '282945655c95a71a3d2_85524607',
+  'nocache_hash' => '198105656d5aeade125_02362488',
   'variables' => 
   array (
     'SITE_PATH' => 0,
@@ -21,18 +21,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5655c95a7920b1_20410824',
+  'unifunc' => 'content_5656d5aeb54044_29180248',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5655c95a7920b1_20410824')) {
-function content_5655c95a7920b1_20410824 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5656d5aeb54044_29180248')) {
+function content_5656d5aeb54044_29180248 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '282945655c95a71a3d2_85524607';
+$_smarty_tpl->properties['nocache_hash'] = '198105656d5aeade125_02362488';
 ?>
  <nav>
   <div class="nav-wrapper grey darken-4">
     <a href="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
-" class="brand-logo">Logo</a>
+" class="brand-logo"><!-- <img width="" src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
+/img/cb.jpg" /> --></a>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     
     

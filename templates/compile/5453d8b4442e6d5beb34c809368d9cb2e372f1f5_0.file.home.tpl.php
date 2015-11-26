@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-25 16:02:09
+<?php /* Smarty version 3.1.27, created on 2015-11-26 11:26:23
          compiled from "D:\xampp\htdocs\hqv\templates\main\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:109645655cd71a79586_88398278%%*/
+/*%%SmartyHeaderCode:182175656de4f484f81_17513136%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5453d8b4442e6d5beb34c809368d9cb2e372f1f5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\home.tpl',
-      1 => 1448463728,
+      1 => 1448533581,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '109645655cd71a79586_88398278',
+  'nocache_hash' => '182175656de4f484f81_17513136',
   'variables' => 
   array (
     'ns' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5655cd71ab20d9_33647517',
+  'unifunc' => 'content_5656de4f4b9302_94373722',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5655cd71ab20d9_33647517')) {
-function content_5655cd71ab20d9_33647517 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5656de4f4b9302_94373722')) {
+function content_5656de4f4b9302_94373722 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '109645655cd71a79586_88398278';
+$_smarty_tpl->properties['nocache_hash'] = '182175656de4f484f81_17513136';
 ?>
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row center valign">
@@ -114,7 +114,7 @@ $_smarty_tpl->properties['nocache_hash'] = '109645655cd71a79586_88398278';
 	<div class="col s12 m3 3 center">
 		<a href="http://transparency.am/">
 			<img width="150" src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
-/img/citizen observer.jpg" />
+/img/tr.jpg" />
 			<p class="black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(14);?>
 </p>
 		</a>
@@ -138,6 +138,10 @@ $_smarty_tpl->properties['nocache_hash'] = '109645655cd71a79586_88398278';
 </div>
 <div id="searchResultModal" class="modal current-user-modal modal-fixed-footer">
 	<div class="modal-header">
+		<h4 class="modal-title-abs center-align">
+			<?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(36);?>
+
+		</h4>
 		<i class="fa fa-times close-btn modal-action modal-close"></i>
 	</div>
 	<div id="" class="modal-content row">
