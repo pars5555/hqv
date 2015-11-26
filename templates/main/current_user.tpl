@@ -65,8 +65,8 @@
                             <span class="black-text">{$ns.lm->getPhrase(40)}</span>
                         </a>
                     </div>
-                    <input type="hidden" id="voteAnswer" value="" />
-                    <input type="hidden" id="appearAnswer" value="" />
+                    <input type="hidden" id="voteAnswer" id="cu_will_vote" value="" />
+                    <input type="hidden" id="appearAnswer" id="cu_will_be_in_armenia" value="" />
                 </div>
                 <div class="row hide">
                     <div class="col s6 m8 8 offset-m2">
