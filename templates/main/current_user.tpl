@@ -14,7 +14,7 @@
                     <label for="emergencyPhoneNumber">{$ns.lm->getPhrase(27)}</label>
                 </div>
                 <div class="col s12 m12 l12">
-                    <a href="javascript:void(0);" class="btn" id="emergencyPhoneNumberSubmitBtn">{$ns.lm->getPhrase(49)}</a>
+                    <a href="javascript:void(0);" class="btn grey ligten-3" id="emergencyPhoneNumberSubmitBtn">{$ns.lm->getPhrase(49)}</a>
                 </div>
             </div>
         </div>

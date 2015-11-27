@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-28 00:16:17
+<?php /* Smarty version 3.1.27, created on 2015-11-28 00:25:44
          compiled from "D:\xampp\htdocs\hqv\templates\main\current_user.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:267485658ba11602e69_93371227%%*/
+/*%%SmartyHeaderCode:116805658bc4844d4f7_12102464%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b7d845e2abf9ef1dcca359ccb19e0be7a9e5185e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\current_user.tpl',
-      1 => 1448655353,
+      1 => 1448655934,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '267485658ba11602e69_93371227',
+  'nocache_hash' => '116805658bc4844d4f7_12102464',
   'variables' => 
   array (
     'ns' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5658ba11649068_47291503',
+  'unifunc' => 'content_5658bc484932c7_08012639',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5658ba11649068_47291503')) {
-function content_5658ba11649068_47291503 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5658bc484932c7_08012639')) {
+function content_5658bc484932c7_08012639 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '267485658ba11602e69_93371227';
+$_smarty_tpl->properties['nocache_hash'] = '116805658bc4844d4f7_12102464';
 if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
     <?php if (!empty($_smarty_tpl->tpl_vars['ns']->value['voter_data'])) {?>
         <p class="center-align red-text text-darken-4"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(30);?>
@@ -46,7 +46,7 @@ if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
 </label>
                 </div>
                 <div class="col s12 m12 l12">
-                    <a href="javascript:void(0);" class="btn" id="emergencyPhoneNumberSubmitBtn"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(49);?>
+                    <a href="javascript:void(0);" class="btn grey ligten-3" id="emergencyPhoneNumberSubmitBtn"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(49);?>
 </a>
                 </div>
             </div>
