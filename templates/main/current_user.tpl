@@ -15,12 +15,12 @@
             <div class="input-field col s12 m12 12 vote-text">
                 {$ns.area->getRegion()}, {$ns.area->getCommunity()}, {$ns.area->getAddress()}, {$ns.area->getTerritoryId()}/{$ns.area->getAreaId()}
             </div>
-            <div class="input-field col s12 m6 6">
+            <div class="input-field col s12 m12 l6">
                 <i class="material-icons prefix">phone</i>
                 <input id="cu_telephone" type="text" class="validate">
                 <label for="cu_telephone">{$ns.lm->getPhrase(27)}</label>
             </div>
-            <div class="input-field col s12 m6 6">
+            <div class="input-field col s12 m12 l6">
                 <i class="material-icons prefix">mailbox</i>
                 <input id="cu_email" type="text" class="">
                 <div id="emailError" class="red-text text-darken-4 error-message" style="display:none;">{$ns.lm->getPhrase(28)}</div>
@@ -31,32 +31,36 @@
                     <div class="col s12 m12 l12 ">
                         <h5 class="center-align">{$ns.lm->getPhrase(37)}</h5>
                     </div>
-                    <div class="col s12 m6 l6 center-align">
-                        <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="vote" data-ans="1" data-to='voteAnswer'>
-                            <i class="hide fa fa-check green-text"></i>
-                            <span class="black-text">{$ns.lm->getPhrase(38)}</span>
-                        </a>
+                    <div class="row">
+                        <div class="col s12 m6 l6 center-align">
+                            <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="vote" data-ans="1" data-to='inArmAnswer'>
+                                <i class="hide fa fa-check green-text"></i>
+                                <span class="black-text">{$ns.lm->getPhrase(38)}</span>
+                            </a>
+                        </div>
+                        <div class="col s12 m6 l6 center-align" >
+                            <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="vote" data-ans="0" data-to='inArmAnswer'>
+                                <i class="hide fa fa-check green-text"></i>
+                                <span class="black-text">{$ns.lm->getPhrase(39)}</span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="col s12 m6 l6 center-align" >
-                        <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="vote" data-ans="0" data-to='voteAnswer'>
-                            <i class="hide fa fa-check green-text"></i>
-                            <span class="black-text">{$ns.lm->getPhrase(39)}</span>
-                        </a>
+                    <div class="row" id="willVoteAnswerContainer">
+                        <div class="col s12 m6 l6 center-align">
+                            <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="appear" data-ans="1" data-to='willVoteAnswer'>
+                                <i class="hide fa fa-check green-text"></i>
+                                <span class="black-text">{$ns.lm->getPhrase(40)}</span>
+                            </a>
+                        </div>
+                        <div class="col s12 m6 l6 center-align">
+                            <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="appear" data-ans="0" data-to='willVoteAnswer'>
+                                <i class="hide fa fa-check green-text"></i>
+                                <span class="black-text">{$ns.lm->getPhrase(41)}</span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="col s12 m6 l6 center-align">
-                        <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="appear" data-ans="1" data-to='appearAnswer'>
-                            <i class="hide fa fa-check green-text"></i>
-                            <span class="black-text">{$ns.lm->getPhrase(39)}</span>
-                        </a>
-                    </div>
-                    <div class="col s12 m6 l6 center-align">
-                        <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="appear" data-ans="0" data-to='appearAnswer'>
-                            <i class="hide fa fa-check green-text"></i>
-                            <span class="black-text">{$ns.lm->getPhrase(40)}</span>
-                        </a>
-                    </div>
-                    <input type="hidden" id="voteAnswer"/>
-                    <input type="hidden" id="appearAnswer" />
+                    <input type="hidden" id="inArmAnswer"/>
+                    <input type="hidden" id="willVoteAnswer" />
                 </div>
             </div>
         </div>
@@ -64,4 +68,4 @@
     </form>
 {else}
     <h4>Wrong Voter Data!<h4>
-{/if}
+        {/if}

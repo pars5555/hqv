@@ -111,6 +111,7 @@ NGS.createLoad("hqv.loads.main.home", {
             selectYears: 150,
             clear: null,
             today: null,
+            close: 'փակել',
             min: [parseInt(minBirthDateParts[0]), parseInt(minBirthDateParts[1])-1, parseInt(minBirthDateParts[2])],
             max: [parseInt(maxBirthDateParts[0]), parseInt(maxBirthDateParts[1])-1, parseInt(maxBirthDateParts[2])]
         });

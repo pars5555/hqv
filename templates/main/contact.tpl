@@ -25,7 +25,7 @@
 		    </div>
 		  </div>
 		  <div class="row">
-		  	<button class="btn col s12 m12 12">
+		  	<button class="btn col blue darken-4 s12 m12 12">
 		  		{$ns.lm->getPhrase(10)}
 		  	</button>
 		  </div>

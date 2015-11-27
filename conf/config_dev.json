@@ -3,8 +3,8 @@
     "DB": {
         "mysql": {
             "host": "127.0.0.1",
-            "user": "hqv",
-            "pass": "hqv123",
+            "user": "root",
+            "pass": "",
             "name": "hqv"
         },
         "mongo": {

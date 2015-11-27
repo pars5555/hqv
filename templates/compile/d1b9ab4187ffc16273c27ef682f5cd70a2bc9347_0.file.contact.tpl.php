@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-26 15:52:07
+<?php /* Smarty version 3.1.27, created on 2015-11-26 16:58:14
          compiled from "D:\xampp\htdocs\hqv\templates\main\contact.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:75515656f2676634c6_79167562%%*/
+/*%%SmartyHeaderCode:10637565701e66bf215_51381651%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd1b9ab4187ffc16273c27ef682f5cd70a2bc9347' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\contact.tpl',
-      1 => 1448463674,
+      1 => 1448542692,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '75515656f2676634c6_79167562',
+  'nocache_hash' => '10637565701e66bf215_51381651',
   'variables' => 
   array (
     'ns' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5656f2676b5ac9_85848755',
+  'unifunc' => 'content_565701e670d511_41690066',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5656f2676b5ac9_85848755')) {
-function content_5656f2676b5ac9_85848755 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_565701e670d511_41690066')) {
+function content_565701e670d511_41690066 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '75515656f2676634c6_79167562';
+$_smarty_tpl->properties['nocache_hash'] = '10637565701e66bf215_51381651';
 ?>
 <div class="container">
 	<h4><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(18);?>
@@ -55,7 +55,7 @@ $_smarty_tpl->properties['nocache_hash'] = '75515656f2676634c6_79167562';
 		  <div class="row">
 		    <div class="input-field col s12">
 		      <textarea id="textarea1" class="materialize-textarea"></textarea>
-		      <label for="textarea1"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(34);?>
+		      <label for="textarea1"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(46);?>
 </label>
 		    </div>
 		  </div>

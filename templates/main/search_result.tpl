@@ -7,7 +7,9 @@
 		</div>
 		<div class="divider"></div>
 	{/foreach}
-	{if count($ns.voters) eq 0}
+	{if count($ns.voters) == 0}
 		<h5 class="center-align">{$ns.lm->getPhrase(45)}</h5>
 	{/if}
+    <input type="hidden" value="{count($ns.voters)}" id="searchResultCount"/>
+    
 </div>

@@ -67,26 +67,36 @@ body{
 }
 .ui-keyboard-keyset .ui-keyboard-button {
     background-image: none !important;
-    background-color: #26a69a !important;
+    background-color: #0d47a1 !important;
     color: #fff !important;
 }
 .ui-keyboard-keyset .ui-keyboard-button.ui-state-hover {
-    background-color: #2bbbad;
-    border-color: #2bbbad;
+    background-color: #0d47a1;
+    border-color: #0d47a1;
 }
 input.ui-widget-content {
     background-color: transparent !important;
     background-image: none !important;
 }
+.text-justify {
+    text-align: justify;
+}
 /**************************************************************************************/
 /*                                        MODAL                                       */
 /**************************************************************************************/
+.nav-wrapper .icon-wrapper {
+    height: 84px;
+    line-height: 84px;
+}
 .current-user-modal .cancel-btn {
     margin-left: 10px !important;
 }
+.current-user-modal {
+    width: 80% !important;
+}
 .thankyou-modal {
     height: 40% !important;
-    width: 35% !important;
+    width: 45% !important;
 }
 .modal .close-btn {
     cursor: pointer;
@@ -206,4 +216,44 @@ input.ui-widget-content {
 }
 .picker__footer .picker__close:hover {
     background-color: #2bbbad;
+}
+.picker__footer .picker__close,
+.picker__day--selected, .picker__day--selected:hover, 
+.picker--focused .picker__day--selected,
+.picker__date-display {
+    background-color: #0d47a1 !important;
+}
+.picker__weekday-display {
+    background-color: #3057b1 !important;
+}
+/* label color */
+.input-field label {
+  color: #000;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #000;
+}
+/* label underline focus color */
+.input-field input:focus {
+  border-bottom: 1px solid #0d47a1 !important;
+  box-shadow: 0 1px 0 0 #0d47a1 !important;
+}
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #000;
+}
+.input-field label.active,
+.input-field .material-icons.prefix.active {
+    color: #0d47a1 !important;
 }

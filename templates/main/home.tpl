@@ -49,7 +49,7 @@
 			      	</div>
 			      </div>
 			      <div class="row">
-		      		<button id="searchVoters" class="btn waves-effect waves-light col s12">
+		      		<button id="searchVoters" class="btn waves-effect waves-light blue darken-4 col s12">
 		      			{$ns.lm->getPhrase(10)}
 				    </button>
 			      </div>
@@ -69,6 +69,12 @@
 			<p class="black-text">{$ns.lm->getPhrase(13)}</p>
 		</a>
 	</div>
+    <div class="col s12 m3 3 center">
+		<a href="http://ela.am/" target="_blank">
+			<img width="150" src="{$SITE_PATH}/img/logo_ela.jpg" />
+			<p class="black-text">{$ns.lm->getPhrase(16)}</p>
+		</a>
+	</div>
 	<div class="col s12 m3 3 center">
 		<a href="http://transparency.am/" target="_blank">
 			<img width="150" src="{$SITE_PATH}/img/tr.jpg" />
@@ -81,17 +87,12 @@
 			<p class="black-text">{$ns.lm->getPhrase(15)}</p>
 		</a>
 	</div>
-	<div class="col s12 m3 3 center">
-		<a href="http://ela.am/" target="_blank">
-			<img width="150" src="{$SITE_PATH}/img/logo_ela.png" />
-			<p class="black-text">{$ns.lm->getPhrase(16)}</p>
-		</a>
-	</div>
 </div>
 <div id="searchResultModal" class="modal current-user-modal modal-fixed-footer">
 	<div class="modal-header">
 		<h4 class="modal-title-abs center-align">
-			{$ns.lm->getPhrase(36)}
+			<span id="selectYouHeaderText1">{$ns.lm->getPhrase(36)}</span>
+			<span id="selectYouHeaderText2">{$ns.lm->getPhrase(47)}</span>
 		</h4>
 		<i class="fa fa-times close-btn modal-action modal-close"></i>
 	</div>
@@ -124,7 +125,7 @@
 	<div id="currentUser" class="modal-content row">
 	</div>
 	<div class="modal-footer">
-		<a id="currentUserModalBtn" href="#!" class="btn disabled">{$ns.lm->getPhrase(10)}</a>
+		<a id="currentUserModalBtn" href="#!" class="btn blue darken-4 disabled">{$ns.lm->getPhrase(10)}</a>
 	</div>
 </div>
 <div id="thankModal" class="modal thankyou-modal current-user-modal modal-fixed-footer">
@@ -152,7 +153,6 @@
 		</div>
 	</div>
 	<div class="modal-footer">
-		<a  href="#!" class="modal-action modal-close btn">{$ns.lm->getPhrase(10)}</a>
 	</div>
 </div>
 
