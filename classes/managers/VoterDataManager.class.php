@@ -46,6 +46,16 @@ namespace hqv\managers {
         public function getDataCountGroupByVoterId() {
             return $this->mapper->getDataCountGroupByVoterId();
         }
+        
+        public function selectJoinVoters($where, $offset, $limit) {
+            $where = $this->getWhereSubQueryByFilters($where);
+            return $this->mapper->selectJoinVoters($where, $offset, $limit);
+        }
+        
+        public function selectJoinVotersCount($where) {
+            $where = $this->getWhereSubQueryByFilters($where);
+            return $this->mapper->selectJoinVotersCount($where);
+        }
 
         public function addSystemRow($id, $voterId, $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os, $datetime) {
             $dto = $this->createDto();
@@ -64,11 +74,18 @@ namespace hqv\managers {
             return $this->insertDto($dto);
         }
 
-        public function addRow($voterId, $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os, $id = null) {
+        public function addRowFromModerator($voterId) {
             $dto = $this->createDto();
-            if (isset($id)) {
-                $dto->setId($id);
-            }
+            $dto->setVoterId($voterId);
+            $dto->setWillVote(0);
+            $dto->setWillBeInArm(0);
+            $dto->setDatetime(date('Y-m-d H:i:s'));
+            $dto->setAdminId(NGS()->getSessionManager()->getUserId());
+            return $this->insertDto($dto);
+        }
+        
+        public function addRow($voterId, $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os) {
+            $dto = $this->createDto();
             $dto->setVoterId($voterId);
             $dto->setEmail($email);
             $dto->setPhone($phone);

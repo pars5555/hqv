@@ -12,9 +12,9 @@
 
 namespace hqv\managers {
 
-    use hqv\dal\mappers\AttackTypeMapper;
+    use hqv\dal\mappers\EmergencyPhoneNumberMapper;
 
-    class AttackTypeManager extends AdvancedAbstractManager {
+    class EmergencyPhoneNumberManager extends AdvancedAbstractManager {
 
         /**
          * @var $instance
@@ -30,9 +30,17 @@ namespace hqv\managers {
          */
         public static function getInstance() {
             if (self::$instance == null) {
-                self::$instance = new AttackTypeManager(AttackTypeMapper::getInstance());
+                self::$instance = new EmergencyPhoneNumberManager(EmergencyPhoneNumberMapper::getInstance());
             }
             return self::$instance;
+        }
+
+        public function addRow($phoneNumber) {
+            $dto = $this->createDto();
+            $dto->setPhoneNumber($phoneNumber);
+            $dto->setIpAddress($_SERVER['REMOTE_ADDR']);
+            $dto->setDatetime(date('Y-m-d- H:i:s'));
+            return $this->insertDto($dto);
         }
 
     }

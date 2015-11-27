@@ -36,8 +36,43 @@ namespace admin\loads\voters {
             $this->addParam('page', $page);
             $this->addParam('limit', $limit);
             $offset = ($page - 1) * $limit;
-            $rows = VoterDataManager::getInstance()->selectAdvance('*', [], ['datetime'], 'DESC', $offset, $limit);
-            $count = VoterDataManager::getInstance()->getLastSelectAdvanceRowsCount();
+
+            $where = [];
+            if (!empty(NGS()->args()->firstName)) {
+                $firstName = NGS()->args()->firstName;
+                $where [] = 'first_name';
+                $where [] = 'like';
+                $where [] = "'$firstName%'";
+            }
+            if (!empty(NGS()->args()->lastName)) {
+                $lastName = NGS()->args()->lastName;
+                if (!empty($where)) {
+                    $where [] = 'and';
+                }
+                $where [] = 'last_name';
+                $where [] = 'like';
+                $where [] = "'$lastName%'";
+            }
+            if (!empty(NGS()->args()->ipAddress )) {
+                $ipAddress = NGS()->args()->ipAddress;
+                if (!empty($where)) {
+                    $where [] = 'and';
+                }
+                $where [] = 'ip_address';
+                $where [] = '=';
+                $where [] = "'$ipAddress'";
+            }
+            if (!empty(NGS()->args()->birthYear) && !empty(NGS()->args()->birthMonth) && !empty(NGS()->args()->birthDay)) {
+                $birthDate = intval(NGS()->args()->birthYear) . '-' . intval(NGS()->args()->birthMonth) . '-' . intval(NGS()->args()->birthDay);
+                if (!empty($where)) {
+                    $where [] = 'and';
+                }
+                $where [] = 'birth_date';
+                $where [] = '=';
+                $where [] = "'$birthDate'";
+            }
+            $rows = VoterDataManager::getInstance()->selectJoinVoters($where, $offset, $limit);
+            $count = VoterDataManager::getInstance()->selectJoinVotersCount($where);
             $voterIdsArray = $this->getVoterIdsArray($rows);
             $voters = \hqv\managers\VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
             $pageCount = ceil($count / $limit);

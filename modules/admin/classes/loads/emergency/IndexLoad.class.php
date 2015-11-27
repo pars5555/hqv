@@ -15,29 +15,21 @@
  *
  */
 
-namespace admin\loads\prevote {
+namespace admin\loads\emergency {
 
     use admin\loads\ModeratorLoad;
+    use hqv\managers\EmergencyPhoneNumberManager;
     use NGS;
 
     class IndexLoad extends ModeratorLoad {
 
         public function load() {
-            
-        }
-
-        public function getDefaultLoads() {
-            $loads = array(); 
-            
-            $loads["add_edit"]["action"] = "admin.loads.passport.add_edit";
-            $loads["add_edit"]["args"] = array();
-            $loads["list"]["action"] = "admin.loads.passport.list";
-            $loads["list"]["args"] = array();
-            return $loads;
+            $selectAll = EmergencyPhoneNumberManager::getInstance()->selectAll();
+            $this->addParam('rows', $selectAll);
         }
 
         public function getTemplate() {
-            return NGS()->getTemplateDir() . "/prevote/index.tpl";
+            return NGS()->getTemplateDir() . "/emergency/index.tpl";
         }
 
     }

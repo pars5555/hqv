@@ -147,7 +147,7 @@ namespace hqv\managers {
             return intval($this->mapper->selectAdvanceCount($this->lastSelectAdvanceWhere));
         }
 
-        private function getWhereSubQueryByFilters($filters) {
+        protected function getWhereSubQueryByFilters($filters) {
             if (empty($filters)) {
                 return "";
             }
