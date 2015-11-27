@@ -42,6 +42,11 @@ namespace hqv\actions\cron {
                     $lastRowId = $row->id;
                 }
             }
+            if (isset($lastRowId) && $lastRowId > 0) {
+                SettingManager::getInstance()->setSetting('prevote_data_last_row_id', $lastRowId);
+            }
+            
+            
             $emLastRowId = null;
             if (!empty($data) && !empty($data->params) && !empty($data->params->em_data)) {
                 foreach ($data->params->em_data as $row) {
@@ -51,9 +56,6 @@ namespace hqv\actions\cron {
                     }
                     $emLastRowId = $row->id;
                 }
-            }
-            if (isset($lastRowId) && $lastRowId > 0) {
-                SettingManager::getInstance()->setSetting('prevote_data_last_row_id', $lastRowId);
             }
             if (isset($emLastRowId) && $emLastRowId > 0) {
                 SettingManager::getInstance()->setSetting('emergency_last_row_id', $emLastRowId);

@@ -33,7 +33,7 @@ namespace hqv\actions\main {
                 $emRowId = 0;
             }
             $rows = \hqv\managers\VoterDataManager::getInstance()->selectAdvance('*', ['id', '>', "'$rowId'"], ['id'], 'ASC');
-            $emrows = \hqv\managers\EmergencyPhoneNumberManager::getInstance()->selectAdvance('*', ['id', '>', "'$rowId'"], ['id'], 'ASC');
+            $emrows = \hqv\managers\EmergencyPhoneNumberManager::getInstance()->selectAdvance('*', ['id', '>', "'$emRowId'"], ['id'], 'ASC');
             $this->addParam('data', $rows);
             $this->addParam('em_data', $emrows);
         }
