@@ -24,6 +24,13 @@
                 {$ns.lm->getPhrase(32)}
               </a>
           </li>
+          <li class="divider"></li>
+          <li>
+              <a href="{$SITE_PATH}/lang/ru" class="f_cur_lan blue-text">
+                <img width="25" src="{$SITE_PATH}/img/rus_flag.jpg" />
+                {$ns.lm->getPhrase(33)}
+              </a>
+          </li>
         </ul>
       </li>
     </ul>
