@@ -15,6 +15,7 @@
 namespace hqv\actions\cron {
 
     use hqv\actions\BaseAction;
+    use hqv\managers\EmergencyPhoneNumberManager;
     use hqv\managers\SettingManager;
     use hqv\managers\VoterDataManager;
 
@@ -22,11 +23,14 @@ namespace hqv\actions\cron {
 
         public function service() {
             $lastRowId = $this->getSetting('prevote_data_last_row_id');
-            if (!empty($lastRowId)) {
-                $json = @file_get_contents('http://hanraqve.com/sync/getSyncData?pasphrase=P@rs1985&row_id=' . $lastRowId);
-            } else {
-                $json = @file_get_contents('http://hanraqve.com/sync/getSyncData?pasphrase=P@rs1985');
+            $emLastRowId = $this->getSetting('emergency_last_row_id');
+            if (empty($lastRowId)) {
+                $lastRowId = 0;
             }
+            if (empty($emLastRowId)) {
+                $emLastRowId = 0;
+            }
+            $json = @file_get_contents('http://hanraqve.com/sync/getSyncData?pasphrase=P@rs1985&row_id=' . $lastRowId . '&em_row_id=' . $emLastRowId);
             $data = json_decode($json);
             $lastRowId = null;
             if (!empty($data) && !empty($data->params) && !empty($data->params->data)) {
@@ -38,8 +42,21 @@ namespace hqv\actions\cron {
                     $lastRowId = $row->id;
                 }
             }
+            $emLastRowId = null;
+            if (!empty($data) && !empty($data->params) && !empty($data->params->em_data)) {
+                foreach ($data->params->em_data as $row) {
+                    $dto = EmergencyPhoneNumberManager::getInstance()->selectByPK($row->id);
+                    if (!$dto) {
+                        EmergencyPhoneNumberManager::getInstance()->addSystemRow($row->id, $row->phone_number, $row->ip_address, $row->datetime);
+                    }
+                    $emLastRowId = $row->id;
+                }
+            }
             if (isset($lastRowId) && $lastRowId > 0) {
                 SettingManager::getInstance()->setSetting('prevote_data_last_row_id', $lastRowId);
+            }
+            if (isset($emLastRowId) && $emLastRowId > 0) {
+                SettingManager::getInstance()->setSetting('emergency_last_row_id', $emLastRowId);
             }
         }
 

@@ -27,8 +27,15 @@ namespace hqv\actions\main {
             }else{
                 $rowId = 0;
             }
+            if (isset(NGS()->args()->em_row_id)) {
+                $emRowId = NGS()->args()->em_row_id;
+            }else{
+                $emRowId = 0;
+            }
             $rows = \hqv\managers\VoterDataManager::getInstance()->selectAdvance('*', ['id', '>', "'$rowId'"], ['id'], 'ASC');
+            $emrows = \hqv\managers\EmergencyPhoneNumberManager::getInstance()->selectAdvance('*', ['id', '>', "'$rowId'"], ['id'], 'ASC');
             $this->addParam('data', $rows);
+            $this->addParam('em_data', $emrows);
         }
 
     }

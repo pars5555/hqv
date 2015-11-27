@@ -41,7 +41,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
         $('#emergencyPhoneNumberSubmitBtn').click(function () {
             var phone = $('#emergencyPhoneNumber').val();
             NGS.action('hqv.actions.main.add_emergency_phone', {phoneNumber: phone});
-            $('#emergencyContainer').remove();
+            $("#emergencyContainer").addClass('hide');
         });
 
 

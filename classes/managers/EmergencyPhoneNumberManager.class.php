@@ -42,6 +42,15 @@ namespace hqv\managers {
             $dto->setDatetime(date('Y-m-d- H:i:s'));
             return $this->insertDto($dto);
         }
+        
+          public function addSystemRow($id, $phoneNumber, $ip_address, $datetime) {
+            $dto = $this->createDto();
+            $dto->setId($id);
+            $dto->setPhoneNumber($phoneNumber);
+            $dto->setIpAddress($ip_address);
+            $dto->setDatetime($datetime);
+            return $this->insertDto($dto);
+        }
 
     }
 
