@@ -18,6 +18,8 @@ namespace hqv\loads\main {
     class ContactLoad extends NgsLoad {
 
         public function load() {
+            $this->initErrorMessages();
+            $this->initSuccessMessages();
             
         }
 

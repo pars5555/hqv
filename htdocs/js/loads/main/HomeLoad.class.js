@@ -26,6 +26,18 @@ NGS.createLoad("hqv.loads.main.home", {
     },
     initSearch: function () {
         var thisInstance = this;
+        $("#lastName").on('keydown', function (e) {
+            var keyCode = e.keyCode || e.which;
+            if (keyCode == 9) {
+                $('#birthDate').trigger('click');
+            }
+        });
+        $("#firstName").on('keydown', function (e) {
+            var keyCode = e.keyCode || e.which;
+            if (keyCode == 9) {
+                $('#lastName').focus();
+            }
+        });
         $('#firstName, #lastName').on('input', function () {
             var text = $(this).val();
             text = thisInstance.convertEnCharsToArmChars(text);
@@ -41,6 +53,7 @@ NGS.createLoad("hqv.loads.main.home", {
                 jQuery("#searchResultModal").openModal();
                 jQuery("#searchResult").html('');
                 jQuery("#searchLoader").show();
+                jQuery(".ui-keyboard").remove();
                 NGS.load("hqv.loads.main.search_result", {birthDate: birthDate, firstName: firstName, lastName: lastName});
             }
         });
@@ -112,8 +125,8 @@ NGS.createLoad("hqv.loads.main.home", {
             clear: null,
             today: null,
             close: 'փակել',
-            min: [parseInt(minBirthDateParts[0]), parseInt(minBirthDateParts[1])-1, parseInt(minBirthDateParts[2])],
-            max: [parseInt(maxBirthDateParts[0]), parseInt(maxBirthDateParts[1])-1, parseInt(maxBirthDateParts[2])]
+            min: [parseInt(minBirthDateParts[0]), parseInt(minBirthDateParts[1]) - 1, parseInt(minBirthDateParts[2])],
+            max: [parseInt(maxBirthDateParts[0]), parseInt(maxBirthDateParts[1]) - 1, parseInt(maxBirthDateParts[2])]
         });
     }
 });

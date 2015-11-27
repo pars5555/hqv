@@ -30,7 +30,7 @@ namespace hqv\managers {
          */
         function __construct() {
             $this->mailgun = new Mailgun('key-2c26be6dca0adcf22ddad766596145e7');
-            $this->domain = 'sandboxdd16d2f69de64c3b9c08433764ca1661.mailgun.org';
+            $this->domain = 'hanraqve.com';
             $this->maxRecipientsPerEmail = intval(500);
             if ($this->maxRecipientsPerEmail <= 10) {
                 $this->maxRecipientsPerEmail = 500;
@@ -73,32 +73,31 @@ namespace hqv\managers {
             }
             return $ret;
         }
-        
+
         public function sendSingleHtmlEmail($to, $subject, $bodyHtml, $fromEmail, $fromName, $attachedFiles = null) {
-           
-           
-                $params = $this->getSingleEmailParams($to, $subject, $bodyHtml, $fromEmail, $fromName, $attachedFiles);
-                try {
-                    $res = $this->mailgun->sendMessage($this->domain, $params[0], $params[1]);
-                    $ret[] = $res->http_response_code == 200;
-                } catch (Exception $ex) {
-                    $ret[] = $ex->getMessage();
+            $params = $this->getSingleEmailParams($to, $subject, $bodyHtml, $fromEmail, $fromName, $attachedFiles);
+            try {
+                $res = $this->mailgun->sendMessage($this->domain, $params[0], $params[1]);
+                if ($res->http_response_code == 200) {
+                    return true;
                 }
-                $ret[] = 'Unknown Error!';
-         
-            return $ret;
+            } catch (Exception $ex) {
+                return $ex->getMessage();
+            }
         }
 
         private function getSingleEmailParams($to, $subject, $bodyHtml, $fromEmail, $fromName, $attachedFiles = null) {
             $result = array(
-                'from' => $fromName . " <" . $fromEmail . ">",
-                'to' => $to,               
+                'from' => $fromName . " <" . $to . ">",
+                'to' => $to,
                 'subject' => $subject,
                 'html' => $bodyHtml,
-                'text' => strip_tags($bodyHtml)
+                'text' => strip_tags($bodyHtml),
+                'h:Reply-To' => "<$fromEmail>"
             );
             return [$result, []];
         }
+
         private function getEmailParams($to, $subject, $bodyHtml, $fromEmail, $fromName, $attachedFiles = null) {
             $result[0] = array(
                 'from' => $fromName . " <" . $fromEmail . ">",
@@ -119,7 +118,6 @@ namespace hqv\managers {
 
             return $result;
         }
-      
 
     }
 

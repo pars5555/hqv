@@ -51,7 +51,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
                 } else {
                     $('.f_choose_btn[data-group=' + group + '][data-ans=0]').find('i').addClass('hide');
                 }
-                if ($('#inArmAnswer').val() == 0) {
+                if ($('#inArmAnswer').val() === '0') {
                     $('#willVoteAnswerContainer').addClass('hide');
                 } else
                 {
