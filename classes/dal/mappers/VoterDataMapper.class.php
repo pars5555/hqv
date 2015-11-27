@@ -42,6 +42,18 @@ namespace hqv\dal\mappers {
             return $this->tableName;
         }
 
+        public function selectJoinVotersCount($where) {
+            $sql = "SELECT count(`%s`.id) as `count` FROM `%s` LEFT JOIN `voters` ON `voters`.`id` = `%s`.voter_id %s";
+            $sqlQuery = sprintf($sql, $this->getTableName(), $this->getTableName(), $this->getTableName(), $where);
+            return intval($this->fetchField($sqlQuery, 'count'));
+        }
+
+        public function selectJoinVoters($where, $offset, $limit) {
+            $sql = "SELECT *,`%s`.`id` as `id`  FROM   `%s` LEFT JOIN `voters` ON `voters`.`id` = `%s`.voter_id %s LIMIT %d,%d";
+            $sqlQuery = sprintf($sql, $this->getTableName(),$this->getTableName(), $this->getTableName(), $where, $offset, $limit);
+            return $this->fetchRows($sqlQuery);
+        }
+
         public function getNonParticipantCounts() {
             $sql = "SELECT COUNT(will_vote) AS `count` FROM                 
                             (SELECT `m1`.* 
@@ -51,9 +63,8 @@ namespace hqv\dal\mappers {
                              )  AS fff";
             $sqlQuery = sprintf($sql, $this->getTableName(), $this->getTableName());
             return $this->fetchField($sqlQuery, 'count');
-            
         }
-        
+
         public function getParticipantCounts() {
             $sql = "SELECT COUNT(will_vote) AS `count` FROM                 
                             (SELECT `m1`.* 
@@ -63,7 +74,6 @@ namespace hqv\dal\mappers {
                              )  AS fff";
             $sqlQuery = sprintf($sql, $this->getTableName(), $this->getTableName());
             return $this->fetchField($sqlQuery, 'count');
-            
         }
 
         public function getDataCountGroupByVoterId() {

@@ -60,6 +60,7 @@
           "loads/HomeLoad.class.js",
           "loads/dashboard/IndexLoad.class.js",
           "loads/snippets/IndexLoad.class.js",
+          "loads/emergency/IndexLoad.class.js",
           "loads/dashboard/AreaSelectionLoad.class.js",
           "loads/dashboard/AreaStatisticsLoad.class.js",
           "loads/dashboard/StatisticsLoad.class.js",
@@ -103,7 +104,9 @@
           "actions/number/SetInvalidVoteAction.class.js",
           "actions/number/DeleteVoteAction.class.js",
           "actions/prevote/UnblockIpAction.class.js",
-          "actions/prevote/SetInvalidVoteAction.class.js"
+          "actions/prevote/SetInvalidVoteAction.class.js",
+          "actions/prevote/AddDataAction.class.js",
+          "actions/emergency/SetDoneAction.class.js"
         ]
       }
     ]

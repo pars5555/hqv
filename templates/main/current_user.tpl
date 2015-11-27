@@ -2,7 +2,17 @@
     {if !empty($ns.voter_data)}
         <p class="center-align red-text text-darken-4">{$ns.lm->getPhrase(30)}</p>
     {/if}
-    <p id="ErrorMessage" class="red-text text-darken-4 center-align"></p>
+    <div class="row center-align hide" id="emergencyContainer">
+        <p class="red-text text-darken-4 center-align">
+            {$ns.lm->getPhrase(48)}
+        </p>
+        <div class="input-field col s12 m12 l6">
+            <i class="material-icons prefix red-text">phone</i>
+            <input type="text" id="emergencyPhoneNumber"/>
+            <label for="emergencyPhoneNumber">{$ns.lm->getPhrase(27)}</label>
+            <a href="javascript:void(0);" class="btn" id="emergencyPhoneNumberSubmitBtn">{$ns.lm->getPhrase(49)}</a>
+        </div>
+    </div>
     <form class="col s12">
         <div class="row">
             <div class="input-field col s12 m12 12 vote-text">

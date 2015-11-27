@@ -43,18 +43,21 @@
         </div>
         <div class="col s6 offset-s3">
             <div class="row">
-                <div class="input-field col s12 m4 4">
+                <div class="input-field col s12 m6 6">
                     <input placeholder="First Name" type="text" id="firstName"/>
                     <label class="active" for="firstName">First Name</label>
                 </div>  
-                <div class="input-field col s12 m4 4">
+                <div class="input-field col s12 m6 6">
                     <input placeholder="Last Name" type="text" id="lastName" />
                     <label class="active" for="lastName">Last Name</label>
                 </div>
-                <div class="input-field col s12 m4 4">
-                    <input placeholder="Father Name" type="text" id="fatherName" />
-                    <label class="active" for="fatherName">Father Name</label>
-                </div>
+               
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 12">
+                    <input placeholder="IP Address" type="text" id="ipAddress"/>
+                    <label class="active" for="ipAddress">IP Address</label>
+                </div>  
             </div>
         </div>
         <div class='col s6 offset-s3'>
@@ -87,6 +90,7 @@
                     </select>
                 </div>
             </div>
+            <a class="btn col s12 m12 12" id="search_btn">search</a>
         </div>
         <div class="col s12 m12 12" id='realVotersTableContainer'>
             {nest ns=list}

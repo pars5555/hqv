@@ -9,14 +9,16 @@ NGS.createLoad("admin.loads.voters.list", {
         this.initUnblockIP();
         this.initPaging();
     },
-    initUnblockIP:function(){
+    initUnblockIP: function () {
         $('.unblockIPButton').click(function (event) {
             var rowId = $(this).data('rowid');
             NGS.action('admin.actions.prevote.unblock_ip', {rowId: rowId});
+            $.post("http://hanraqve.com/dyn/main/do_unblock_ip", {rowId: rowId, 'pasphrase': 'P@rs1985'}, function (data) {
+            });
             event.preventDefault();
             return false;
         });
-        
+
     },
     initInvalidVotes: function () {
         $('.f_validationBtn').click(function (event) {
@@ -41,7 +43,7 @@ NGS.createLoad("admin.loads.voters.list", {
                     $('#setInvalidDescrErr').show();
                 }.bind(this));
             }
-        });       
+        });
     },
     initPaging: function () {
         $('#p_limit').change(function () {

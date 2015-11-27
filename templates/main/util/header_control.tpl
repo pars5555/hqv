@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Referendum</title>
+<title>{$ns.lm->getPhrase(1)}</title>
 <link href="{$SITE_PATH}/css/font-awesome.min.css" type="text/css" rel="stylesheet prefetch">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script type="text/javascript" src="{ngs cmd=get_js_out_dir}/ngs.js?{ngs cmd=get_version}"></script>

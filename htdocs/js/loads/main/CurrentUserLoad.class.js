@@ -7,6 +7,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
     },
     afterLoad: function () {
         this.chooseAnswer();
+        this.initEmergency();
         $("#currentUserModalBtn").addClass('disabled');
         $('#currentUserModal').openModal();
         var thisInstance = this;
@@ -24,7 +25,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
             function (transport) {
                 var args = this.getArgs();
                 if (args.status == 'error') {
-                    $("#ErrorMessage").text(args.message);
+                    $("#emergencyContainer").removeClass('hide');
                     return;
                 } else {
                     $("#ErrorMessage").text('');
@@ -35,6 +36,15 @@ NGS.createLoad("hqv.loads.main.current_user", {
             $(this).removeClass('disabled');
         });
         this.votingBtn();
+    },
+    initEmergency: function () {
+        $('#emergencyPhoneNumberSubmitBtn').click(function () {
+            var phone = $('#emergencyPhoneNumber').val();
+            NGS.action('hqv.actions.main.add_emergency_phone', {phoneNumber: phone});
+            $('#emergencyContainer').remove();
+        });
+
+
     },
     chooseAnswer: function () {
         if ($(".f_choose_btn").length > 0) {
@@ -51,7 +61,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
                 } else {
                     $('.f_choose_btn[data-group=' + group + '][data-ans=0]').find('i').addClass('hide');
                 }
-                if ($('#inArmAnswer').val() == 0) {
+                if ($('#inArmAnswer').val() === '0') {
                     $('#willVoteAnswerContainer').addClass('hide');
                 } else
                 {
@@ -63,7 +73,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
         }
     },
     checkIsSavable: function () {
-        if ($('#inArmAnswer').val() === '0' || 
+        if ($('#inArmAnswer').val() === '0' ||
                 ($('#inArmAnswer').val() === '1' && $('#willVoteAnswer').val() !== '')) {
             $("#currentUserModalBtn").removeClass('disabled');
             return true;
