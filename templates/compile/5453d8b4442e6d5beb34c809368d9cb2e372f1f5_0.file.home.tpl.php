@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-27 16:20:33
+<?php /* Smarty version 3.1.27, created on 2015-11-27 16:33:26
          compiled from "D:\xampp\htdocs\hqv\templates\main\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:406656584a9141a0b0_79932786%%*/
+/*%%SmartyHeaderCode:641956584d962a93f6_16805212%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5453d8b4442e6d5beb34c809368d9cb2e372f1f5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\home.tpl',
-      1 => 1448626832,
+      1 => 1448627601,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '406656584a9141a0b0_79932786',
+  'nocache_hash' => '641956584d962a93f6_16805212',
   'variables' => 
   array (
     'ns' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56584a915fb567_73897591',
+  'unifunc' => 'content_56584d962e4fb6_09693206',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56584a915fb567_73897591')) {
-function content_56584a915fb567_73897591 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56584d962e4fb6_09693206')) {
+function content_56584d962e4fb6_09693206 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '406656584a9141a0b0_79932786';
+$_smarty_tpl->properties['nocache_hash'] = '641956584d962a93f6_16805212';
 ?>
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row center valign">
@@ -117,7 +117,7 @@ $_smarty_tpl->properties['nocache_hash'] = '406656584a9141a0b0_79932786';
 	</div>
 	<div class="col s12 m3 3 center">
 		<a href="http://transparency.am/" target="_blank">
-			<img width="150" src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
+			<img width="220" src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
 /img/tr.jpg" />
 			<p class="black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(14);?>
 </p>

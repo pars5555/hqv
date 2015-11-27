@@ -71,7 +71,7 @@
 	</div>
 	<div class="col s12 m3 3 center">
 		<a href="http://transparency.am/" target="_blank">
-			<img width="150" src="{$SITE_PATH}/img/tr.jpg" />
+			<img width="220" src="{$SITE_PATH}/img/tr.jpg" />
 			<p class="black-text">{$ns.lm->getPhrase(14)}</p>
 		</a>
 	</div>
