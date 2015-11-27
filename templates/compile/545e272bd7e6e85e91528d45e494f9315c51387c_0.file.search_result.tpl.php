@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-16 10:54:36
+<?php /* Smarty version 3.1.27, created on 2015-11-27 17:07:16
          compiled from "D:\xampp\htdocs\hqv\templates\main\search_result.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:269375649a7dc291d88_30790188%%*/
+/*%%SmartyHeaderCode:875656585584907b36_78709228%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '545e272bd7e6e85e91528d45e494f9315c51387c' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\search_result.tpl',
-      1 => 1447664249,
+      1 => 1448621523,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '269375649a7dc291d88_30790188',
+  'nocache_hash' => '875656585584907b36_78709228',
   'variables' => 
   array (
     'ns' => 0,
@@ -22,13 +22,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5649a7dc31c4b5_77496925',
+  'unifunc' => 'content_565855849baa86_50216254',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5649a7dc31c4b5_77496925')) {
-function content_5649a7dc31c4b5_77496925 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_565855849baa86_50216254')) {
+function content_565855849baa86_50216254 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '269375649a7dc291d88_30790188';
+$_smarty_tpl->properties['nocache_hash'] = '875656585584907b36_78709228';
 ?>
 <div>
 	<?php
@@ -60,8 +60,12 @@ $_smarty_tpl->tpl_vars['voter'] = $foreach_voter_Sav;
 }
 ?>
 	<?php if (count($_smarty_tpl->tpl_vars['ns']->value['voters']) == 0) {?>
-		<h5 class="center-align">No users</h5>
+		<h5 class="center-align"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(45);?>
+</h5>
 	<?php }?>
+    <input type="hidden" value="<?php echo count($_smarty_tpl->tpl_vars['ns']->value['voters']);?>
+" id="searchResultCount"/>
+    
 </div>
 <?php }
 }

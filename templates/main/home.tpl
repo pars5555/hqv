@@ -1,5 +1,5 @@
 <div class="parallax-container valign-wrapper">
-		<div class="no-pad-bot row center valign">
+		<div class="no-pad-bot row right valign main-text">
 			<div class="col s12">
 		      	<h1 class="header center white-text text-lighten-2">{$ns.lm->getPhrase(2)}</h1>
 		      	<h5 class="header light white-text">{$ns.lm->getPhrase(3)}</h5>
@@ -18,11 +18,11 @@
 </div>
 <div id="searchDashboard" class="section white scrollspy">
 	<div class="row container">
-        <div class="col s12 center-align">
+        <div class="col s12 left-align">
             <p>{$ns.lm->getPhrase(42)}</p>
         </div>
-		<div class="col s12 center-align">
-			<h2 class="header">{$ns.lm->getPhrase(6)}</h2>
+		<div class="col s12 left-align">
+			<h2 class="header search-header">{$ns.lm->getPhrase(6)}</h2>
 			<p class="grey-text text-darken-3 lighten-3">
 				{$ns.lm->getPhrase(7)}
 			</p>
@@ -49,7 +49,7 @@
 			      	</div>
 			      </div>
 			      <div class="row">
-		      		<button id="searchVoters" class="btn waves-effect waves-light blue darken-4 col s12">
+		      		<button id="searchVoters" class="btn waves-effect waves-light grey ligten-3 col s12">
 		      			{$ns.lm->getPhrase(10)}
 				    </button>
 			      </div>
@@ -61,30 +61,34 @@
 		</div>
 	</div>
 </div>
-<h3 class="header col s12 light black-text center-align">{$ns.lm->getPhrase(12)}</h3>
-<div class="section row container">
+<div class="section blue darken-6">
+	<div class="row container">
+		<h3 class="header col s12 light white-text left-align search-header">{$ns.lm->getPhrase(12)}</h3>
+	</div>
+</div>
+<div class="section row container valign-wrapper">
 	<div class="col s12 m3 3 center">
         <a href="http://www.asparez.am/" target="_blank">
 			<img width="150" src="{$SITE_PATH}/img/asparez_logo.jpg" />
-			<p class="black-text">{$ns.lm->getPhrase(13)}</p>
+			<!-- <p class="black-text">{$ns.lm->getPhrase(13)}</p> -->
 		</a>
 	</div>
 	<div class="col s12 m3 3 center">
 		<a href="http://transparency.am/" target="_blank">
 			<img width="220" src="{$SITE_PATH}/img/tr.jpg" />
-			<p class="black-text">{$ns.lm->getPhrase(14)}</p>
+			<!-- <p class="black-text">{$ns.lm->getPhrase(14)}</p> -->
 		</a>
 	</div>
     <div class="col s12 m3 3 center">
 		<a href="http://ela.am/" target="_blank">
 			<img width="150" src="{$SITE_PATH}/img/logo_ela.jpg" />
-			<p class="black-text">{$ns.lm->getPhrase(16)}</p>
+			<!-- <p class="black-text">{$ns.lm->getPhrase(16)}</p> -->
 		</a>
 	</div>
 	<div class="col s12 m3 3 center">
 		<a href="http://hcav.am/" target="_blank">
 			<img width="150" src="{$SITE_PATH}/img/hcav.png" />
-			<p class="black-text">{$ns.lm->getPhrase(15)}</p>
+			<!-- <p class="black-text">{$ns.lm->getPhrase(15)}</p> -->
 		</a>
 	</div>
 </div>
@@ -125,7 +129,7 @@
 	<div id="currentUser" class="modal-content row">
 	</div>
 	<div class="modal-footer">
-		<a id="currentUserModalBtn" href="#!" class="btn blue darken-4 disabled">{$ns.lm->getPhrase(10)}</a>
+		<a id="currentUserModalBtn" href="#!" class="btn grey ligten-3  disabled">{$ns.lm->getPhrase(10)}</a>
 	</div>
 </div>
 <div id="thankModal" class="modal thankyou-modal current-user-modal modal-fixed-footer">

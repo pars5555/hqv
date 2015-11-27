@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-27 16:33:26
+<?php /* Smarty version 3.1.27, created on 2015-11-27 17:22:10
          compiled from "D:\xampp\htdocs\hqv\templates\main\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:641956584d962a93f6_16805212%%*/
+/*%%SmartyHeaderCode:26066565859022bb697_66042182%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5453d8b4442e6d5beb34c809368d9cb2e372f1f5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\home.tpl',
-      1 => 1448627601,
+      1 => 1448630528,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '641956584d962a93f6_16805212',
+  'nocache_hash' => '26066565859022bb697_66042182',
   'variables' => 
   array (
     'ns' => 0,
@@ -21,16 +21,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56584d962e4fb6_09693206',
+  'unifunc' => 'content_565859022fda47_97555134',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56584d962e4fb6_09693206')) {
-function content_56584d962e4fb6_09693206 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_565859022fda47_97555134')) {
+function content_565859022fda47_97555134 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '641956584d962a93f6_16805212';
+$_smarty_tpl->properties['nocache_hash'] = '26066565859022bb697_66042182';
 ?>
 <div class="parallax-container valign-wrapper">
-		<div class="no-pad-bot row center valign">
+		<div class="no-pad-bot row right valign main-text">
 			<div class="col s12">
 		      	<h1 class="header center white-text text-lighten-2"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(2);?>
 </h1>
@@ -54,12 +54,12 @@ $_smarty_tpl->properties['nocache_hash'] = '641956584d962a93f6_16805212';
 </div>
 <div id="searchDashboard" class="section white scrollspy">
 	<div class="row container">
-        <div class="col s12 center-align">
+        <div class="col s12 left-align">
             <p><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(42);?>
 </p>
         </div>
-		<div class="col s12 center-align">
-			<h2 class="header"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(6);?>
+		<div class="col s12 left-align">
+			<h2 class="header search-header"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(6);?>
 </h2>
 			<p class="grey-text text-darken-3 lighten-3">
 				<?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(7);?>
@@ -91,7 +91,7 @@ $_smarty_tpl->properties['nocache_hash'] = '641956584d962a93f6_16805212';
 			      	</div>
 			      </div>
 			      <div class="row">
-		      		<button id="searchVoters" class="btn waves-effect waves-light blue darken-4 col s12">
+		      		<button id="searchVoters" class="btn waves-effect waves-light grey ligten-3 col s12">
 		      			<?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(10);?>
 
 				    </button>
@@ -104,39 +104,43 @@ $_smarty_tpl->properties['nocache_hash'] = '641956584d962a93f6_16805212';
 		</div>
 	</div>
 </div>
-<h3 class="header col s12 light black-text center-align"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(12);?>
+<div class="section blue darken-6">
+	<div class="row container">
+		<h3 class="header col s12 light white-text left-align search-header"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(12);?>
 </h3>
-<div class="section row container">
+	</div>
+</div>
+<div class="section row container valign-wrapper">
 	<div class="col s12 m3 3 center">
         <a href="http://www.asparez.am/" target="_blank">
 			<img width="150" src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
 /img/asparez_logo.jpg" />
-			<p class="black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(13);?>
-</p>
+			<!-- <p class="black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(13);?>
+</p> -->
 		</a>
 	</div>
 	<div class="col s12 m3 3 center">
 		<a href="http://transparency.am/" target="_blank">
 			<img width="220" src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
 /img/tr.jpg" />
-			<p class="black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(14);?>
-</p>
+			<!-- <p class="black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(14);?>
+</p> -->
 		</a>
 	</div>
     <div class="col s12 m3 3 center">
 		<a href="http://ela.am/" target="_blank">
 			<img width="150" src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
 /img/logo_ela.jpg" />
-			<p class="black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(16);?>
-</p>
+			<!-- <p class="black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(16);?>
+</p> -->
 		</a>
 	</div>
 	<div class="col s12 m3 3 center">
 		<a href="http://hcav.am/" target="_blank">
 			<img width="150" src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
 /img/hcav.png" />
-			<p class="black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(15);?>
-</p>
+			<!-- <p class="black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(15);?>
+</p> -->
 		</a>
 	</div>
 </div>
@@ -179,7 +183,7 @@ $_smarty_tpl->properties['nocache_hash'] = '641956584d962a93f6_16805212';
 	<div id="currentUser" class="modal-content row">
 	</div>
 	<div class="modal-footer">
-		<a id="currentUserModalBtn" href="#!" class="btn blue darken-4 disabled"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(10);?>
+		<a id="currentUserModalBtn" href="#!" class="btn grey ligten-3  disabled"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(10);?>
 </a>
 	</div>
 </div>

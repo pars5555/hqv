@@ -1,4 +1,4 @@
-<footer class="page-footer blue darken-4">
+<footer class="page-footer blue darken-6">
   <div class="container">
     <div class="row">     
       <div class="col l12">
@@ -26,7 +26,7 @@
       </div>
     </div>
   </div>
-  <div class="footer-copyright blue darken-3">
+  <div class="footer-copyright blue lighten-6">
     <div class="container">
     </div>
   </div>
