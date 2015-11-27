@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-27 17:07:17
+<?php /* Smarty version 3.1.27, created on 2015-11-28 00:16:17
          compiled from "D:\xampp\htdocs\hqv\templates\main\current_user.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:623756585585bb2865_81188012%%*/
+/*%%SmartyHeaderCode:267485658ba11602e69_93371227%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,30 +9,49 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b7d845e2abf9ef1dcca359ccb19e0be7a9e5185e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\current_user.tpl',
-      1 => 1448621523,
+      1 => 1448655353,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '623756585585bb2865_81188012',
+  'nocache_hash' => '267485658ba11602e69_93371227',
   'variables' => 
   array (
     'ns' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56585585bf32a6_31564875',
+  'unifunc' => 'content_5658ba11649068_47291503',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56585585bf32a6_31564875')) {
-function content_56585585bf32a6_31564875 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5658ba11649068_47291503')) {
+function content_5658ba11649068_47291503 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '623756585585bb2865_81188012';
+$_smarty_tpl->properties['nocache_hash'] = '267485658ba11602e69_93371227';
 if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
     <?php if (!empty($_smarty_tpl->tpl_vars['ns']->value['voter_data'])) {?>
         <p class="center-align red-text text-darken-4"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(30);?>
 </p>
     <?php }?>
-    <p id="ErrorMessage" class="red-text text-darken-4 center-align"></p>
+    <div class="row center-align hide" id="emergencyContainer">
+        <p class="red-text text-darken-4 center-align">
+            <?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(48);?>
+
+        </p>
+        <div class="col s12 m12 l6 offset-l3">
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <i class="material-icons prefix red-text">phone</i>
+                    <input type="text" id="emergencyPhoneNumber"/>
+                    <label for="emergencyPhoneNumber"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(27);?>
+</label>
+                </div>
+                <div class="col s12 m12 l12">
+                    <a href="javascript:void(0);" class="btn" id="emergencyPhoneNumberSubmitBtn"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(49);?>
+</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <form class="col s12">
         <div class="row">
             <div class="input-field col s12 m12 12 vote-text">

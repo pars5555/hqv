@@ -6,11 +6,17 @@
         <p class="red-text text-darken-4 center-align">
             {$ns.lm->getPhrase(48)}
         </p>
-        <div class="input-field col s12 m12 l6">
-            <i class="material-icons prefix red-text">phone</i>
-            <input type="text" id="emergencyPhoneNumber"/>
-            <label for="emergencyPhoneNumber">{$ns.lm->getPhrase(27)}</label>
-            <a href="javascript:void(0);" class="btn" id="emergencyPhoneNumberSubmitBtn">{$ns.lm->getPhrase(49)}</a>
+        <div class="col s12 m12 l6 offset-l3">
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <i class="material-icons prefix red-text">phone</i>
+                    <input type="text" id="emergencyPhoneNumber"/>
+                    <label for="emergencyPhoneNumber">{$ns.lm->getPhrase(27)}</label>
+                </div>
+                <div class="col s12 m12 l12">
+                    <a href="javascript:void(0);" class="btn" id="emergencyPhoneNumberSubmitBtn">{$ns.lm->getPhrase(49)}</a>
+                </div>
+            </div>
         </div>
     </div>
     <form class="col s12">

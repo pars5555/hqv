@@ -1,7 +1,7 @@
 <footer class="page-footer blue darken-6">
   <div class="container">
     <div class="row">     
-      <div class="col l12">
+      <div class="col l6 offset-l3">
         <ul class="row">
           <li class="col l6">
             <p class="grey-text text-lighten-3">{$ns.lm->getPhrase(21)}</p>
