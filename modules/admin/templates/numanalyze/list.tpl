@@ -22,7 +22,7 @@
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Father Price</th>
+            <th>Father Name</th>
             <th>Birth Date</th>
             <th>Vote Count</th>
             <th>In List</th>

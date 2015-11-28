@@ -16,6 +16,7 @@
     <div class="col s12 m4 4">
         <label for="birthYear">Year</label>
         <select id="birthYear" class="browser-default">
+            <option value="0">Select</option>
             {for $i=1890 to 2000}
                 <option value="{$i}" {if $ns.birth_year == $i}selected{/if}>{$i}</option>
             {/for}
@@ -24,6 +25,7 @@
     <div class="col s12 m4 4">
         <label for="birthMonth">Month</label>
         <select id="birthMonth" class="browser-default">
+            <option value="0">Select</option>
             {for $i=1 to 12}
                 <option value="{$i}"  {if $ns.birth_month == $i}selected{/if}>{$i}</option>
             {/for}
@@ -32,6 +34,7 @@
     <div class="col s12 m4 4">
         <label for="birthDay">day</label>
         <select id="birthDay" class="browser-default">
+            <option value="0">Select</option>
             {for $i=1 to 31}
                 <option value="{$i}"  {if $ns.birth_day == $i}selected{/if}>{$i}</option>
             {/for}
@@ -42,6 +45,7 @@
 <div class="row">
     <input type="hidden" id="editRowId" value="{if $ns.edit==1}{$ns.row_id}{/if}"/>
     <p id="addVoterError" class="red-text text-darken-4 center-align"></p>
+    <p id="addVoterSuccess" class="green-text text-darken-4 center-align"></p>
     <input class="btn col s12 m12 12" type="submit" value="{if $ns.edit==1}Save{else}Add{/if}"/>
 </div>
 {if $ns.edit==1}

@@ -28,8 +28,8 @@ namespace admin\loads\prevote {
             $lastName = "";
             $fatherName = "";
             $birthYear = 1950;
-            $birthMonth = 1;
-            $birthDay = 1;
+            $birthMonth = 0;
+            $birthDay = 0;
             if (isset(NGS()->args()->rowId)) {
                 $realVoter = RealVoterPassportManager::getInstance()->selectByPK(NGS()->args()->rowId);
                 if (isset($realVoter)) {

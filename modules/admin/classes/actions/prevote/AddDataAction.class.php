@@ -27,47 +27,68 @@ namespace admin\actions\prevote {
                     $where[] = 'and';
                     $where[] = 'MONTH(birth_date)';
                     $where[] = '=';
-                    $where[] = "'$birthMonth%'";
+                    $where[] = "'$birthMonth'";
                 }
                 if (!empty($birthDay)) {
                     $where[] = 'and';
                     $where[] = 'DAY(birth_date)';
                     $where[] = '=';
-                    $where[] = "'$birthDay%'";
+                    $where[] = "'$birthDay'";
                 }
-
                 $rows = VoterManager::getInstance()->selectAdvance('*', $where);
-                if (!empty($rows) && is_array($rows) && count($row) === 1) {
+                if (!empty($rows) && is_array($rows) && count($rows) === 1) {
                     $voter = $rows[0];
+                    $alreadyExistsRows = VoterDataManager::getInstance()->selectByField('voter_id', $voter->getId());
+                    if ($alreadyExistsRows) {
+                        $alreadyExistsVoter = VoterManager::getInstance()->selectByPK($voter->getId());
+                        $this->addParam('status', 'error');
+                        $this->addParam('message', 'Already Exists!<br> '. $alreadyExistsVoter->getFirstName() . ' ' . $alreadyExistsVoter->getLastName() . ' ' . $alreadyExistsVoter->getFatherName() . ' ' . $alreadyExistsVoter->getBirthDate() );
+                        return;
+                    }
+
                     VoterDataManager::getInstance()->addRowFromModerator($voter->getId());
+                    return;
                 }
+                $this->addParam('status', 'error');
+                $message = "";
+                if (empty($rows)) {
+                    $message = "Not Found!";
+                } else {
+                    foreach ($rows as $row) {
+                        $message .= $row->getFirstName() . ' ' . $row->getLastName() . ' ' . $row->getFatherName() . ' ' . $row->getBirthDate() . '<br>';
+                    }
+                }
+                $this->addParam('message', $message);
+            } else {
+                $this->addParam('status', 'error');
+                $this->addParam('message', "First Name, Last Name, Birth Year is required!");
             }
         }
 
         public function validateData() {
-            if (!isset(NGS()->args()->firstName)) {
+            if (empty(NGS()->args()->firstName)) {
                 return false;
             }
-            if (!isset(NGS()->args()->lastName)) {
+            if (empty(NGS()->args()->lastName)) {
                 return false;
             }
-            if (!isset(NGS()->args()->birthYear)) {
+            if (empty(NGS()->args()->birthYear)) {
                 return false;
             }
             $fatherName = "";
-            if (isset(NGS()->args()->lastName)) {
-                $fatherName = NGS()->args()->lastName;
+            if (isset(NGS()->args()->fatherName)) {
+                $fatherName = NGS()->args()->fatherName;
             }
             $birthMonth = "";
             if (isset(NGS()->args()->birthMonth)) {
-                $fatherName = NGS()->args()->birthMonth;
+                $birthMonth = NGS()->args()->birthMonth;
             }
             $birthDay = "";
             if (isset(NGS()->args()->birthDay)) {
-                $fatherName = NGS()->args()->birthDay;
+                $birthDay = NGS()->args()->birthDay;
             }
 
-            return [NGS()->args()->firstName, NGS()->args()->lastName, $fatherName, NGS()->args()->birthYear, $birthMonth, $birthDay];
+            return [trim(NGS()->args()->firstName), trim(NGS()->args()->lastName), trim($fatherName), NGS()->args()->birthYear, $birthMonth, $birthDay];
         }
 
     }

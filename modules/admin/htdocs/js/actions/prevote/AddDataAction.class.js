@@ -3,6 +3,14 @@ NGS.createAction("admin.actions.prevote.add_data", {
 
     },
     afterAction: function () {
-        alert(1);
+        var args = this.getArgs();
+        if (args.status === 'error') {
+            jQuery("#addVoterError").html(args.message);
+            jQuery("#addVoterSuccess").html('');
+            return;
+        } else {
+            jQuery("#addVoterError").html('');
+            jQuery("#addVoterSuccess").html('Successfully Added');
+        }
     }
 });

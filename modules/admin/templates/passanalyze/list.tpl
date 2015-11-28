@@ -22,8 +22,9 @@
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Father Price</th>
+            <th>Father Name</th>
             <th>Birth Date</th>
+            <th>Document</th>
             <th>Vote Count</th>
             <th>In List</th>
             <th>In Area List</th>           
@@ -42,6 +43,7 @@
                 <td>{$row->getLastName()}</td>
                 <td>{$row->getFatherName()}</td>
                 <td>{$row->getBirthDate()}</td>
+                <td>{$row->getPassportType()}</td>
                 <td>{$row->getVoteCount()}</td>
                 <td>{if $row->getVoterId()>0}<i class="fa fa-check action-btn"></i>{else}<i class="fa fa-close action-btn delete"></i>{/if}</td>
                 <td>{if $row->getInAreaList()>0}<i class="fa fa-check action-btn"></i>{else}<i class="fa fa-close action-btn delete"></i>{/if}</td>

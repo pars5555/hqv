@@ -27,7 +27,7 @@
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Father Price</th>
+            <th>Father Name</th>
             <th>Birth Date</th>
             <th>Will Vote</th>
             <th>Invalid</th>

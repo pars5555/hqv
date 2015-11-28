@@ -22,7 +22,7 @@
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Father Price</th>
+            <th>Father Name</th>
             <th>Birth Date</th>
             <th>Exist In List</th>
             <th>Duplication</th>

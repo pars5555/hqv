@@ -29,9 +29,9 @@ namespace admin\loads\prevote {
         public function getDefaultLoads() {
             $loads = array(); 
             
-            $loads["add_edit"]["action"] = "admin.loads.passport.add_edit";
+            $loads["add_edit"]["action"] = "admin.loads.prevote.add_edit";
             $loads["add_edit"]["args"] = array();
-            $loads["list"]["action"] = "admin.loads.passport.list";
+            $loads["list"]["action"] = "admin.loads.prevote.list";
             $loads["list"]["args"] = array();
             return $loads;
         }

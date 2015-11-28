@@ -27,13 +27,13 @@
         </li>
         {if $ns.userType==$ns.userTypeAdmin}
             <li id="sidebar_passanalyze_li">
-                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='passanalyze.index'><i class="material-icons left">perm_media</i>Passport Analyze</a>
+                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='passanalyze.index'><i class="material-icons left">perm_media</i>PassAnalyze</a>
             </li>
             <li id="sidebar_numanalyze_li">
-                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='numanalyze.index'><i class="material-icons left">perm_media</i>Numbers Analyze</a>
+                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='numanalyze.index'><i class="material-icons left">perm_media</i>NumAnalyze</a>
             </li>
             <li id="sidebar_prevoteanalyze_li">
-                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='prevoteanalyze.index'><i class="material-icons left">perm_media</i>Prevote Analyze</a>
+                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='prevoteanalyze.index'><i class="material-icons left">perm_media</i>PrevoteAnalyze</a>
             </li>
             <li id="sidebar_snippets_li">
                 <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='snippets.index'><i class="material-icons left">perm_media</i>Snippets</a>

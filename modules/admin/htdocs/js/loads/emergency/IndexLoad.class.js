@@ -9,7 +9,14 @@ NGS.createLoad("admin.loads.emergency.index", {
         $('#slide-out li').removeClass('active');
         $('#sidebar_emergency_li').addClass('active');
         this.initDoneNotDone();
-
+        if (NGS.emergencyTimoutId) {
+            clearTimeout(NGS.emergencyTimoutId);
+        }
+        NGS.emergencyTimoutId = setTimeout(function () {
+            if ($('#sidebar_emergency_li').hasClass('active')) {
+            NGS.load('admin.loads.emergency.index', {});
+            }
+        }.bind(this), 5000);
     },
     initDoneNotDone: function () {
         $('.f_validationBtn').click(function (event) {

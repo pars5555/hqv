@@ -46,12 +46,12 @@ namespace hqv\managers {
         public function getDataCountGroupByVoterId() {
             return $this->mapper->getDataCountGroupByVoterId();
         }
-        
+
         public function selectJoinVoters($where, $offset, $limit) {
             $where = $this->getWhereSubQueryByFilters($where);
             return $this->mapper->selectJoinVoters($where, $offset, $limit);
         }
-        
+
         public function selectJoinVotersCount($where) {
             $where = $this->getWhereSubQueryByFilters($where);
             return $this->mapper->selectJoinVotersCount($where);
@@ -76,6 +76,13 @@ namespace hqv\managers {
 
         public function addRowFromModerator($voterId) {
             $dto = $this->createDto();
+            $dtos = $this->selectAdvance('*', ['id', '>=', 3000000 ], ['id'], 'DESC', 0, 1);
+            if (!empty($dtos)) {
+                $lastRowId = intval($dtos[0]->getId()) + 1;
+            } else {
+                $lastRowId = 3000000;
+            }
+            $dto->setId($lastRowId);
             $dto->setVoterId($voterId);
             $dto->setWillVote(0);
             $dto->setWillBeInArm(0);
@@ -83,7 +90,7 @@ namespace hqv\managers {
             $dto->setAdminId(NGS()->getSessionManager()->getUserId());
             return $this->insertDto($dto);
         }
-        
+
         public function addRow($voterId, $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os) {
             $dto = $this->createDto();
             $dto->setVoterId($voterId);
