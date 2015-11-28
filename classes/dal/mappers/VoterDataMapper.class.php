@@ -49,8 +49,8 @@ namespace hqv\dal\mappers {
         }
 
         public function selectJoinVoters($where, $offset, $limit) {
-            $sql = "SELECT *,`%s`.`id` as `id`  FROM   `%s` LEFT JOIN `voters` ON `voters`.`id` = `%s`.voter_id %s LIMIT %d,%d";
-            $sqlQuery = sprintf($sql, $this->getTableName(),$this->getTableName(), $this->getTableName(), $where, $offset, $limit);
+            $sql = "SELECT *,`%s`.`id` as `id`  FROM   `%s` LEFT JOIN `voters` ON `voters`.`id` = `%s`.voter_id %s ORDER BY `%s`.id DESC LIMIT %d,%d";
+            $sqlQuery = sprintf($sql, $this->getTableName(),$this->getTableName(), $this->getTableName(), $where,$this->getTableName(), $offset, $limit);
             return $this->fetchRows($sqlQuery);
         }
 

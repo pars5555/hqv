@@ -48,7 +48,7 @@
                     <div class="switch">
                         <label>
                             invalid
-                        <input data-rowid="{$row->getId()}" {if $voter->getInvalid() == 0}checked{/if}  class="f_validationBtn" type="checkbox" />
+                        <input data-rowid="{$row->getId()}" {if $row->getInvalid() == 0}checked{/if}  class="f_validationBtn" type="checkbox" />
                         <span class="lever"></span>
                             valid
                         </label>

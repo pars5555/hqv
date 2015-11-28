@@ -72,16 +72,25 @@ namespace hqv\loads\main {
 
                 $firstName = NGS()->args()->firstName;
             }
+            $firstName = str_replace('և', 'եւ', $firstName);
+            $firstName = str_replace('եվ', 'եւ', $firstName);
+            $firstName = str_replace('Եվ', 'Եւ', $firstName);
             $lastName = '';
             if (!empty(NGS()->args()->lastName)) {
 
                 $lastName = NGS()->args()->lastName;
             }
+            $lastName = str_replace('և', 'եւ', $lastName);
+            $lastName = str_replace('եվ', 'եւ', $lastName);
+            $lastName = str_replace('Եվ', 'Եւ', $lastName);
             $fatherName = '';
             if (!empty(NGS()->args()->fatherName)) {
 
                 $fatherName = NGS()->args()->fatherName;
             }
+            $fatherName = str_replace('և', 'եւ', $fatherName);
+            $fatherName = str_replace('եվ', 'եւ', $fatherName);
+            $fatherName = str_replace('Եվ', 'Եւ', $fatherName);
             return [$date, $firstName, $lastName, $fatherName];
         }
 
