@@ -61,6 +61,9 @@ use ngs\framework\AbstractLoad;
         public function getSetting($varName) {
             return SettingManager::getInstance()->getSetting($varName);
         }
+        public function getPhrase($id, $lang= null) {
+            return TranslationManager::getInstance()->getPhrase($id, $lang);
+        }
 
     }
 

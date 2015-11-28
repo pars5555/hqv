@@ -6,7 +6,7 @@ NGS.createLoad("hqv.loads.main.home", {
 
     },
     afterLoad: function (params) {
-        this.initBirthDate(params.minBirthDate, params.maxBirthDate);
+        this.initBirthDate(params.minBirthDate, params.maxBirthDate, params.closeText);
         this.initArmKeyboard();
         this.initSearch();
         this.initParallax();
@@ -106,7 +106,7 @@ NGS.createLoad("hqv.loads.main.home", {
         });
 
     },
-    initBirthDate: function (minBirthDate, maxBirthDate) {
+    initBirthDate: function (minBirthDate, maxBirthDate, closeText) {
         var minBirthDateParts = minBirthDate.split("-");
         var maxBirthDateParts = maxBirthDate.split("-");
         console.log(minBirthDateParts);
@@ -124,7 +124,7 @@ NGS.createLoad("hqv.loads.main.home", {
             selectYears: 150,
             clear: null,
             today: null,
-            close: 'փակել',
+            close: closeText,
             min: [parseInt(minBirthDateParts[0]), parseInt(minBirthDateParts[1]) - 1, parseInt(minBirthDateParts[2])],
             max: [parseInt(maxBirthDateParts[0]), parseInt(maxBirthDateParts[1]) - 1, parseInt(maxBirthDateParts[2])]
         });

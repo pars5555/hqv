@@ -21,6 +21,7 @@ namespace hqv\loads\main {
             list($minBirthDate, $maxBirthDate) = \hqv\managers\VoterManager::getInstance()->getMaxAndMinBirthDates();
             $this->addJsonParam('minBirthDate', $minBirthDate);
             $this->addJsonParam('maxBirthDate', $maxBirthDate);
+            $this->addJsonParam('closeText', $this->getPhrase(50));
         }
 
         public function getTemplate() {
