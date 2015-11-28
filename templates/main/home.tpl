@@ -31,15 +31,20 @@
 			<div class="row">
 				<form class="col s12">
 			      <div class="row">
-			        <div class="input-field col s12 m6 6">
+			        <div class="input-field col s12 m4 4">
 			          <i class="material-icons prefix">account_circle</i>
 			          <input id="firstName" type="text" class="keyboard">
 			          <label for="firstName">{$ns.lm->getPhrase(8)}</label>
 			        </div>
-			        <div class="input-field col s12 m6 6">
+			        <div class="input-field col s12 m4 4">
 			          <i class="material-icons prefix">account_circle</i>
-			          <input id="lastName" type="tel" class="keyboard">
+			          <input id="lastName" type="text" class="keyboard">
 			          <label for="lastName">{$ns.lm->getPhrase(9)}</label>
+			        </div>
+			        <div class="input-field col s12 m4 4">
+			          <i class="material-icons prefix">account_circle</i>
+			          <input id="fatherName" type="text" class="keyboard">
+			          <label for="fatherName">{$ns.lm->getPhrase(51)}</label>
 			        </div>
 			      </div>
 			      <div class="row">

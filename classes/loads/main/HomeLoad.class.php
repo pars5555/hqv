@@ -22,6 +22,7 @@ namespace hqv\loads\main {
             $this->addJsonParam('minBirthDate', $minBirthDate);
             $this->addJsonParam('maxBirthDate', $maxBirthDate);
             $this->addJsonParam('closeText', $this->getPhrase(50));
+            $this->addJsonParam('clearText', $this->getPhrase(52));
         }
 
         public function getTemplate() {

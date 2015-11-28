@@ -6,7 +6,7 @@ NGS.createLoad("hqv.loads.main.home", {
 
     },
     afterLoad: function (params) {
-        this.initBirthDate(params.minBirthDate, params.maxBirthDate, params.closeText);
+        this.initBirthDate(params.minBirthDate, params.maxBirthDate, params.closeText, params.clearText);
         this.initArmKeyboard();
         this.initSearch();
         this.initParallax();
@@ -26,10 +26,16 @@ NGS.createLoad("hqv.loads.main.home", {
     },
     initSearch: function () {
         var thisInstance = this;
-        $("#lastName").on('keydown', function (e) {
+        $("#fatherName").on('keydown', function (e) {
             var keyCode = e.keyCode || e.which;
             if (keyCode == 9) {
                 $('#birthDate').trigger('click');
+            }
+        });
+        $("#lastName").on('keydown', function (e) {
+            var keyCode = e.keyCode || e.which;
+            if (keyCode == 9) {
+                $('#fatherName').focus();
             }
         });
         $("#firstName").on('keydown', function (e) {
@@ -38,7 +44,7 @@ NGS.createLoad("hqv.loads.main.home", {
                 $('#lastName').focus();
             }
         });
-        $('#firstName, #lastName').on('input', function () {
+        $('#firstName, #lastName, #fatherName').on('input', function () {
             var text = $(this).val();
             text = thisInstance.convertEnCharsToArmChars(text);
             $(this).val(text);
@@ -48,14 +54,13 @@ NGS.createLoad("hqv.loads.main.home", {
             e.preventDefault();
             var firstName = $('#firstName').val();
             var lastName = $('#lastName').val();
+            var fatherName = $('#fatherName').val();
             var birthDate = $('input[name="birthDate"]').val();
-            if (birthDate.length > 0) {
-                jQuery("#searchResultModal").openModal();
-                jQuery("#searchResult").html('');
-                jQuery("#searchLoader").show();
-                jQuery(".ui-keyboard").remove();
-                NGS.load("hqv.loads.main.search_result", {birthDate: birthDate, firstName: firstName, lastName: lastName});
-            }
+            jQuery("#searchResultModal").openModal();
+            jQuery("#searchResult").html('');
+            jQuery("#searchLoader").show();
+            jQuery(".ui-keyboard").remove();
+            NGS.load("hqv.loads.main.search_result", {birthDate: birthDate, firstName: firstName, lastName: lastName, fatherName: fatherName});
         });
     },
     initArmKeyboard: function () {
@@ -106,11 +111,9 @@ NGS.createLoad("hqv.loads.main.home", {
         });
 
     },
-    initBirthDate: function (minBirthDate, maxBirthDate, closeText) {
+    initBirthDate: function (minBirthDate, maxBirthDate, closeText, clearText) {
         var minBirthDateParts = minBirthDate.split("-");
         var maxBirthDateParts = maxBirthDate.split("-");
-        console.log(minBirthDateParts);
-        console.log(maxBirthDateParts);
         $('#birthDate').pickadate({
             format: 'd mmmm, yyyy',
             formatSubmit: 'yyyy-mm-dd',
@@ -122,7 +125,7 @@ NGS.createLoad("hqv.loads.main.home", {
             weekdaysShort: ['կիր', 'երկ', 'երեք', 'չոր', 'հինգ', 'ուրբ', 'շաբ'],
             selectMonths: true,
             selectYears: 150,
-            clear: null,
+            clear: clearText,
             today: null,
             close: closeText,
             min: [parseInt(minBirthDateParts[0]), parseInt(minBirthDateParts[1]) - 1, parseInt(minBirthDateParts[2])],

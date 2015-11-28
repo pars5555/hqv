@@ -20,21 +20,38 @@ namespace hqv\loads\main {
     class SearchResultLoad extends NgsLoad {
 
         public function load() {
-            list($birthDate, $firstName, $lastName) = $this->validateParams();
-            $where = ['birth_date', '=', "'$birthDate'"];
+            list($birthDate, $firstName, $lastName, $fatherName) = $this->validateParams();
+            $where = [];
+            if (!empty($birthDate)) {
+                $where[] = 'birth_date';
+                $where[] = '=';
+                $where[] = "'$birthDate'";
+            }
             if (!empty($firstName)) {
-                $where[] = 'and';
+                if (!empty($where)) {
+                    $where[] = 'and';
+                }
                 $where[] = 'first_name';
                 $where[] = 'like';
                 $where[] = "'$firstName%'";
             }
-            if (!empty($firstName)) {
-                $where[] = 'and';
+            if (!empty($lastName)) {
+                if (!empty($where)) {
+                    $where[] = 'and';
+                }
                 $where[] = 'last_name';
                 $where[] = 'like';
                 $where[] = "'$lastName%'";
             }
-            $voters = VoterManager::getInstance()->selectAdvance('*', $where, ['first_name']);
+            if (!empty($fatherName)) {
+                if (!empty($where)) {
+                    $where[] = 'and';
+                }
+                $where[] = 'father_name';
+                $where[] = 'like';
+                $where[] = "'$fatherName%'";
+            }
+            $voters = VoterManager::getInstance()->selectAdvance('*', $where, ['first_name', 'last_name', 'father_name'], 'ASC', 0, 100);
             $areaIds = $this->getAreaIds($voters);
             $areas = [];
             if (!empty($areaIds)) {
@@ -60,7 +77,12 @@ namespace hqv\loads\main {
 
                 $lastName = NGS()->args()->lastName;
             }
-            return [$date, $firstName, $lastName];
+            $fatherName = '';
+            if (!empty(NGS()->args()->fatherName)) {
+
+                $fatherName = NGS()->args()->fatherName;
+            }
+            return [$date, $firstName, $lastName, $fatherName];
         }
 
         public function getTemplate() {
