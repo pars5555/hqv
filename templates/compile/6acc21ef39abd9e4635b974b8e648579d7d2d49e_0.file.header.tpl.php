@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-27 17:00:16
+<?php /* Smarty version 3.1.27, created on 2015-11-28 18:40:30
          compiled from "D:\xampp\htdocs\hqv\templates\main\util\header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:13422565853e09f2908_31411564%%*/
+/*%%SmartyHeaderCode:253065659bcdeb78780_66641536%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6acc21ef39abd9e4635b974b8e648579d7d2d49e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\util\\header.tpl',
-      1 => 1448629216,
+      1 => 1448721615,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13422565853e09f2908_31411564',
+  'nocache_hash' => '253065659bcdeb78780_66641536',
   'variables' => 
   array (
     'SITE_PATH' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_565853e0a28fd3_72898074',
+  'unifunc' => 'content_5659bcdebb7782_15248823',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_565853e0a28fd3_72898074')) {
-function content_565853e0a28fd3_72898074 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5659bcdebb7782_15248823')) {
+function content_5659bcdebb7782_15248823 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '13422565853e09f2908_31411564';
+$_smarty_tpl->properties['nocache_hash'] = '253065659bcdeb78780_66641536';
 ?>
  <nav>
   <div class="nav-wrapper blue lighten-6">
@@ -47,8 +47,31 @@ $_smarty_tpl->properties['nocache_hash'] = '13422565853e09f2908_31411564';
       <li <?php if ($_smarty_tpl->tpl_vars['ns']->value['loadName'] == 'about') {?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
 /about"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(19);?>
 </a></li>
-      <li>
-        <a id="lanBtn" class="f_lan_drop_down dropdown-button" href="javascript:void(0);" data-activates="dropdown1"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(20);?>
+      <li class="language-wrapper">
+        <div class="">
+          <a href="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
+/lang/am" class="f_cur_lan white-text">
+              <img width="25" src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
+/img/arm_flag.png" />
+              <?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(31);?>
+
+          </a>
+          <a href="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
+/lang/en" class="f_cur_lan white-text">
+            <img width="25" src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
+/img/eng_flag.png" />
+            <?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(32);?>
+
+          </a>
+           <a href="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
+/lang/ru" class="f_cur_lan white-text">
+                <img width="25" src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
+/img/rus_flag.jpg" />
+                <?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(33);?>
+
+              </a>
+        </div>
+        <!-- <a id="lanBtn" class="f_lan_drop_down dropdown-button" href="javascript:void(0);" data-activates="dropdown1"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(20);?>
 <i class="material-icons right icon-wrapper">arrow_drop_down</i></a>
         <ul id="dropdown1" class="dropdown-content">
           <li>
@@ -80,7 +103,7 @@ $_smarty_tpl->properties['nocache_hash'] = '13422565853e09f2908_31411564';
 
               </a>
           </li>
-        </ul>
+        </ul> -->
       </li>
     </ul>
     <ul class="side-nav" id="mobile-demo">

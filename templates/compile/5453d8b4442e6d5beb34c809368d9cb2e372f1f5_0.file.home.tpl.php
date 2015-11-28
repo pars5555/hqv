@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-27 17:22:10
+<?php /* Smarty version 3.1.27, created on 2015-11-28 18:35:26
          compiled from "D:\xampp\htdocs\hqv\templates\main\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:26066565859022bb697_66042182%%*/
+/*%%SmartyHeaderCode:128995659bbae857a87_11730253%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5453d8b4442e6d5beb34c809368d9cb2e372f1f5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\home.tpl',
-      1 => 1448630528,
+      1 => 1448721325,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '26066565859022bb697_66042182',
+  'nocache_hash' => '128995659bbae857a87_11730253',
   'variables' => 
   array (
     'ns' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_565859022fda47_97555134',
+  'unifunc' => 'content_5659bbae8936e0_65404767',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_565859022fda47_97555134')) {
-function content_565859022fda47_97555134 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5659bbae8936e0_65404767')) {
+function content_5659bbae8936e0_65404767 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '26066565859022bb697_66042182';
+$_smarty_tpl->properties['nocache_hash'] = '128995659bbae857a87_11730253';
 ?>
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row right valign main-text">
@@ -182,8 +182,8 @@ $_smarty_tpl->properties['nocache_hash'] = '26066565859022bb697_66042182';
 	</div>
 	<div id="currentUser" class="modal-content row">
 	</div>
-	<div class="modal-footer">
-		<a id="currentUserModalBtn" href="#!" class="btn grey ligten-3  disabled"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(10);?>
+	<div class="modal-footer row">
+		<a id="currentUserModalBtn" href="#!" class="btn grey ligten-3 col s12 disabled"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(10);?>
 </a>
 	</div>
 </div>

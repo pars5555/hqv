@@ -19,8 +19,8 @@ body{
 /**************************************************************************************/
 .logo {
     margin-left: 50px;
-    width: 100px;
-    margin-top: 15px;
+    margin-top: 2px;
+    width: 130px;
 }
 .wrapper{
     display:table;
@@ -55,6 +55,16 @@ body{
 }
 .blue.lighten-6 {
     background-color: #649BE6 !important;
+}
+.language-wrapper div{
+    line-height: 24px; 
+    margin-top: 30px;
+}
+.language-wrapper a {
+    line-height: 24px; 
+}
+.language-wrapper:hover {
+    background-color:       transparent; !important;
 }
 /**************************************************************************************/
 /*                           SEARCH RESULT WRAPPER                                    */

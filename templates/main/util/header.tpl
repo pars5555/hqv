@@ -8,8 +8,22 @@
       <li {if $ns.loadName=='default'}class="active"{/if}><a href="{$SITE_PATH}">{$ns.lm->getPhrase(17)}</a></li>
       <li {if $ns.loadName=='contact'}class="active"{/if}><a href="{$SITE_PATH}/contact">{$ns.lm->getPhrase(18)}</a></li>
       <li {if $ns.loadName=='about'}class="active"{/if}><a href="{$SITE_PATH}/about">{$ns.lm->getPhrase(19)}</a></li>
-      <li>
-        <a id="lanBtn" class="f_lan_drop_down dropdown-button" href="javascript:void(0);" data-activates="dropdown1">{$ns.lm->getPhrase(20)}<i class="material-icons right icon-wrapper">arrow_drop_down</i></a>
+      <li class="language-wrapper">
+        <div class="">
+          <a href="{$SITE_PATH}/lang/am" class="f_cur_lan white-text">
+              <img width="25" src="{$SITE_PATH}/img/arm_flag.png" />
+              {$ns.lm->getPhrase(31)}
+          </a>
+          <a href="{$SITE_PATH}/lang/en" class="f_cur_lan white-text">
+            <img width="25" src="{$SITE_PATH}/img/eng_flag.png" />
+            {$ns.lm->getPhrase(32)}
+          </a>
+           <a href="{$SITE_PATH}/lang/ru" class="f_cur_lan white-text">
+                <img width="25" src="{$SITE_PATH}/img/rus_flag.jpg" />
+                {$ns.lm->getPhrase(33)}
+              </a>
+        </div>
+        <!-- <a id="lanBtn" class="f_lan_drop_down dropdown-button" href="javascript:void(0);" data-activates="dropdown1">{$ns.lm->getPhrase(20)}<i class="material-icons right icon-wrapper">arrow_drop_down</i></a>
         <ul id="dropdown1" class="dropdown-content">
           <li>
               <a href="{$SITE_PATH}/lang/am" class="f_cur_lan blue-text">
@@ -31,7 +45,7 @@
                 {$ns.lm->getPhrase(33)}
               </a>
           </li>
-        </ul>
+        </ul> -->
       </li>
     </ul>
     <ul class="side-nav" id="mobile-demo">

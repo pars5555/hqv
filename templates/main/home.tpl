@@ -128,8 +128,8 @@
 	</div>
 	<div id="currentUser" class="modal-content row">
 	</div>
-	<div class="modal-footer">
-		<a id="currentUserModalBtn" href="#!" class="btn grey ligten-3  disabled">{$ns.lm->getPhrase(10)}</a>
+	<div class="modal-footer row">
+		<a id="currentUserModalBtn" href="#!" class="btn grey ligten-3 col s12 disabled">{$ns.lm->getPhrase(10)}</a>
 	</div>
 </div>
 <div id="thankModal" class="modal thankyou-modal current-user-modal modal-fixed-footer">

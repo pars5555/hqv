@@ -1,5 +1,5 @@
 <div class="container">
-    <h4>{$ns.lm->getPhrase(18)}</h4>
+    <h4 class="search-header">{$ns.lm->getPhrase(18)}</h4>
 
     {if isset($ns.success_message)}
         <div class="row green-text">
@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="row">
-                <button class="btn col blue darken-4 s12 m12 12">
+                <button class="btn col grey ligten-3 s12 m12 12">
                     {$ns.lm->getPhrase(10)}
                 </button>
             </div>
