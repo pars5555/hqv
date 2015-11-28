@@ -38,7 +38,7 @@
     <tbody id="real_voters_table">
         {foreach from=$ns.rows item=row}
             {assign voter $ns.voters[$row->getVoterId()]}
-            <tr data-rowid="{$voter->getId()}">
+            <tr data-rowid="{$row->getId()}">
                 <td>{$voter->getFirstName()}</td>
                 <td>{$voter->getLastName()}</td>
                 <td>{$voter->getFatherName()}</td>
@@ -48,7 +48,7 @@
                     <div class="switch">
                         <label>
                             invalid
-                        <input data-rowid="{$voter->getId()}" {if $voter->getInvalid() == 0}checked{/if}  class="f_validationBtn" type="checkbox" />
+                        <input data-rowid="{$row->getId()}" {if $voter->getInvalid() == 0}checked{/if}  class="f_validationBtn" type="checkbox" />
                         <span class="lever"></span>
                             valid
                         </label>
