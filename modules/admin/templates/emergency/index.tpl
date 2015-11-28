@@ -22,7 +22,7 @@
         {foreach from=$ns.rows item=row}
             <tr data-rowid="{$row->getId()}">
                 <td>{$row->getPhoneNumber()}</td>
-                <td>{$row->getIpAddress()}</td>
+                <td><a href="javascript:void(0);" class="ip_address_btn" data-ip="{$row->getIpAddress()}">{$row->getIpAddress()}</a></td>
                 <td>{$row->getDatetime()}</td>
                 <td>
                     <div class="switch">

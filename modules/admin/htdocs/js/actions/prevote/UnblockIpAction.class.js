@@ -3,6 +3,6 @@ NGS.createAction("admin.actions.prevote.unblock_ip", {
 
     },
     afterAction: function () {
-       
+       alert('ok');
     }
 });
