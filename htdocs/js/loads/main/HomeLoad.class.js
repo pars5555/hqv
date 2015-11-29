@@ -54,6 +54,10 @@ NGS.createLoad("hqv.loads.main.home", {
             e.preventDefault();
             var firstName = $('#firstName').val();
             var lastName = $('#lastName').val();
+            if (firstName.trim() === '' || lastName.trim() === '' )
+            {
+                return;
+            }
             var fatherName = $('#fatherName').val();
             var birthDate = $('input[name="birthDate"]').val();
             jQuery("#searchResultModal").openModal();
