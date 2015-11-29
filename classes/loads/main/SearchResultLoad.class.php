@@ -91,7 +91,7 @@ namespace hqv\loads\main {
             $fatherName = str_replace('և', 'եւ', $fatherName);
             $fatherName = str_replace('եվ', 'եւ', $fatherName);
             $fatherName = str_replace('Եվ', 'Եւ', $fatherName);
-            return [$date, $firstName, $lastName, $fatherName];
+            return [$date, trim($firstName), trim($lastName), trim($fatherName)];
         }
 
         public function getTemplate() {
