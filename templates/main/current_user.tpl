@@ -51,12 +51,14 @@
                         <div class="col s12 m6 l6 center-align">
                             <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="vote" data-ans="1" data-to='inArmAnswer'>
                                 <i class="hide fa fa-check green-text"></i>
+                                <i class="fa fa-square-o square"></i>
                                 <span class="black-text">{$ns.lm->getPhrase(38)}</span>
                             </a>
                         </div>
                         <div class="col s12 m6 l6 center-align" >
                             <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="vote" data-ans="0" data-to='inArmAnswer'>
                                 <i class="hide fa fa-check green-text"></i>
+                                <i class="fa fa-square-o square"></i> 
                                 <span class="black-text">{$ns.lm->getPhrase(39)}</span>
                             </a>
                         </div>
@@ -65,20 +67,23 @@
                         <div class="col s12 m6 l6 center-align">
                             <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="appear" data-ans="1" data-to='willVoteAnswer'>
                                 <i class="hide fa fa-check green-text"></i>
+                                <i class="fa fa-square-o square"></i> 
                                 <span class="black-text">{$ns.lm->getPhrase(40)}</span>
                             </a>
                         </div>
                         <div class="col s12 m6 l6 center-align">
                             <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="appear" data-ans="0" data-to='willVoteAnswer'>
                                 <i class="hide fa fa-check green-text"></i>
+                                 <i class="fa fa-square-o square"></i> 
                                 <span class="black-text">{$ns.lm->getPhrase(41)}</span>
                             </a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col s12 m12 l12 center-align">
-                            <a href="javascript:void(0);" class="choose-btn" id="death_checkbox" data-to='deathAnswer'>
+                            <a href="javascript:void(0);" class="choose-btn" id="death_checkbox">
                                 <i class="hide fa fa-check green-text"></i>
+                                <i class="fa fa-square-o square"></i> 
                                 <span class="red-text text-darken-4">{$ns.lm->getPhrase(53)}</span>
                             </a>
                         </div>
