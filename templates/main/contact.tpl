@@ -1,6 +1,6 @@
 <div class="container">
     <h4 class="search-header">{$ns.lm->getPhrase(18)}</h4>
-
+   
     {if isset($ns.success_message)}
         <div class="row green-text">
             {$ns.success_message}
@@ -36,11 +36,11 @@
                     </div> 
                 </div>
                 <div class="col s6">
-                    <p>{$ns.lm->getPhrase(61)}</p>
+                    <p>{$ns.lm->getPhrase(56)}</p>
                     <p>
-                        <a href="tel:{$ns.lm->getPhrase(59)}">{$ns.lm->getPhrase(62)}</a>,
-                        <a href="tel:{$ns.lm->getPhrase(60)}">{$ns.lm->getPhrase(63)}</a>,
-                        <a href="tel:{$ns.lm->getPhrase(61)}">{$ns.lm->getPhrase(64)}</a>
+                        <a href="tel:093949677">093949677</a>,
+                        <a href="tel:043609004">043609004</a>,
+                        <a href="tel:095049555">095049555</a>
                     </p>
                 </div>
                 <div class="col s12">
