@@ -57,7 +57,7 @@ NGS()->define("DEFAULT_NS", "ngs");
 | DEFINNING ENVIRONMENT VARIABLES
 |--------------------------------------------------------------------------
 */
-$environment = "production";
+$environment = "development";
 if (isset($_SERVER["ENVIRONMENT"])) {
   $environment = $_SERVER["ENVIRONMENT"];
 }
