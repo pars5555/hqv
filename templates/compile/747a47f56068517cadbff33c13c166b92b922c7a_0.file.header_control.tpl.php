@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-28 00:02:54
+<?php /* Smarty version 3.1.27, created on 2015-11-29 13:42:36
          compiled from "D:\xampp\htdocs\hqv\templates\main\util\header_control.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:13235658b6ee824e07_77744323%%*/
+/*%%SmartyHeaderCode:19759565ac88c3932d6_11190108%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '747a47f56068517cadbff33c13c166b92b922c7a' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\util\\header_control.tpl',
-      1 => 1448654550,
+      1 => 1448790067,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13235658b6ee824e07_77744323',
+  'nocache_hash' => '19759565ac88c3932d6_11190108',
   'variables' => 
   array (
     'ns' => 0,
@@ -21,18 +21,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5658b6ee885044_09100519',
+  'unifunc' => 'content_565ac88c587db2_63191445',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5658b6ee885044_09100519')) {
-function content_5658b6ee885044_09100519 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_565ac88c587db2_63191445')) {
+function content_565ac88c587db2_63191445 ($_smarty_tpl) {
 if (!is_callable('smarty_function_ngs')) require_once 'D:\\xampp\\htdocs\\hqv\\classes\\framework\\lib\\smarty\\plugins\\function.ngs.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '13235658b6ee824e07_77744323';
+$_smarty_tpl->properties['nocache_hash'] = '19759565ac88c3932d6_11190108';
 ?>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="<?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(35);?>
+" />
+<meta name="keywords" content="Hanraqve, Hanrakve, Հանրաքվե"/>
 <title><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(1);?>
 </title>
 <link href="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
@@ -62,6 +65,19 @@ $_smarty_tpl->properties['nocache_hash'] = '13235658b6ee824e07_77744323';
 " type="text/css" rel="stylesheet">
 <link href="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
 /css/materialize.css" type="text/css" rel="stylesheet prefetch">
+
+<?php echo '<script'; ?>
+>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-70814215-1', 'auto');
+  ga('send', 'pageview');
+
+<?php echo '</script'; ?>
+>
 
 <?php }
 }

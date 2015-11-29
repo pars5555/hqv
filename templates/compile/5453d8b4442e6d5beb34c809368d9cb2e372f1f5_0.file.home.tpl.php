@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-28 18:35:26
+<?php /* Smarty version 3.1.27, created on 2015-11-29 13:42:36
          compiled from "D:\xampp\htdocs\hqv\templates\main\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:128995659bbae857a87_11730253%%*/
+/*%%SmartyHeaderCode:24380565ac88c5e1d28_45335302%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5453d8b4442e6d5beb34c809368d9cb2e372f1f5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\home.tpl',
-      1 => 1448721325,
+      1 => 1448790067,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '128995659bbae857a87_11730253',
+  'nocache_hash' => '24380565ac88c5e1d28_45335302',
   'variables' => 
   array (
     'ns' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5659bbae8936e0_65404767',
+  'unifunc' => 'content_565ac88c6024a7_10000540',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5659bbae8936e0_65404767')) {
-function content_5659bbae8936e0_65404767 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_565ac88c6024a7_10000540')) {
+function content_565ac88c6024a7_10000540 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '128995659bbae857a87_11730253';
+$_smarty_tpl->properties['nocache_hash'] = '24380565ac88c5e1d28_45335302';
 ?>
 <div class="parallax-container valign-wrapper">
 		<div class="no-pad-bot row right valign main-text">
@@ -70,16 +70,22 @@ $_smarty_tpl->properties['nocache_hash'] = '128995659bbae857a87_11730253';
 			<div class="row">
 				<form class="col s12">
 			      <div class="row">
-			        <div class="input-field col s12 m6 6">
+			        <div class="input-field col s12 m4 4">
 			          <i class="material-icons prefix">account_circle</i>
 			          <input id="firstName" type="text" class="keyboard">
 			          <label for="firstName"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(8);?>
 </label>
 			        </div>
-			        <div class="input-field col s12 m6 6">
+			        <div class="input-field col s12 m4 4">
 			          <i class="material-icons prefix">account_circle</i>
-			          <input id="lastName" type="tel" class="keyboard">
+			          <input id="lastName" type="text" class="keyboard">
 			          <label for="lastName"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(9);?>
+</label>
+			        </div>
+			        <div class="input-field col s12 m4 4">
+			          <i class="material-icons prefix">account_circle</i>
+			          <input id="fatherName" type="text" class="keyboard">
+			          <label for="fatherName"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(51);?>
 </label>
 			        </div>
 			      </div>
