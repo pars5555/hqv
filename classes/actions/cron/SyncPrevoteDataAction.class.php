@@ -37,7 +37,7 @@ namespace hqv\actions\cron {
                 foreach ($data->params->data as $row) {
                     $dto = VoterDataManager::getInstance()->selectByPK($row->id);
                     if (!$dto) {
-                        VoterDataManager::getInstance()->addSystemRow($row->id, $row->voter_id, $row->email, $row->phone, $row->will_vote, $row->will_be_in_arm, $row->ip_address, $row->country, $row->browser, $row->browser_version, $row->platrom, $row->datetime);
+                        VoterDataManager::getInstance()->addSystemRow($row->id, $row->voter_id, $row->email, $row->phone, $row->will_vote, $row->will_be_in_arm, $row->is_death, $row->ip_address, $row->country, $row->browser, $row->browser_version, $row->platrom, $row->datetime);
                     }
                     $lastRowId = $row->id;
                 }
@@ -45,8 +45,8 @@ namespace hqv\actions\cron {
             if (isset($lastRowId) && $lastRowId > 0) {
                 SettingManager::getInstance()->setSetting('prevote_data_last_row_id', $lastRowId);
             }
-            
-            
+
+
             $emLastRowId = null;
             if (!empty($data) && !empty($data->params) && !empty($data->params->em_data)) {
                 foreach ($data->params->em_data as $row) {

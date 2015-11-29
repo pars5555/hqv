@@ -42,10 +42,11 @@ namespace hqv\managers {
         public function getDuplicatedOrDeathData($offset, $limit) {
             return $this->mapper->getDuplicatedOrDeathData($offset, $limit);
         }
+
         public function getDuplicatedOrDeathDataCount() {
             return $this->mapper->getDuplicatedOrDeathDataCount();
         }
-        
+
         public function getNonParticipantCounts() {
             return $this->mapper->getNonParticipantCounts();
         }
@@ -64,7 +65,7 @@ namespace hqv\managers {
             return $this->mapper->selectJoinVotersCount($where);
         }
 
-        public function addSystemRow($id, $voterId, $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os, $datetime) {
+        public function addSystemRow($id, $voterId, $email, $phone, $will_vote, $will_be_in_arm, $is_death, $ip_address, $country, $browser, $version, $os, $datetime) {
             $dto = $this->createDto();
             $dto->setId($id);
             $dto->setVoterId($voterId);
@@ -72,6 +73,7 @@ namespace hqv\managers {
             $dto->setPhone($phone);
             $dto->setWillVote($will_vote);
             $dto->setBeWillInArm($will_be_in_arm);
+            $dto->setIsDeath($is_death);
             $dto->setIpAddress($ip_address);
             $dto->setCountry($country);
             $dto->setBrowser($browser);
@@ -83,7 +85,7 @@ namespace hqv\managers {
 
         public function addRowFromModerator($voterId) {
             $dto = $this->createDto();
-            $dtos = $this->selectAdvance('*', ['id', '>=', 3000000 ], ['id'], 'DESC', 0, 1);
+            $dtos = $this->selectAdvance('*', ['id', '>=', 3000000], ['id'], 'DESC', 0, 1);
             if (!empty($dtos)) {
                 $lastRowId = intval($dtos[0]->getId()) + 1;
             } else {
