@@ -48,14 +48,6 @@
                         <h5 class="center-align">{$ns.lm->getPhrase(37)}</h5>
                     </div>
                     <div class="row">
-                        <div class="col s12 m12 l12 center-align">
-                            <a href="javascript:void(0);" class="choose-btn" id="death_checkbox" data-to='deathAnswer'>
-                                <i class="hide fa fa-check green-text"></i>
-                                <span class="red-text text-darken-4">This person in death</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col s12 m6 l6 center-align">
                             <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="vote" data-ans="1" data-to='inArmAnswer'>
                                 <i class="hide fa fa-check green-text"></i>
@@ -80,6 +72,14 @@
                             <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="appear" data-ans="0" data-to='willVoteAnswer'>
                                 <i class="hide fa fa-check green-text"></i>
                                 <span class="black-text">{$ns.lm->getPhrase(41)}</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m12 l12 center-align">
+                            <a href="javascript:void(0);" class="choose-btn" id="death_checkbox" data-to='deathAnswer'>
+                                <i class="hide fa fa-check green-text"></i>
+                                <span class="red-text text-darken-4">{$ns.lm->getPhrase(53)}</span>
                             </a>
                         </div>
                     </div>
