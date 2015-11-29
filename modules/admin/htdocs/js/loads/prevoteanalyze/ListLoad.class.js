@@ -29,6 +29,6 @@ NGS.createLoad("admin.loads.prevoteanalyze.list", {
     {
         var page = $('#p_page').val();
         var limit = $('#p_limit').val();
-        NGS.load('admin.loads.passanalyze.list', {page: page, limit: limit});
+        NGS.load('admin.loads.prevoteanalyze.list', {page: page, limit: limit});
     }
 });
