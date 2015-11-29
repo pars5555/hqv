@@ -32,12 +32,13 @@ namespace hqv\actions\cron {
             }
             $json = @file_get_contents('http://hanraqve.com/sync/getSyncData?pasphrase=P@rs1985&row_id=' . $lastRowId . '&em_row_id=' . $emLastRowId);
             $data = json_decode($json);
+            
             $lastRowId = null;
             if (!empty($data) && !empty($data->params) && !empty($data->params->data)) {
                 foreach ($data->params->data as $row) {
                     $dto = VoterDataManager::getInstance()->selectByPK($row->id);
                     if (!$dto) {
-                        VoterDataManager::getInstance()->addSystemRow($row->id, $row->voter_id, $row->email, $row->phone, $row->will_vote, $row->will_be_in_arm, $row->is_death, $row->ip_address, $row->country, $row->browser, $row->browser_version, $row->platrom, $row->datetime);
+                        VoterDataManager::getInstance()->addSystemRow($row->id, $row->voter_id, $row->email, $row->phone, $row->will_vote, $row->will_be_in_arm, $row->is_death, $row->ip_address, $row->country, $row->browser, $row->browser_version, $row->platform, $row->datetime);
                     }
                     $lastRowId = $row->id;
                 }
