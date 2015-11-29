@@ -45,13 +45,13 @@ namespace hqv\managers {
         }
 
         public function getPhrase($phraseFormula, $lang_code = null, $transform = 0) {
-            $lc = 'en';
+            $lc = 'am';
             if (!empty($lang_code) && ($lang_code == 'en' || $lang_code == 'am' || $lang_code == 'ru')) {
                 $lc = $lang_code;
             } elseif (!empty($_COOKIE['ul']) && ($_COOKIE['ul'] == 'en' || $_COOKIE['ul'] == 'am' || $_COOKIE['ul'] == 'ru')) {
                 $lc = $_COOKIE['ul'];
             } else {
-                $lc = 'en';
+                $lc = 'am';
             }
             $ret = $phraseFormula;
             if (strpos($phraseFormula, '`') !== false) {

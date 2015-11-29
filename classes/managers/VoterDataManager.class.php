@@ -39,6 +39,13 @@ namespace hqv\managers {
             return $this->mapper->getParticipantCounts();
         }
 
+        public function getDuplicatedOrDeathData($offset, $limit) {
+            return $this->mapper->getDuplicatedOrDeathData($offset, $limit);
+        }
+        public function getDuplicatedOrDeathDataCount() {
+            return $this->mapper->getDuplicatedOrDeathDataCount();
+        }
+        
         public function getNonParticipantCounts() {
             return $this->mapper->getNonParticipantCounts();
         }

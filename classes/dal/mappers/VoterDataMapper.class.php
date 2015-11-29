@@ -42,6 +42,28 @@ namespace hqv\dal\mappers {
             return $this->tableName;
         }
 
+        public function getDuplicatedOrDeathData($offset, $limit) {
+            $sql = "SELECT   * FROM (
+                SELECT   *,  COUNT(*) AS vote_count, GROUP_CONCAT(id) AS duplication_ids  FROM  `%s` WHERE invalid = 0 GROUP BY voter_id HAVING vote_count > 1 
+                UNION 
+                SELECT   *,  1 AS vote_count, id AS duplication_ids  FROM `%s` WHERE is_death=1 AND invalid = 0
+                ) AS sss
+                ORDER BY vote_count DESC LIMIT %d, %d";
+            $sqlQuery = sprintf($sql, $this->getTableName(), $this->getTableName(), $offset, $limit);
+            return $this->fetchRows($sqlQuery);
+        }
+
+        public function getDuplicatedOrDeathDataCount() {
+            $sql = "SELECT   count(*) as `count` FROM (
+                SELECT   *,  COUNT(*) AS vote_count, GROUP_CONCAT(id) AS duplication_ids  FROM  `%s` WHERE invalid = 0 GROUP BY voter_id HAVING vote_count > 1 
+                UNION 
+                SELECT   *,  1 AS vote_count, id AS duplication_ids  FROM `%s` WHERE is_death=1 AND invalid = 0
+                ) AS sss
+                ";
+            $sqlQuery = sprintf($sql, $this->getTableName(), $this->getTableName());
+            return intval($this->fetchField($sqlQuery, 'count'));
+        }
+
         public function selectJoinVotersCount($where) {
             $sql = "SELECT count(`%s`.id) as `count` FROM `%s` LEFT JOIN `voters` ON `voters`.`id` = `%s`.voter_id %s";
             $sqlQuery = sprintf($sql, $this->getTableName(), $this->getTableName(), $this->getTableName(), $where);
@@ -50,7 +72,7 @@ namespace hqv\dal\mappers {
 
         public function selectJoinVoters($where, $offset, $limit) {
             $sql = "SELECT *,`%s`.`id` as `id`  FROM   `%s` LEFT JOIN `voters` ON `voters`.`id` = `%s`.voter_id %s ORDER BY `%s`.id DESC LIMIT %d,%d";
-            $sqlQuery = sprintf($sql, $this->getTableName(),$this->getTableName(), $this->getTableName(), $where,$this->getTableName(), $offset, $limit);
+            $sqlQuery = sprintf($sql, $this->getTableName(), $this->getTableName(), $this->getTableName(), $where, $this->getTableName(), $offset, $limit);
             return $this->fetchRows($sqlQuery);
         }
 
