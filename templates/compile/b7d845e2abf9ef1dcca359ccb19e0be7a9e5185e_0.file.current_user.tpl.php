@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-11-28 00:25:44
+<?php /* Smarty version 3.1.27, created on 2015-11-29 13:44:49
          compiled from "D:\xampp\htdocs\hqv\templates\main\current_user.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:116805658bc4844d4f7_12102464%%*/
+/*%%SmartyHeaderCode:5351565ac911c1d247_79263405%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b7d845e2abf9ef1dcca359ccb19e0be7a9e5185e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\hqv\\templates\\main\\current_user.tpl',
-      1 => 1448655934,
+      1 => 1448790246,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '116805658bc4844d4f7_12102464',
+  'nocache_hash' => '5351565ac911c1d247_79263405',
   'variables' => 
   array (
     'ns' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5658bc484932c7_08012639',
+  'unifunc' => 'content_565ac911d484f9_24144880',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5658bc484932c7_08012639')) {
-function content_5658bc484932c7_08012639 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_565ac911d484f9_24144880')) {
+function content_565ac911d484f9_24144880 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '116805658bc4844d4f7_12102464';
+$_smarty_tpl->properties['nocache_hash'] = '5351565ac911c1d247_79263405';
 if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
     <?php if (!empty($_smarty_tpl->tpl_vars['ns']->value['voter_data'])) {?>
         <p class="center-align red-text text-darken-4"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(30);?>
@@ -98,6 +98,14 @@ if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
                     </div>
                     <div class="row">
                         <div class="col s12 m6 l6 center-align">
+                            <a href="javascript:void(0);" class="choose-btn" id="death_checkbox" data-to='deathAnswer'>
+                                <i class="hide fa fa-check green-text"></i>
+                                <span class="black-text">This person in death</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m6 l6 center-align">
                             <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="vote" data-ans="1" data-to='inArmAnswer'>
                                 <i class="hide fa fa-check green-text"></i>
                                 <span class="black-text"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(38);?>
@@ -130,6 +138,7 @@ if (isset($_smarty_tpl->tpl_vars['ns']->value['voter'])) {?>
                     </div>
                     <input type="hidden" id="inArmAnswer"/>
                     <input type="hidden" id="willVoteAnswer" />
+                    <input type="hidden" id="deathAnswer" />
                 </div>
             </div>
         </div>

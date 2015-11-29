@@ -91,13 +91,14 @@ namespace hqv\managers {
             return $this->insertDto($dto);
         }
 
-        public function addRow($voterId, $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os) {
+        public function addRow($voterId, $email, $phone, $will_vote, $will_be_in_arm, $is_death, $ip_address, $country, $browser, $version, $os) {
             $dto = $this->createDto();
             $dto->setVoterId($voterId);
             $dto->setEmail($email);
             $dto->setPhone($phone);
             $dto->setWillVote($will_vote);
             $dto->setWillBeInArm($will_be_in_arm);
+            $dto->setIsDeath($is_death);
             $dto->setIpAddress($ip_address);
             $dto->setCountry($country);
             $dto->setBrowser($browser);

@@ -12,8 +12,6 @@
 namespace hqv\loads\main {
 
     use hqv\loads\NgsLoad;
-    use hqv\managers\AreaManager;
-    use hqv\managers\VoterDataManager;
     use hqv\managers\VoterManager;
     use hqv\security\RequestGroups;
     use NGS;

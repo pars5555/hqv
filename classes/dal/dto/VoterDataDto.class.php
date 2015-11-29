@@ -31,6 +31,7 @@ namespace hqv\dal\dto {
             "voter_id" => "voterId",
             "will_vote" => "willVote",
             "will_be_in_arm" => "willBeInArm",
+            "is_death" => "isDeath",
             "phone" => "phone",
             "email" => "email",
             "note" => "note",
