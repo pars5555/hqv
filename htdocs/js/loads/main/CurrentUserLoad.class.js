@@ -41,6 +41,10 @@ NGS.createLoad("hqv.loads.main.current_user", {
     initEmergency: function () {
         $('#emergencyPhoneNumberSubmitBtn').click(function () {
             var phone = $('#emergencyPhoneNumber').val();
+            if (phone.trim()==='')
+            {
+                return false;
+            }
             NGS.action('hqv.actions.main.add_emergency_phone', {phoneNumber: phone});
             $("#emergencyContainer").addClass('hide');
         });

@@ -27,10 +27,10 @@
                 <td>
                     <div class="switch">
                         <label class="active"> 
-                            no
+                            problem
                             <input data-rowid="{$row->getId()}" {if $row->getIsDone() == 1}checked{/if}  class="f_validationBtn" type="checkbox" />
-                            <span class="lever"></span>
-                            yes
+                            <span class="lever redlever"></span>
+                            solved
                         </label>
                     </div>
                 </td>
