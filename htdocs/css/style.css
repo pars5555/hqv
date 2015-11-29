@@ -126,6 +126,9 @@ input.ui-widget-content {
 .current-user-modal {
     width: 80% !important;
 }
+.current-user-modal .modal-footer {
+    margin-bottom: 0px;
+}
 .thankyou-modal {
     height: 40% !important;
     width: 45% !important;
