@@ -48,10 +48,10 @@
                         <h5 class="center-align">{$ns.lm->getPhrase(37)}</h5>
                     </div>
                     <div class="row">
-                        <div class="col s12 m6 l6 center-align">
+                        <div class="col s12 m12 l12 center-align">
                             <a href="javascript:void(0);" class="choose-btn" id="death_checkbox" data-to='deathAnswer'>
                                 <i class="hide fa fa-check green-text"></i>
-                                <span class="black-text">This person in death</span>
+                                <span class="red-text text-darken-4">This person in death</span>
                             </a>
                         </div>
                     </div>
