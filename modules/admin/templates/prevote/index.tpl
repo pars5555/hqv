@@ -12,12 +12,12 @@
     <div class="row">
         <div class="col s12 m6 6 offset-m3" id="realVoterAddEditForm">
             <form id="addPrevoteForm" autocomplete="off">
-                <div class="row" id='addRealVoterAddEditContainer'>
+                <div class="row" id='prevoteAddEditContainer'>
                     {nest ns=add_edit}
                 </div>
             </form>
         </div>
-        <div class="col s12 m12 12" id='realVotersTableContainer'>
+        <div class="col s12 m12 12" id='prevoteTableContainer'>
             {nest ns=list}
         </div>
     </div>

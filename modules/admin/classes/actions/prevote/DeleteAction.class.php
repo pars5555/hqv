@@ -7,7 +7,7 @@ namespace admin\actions\prevote {
     use hqv\managers\VoterDataManager;
     use NGS;
 
-    class SetInvalidVoteAction extends BaseAction {
+    class DeleteAction extends BaseAction {
 
         public function service() {
             if (!isset(NGS()->args()->rowId)) {
@@ -16,11 +16,7 @@ namespace admin\actions\prevote {
                 return;
             }
             $rowId = intval(NGS()->args()->rowId);
-            $invalid = intval(NGS()->args()->invalid);
-            VoterDataManager::getInstance()->updateField($rowId, 'invalid', $invalid);
-            if (NGS()->args()->note) {
-                VoterDataManager::getInstance()->updateField($rowId, 'invalid_note', NGS()->args()->note);
-            }
+            VoterDataManager::getInstance()->deleteByPK($rowId);
         }
 
         public function getRequestGroup() {

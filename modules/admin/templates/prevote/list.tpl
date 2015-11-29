@@ -24,11 +24,6 @@
             <th>Last Name</th>
             <th>Father Name</th>
             <th>Birth Date</th>
-            <th>In List</th>
-            <th>In Area List</th>
-            <th>Duplication</th>
-            <th>PreVote Match</th>
-            <th>invalid?</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -40,36 +35,12 @@
                 {assign voter 0}
             {/if}
             <tr data-rowid="{$row->getId()}">
-                <td>{$row->getFirstName()}</td>
-                <td>{$row->getLastName()}</td>
-                <td>{$row->getFatherName()}</td>
-                <td>{$row->getBirthDate()}</td>
-                <td>{if $row->getVoterId()>0}<i class="fa fa-check action-btn"></i>{else}<i class="fa fa-close action-btn delete"></i>{/if}</td>
-                <td>{if $row->getInAreaList()}<i class="fa fa-check action-btn"></i>{else}<i class="fa fa-close action-btn delete"></i>{/if}</td>
-                <td>{if in_array($row->getId(), $ns.duplicatedInListMappedById)}<i class="fa fa-close action-btn delete"></i>{else}<i class="fa fa-check action-btn"></i>{/if}</td>
+                <td>{$voter->getFirstName()}</td>
+                <td>{$voter->getLastName()}</td>
+                <td>{$voter->getFatherName()}</td>
+                <td>{$voter->getBirthDate()}</td>
                 <td>
-                    {if !isset($ns.preVoteData[$row->getVoterId()])}-{else}
-                        {if $ns.preVoteData[$row->getVoterId()]->getWillVote()==1}
-                           <i class="fa fa-check action-btn"></i>
-                        {else}
-                            <i class="fa fa-close action-btn delete"></i>
-                        {/if}
-                    {/if}</td>
-                <td>
-                    <div class="switch">
-                        <label class="active"> 
-                            invalid
-                            <input data-rowid="{$row->getId()}" {if $row->getInvalid() == 0}checked{/if}  class="f_validationBtn" type="checkbox" />
-                            <span class="lever"></span>
-                            valid
-                        </label>
-                    </div>
-                    <!-- <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="validVoteButton">+</a>
-                    <a data-rowid="{$row->getId()}" href="javascript:void(0);" class="invalidVoteButton">X</a> -->
-                </td>
-                <td>
-                    <a data-rowid="{$row->getId()}" class="f_edit waves-effect waves-light btn">Edit<i class="material-icons left">mode_edit</i></a>
-                    <a data-rowid="{$row->getId()}" class="f_delete waves-effect waves-light btn">Delete<i class="material-icons left">mode_delete</i></a>
+                    <a data-rowid="{$row->getId()}" class="f_delete waves-effect waves-light btn">Delete<i class="material-icons left">mode_remove</i></a>
                 </td>
                
             </tr>

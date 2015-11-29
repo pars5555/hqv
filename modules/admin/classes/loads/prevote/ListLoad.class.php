@@ -18,7 +18,7 @@
 namespace admin\loads\prevote {
 
     use admin\loads\ModeratorLoad;
-    use admin\managers\RealVoterPassportManager;
+    use hqv\managers\VoterDataManager;
     use hqv\managers\VoterManager;
     use NGS;
 
@@ -37,26 +37,26 @@ namespace admin\loads\prevote {
             $this->addParam('page', $page);
             $this->addParam('limit', $limit);
             $offset = ($page - 1) * $limit;
-            $rows = RealVoterPassportManager::getInstance()->selectAdvance('*', ['moderator_id', '=', $moderatorId], ['create_datetime'], 'DESC', $offset, $limit);
+            $rows = VoterDataManager::getInstance()->selectAdvance('*', ['admin_id', '=', $moderatorId], ['datetime'], 'DESC', $offset, $limit);
             $voterIdsArray = $this->getVoterIdsArray($rows);
 
-            $duplicatedInListRealVoters = [];
+            $duplicatedInList = [];
             $voters = [];
             $preVoteData = [];
             if (!empty($voterIdsArray)) {
                 $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
-                $duplicatedInListRealVoters = RealVoterPassportManager::getInstance()->getDuplicatedInListRealVotersRowIds($voterIdsArray);
+                //$duplicatedInList = VoterDataManager::getInstance()->getDuplicatedInListRealVotersRowIds($voterIdsArray);
                 $voterIdsSqlString = "(" . implode(',', $voterIdsArray) . ")";
-                $preVoteData = \hqv\managers\VoterDataManager::getInstance()->selectAdvance('*', ['voter_id', 'in', $voterIdsSqlString]);
+                $preVoteData = VoterDataManager::getInstance()->selectAdvance('*', ['voter_id', 'in', $voterIdsSqlString]);
                 $preVoteData = $this->MapByVoterId($preVoteData);
             }
 
-            $count = RealVoterPassportManager::getInstance()->getLastSelectAdvanceRowsCount();
+            $count = VoterDataManager::getInstance()->getLastSelectAdvanceRowsCount();
             $pageCount = ceil($count / $limit);
             $this->addParam('pageCount', $pageCount);
             $this->addParam('rows', $rows);
             $this->addParam('voters', $voters);
-            $this->addParam('duplicatedInListMappedById', $duplicatedInListRealVoters);
+            // $this->addParam('duplicatedInListMappedById', $duplicatedInList);
             $this->addParam('preVoteData', $preVoteData);
         }
 

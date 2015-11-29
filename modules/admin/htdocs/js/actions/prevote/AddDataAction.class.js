@@ -11,6 +11,7 @@ NGS.createAction("admin.actions.prevote.add_data", {
         } else {
             jQuery("#addVoterError").html('');
             jQuery("#addVoterSuccess").html('Successfully Added');
+             NGS.load('admin.loads.prevote.list', {});
         }
     }
 });

@@ -104,7 +104,7 @@
           "actions/number/SetInvalidVoteAction.class.js",
           "actions/number/DeleteVoteAction.class.js",
           "actions/prevote/UnblockIpAction.class.js",
-          "actions/prevote/SetInvalidVoteAction.class.js",
+          "actions/prevote/DeleteAction.class.js",
           "actions/prevote/AddDataAction.class.js",
           "actions/emergency/SetDoneAction.class.js"
         ]
