@@ -49,16 +49,21 @@ NGS.createLoad("hqv.loads.main.current_user", {
     },
     chooseAnswer: function () {
         $('#death_checkbox').click(function () {
-            if ($(this).find('i').hasClass('hide')) {
-                $(this).find('i').removeClass('hide');
+            if ($(this).find('i.fa-check').hasClass('hide')) {
+                
+                $(this).find('i.fa-check').removeClass('hide');
+                $(this).find('i.fa-square-o').addClass('hide');
+                
                 $('.f_choose_btn').addClass('hide');
                 $('#deathAnswer').val(1);
 
             } else
             {
-                $('#deathAnswer').val(0);
-                $(this).find('i').addClass('hide');
+                $(this).find('i.fa-check').addClass('hide');
+                $(this).find('i.fa-square-o').removeClass('hide');
+                
                 $('.f_choose_btn').removeClass('hide');
+                $('#deathAnswer').val(0);
 
             }
             thisInstance.checkIsSavable();
@@ -69,20 +74,17 @@ NGS.createLoad("hqv.loads.main.current_user", {
                 var answerVal = $(this).data('ans');
                 var answerId = $(this).data('to');
                 var group = $(this).data('group');
-                $(this).find('i').removeClass('hide');
+                $(this).find('i.fa-check').removeClass('hide');
+                $(this).find('i.fa-square-o').addClass('hide');
                 $("#" + answerId).val(answerVal);
+                $('.f_choose_btn[data-group=' + group + '][data-ans='+(answerVal=='0'?1:0)+']').find('i.fa-square-o').removeClass('hide');
+                $('.f_choose_btn[data-group=' + group + '][data-ans='+(answerVal=='0'?1:0)+']').find('i.fa-check').addClass('hide');
                 // Make Sure that the other is unchecked
-                if (answerVal == 0) {
-                    $('.f_choose_btn[data-group=' + group + '][data-ans=1]').find('i').addClass('hide');
-                } else {
-                    $('.f_choose_btn[data-group=' + group + '][data-ans=0]').find('i').addClass('hide');
-                }
                 if ($('#inArmAnswer').val() === '0') {
                     $('#willVoteAnswerContainer').addClass('hide');
                 } else
                 {
                     $('#willVoteAnswerContainer').removeClass('hide');
-
                 }
                 thisInstance.checkIsSavable();
             });
