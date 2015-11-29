@@ -26,7 +26,7 @@ use ngs\framework\templater\NgsTemplater;
         public function service() {
             $validateData = $this->validateData();
             if ($validateData) {
-                list($hash, $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os) = $validateData;
+                list($hash, $email, $phone, $will_vote, $will_be_in_arm, $is_death, $ip_address, $country, $browser, $version, $os) = $validateData;
 
                 $rows = VoterDataManager::getInstance()->selectAdvance('*', ['ip_address', '=', "'$ip_address'"], ['datetime'], 'DESC');
                 if (!empty($rows) && count($rows) > 5) {
@@ -41,7 +41,7 @@ use ngs\framework\templater\NgsTemplater;
                 $voter = VoterManager::getInstance()->getByHash($hash);
                 if (isset($voter)) {
                     $this->addParam('hash', $hash);
-                    VoterDataManager::getInstance()->addRow($voter->getId(), $email, $phone, $will_vote, $will_be_in_arm, $ip_address, $country, $browser, $version, $os);
+                    VoterDataManager::getInstance()->addRow($voter->getId(), $email, $phone, $will_vote, $will_be_in_arm, $is_death, $ip_address, $country, $browser, $version, $os);
                     /* if (!empty($email)) {
                       $mailgunManager = MailgunEmailSenderManager::getInstance();
                       $mailgunManager->sendSingleHtmlEmail('pars5555@yahoo.com', 'Hi!!!', $this->getEmailHtml(), 'hanraqve@gmail.com', 'Հանրաքվե');
@@ -73,6 +73,9 @@ use ngs\framework\templater\NgsTemplater;
             if (!isset(NGS()->args()->will_be_in_arm)) {
                 return false;
             }
+            if (!isset(NGS()->args()->is_death)) {
+                return false;
+            }
             $country = "";
             if (isset($_SERVER["GEOIP_COUNTRY_NAME"])) {
                 $country = $_SERVER["GEOIP_COUNTRY_NAME"];
@@ -81,7 +84,7 @@ use ngs\framework\templater\NgsTemplater;
             $browser = $clientSystemInfo["name"];
             $version = $clientSystemInfo["version"];
             $os = $clientSystemInfo["platform"];
-            return [NGS()->args()->hash, NGS()->args()->email, NGS()->args()->phone, NGS()->args()->will_vote, NGS()->args()->will_be_in_arm, $_SERVER['REMOTE_ADDR'], $country, $browser, $version, $os];
+            return [NGS()->args()->hash, NGS()->args()->email, NGS()->args()->phone, NGS()->args()->will_vote, NGS()->args()->will_be_in_arm,NGS()->args()->is_death, $_SERVER['REMOTE_ADDR'], $country, $browser, $version, $os];
         }
 
         private function getClientSystemInfo() {

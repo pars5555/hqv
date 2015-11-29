@@ -36,11 +36,11 @@
                     </div> 
                 </div>
                 <div class="col s6">
-                    <p>{$ns.lm->getPhrase(58)}</p>
+                    <p>{$ns.lm->getPhrase(61)}</p>
                     <p>
-                        <a href="tel:{$ns.lm->getPhrase(59)}">{$ns.lm->getPhrase(59)}</a>,
-                        <a href="tel:{$ns.lm->getPhrase(60)}">{$ns.lm->getPhrase(60)}</a>,
-                        <a href="tel:{$ns.lm->getPhrase(61)}">{$ns.lm->getPhrase(61)}</a>
+                        <a href="tel:{$ns.lm->getPhrase(59)}">{$ns.lm->getPhrase(62)}</a>,
+                        <a href="tel:{$ns.lm->getPhrase(60)}">{$ns.lm->getPhrase(63)}</a>,
+                        <a href="tel:{$ns.lm->getPhrase(61)}">{$ns.lm->getPhrase(64)}</a>
                     </p>
                 </div>
                 <div class="col s12">

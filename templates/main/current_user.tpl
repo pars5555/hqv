@@ -49,6 +49,14 @@
                     </div>
                     <div class="row">
                         <div class="col s12 m6 l6 center-align">
+                            <a href="javascript:void(0);" class="choose-btn" id="death_checkbox" data-to='deathAnswer'>
+                                <i class="hide fa fa-check green-text"></i>
+                                <span class="black-text">This person in death</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m6 l6 center-align">
                             <a href="javascript:void(0);" class="f_choose_btn choose-btn" data-group="vote" data-ans="1" data-to='inArmAnswer'>
                                 <i class="hide fa fa-check green-text"></i>
                                 <span class="black-text">{$ns.lm->getPhrase(38)}</span>
@@ -77,6 +85,7 @@
                     </div>
                     <input type="hidden" id="inArmAnswer"/>
                     <input type="hidden" id="willVoteAnswer" />
+                    <input type="hidden" id="deathAnswer" />
                 </div>
             </div>
         </div>

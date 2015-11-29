@@ -19,9 +19,10 @@ NGS.createLoad("hqv.loads.main.current_user", {
             var email = $('#cu_email').val();
             var phone = $('#cu_telephone').val();
             var will_be_in_arm = $('#inArmAnswer').val();
+            var is_death = $('#deathAnswer').val();
             var will_vote = $('#willVoteAnswer').val();
             var voter_hash = $('#voterHash').val();
-            NGS.action('hqv.actions.main.set_data', {email: email, phone: phone, will_vote: will_vote, will_be_in_arm: will_be_in_arm, hash: voter_hash},
+            NGS.action('hqv.actions.main.set_data', {email: email, phone: phone, will_vote: will_vote, will_be_in_arm: will_be_in_arm, is_death: is_death, hash: voter_hash},
             function (transport) {
                 var args = this.getArgs();
                 if (args.status == 'error') {
@@ -47,6 +48,21 @@ NGS.createLoad("hqv.loads.main.current_user", {
 
     },
     chooseAnswer: function () {
+        $('#death_checkbox').click(function () {
+            if ($(this).find('i').hasClass('hide')) {
+                $(this).find('i').removeClass('hide');
+                $('.f_choose_btn').addClass('hide');
+                $('#deathAnswer').val(1);
+
+            } else
+            {
+                $('#deathAnswer').val(0);
+                $(this).find('i').addClass('hide');
+                $('.f_choose_btn').removeClass('hide');
+
+            }
+            thisInstance.checkIsSavable();
+        });
         if ($(".f_choose_btn").length > 0) {
             var thisInstance = this;
             $('.f_choose_btn').click(function () {
@@ -73,7 +89,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
         }
     },
     checkIsSavable: function () {
-        if ($('#inArmAnswer').val() === '0' ||
+        if ($('#deathAnswer').val() === '1' || $('#inArmAnswer').val() === '0' ||
                 ($('#inArmAnswer').val() === '1' && $('#willVoteAnswer').val() !== '')) {
             $("#currentUserModalBtn").removeClass('disabled');
             return true;

@@ -5,16 +5,16 @@
         <ul class="row">
           <li class="col l3">
             <p class="grey-text text-lighten-3">
-              {$ns.lm->getPhrase(50)}
+              {$ns.lm->getPhrase(53)}
             </p>
             <p class="grey-text text-lighten-3">
-              {$ns.lm->getPhrase(51)}
+              {$ns.lm->getPhrase(54)}
             </p>
             <p class="grey-text text-lighten-3">
-              {$ns.lm->getPhrase(22)}:-<a href="mailto:admin@asparez.am">{$ns.lm->getPhrase(52)}</a>
+              {$ns.lm->getPhrase(22)}:-<a href="mailto:admin@asparez.am">{$ns.lm->getPhrase(55)}</a>
             </p>
             <p class="grey-text text-lighten-3">
-              {$ns.lm->getPhrase(23)}-<a href="tel:+374 312 5- 06-22">{$ns.lm->getPhrase(53)}</a>
+              {$ns.lm->getPhrase(23)}-<a href="tel:+374 312 5- 06-22">{$ns.lm->getPhrase(56)}</a>
             </p>
           </li>
           <li class="col l3">
@@ -36,16 +36,16 @@
           </li>
           <li class="col l3">
             <p class="grey-text text-lighten-3">
-              {$ns.lm->getPhrase(54)}
+              {$ns.lm->getPhrase(57)}
             </p>
             <p class="grey-text text-lighten-3">
-              {$ns.lm->getPhrase(55)}
+              {$ns.lm->getPhrase(58)}
             </p>
             <p class="grey-text text-lighten-3">
-              {$ns.lm->getPhrase(22)}:-<a href="mailto:hcav@hcav.am">{$ns.lm->getPhrase(56)}</a>
+              {$ns.lm->getPhrase(22)}:-<a href="mailto:hcav@hcav.am">{$ns.lm->getPhrase(59)}</a>
             </p>
             <p class="grey-text text-lighten-3">
-              {$ns.lm->getPhrase(23)}-<a href="tel:0322 4 22 68">{$ns.lm->getPhrase(57)}</a>
+              {$ns.lm->getPhrase(23)}-<a href="tel:0322 4 22 68">{$ns.lm->getPhrase(60)}</a>
             </p>
           </li>
         </ul>
