@@ -42,6 +42,12 @@ namespace hqv\dal\mappers {
             return $this->tableName;
         }
 
+        public function selectGroupByIp() {
+            $sql = "SELECT *, COUNT(ip_address) as `count` FROM `%s` GROUP BY ip_address ORDER BY `datetime` DESC";
+            $sqlQuery = sprintf($sql,$this->getTableName());
+            return $this->fetchRows($sqlQuery);
+        }
+
     }
 
 }

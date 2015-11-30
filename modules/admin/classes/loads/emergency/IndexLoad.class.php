@@ -24,7 +24,7 @@ namespace admin\loads\emergency {
     class IndexLoad extends ModeratorLoad {
 
         public function load() {
-            $selectAll = EmergencyPhoneNumberManager::getInstance()->selectAdvance('*', [], ['datetime'], 'DESC');
+            $selectAll = EmergencyPhoneNumberManager::getInstance()->selectGroupByIp();
             $this->addParam('rows', $selectAll);
         }
 

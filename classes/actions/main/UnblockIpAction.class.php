@@ -12,20 +12,25 @@ namespace hqv\actions\main {
             if (!isset(NGS()->args()->pasphrase) || NGS()->args()->pasphrase != 'P@rs1985') {
                 return false;
             }
-            if (!isset(NGS()->args()->rowId)) {
+            if (!isset(NGS()->args()->rowId) && !isset(NGS()->args()->ip)) {
                 $this->addParam('status', 'error');
                 $this->addParam('message', "Missing ID");
                 return;
             }
-            $rowId = intval(NGS()->args()->rowId);
 
-            $row = VoterDataManager::getInstance()->selectByPK($rowId);
-            if (!isset($row)) {
-                $this->addParam('status', 'error');
-                $this->addParam('message', "Wrong data!");
-                return;
+            if (isset(NGS()->args()->ip)) {
+                $ipAddress = NGS()->args()->ip;
+            } else {
+                $rowId = intval(NGS()->args()->rowId);
+                $row = VoterDataManager::getInstance()->selectByPK($rowId);
+                if (!isset($row)) {
+                    $this->addParam('status', 'error');
+                    $this->addParam('message', "Wrong data!");
+                    return;
+                }
+                $ipAddress = $row->getIpAddress();
             }
-            $rows = VoterDataManager::getInstance()->selectByField('ip_address', $row->getIpAddress());
+            $rows = VoterDataManager::getInstance()->selectByField('ip_address', $ipAddress);
             foreach ($rows as $row) {
                 VoterDataManager::getInstance()->updateField($row->getId(), 'ip_address', $row->getIpAddress() . '_');
             }

@@ -12,9 +12,7 @@ NGS.createLoad("admin.loads.voters.list", {
     initUnblockIP: function () {
         $('.unblockIPButton').click(function (event) {
             var rowId = $(this).data('rowid');
-            NGS.action('admin.actions.prevote.unblock_ip', {rowId: rowId});
-            $.post("http://hanraqve.com/dyn/main/do_unblock_ip", {rowId: rowId, 'pasphrase': 'P@rs1985'}, function (data) {
-            });
+            NGS.action('admin.actions.prevote.unblock_ip', {rowId: rowId});            
             event.preventDefault();
             return false;
         });

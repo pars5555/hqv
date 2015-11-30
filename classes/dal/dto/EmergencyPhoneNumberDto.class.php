@@ -31,7 +31,9 @@ namespace hqv\dal\dto {
             "phone_number" => "phoneNumber",
             "ip_address" => "ipAddress",
             "datetime" => "datetime",
-            "is_done" => "isDone"
+            "is_done" => "isDone",
+            
+            "count" => "count"
         );
 
         // returns map array

@@ -35,6 +35,11 @@ namespace hqv\managers {
             return self::$instance;
         }
 
+        public function selectGroupByIp() {
+            return $this->mapper->selectGroupByIp();
+            
+        }
+        
         public function addRow($phoneNumber) {
             $dto = $this->createDto();
             $dto->setPhoneNumber($phoneNumber);
