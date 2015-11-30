@@ -17,11 +17,12 @@
 
 namespace admin\loads\voters {
 
-    use admin\loads\AdminLoad;
+    use admin\loads\ModeratorLoad;
     use hqv\managers\VoterDataManager;
+    use hqv\managers\VoterManager;
     use NGS;
 
-    class ListLoad extends AdminLoad {
+    class ListLoad extends ModeratorLoad {
 
         public function load() {
 
@@ -53,7 +54,7 @@ namespace admin\loads\voters {
                 $where [] = 'like';
                 $where [] = "'$lastName%'";
             }
-            if (!empty(NGS()->args()->ipAddress )) {
+            if (!empty(NGS()->args()->ipAddress)) {
                 $ipAddress = NGS()->args()->ipAddress;
                 if (!empty($where)) {
                     $where [] = 'and';
@@ -74,7 +75,7 @@ namespace admin\loads\voters {
             $rows = VoterDataManager::getInstance()->selectJoinVoters($where, $offset, $limit);
             $count = VoterDataManager::getInstance()->selectJoinVotersCount($where);
             $voterIdsArray = $this->getVoterIdsArray($rows);
-            $voters = \hqv\managers\VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
+            $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
             $pageCount = ceil($count / $limit);
             $this->addParam('pageCount', $pageCount);
             $this->addParam('rows', $rows);

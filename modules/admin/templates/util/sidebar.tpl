@@ -12,10 +12,10 @@
         <li id="sidebar_dashboard_li">
             <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='dashboard.index' ><i class="material-icons left">language</i>Dashboard</a>
         </li>
-            <li id="sidebar_voters_li">
-                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='voters.index' ><i class="material-icons left">perm_identity</i>Pre Vote Data</a>
-            </li>
         {/if}
+        <li id="sidebar_voters_li">
+            <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='voters.index' ><i class="material-icons left">perm_identity</i>Pre Vote Data</a>
+        </li>
         <li id="sidebar_passport_li">
             <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='passport.index'><i class="material-icons left">perm_media</i>Passport</a>
         </li>
@@ -38,10 +38,10 @@
             <li id="sidebar_snippets_li">
                 <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='snippets.index'><i class="material-icons left">perm_media</i>Snippets</a>
             </li>
-            <li id="sidebar_emergency_li">
-                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='emergency.index'><i class="material-icons left">perm_media</i>Emergency Call</a>
-            </li>
         {/if}
+        <li id="sidebar_emergency_li">
+            <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='emergency.index'><i class="material-icons left">perm_media</i>Emergency Call</a>
+        </li>
         <li>
             <a class="waves-effect waves-light btn-flat le" href="{$SITE_PATH}/dyn/login/do_logout"><i class="material-icons left">input</i>Logout</a>
         </li>

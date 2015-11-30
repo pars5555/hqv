@@ -17,11 +17,11 @@
 
 namespace admin\loads\voters {
 
-use admin\loads\AdminLoad;
-use hqv\managers\VoterDataManager;
-use NGS;
+    use admin\loads\ModeratorLoad;
+    use hqv\managers\VoterDataManager;
+    use NGS;
 
-    class IndexLoad extends AdminLoad {
+    class IndexLoad extends ModeratorLoad {
 
         public function load() {
             $dataCountGroupByVoter = VoterDataManager::getInstance()->getDataCountGroupByVoterId();
