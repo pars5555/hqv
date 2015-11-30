@@ -8,7 +8,7 @@
         </div>
     </nav>
 </div>
-<a href="javascript:void(0);" class="updatePageButton">Refresh</a>
+<a href="javascript:void(0);" class="btn updatePageButton">Refresh</a>
 <table class="responsive-table real-voters">
     <thead>
         <tr>
