@@ -8,7 +8,7 @@
         </div>
     </nav>
 </div>
-
+<a href="javascript:void(0);" class="updatePageButton">Refresh</a>
 <table class="responsive-table real-voters">
     <thead>
         <tr>
@@ -39,7 +39,8 @@
                         </label>
                     </div>
                 </td>
-                <td><textarea></textarea></td>
+                <td><textarea data-rowid="{$row->getId()}"  class="emergencyNote">{$row->getNote()}</textarea></td>
+                <td><a href="javascript:void(0);" class="saveNoteButton btn">Save</a></td>
 
             </tr>
         {/foreach}

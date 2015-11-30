@@ -109,7 +109,8 @@
           "actions/prevote/UnblockIpAction.class.js",
           "actions/prevote/DeleteAction.class.js",
           "actions/prevote/AddDataAction.class.js",
-          "actions/emergency/SetDoneAction.class.js"
+          "actions/emergency/SetDoneAction.class.js",
+          "actions/emergency/SetNoteAction.class.js"
         ]
       }
     ]

@@ -11,14 +11,10 @@ NGS.createLoad("admin.loads.emergency.index", {
         this.initDoneNotDone();
         this.initIpAddressClick();
         this.initUnblockIP();
-        if (NGS.emergencyTimoutId) {
-            clearTimeout(NGS.emergencyTimoutId);
-        }
-        NGS.emergencyTimoutId = setTimeout(function () {
-            if ($('#sidebar_emergency_li').hasClass('active')) {
-                NGS.load('admin.loads.emergency.index', {});
-            }
-        }.bind(this), 5000);
+        this.initSaveNote();
+        $('#updatePageButton').click(function() {
+            NGS.load('admin.loads.emergency.index', {});
+        });
     },
     initIpAddressClick: function () {
         $('.ip_address_btn').click(function () {
@@ -35,6 +31,15 @@ NGS.createLoad("admin.loads.emergency.index", {
         $('.unblockIPButton').click(function (event) {
             var ip = $(this).data('ip');
             NGS.action('admin.actions.prevote.unblock_ip', {ip: ip});
+            event.preventDefault();
+            return false;
+        });
+    },
+    initSaveNote: function () {
+        $('.saveNoteButton').click(function (event) {
+            var note = $(this).parent().parent().find('textarea').val();
+            var rowId= $(this).parent().parent().find('textarea').data('rowid');
+            NGS.action('admin.actions.emergency.set_note', {rowId:rowId, note: note});
             event.preventDefault();
             return false;
         });

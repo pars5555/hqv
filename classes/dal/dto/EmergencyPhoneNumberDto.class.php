@@ -32,6 +32,7 @@ namespace hqv\dal\dto {
             "ip_address" => "ipAddress",
             "datetime" => "datetime",
             "is_done" => "isDone",
+            "note" => "note",
             
             "count" => "count"
         );
