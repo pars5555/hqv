@@ -49,7 +49,7 @@ namespace hqv\dal\mappers {
         }
 
         public function selectGroupByIp() {
-            $sql = "SELECT *, COUNT(ip_address) as `count` FROM `%s` GROUP BY ip_address ORDER BY `datetime` DESC";
+            $sql = "SELECT *, COUNT(ip_address) as `count` FROM `%s` GROUP BY ip_address ORDER BY `is_done`,`datetime` DESC";
             $sqlQuery = sprintf($sql, $this->getTableName());
             return $this->fetchRows($sqlQuery);
         }
