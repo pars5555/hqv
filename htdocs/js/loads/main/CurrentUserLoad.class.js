@@ -40,7 +40,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
         this.votingBtn();
     },
     initEmergency: function () {
-        $('#emergencyPhoneNumberSubmitBtn').click(function () {
+        $('#emergencyPhoneNumberSubmitBtn').submit(function () {
             var phone = $('#emergencyPhoneNumber').val();
             var captchaCode = $('#emergencyCaptchaCode').val();
             if (phone.trim() === '' || captchaCode.trim() === '')
@@ -48,7 +48,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
                 return false;
             }
             NGS.action('hqv.actions.main.add_emergency_phone', {phoneNumber: phone, captchaCode: captchaCode});
-            
+            return false;
         });
 
 

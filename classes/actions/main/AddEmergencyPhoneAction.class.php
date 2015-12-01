@@ -24,7 +24,14 @@ namespace hqv\actions\main {
         public function service() {
             $phoneNumber = NGS()->args()->getPhoneNumber();
             $captchaCode = NGS()->args()->getCaptchaCode();
-            if (!isset($_SESSION['captcha_code']) || $captchaCode !== $_SESSION['captcha_code']) {
+            if (!preg_match('/^\+?\d+$/', $phoneNumber) || !isset($_SESSION['captcha_code']) || $captchaCode !== $_SESSION['captcha_code']) {
+                if (!isset($_SESSION['captcha_code']) || $captchaCode !== $_SESSION['captcha_code']) {
+                    $this->addParam('message', $this->getPhrase(58));
+                } else {
+                    if (!preg_match('/^\+?\d+$/', $phoneNumber)) {
+                        $this->addParam('message', $this->getPhrase(59));
+                    }
+                }
                 require_once NGS()->getClassesDir('ngs') . "/lib/captcha/simple-php-captcha.php";
                 list($code, $base64Png) = generateCaptcha();
                 $_SESSION['captcha_code'] = $code;

@@ -6,6 +6,7 @@ NGS.createAction("hqv.actions.main.add_emergency_phone", {
         var args = this.getArgs();
         if (args.status == 'error') {
             $("#emergencyCaptcha").attr('src', args.captcha);
+            $("#emergencyErrorMessage").html(args.message);
             $("#emergencyErrorMessage").removeClass("hide");
             
         } else

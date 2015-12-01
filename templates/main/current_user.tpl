@@ -7,29 +7,28 @@
             {$ns.lm->getPhrase(48)}
         </p>
         <div class="col s12 m12 l6 offset-l3">
-            <div class="row">
-                <div class="input-field col s12 m6 l6">
-                    <i class="material-icons prefix red-text">lock</i>
-                    <input type="text" id="emergencyCaptchaCode"/>
-                    <label for="emergencyCaptchaCode">{$ns.lm->getPhrase(57)}</label>                    
+            <form id="emergencyPhoneNumberSubmitBtn">
+                <div class="row">
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix red-text">lock</i>
+                        <input type="text" id="emergencyCaptchaCode"/>
+                        <label for="emergencyCaptchaCode">{$ns.lm->getPhrase(57)}</label>                    
+                    </div>
+                    <img id="emergencyCaptcha"/>
                 </div>
-                <img id="emergencyCaptcha"/>
-            </div>
-            <div class="row">
-                <div class="input-field col s12 m6 l6">
-                    <i class="material-icons prefix red-text">phone</i>
-                    <input type="text" id="emergencyPhoneNumber"/>
-                    <label for="emergencyPhoneNumber">{$ns.lm->getPhrase(27)}</label>                    
+                <div class="row">
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix red-text">phone</i>
+                        <input type="tel" id="emergencyPhoneNumber"/>
+                        <label for="emergencyPhoneNumber">{$ns.lm->getPhrase(27)}</label>                    
+                    </div>
                 </div>
-            </div>
-            <div class="col s12 m12 l12 hide red-text" id="emergencyErrorMessage">
-                <p>
-                {$ns.lm->getPhrase(58)}
-                </p>
-            </div>
-            <div class="col s12 m12 l12">
-                <a href="javascript:void(0);" class="btn grey ligten-3" id="emergencyPhoneNumberSubmitBtn">{$ns.lm->getPhrase(49)}</a>
-            </div>
+                <div class="col s12 m12 l12 hide red-text" id="emergencyErrorMessage">
+                </div>
+                <div class="col s12 m12 l12">
+                    <button href="javascript:void(0);" class="btn grey ligten-3" >{$ns.lm->getPhrase(49)}</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -47,7 +46,7 @@
         </div>
         <div class="input-field col s12 m12 l6">
             <i class="material-icons prefix">phone</i>
-            <input id="cu_telephone" type="text" class="validate">
+            <input id="cu_telephone" type="tel" class="validate">
             <label for="cu_telephone">{$ns.lm->getPhrase(27)}</label>
         </div>
         <div class="input-field col s12 m12 l6">
