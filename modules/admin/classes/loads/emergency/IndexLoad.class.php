@@ -25,7 +25,9 @@ namespace admin\loads\emergency {
 
         public function load() {
             $selectAll = EmergencyPhoneNumberManager::getInstance()->selectGroupByIp();
+            $notDoneCount = EmergencyPhoneNumberManager::getInstance()->selectNonDoneCountGroupByIp();
             $this->addParam('rows', $selectAll);
+            $this->addParam('notDoneCount', $notDoneCount);
         }
 
         public function getTemplate() {

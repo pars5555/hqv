@@ -9,6 +9,7 @@
     </nav>
 </div>
 <a href="javascript:void(0);" class="btn updatePageButton">Refresh</a>
+<h2>problems count: {$ns.notDoneCount}</h2>
 <table class="responsive-table real-voters">
     <thead>
         <tr>

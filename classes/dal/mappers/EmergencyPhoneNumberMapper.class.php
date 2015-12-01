@@ -42,9 +42,15 @@ namespace hqv\dal\mappers {
             return $this->tableName;
         }
 
+        public function selectNonDoneCountGroupByIp() {
+            $sql = "SELECT COUNT(*) as `count` FROM (SELECT * FROM `%s` WHERE is_done = 0 GROUP BY ip_address) AS ddd";
+            $sqlQuery = sprintf($sql, $this->getTableName());
+            return intval($this->fetchField($sqlQuery, 'count'));
+        }
+
         public function selectGroupByIp() {
             $sql = "SELECT *, COUNT(ip_address) as `count` FROM `%s` GROUP BY ip_address ORDER BY `datetime` DESC";
-            $sqlQuery = sprintf($sql,$this->getTableName());
+            $sqlQuery = sprintf($sql, $this->getTableName());
             return $this->fetchRows($sqlQuery);
         }
 

@@ -39,6 +39,10 @@ namespace hqv\managers {
             return $this->mapper->selectGroupByIp();
             
         }
+        public function selectNonDoneCountGroupByIp() {
+            return $this->mapper->selectNonDoneCountGroupByIp();
+            
+        }
         
         public function addRow($phoneNumber) {
             $dto = $this->createDto();
