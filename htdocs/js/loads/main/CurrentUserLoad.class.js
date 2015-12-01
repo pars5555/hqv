@@ -27,6 +27,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
                 var args = this.getArgs();
                 if (args.status == 'error') {
                     $("#emergencyContainer").removeClass('hide');
+                    $("#emergencyCaptcha").attr('src', args.captcha);
                     return;
                 } else {
                     $("#ErrorMessage").text('');
@@ -41,12 +42,13 @@ NGS.createLoad("hqv.loads.main.current_user", {
     initEmergency: function () {
         $('#emergencyPhoneNumberSubmitBtn').click(function () {
             var phone = $('#emergencyPhoneNumber').val();
-            if (phone.trim()==='')
+            var captchaCode = $('#emergencyCaptchaCode').val();
+            if (phone.trim() === '' || captchaCode.trim() === '')
             {
                 return false;
             }
-            NGS.action('hqv.actions.main.add_emergency_phone', {phoneNumber: phone});
-            $("#emergencyContainer").addClass('hide');
+            NGS.action('hqv.actions.main.add_emergency_phone', {phoneNumber: phone, captchaCode: captchaCode});
+            
         });
 
 
@@ -54,10 +56,10 @@ NGS.createLoad("hqv.loads.main.current_user", {
     chooseAnswer: function () {
         $('#death_checkbox').click(function () {
             if ($(this).find('i.fa-check').hasClass('hide')) {
-                
+
                 $(this).find('i.fa-check').removeClass('hide');
                 $(this).find('i.fa-square-o').addClass('hide');
-                
+
                 $('.f_choose_btn').addClass('hide');
                 $('#deathAnswer').val(1);
 
@@ -65,7 +67,7 @@ NGS.createLoad("hqv.loads.main.current_user", {
             {
                 $(this).find('i.fa-check').addClass('hide');
                 $(this).find('i.fa-square-o').removeClass('hide');
-                
+
                 $('.f_choose_btn').removeClass('hide');
                 $('#deathAnswer').val(0);
 
@@ -81,8 +83,8 @@ NGS.createLoad("hqv.loads.main.current_user", {
                 $(this).find('i.fa-check').removeClass('hide');
                 $(this).find('i.fa-square-o').addClass('hide');
                 $("#" + answerId).val(answerVal);
-                $('.f_choose_btn[data-group=' + group + '][data-ans='+(answerVal=='0'?1:0)+']').find('i.fa-square-o').removeClass('hide');
-                $('.f_choose_btn[data-group=' + group + '][data-ans='+(answerVal=='0'?1:0)+']').find('i.fa-check').addClass('hide');
+                $('.f_choose_btn[data-group=' + group + '][data-ans=' + (answerVal == '0' ? 1 : 0) + ']').find('i.fa-square-o').removeClass('hide');
+                $('.f_choose_btn[data-group=' + group + '][data-ans=' + (answerVal == '0' ? 1 : 0) + ']').find('i.fa-check').addClass('hide');
                 // Make Sure that the other is unchecked
                 if ($('#inArmAnswer').val() === '0') {
                     $('#willVoteAnswerContainer').addClass('hide');

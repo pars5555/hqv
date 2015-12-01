@@ -3,6 +3,7 @@
 namespace hqv\actions {
 
     use hqv\managers\SettingManager;
+    use hqv\managers\TranslationManager;
     use hqv\security\RequestGroups;
     use ngs\framework\AbstractAction;
 
@@ -23,6 +24,10 @@ namespace hqv\actions {
 
         public function getSetting($varName) {
             return SettingManager::getInstance()->getSetting($varName);
+        }
+
+        public function getPhrase($id, $lang = null) {
+            return TranslationManager::getInstance()->getPhrase($id, $lang);
         }
 
     }

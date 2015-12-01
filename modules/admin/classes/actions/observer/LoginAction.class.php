@@ -16,7 +16,7 @@ namespace admin\actions\observer {
             if (!$observerDto) {
                 $ret = new stdClass();
                 $ret->status = 'error';
-                $ret->message = 'Wrong login/pass!';
+                $ret->message = 'Wrong login/password!';
                 echo json_encode($ret);
                 exit;
             }

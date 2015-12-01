@@ -29,10 +29,13 @@ use ngs\framework\templater\NgsTemplater;
                 list($hash, $email, $phone, $will_vote, $will_be_in_arm, $is_death, $ip_address, $country, $browser, $version, $os) = $validateData;
 
                 $rows = VoterDataManager::getInstance()->selectAdvance('*', ['ip_address', '=', "'$ip_address'"], ['datetime'], 'DESC');
-                if (!empty($rows) && count($rows) > 5) {
-                    $this->addParam('status', 'error');
+                if (!empty($rows) && count($rows) > 5) {                    
                     $this->addParam('status', 'error');
                     $supportPhoneNumber = $this->getSetting('support_phone_number');
+                    require_once NGS()->getClassesDir('ngs') . "/lib/captcha/simple-php-captcha.php";
+                    list($code, $base64Png) = generateCaptcha();
+                    $_SESSION['captcha_code']= $code;
+                    $this->addParam('captcha', 'data:image/png;base64,'.$base64Png);
                     $this->addParam('message', 'Sorry, you tried to vote for many peaple, please call us on ' . $supportPhoneNumber, ' for support.');
                     return;
                 }

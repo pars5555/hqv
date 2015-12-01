@@ -95,7 +95,8 @@ if (!function_exists('hex2rgb')) {
 }
 
 // Draw the image
-function generateCaptcha($captcha_config ) {
+function generateCaptcha( ) {
+    $captcha_config = getCaptchaConfig();
     // Pick random background, get info, and start captcha
     $background = $captcha_config['backgrounds'][mt_rand(0, count($captcha_config['backgrounds']) - 1)];
     list($bg_width, $bg_height, $bg_type, $bg_attr) = getimagesize($background);
@@ -148,5 +149,5 @@ function generateCaptcha($captcha_config ) {
     imagepng($captcha);
     $contents = ob_get_contents(); //Instead, output above is saved to $contents
     ob_end_clean(); //End the output buffer.
-    return $contents;
+    return [$captcha_config['code'],base64_encode($contents)];
 }
