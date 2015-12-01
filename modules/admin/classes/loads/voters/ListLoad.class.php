@@ -60,8 +60,8 @@ namespace admin\loads\voters {
                     $where [] = 'and';
                 }
                 $where [] = 'ip_address';
-                $where [] = '=';
-                $where [] = "'$ipAddress'";
+                $where [] = 'like';
+                $where [] = "'%$ipAddress'";
             }
             if (!empty(NGS()->args()->birthYear) && !empty(NGS()->args()->birthMonth) && !empty(NGS()->args()->birthDay)) {
                 $birthDate = intval(NGS()->args()->birthYear) . '-' . intval(NGS()->args()->birthMonth) . '-' . intval(NGS()->args()->birthDay);
