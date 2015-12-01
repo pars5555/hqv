@@ -19,6 +19,28 @@ namespace hqv\actions\main {
     class ConvertAction extends BaseAction {
 
         public function service() {
+            require_once NGS()->getClassesDir('ngs') . "/lib/captcha/simple-php-captcha.php";
+            $conf = getCaptchaConfig( array(
+    'min_length' => 5,
+    'max_length' => 5,
+    'backgrounds' => array('45-degree-fabric.png'),
+    'fonts' => array('times_new_yorker.ttf'),
+    'characters' => 'ABCDEFGHJKLMNPRSTUVWXYZabcdefghjkmnprstuvwxyz23456789',
+    'min_font_size' => 28,
+    'max_font_size' => 28,
+    'color' => '#666',
+    'angle_min' => 0,
+    'angle_max' => 10,
+    'shadow' => true,
+    'shadow_color' => '#fff',
+    'shadow_offset_x' => -1,
+    'shadow_offset_y' => 1
+));
+//var_dump($conf['code']);
+$a = generateCaptcha($conf);
+echo "<img src='data:image/png;base64,$a'/>";exit;
+
+            
             set_time_limit(500000);
             /* $fileContent = file_get_contents(NGS()->getRootDirByModule('ngs'). '/' .DATA_DIR . '/111.xml');
               for ($i=1;$i<=1984;$i++)
