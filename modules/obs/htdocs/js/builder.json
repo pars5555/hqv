@@ -1,0 +1,97 @@
+[
+  {
+    "output_file": "ngs.js",
+    "compress": true,
+    "builders": [
+      {
+        "output_file": "im_libs.js",
+        "compress": false,
+        "module": "hqv",
+        "files": [
+          "lib/jquery.js",
+          "lib/jquery-ui.js"
+        ]
+      },
+      {
+        "output_file": "ngs_framework.js",
+        "compress": false,
+        "module": "hqv",
+        "files": [
+          "framework/NGS.js",
+          "framework/Dispatcher.class.js",
+          "framework/AbstractLoad.class.js",
+          "framework/AbstractAction.class.js",
+          "framework/AjaxLoader.class.js",
+          "framework/CustomEvent.js",
+          "framework/NGSEvent.js"
+        ]
+      },
+      {
+        "output_file": "ngs_global.js",
+        "compress": false,
+        "module": "hqv",
+        "files": [
+          "index.js",
+          "conf/config.js"
+        ]
+      },
+      {
+        "output_file": "im_utils.js",
+        "compress": false,
+        "module": "hqv",
+        "files": [
+          "util/FileUtil.class.js",
+          "util/FormValidator.class.js",
+          "util/UrlObserver.class.js"
+        ]
+      }
+    ]
+  },
+  {
+    "output_file": "ngs_loads.js",
+    "compress": true,
+    "builders": [
+      {
+        "output_file": "ngs_loads_main.js",
+        "compress": false,
+        "files": [
+          "loads/IndexLoad.class.js",
+          "loads/LoginLoad.class.js",
+          "loads/HomeLoad.class.js"
+         
+        ]
+      }
+    ]
+  },
+  {
+    "output_file": "ngs_actions.js",
+    "compress": true,
+    "builders": [
+      {
+        "output_file": "ngs_actions_main.js",
+        "compress": false,
+        "files": [
+          "actions/SiteAction.class.js"
+         
+        ]
+      }
+    ]
+  },
+  {
+    "output_file": "ngs_managers.js",
+    "compress": true,
+    "builders": [
+      {
+        "output_file": "ngs_admin_managers.js",
+        "compress": false,
+        "files": [
+          "managers/DialogsManager.class.js",
+          "managers/RegisterPagesManager.class.js",
+          "managers/OrderingManager.class.js",
+          "managers/PagingManager.class.js",
+          "managers/UploadManager.class.js"
+        ]
+      }
+    ]
+  }
+]

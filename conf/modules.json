@@ -3,6 +3,9 @@
         "subdomain": {
             "admin": {
                 "dir": "admin"
+            },
+            "obs": {
+                "dir": "obs"
             }
         },
         "path": {},

@@ -1,0 +1,30 @@
+{
+    "login": [
+        {
+            "action": "loads.index",
+            "nestedLoad": {
+                "content": {
+                    "action": "loads.login"
+                }
+            }
+        }
+    ],
+    "home": [
+        {
+            "action": "loads.index",
+            "nestedLoad": {
+                "content": {
+                    "action": "loads.home"
+                }
+            }
+        }
+    ],
+     "default": {
+        "action": "loads.index",
+        "nestedLoad": {
+            "content": {
+                "action": "loads.home"
+            }
+        }
+    }
+}

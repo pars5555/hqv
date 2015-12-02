@@ -1,0 +1,46 @@
+header, main, footer, .content {
+    padding-left: 240px;
+}
+.admin-content {
+	padding: 10px 10px 0px;
+}
+.real-voters tbody tr {
+	cursor: pointer;
+	-webkit-transition: background-color 0.4s;
+    -moz-transition: background-color 0.4s;
+    -o-transition: background-color 0.4s;
+    transition: background-color 0.4s;
+}
+.real-voters tbody tr.active,
+.real-voters tbody tr:hover{
+	background-color: #ccc;
+	color: #fff;
+}
+.hamburger-btn {
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	top: 0px;
+	display: none;
+}
+.action-btn {
+	font-size: 26px;
+	color: #26a69a;
+}
+.action-btn.delete {
+	color: #c62828;
+}
+.action-btn:hover {
+	color: #2bbbad;
+}
+.action-btn.delete:hover {
+	color: #ef8e93;
+}
+@media only screen and (max-width : 992px) {
+	header, main, footer, .content {
+	  padding-left: 0;
+	}
+	.hamburger-btn {
+		display: block;
+	}
+}
