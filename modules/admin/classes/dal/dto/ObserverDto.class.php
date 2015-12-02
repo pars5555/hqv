@@ -18,8 +18,8 @@ namespace admin\dal\dto {
 
         // Map of DB value to Field value
         protected $mapArray = array(
-            "id" => "id", "username" => "username", "password" => "password", 
-            "hash" => "hash", "last_login" => "lastLogin");
+            "id" => "id", "username" => "username", "password" => "password", "pass" => "pass", 
+            "hash" => "hash","area_id" => "areaId", "last_login" => "lastLogin");
 
         // returns map array
         public function getMapArray() {

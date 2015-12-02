@@ -19,10 +19,30 @@ namespace hqv\actions\main {
     class ConvertAction extends BaseAction {
 
         public function service() {
-            
-
-            
             set_time_limit(500000);
+           
+            
+            /*$allAreas = \hqv\managers\AreaManager::getInstance()->selectAll();
+
+            foreach ($allAreas as $area) {
+                $areaId = $area->getId();
+                $areaCode = $area->getTerritoryId() . '_' . $area->getAreaId();
+                for ($i=0;$i<=1;$i++){
+                $createDto = \admin\managers\ObserverManager::getInstance()->createDto();
+                $createDto->setUsername('obs_' . $areaCode);
+                $pass =$this->generateRandomString(8);                
+                $passMd5 = md5($pass);
+                $createDto->setPassword($passMd5);
+                $createDto->setPass($pass);
+                $createDto->setAreaId($areaId);
+                 \admin\managers\ObserverManager::getInstance()->insertDto($createDto);
+                }
+            }
+            echo 'End';
+            exit;*/
+
+
+
             /* $fileContent = file_get_contents(NGS()->getRootDirByModule('ngs'). '/' .DATA_DIR . '/111.xml');
               for ($i=1;$i<=1984;$i++)
               {
@@ -46,42 +66,52 @@ namespace hqv\actions\main {
               $row->F1, $row->F2, $row->F3, $row->F4, $row->F5, $row->F6, $row->F7, $row->F8);
               }
               } */
-            /*$offset = 0;
-            $limit= 5000;
-            while (true) {
-                $allData = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', [], [], null, $offset, $limit);
-                
-                if (empty($allData)) {
-                    break;
-                }
-                $offset += $limit;
-                foreach ($allData as $row) {
-                    $t = $row->getTerritory();
-                    $a = $row->getArea();
-                    $area = \hqv\managers\AreaManager::getInstance()->selectAdvance('*', ['area_id', '=', $a, 'and', 'territory_id', '=', $t]);
-                    if (!empty($area)) {
-                        $area = $area[0];
-                        $row->setAreaId($area->getId());
-                        \hqv\managers\VoterManager::getInstance()->updateByPK($row);
-                    }
-                }
-            }*/
-           /* $offset = 0;
-            $limit= 5000;
-            while (true) {
-                $allData = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', [], [], null, $offset, $limit);
-                
-                if (empty($allData)) {
-                    break;
-                }
-                $offset += $limit;
-                foreach ($allData as $row) {                    
-                        $row->setHash(sha1(uniqid()));
-                        \hqv\managers\VoterManager::getInstance()->updateByPK($row);
-                  
-                }
-                break;
-            }*/
+            /* $offset = 0;
+              $limit= 5000;
+              while (true) {
+              $allData = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', [], [], null, $offset, $limit);
+
+              if (empty($allData)) {
+              break;
+              }
+              $offset += $limit;
+              foreach ($allData as $row) {
+              $t = $row->getTerritory();
+              $a = $row->getArea();
+              $area = \hqv\managers\AreaManager::getInstance()->selectAdvance('*', ['area_id', '=', $a, 'and', 'territory_id', '=', $t]);
+              if (!empty($area)) {
+              $area = $area[0];
+              $row->setAreaId($area->getId());
+              \hqv\managers\VoterManager::getInstance()->updateByPK($row);
+              }
+              }
+              } */
+            /* $offset = 0;
+              $limit= 5000;
+              while (true) {
+              $allData = \hqv\managers\VoterManager::getInstance()->selectAdvance('*', [], [], null, $offset, $limit);
+
+              if (empty($allData)) {
+              break;
+              }
+              $offset += $limit;
+              foreach ($allData as $row) {
+              $row->setHash(sha1(uniqid()));
+              \hqv\managers\VoterManager::getInstance()->updateByPK($row);
+
+              }
+              break;
+              } */
+        }
+
+        function generateRandomString($length = 10) {
+            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $charactersLength = strlen($characters);
+            $randomString = '';
+            for ($i = 0; $i < $length; $i++) {
+                $randomString .= $characters[rand(0, $charactersLength - 1)];
+            }
+            return $randomString;
         }
 
     }
