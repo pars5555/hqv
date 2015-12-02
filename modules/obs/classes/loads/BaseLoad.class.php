@@ -36,6 +36,20 @@ namespace obs\loads {
             return true;
         }
 
+        protected function initErrorMessages() {
+            if (isset($_SESSION['error_message'])) {
+                $this->addParam('error_message', $_SESSION['error_message']);
+                unset($_SESSION['error_message']);
+            }
+        }
+
+        protected function initSuccessMessages() {
+            if (isset($_SESSION['success_message'])) {
+                $this->addParam('success_message', $_SESSION['success_message']);
+                unset($_SESSION['success_message']);
+            }
+        }
+
         public function getSetting($varName) {
             return SettingManager::getInstance()->getSetting($varName);
         }

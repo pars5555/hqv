@@ -6,6 +6,6 @@ NGS.createLoad("obs.loads.home", {
 
     },
     afterLoad: function () {
-		
+        $('#numberInput').focus();
     }
 });

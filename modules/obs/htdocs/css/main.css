@@ -1,46 +1,217 @@
-header, main, footer, .content {
-    padding-left: 240px;
+*{
+    margin: auto;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    color:#333;
+    font-size: 20px;
+    text-align: center;
+}
+
+.wrapper,header, main, footer {
+    max-width: 480px;
+    margin: auto;
 }
 .admin-content {
-	padding: 10px 10px 0px;
+    padding: 10px 10px 0px;
 }
 .real-voters tbody tr {
-	cursor: pointer;
-	-webkit-transition: background-color 0.4s;
+    cursor: pointer;
+    -webkit-transition: background-color 0.4s;
     -moz-transition: background-color 0.4s;
     -o-transition: background-color 0.4s;
     transition: background-color 0.4s;
 }
 .real-voters tbody tr.active,
 .real-voters tbody tr:hover{
-	background-color: #ccc;
-	color: #fff;
+    background-color: #ccc;
+    color: #fff;
 }
 .hamburger-btn {
-	cursor: pointer;
-	position: absolute;
-	right: 10px;
-	top: 0px;
-	display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    display: none;
 }
 .action-btn {
-	font-size: 26px;
-	color: #26a69a;
+    font-size: 26px;
+    color: #26a69a;
 }
 .action-btn.delete {
-	color: #c62828;
+    color: #c62828;
 }
 .action-btn:hover {
-	color: #2bbbad;
+    color: #2bbbad;
 }
 .action-btn.delete:hover {
-	color: #ef8e93;
+    color: #ef8e93;
 }
+
+.site--logo{
+    display:block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.site--logo img{
+    display: inline-block;
+    max-height: 220px;
+}
+
+.login-form{
+    text-align: center;
+}
+
+.table{
+    display: table;
+    margin: auto;
+    text-align: left;
+}
+
+.table-row{
+    display: table-row;
+}
+
+.table-cell{
+    display: table-cell;
+    vertical-align: middle;
+    padding:5px;
+}
+
+form{
+    margin:20px auto;
+}
+
+.link{
+    text-decoration: underline;
+}
+.link:hover,.link:active{
+    color:#63b4fb;
+}
+
+
+.text{
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    font-size: 30px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.number{
+    text-align: center;
+    padding:20px 5px;
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+
+.button{
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    border-radius:5px;
+    border:1px solid #63b4fb;
+    padding: 10px;
+    margin:10px auto; 
+    font-size: 30px;
+    font-weight: 600;
+    background-color: #63b4fb;
+    color:#fff;
+    text-align: center;
+    cursor: pointer;
+    user-select:none;
+    text-decoration: none;
+}
+
+.button.small{
+    width: auto;
+    display: inline-block;
+    font-size: 22px;   
+    padding: 10px 15px; 
+}
+
+.button.gray{
+    background-color: #777;
+    border-color:#333;
+}
+
+.button.red{
+    background-color: #cc0000;
+    border-color:#aa0000;
+}
+
+.save{
+    padding: 20px;  
+    font-size: 30px;  
+    font-weight: 600;
+}
+
+.history{
+    display: inline-block;
+    width: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.logout{
+    display: inline-block;
+    width: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.main--title{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    padding-top:30px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.success{
+    color:#259601;
+    font-weight: 600;
+    margin: 10px auto;
+}
+
+.error{
+    color:#cc0000;
+    font-weight: 600;
+    margin: 10px auto;
+}
+
+.add-number-form{
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    text-align: center;
+
+    -webkit-transform: translate(0,-50%);
+    -moz-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+}
+
 @media only screen and (max-width : 992px) {
-	header, main, footer, .content {
-	  padding-left: 0;
-	}
-	.hamburger-btn {
-		display: block;
-	}
+    header, main, footer, .content {
+        padding-left: 0;
+    }
+    .hamburger-btn {
+        display: block;
+    }
 }

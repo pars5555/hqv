@@ -54,6 +54,23 @@ namespace admin\managers {
             return $this->updateByPk($dto);
         }
 
+        public function revertObserverLastInput($areaId) {
+            $dtos = $this->selectAdvance('*', ['area_id', '=', $areaId, 'and', 'moderator_id', '=', '0'], ['create_datetime'], 'DESC');
+            if (!empty($dtos)) {
+                $rowToBeDeleted = $dtos[0];
+                $createDatetime = $rowToBeDeleted->getCreateDatetime();
+                $currentDatetime = date('Y-m-d H:i:s');
+                $timeFirst = strtotime($currentDatetime);
+                $timeSecond = strtotime($createDatetime);
+                $deltaSeconds = $timeFirst - $timeSecond;
+                if ($deltaSeconds <= 15) {
+                    $this->deleteByPK($rowToBeDeleted->getId());
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public function addRow($voterNumberInArea, $moderatorId, $areaId) {
             $dto = $this->createDto();
             $dto->setAreaVoterId($voterNumberInArea);

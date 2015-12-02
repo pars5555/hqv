@@ -21,6 +21,7 @@ namespace obs\loads {
     class LoginLoad extends BaseLoad {
 
         public function load() {
+             $this->initErrorMessages();
             $userType = NGS()->getSessionManager()->getUserType();
             if (isset($userType) && $userType == UserGroups::$OBSERVER) {
                 $this->redirect('');

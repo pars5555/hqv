@@ -29,7 +29,7 @@ namespace obs\managers {
         private $user = null;
 
         public function __construct() {
-            
+            session_start();
         }
 
         /**

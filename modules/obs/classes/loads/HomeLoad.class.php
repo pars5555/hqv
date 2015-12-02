@@ -22,6 +22,12 @@ namespace obs\loads {
     class HomeLoad extends ObserverLoad {
 
         public function load() {
+            $this->initErrorMessages();
+            $this->initSuccessMessages();
+            if (isset($_SESSION['can_revert']) && $_SESSION['can_revert'] == 1)
+            {
+                $this->addParam('can_revert', 1);
+            }
         }
 
         public function getTemplate() {

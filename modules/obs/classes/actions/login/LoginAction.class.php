@@ -13,6 +13,7 @@ namespace obs\actions\login {
         public function service() {
             $observerDto = ObserverManager::getInstance()->getByUsernamePassword(NGS()->args()->getUsername(), NGS()->args()->getPassword());
             if (!$observerDto) {
+                $_SESSION['error_message'] = "Wrong login/password";
                 $this->redirect('login');
             }
             NGS()->getSessionManager()->login(UserGroups::$OBSERVER, $observerDto->getId());
