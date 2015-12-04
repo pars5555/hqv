@@ -10,7 +10,7 @@
 </div>
 <div class="admin-content">
     <div class="row">
-        <div class="col s12 m6 6 offset-m3" id="realVoterAddEditForm">
+        <div class="col s16 m8 8 offset-m0" id="realVoterAddEditForm">
             <form id="addRealVoterNumberForm" autocomplete="off">
                 <div class="row" id='addRealVoterAreaSelectionContainer'>
                     {nest ns=area}

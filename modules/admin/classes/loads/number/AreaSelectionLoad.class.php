@@ -56,7 +56,7 @@ namespace admin\loads\number {
                 }
             }
 
-            $areasMappedById = AreaManager::getInstance()->getByRegionAndCommunity($selectedRegion , $selectedRegionCommunity);
+            $areasMappedById = AreaManager::getInstance()->getByRegionAndCommunity($selectedRegion, $selectedRegionCommunity);
             if (!isset($selectedAreaId)) {
                 $areaIds = array_keys($areasMappedById);
                 reset($areaIds);
@@ -66,15 +66,15 @@ namespace admin\loads\number {
                 }
             }
 
-
-            $this->addParam('selectedRegion',  $selectedRegion);
-            $this->addParam('selectedRegionCommunity',  $selectedRegionCommunity);
-            $this->addParam('selectedAreaId',  $selectedAreaId);
-            $this->addParam('regions',  $regionNamesArray);
-            $this->addParam('regionCommunities',  $regionCommunities);
-            $this->addParam('areas',  $areasMappedById
-
-                );
+            $allAreas = AreaManager::getInstance()->selectAll();
+            $this->addParam('all_areas', $allAreas);
+            $this->addParam('selectedRegion', $selectedRegion);
+            $this->addParam('selectedRegionCommunity', $selectedRegionCommunity);
+            $this->addParam('selectedAreaId', $selectedAreaId);
+            $this->addParam('regions', $regionNamesArray);
+            $this->addParam('regionCommunities', $regionCommunities);
+            $this->addParam('areas', $areasMappedById
+            );
         }
 
         public function getTemplate() {

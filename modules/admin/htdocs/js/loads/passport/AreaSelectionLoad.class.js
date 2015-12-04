@@ -5,7 +5,7 @@ NGS.createLoad("admin.loads.passport.area_selection", {
     onError: function (params) {
     },
     afterLoad: function () {
-         this.initAreaSelection();
+        this.initAreaSelection();
     },
     initAreaSelection: function () {
         $('#p_region').change(function () {
@@ -17,5 +17,17 @@ NGS.createLoad("admin.loads.passport.area_selection", {
             var selectedRegionCommunity = $('#p_community').val();
             NGS.load('admin.loads.passport.area_selection', {selectedRegion: selectedRegion, selectedRegionCommunity: selectedRegionCommunity});
         });
-    },
+        $('#p_address').change(function () {
+            var selectedRegion = $('#p_region').val();
+            var selectedRegionCommunity = $('#p_community').val();
+            var selectedAreaId = $('#p_address').val();
+            NGS.load('admin.loads.number.area_selection', {selectedRegion: selectedRegion, selectedRegionCommunity: selectedRegionCommunity, selectedAreaId: selectedAreaId});
+        });
+        $('#p_area').change(function () {
+            var selectedRegion = $('#p_area').find(':selected').data('region');
+            var selectedRegionCommunity = $('#p_area').find(':selected').data('community');
+            var selectedAreaId = $('#p_area').val();
+            NGS.load('admin.loads.passport.area_selection', {selectedRegion: selectedRegion, selectedRegionCommunity: selectedRegionCommunity, selectedAreaId: selectedAreaId});
+        });
+    }
 });

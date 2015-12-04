@@ -38,6 +38,9 @@
             <li id="sidebar_snippets_li">
                 <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='snippets.index'><i class="material-icons left">perm_media</i>Snippets</a>
             </li>
+            <li id="sidebar_observer_li">
+                <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='observer.index'><i class="material-icons left">perm_media</i>Observers</a>
+            </li>
         {/if}
         <li id="sidebar_emergency_li">
             <a class="waves-effect waves-light btn-flat le sidebar" data-loadname='emergency.index'><i class="material-icons left">perm_media</i>Emergency Call</a>

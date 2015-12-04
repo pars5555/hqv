@@ -37,6 +37,8 @@ namespace hqv\dal\dto {
             "area_id" => "areaId",
             "invalid" => "invalid",
             "invalid_note" => "invalidNote",
+            "cut" => "cut",
+            "additional_voter_id" => "additionalVoterId",
             "hash" => "hash"
             );
 

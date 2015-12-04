@@ -41,6 +41,7 @@ namespace hqv\dal\dto {
             "territory_id" => "territoryId",
             "area_id" => "areaId",
             "area" => "area",
+            "voter_id" => "voterId",
             "note" => "note"
             );
 

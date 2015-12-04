@@ -61,6 +61,7 @@
           "loads/dashboard/IndexLoad.class.js",
           "loads/snippets/IndexLoad.class.js",
           "loads/emergency/IndexLoad.class.js",
+          "loads/observer/IndexLoad.class.js",
           "loads/dashboard/AreaSelectionLoad.class.js",
           "loads/dashboard/AreaStatisticsLoad.class.js",
           "loads/dashboard/StatisticsLoad.class.js",
@@ -110,7 +111,8 @@
           "actions/prevote/DeleteAction.class.js",
           "actions/prevote/AddDataAction.class.js",
           "actions/emergency/SetDoneAction.class.js",
-          "actions/emergency/SetNoteAction.class.js"
+          "actions/emergency/SetNoteAction.class.js",
+          "actions/observer/ResetAction.class.js"
         ]
       }
     ]

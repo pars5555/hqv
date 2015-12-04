@@ -63,10 +63,10 @@ namespace hqv\managers {
         }
 
         public function getByRegionAndCommunity($region, $community) {
-            $communityPlaces = $this->selectAdvance('*', ['region', '=', "'$region'", 'and', 'community', '=', "'$community'"], ['address']);
+            $communityPlaces = $this->selectAdvance('*', ['region', '=', "'$region'", 'and', 'community', '=', "'$community'"], ['territory_id', 'area_id']);
             $ret = [];
             foreach ($communityPlaces as $row) {
-                $ret[$row->getId()] = $row->getAddress()."(".$row->getTerritoryId()."/".$row->getAreaId().")";
+                $ret[$row->getId()] = "(".$row->getTerritoryId()."/".$row->getAreaId().") ". $row->getAddress();
             }
             return $ret;
         }

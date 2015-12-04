@@ -65,8 +65,9 @@ namespace admin\loads\passport {
                     $selectedAreaId = NGS()->args()->selectedAreaId;
                 }
             }
-
-
+            
+            $allAreas = AreaManager::getInstance()->selectAll();
+            $this->addParam('all_areas', $allAreas);
             $this->addParam('selectedRegion', $selectedRegion);
             $this->addParam('selectedRegionCommunity', $selectedRegionCommunity);
             $this->addParam('selectedAreaId', $selectedAreaId);
