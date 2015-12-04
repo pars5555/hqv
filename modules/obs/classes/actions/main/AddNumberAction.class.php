@@ -3,7 +3,7 @@
 namespace obs\actions\main {
 
 use admin\managers\ObserverManager;
-use admin\managers\RealVoterNumberManager;
+use admin\managers\RealVoterNumberTmpManager;
 use hqv\managers\VoterManager;
 use NGS;
 use ngs\framework\AbstractAction;
@@ -20,8 +20,8 @@ use obs\security\RequestGroups;
             $userId = NGS()->getSessionManager()->getUserId();
             $observerDto = ObserverManager::getInstance()->selectByPK($userId);
             $areaId = $observerDto->getAreaId();
-            $rowId = RealVoterNumberManager::getInstance()->addRow($number, 0, $areaId);
-            $dto = RealVoterNumberManager::getInstance()->selectByPK($rowId);
+            $rowId = RealVoterNumberTmpManager::getInstance()->addRow($number, $userId, $areaId);
+            $dto = RealVoterNumberTmpManager::getInstance()->selectByPK($rowId);
             $voterId = $dto->getVoterId();
             
             $_SESSION['can_revert'] = 1; 

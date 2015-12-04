@@ -2,6 +2,7 @@
 
 namespace obs\actions\login {
 
+    use admin\managers\ObserverManager;
     use NGS;
     use ngs\framework\AbstractAction;
     use obs\security\RequestGroups;
@@ -12,6 +13,7 @@ namespace obs\actions\login {
     class LogoutAction extends AbstractAction {
 
         public function service() {
+            ObserverManager::getInstance()->updateField(NGS()->getSessionManager()->getUserID(), 'hash', '');
             NGS()->getSessionManager()->logout();
             $this->redirect('login');
         }

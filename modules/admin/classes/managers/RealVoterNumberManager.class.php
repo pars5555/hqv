@@ -71,11 +71,23 @@ namespace admin\managers {
             return false;
         }
 
+        public function addRowForObserver($voterNumberInArea, $voterId, $areaId, $observersIds, $datetime) {
+            $dto = $this->createDto();
+            $dto->setAreaVoterId($voterNumberInArea);
+            $dto->setModeratorId(0);
+            $dto->setObserversIds($observersIds);
+            $dto->setAreaId($areaId);
+            $dto->setVoterId($voterId);
+            $dto->setCreateDatetime($datetime);
+            return $this->insertDto($dto);
+        }
+        
         public function addRow($voterNumberInArea, $moderatorId, $areaId) {
             $dto = $this->createDto();
             $dto->setAreaVoterId($voterNumberInArea);
             $dto->setCreateDatetime(date('Y-m-d H:i:s'));
             $dto->setModeratorId($moderatorId);
+            $dto->setObserversIds($observersIds);
             $dto->setAreaId($areaId);
             $listVoters = VoterManager::getInstance()->selectAdvance('*', ['area_id', '=', $areaId, 'and', 'number', '=', $voterNumberInArea]);
             if (!empty($listVoters) && count($listVoters) === 1) {

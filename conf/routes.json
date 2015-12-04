@@ -36,6 +36,10 @@
             "route": "sync_prevote_data"
         },
         {
+            "action": "actions.cron.sync_real_voter_numbers_data",
+            "route": "sync_real_voter_numbers_data"
+        },
+        {
             "default": "dyn"
         }
     ],
