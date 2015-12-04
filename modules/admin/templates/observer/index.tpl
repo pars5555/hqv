@@ -28,7 +28,8 @@
 
 
                 <td>
-                    {if !empty($row->getHash())}
+                    {assign hash $row->getHash()}
+                    {if !empty($hash)}
                         <a href="javascript:void(0);" data-rowid="{$row->getId()}" class="btn resetObserverBtn">Reset</a>
                     {/if}
                 </td>
