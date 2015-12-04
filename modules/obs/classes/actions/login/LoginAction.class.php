@@ -16,6 +16,11 @@ namespace obs\actions\login {
                 $_SESSION['error_message'] = "Wrong login/password";
                 $this->redirect('login');
             }
+            $hash = $observerDto->getHash();
+            if (!empty($hash)) {
+                $_SESSION['error_message'] = "Account currenctly is in used!";
+                $this->redirect('login');
+            }
             NGS()->getSessionManager()->login(UserGroups::$OBSERVER, $observerDto->getId());
             $this->redirect('');
         }
