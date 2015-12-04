@@ -15,31 +15,50 @@
 namespace hqv\actions\main {
 
     use hqv\actions\BaseAction;
+    use hqv\managers\AdditionalVoterManager;
+    use hqv\managers\AreaManager;
 
     class ConvertAction extends BaseAction {
 
         public function service() {
             set_time_limit(500000);
-           
-            
-            /*$allAreas = \hqv\managers\AreaManager::getInstance()->selectAll();
-
-            foreach ($allAreas as $area) {
-                $areaId = $area->getId();
-                $areaCode = $area->getTerritoryId() . '_' . $area->getAreaId();
-                for ($i=0;$i<=1;$i++){
-                $createDto = \admin\managers\ObserverManager::getInstance()->createDto();
-                $createDto->setUsername('obs_' . $areaCode);
-                $pass =$this->generateRandomString(8);                
-                $passMd5 = md5($pass);
-                $createDto->setPassword($passMd5);
-                $createDto->setPass($pass);
-                $createDto->setAreaId($areaId);
-                 \admin\managers\ObserverManager::getInstance()->insertDto($createDto);
+/*
+            $offset = 0;
+            $limit = 5000;
+            while (true) {
+                $allData = AdditionalVoterManager::getInstance()->selectAdvance('*', [], [], null, $offset, $limit);
+                if (empty($allData)) {
+                    break;
+                }
+                $offset += $limit;
+                foreach ($allData as $row) {
+                    $bd = $row->getBd();
+                    $bdArray = explode('/', $bd);
+                    $birthDate = $bdArray [2].'-'.$bdArray [1].'-'.$bdArray [0];
+                    $row->setBirthDate($birthDate);
+                    AdditionalVoterManager::getInstance()->updateByPK($row);
                 }
             }
-            echo 'End';
             exit;*/
+
+            /* $allAreas = \hqv\managers\AreaManager::getInstance()->selectAll();
+
+              foreach ($allAreas as $area) {
+              $areaId = $area->getId();
+              $areaCode = $area->getTerritoryId() . '_' . $area->getAreaId();
+              for ($i=0;$i<=1;$i++){
+              $createDto = \admin\managers\ObserverManager::getInstance()->createDto();
+              $createDto->setUsername('obs_' . $areaCode);
+              $pass =$this->generateRandomString(8);
+              $passMd5 = md5($pass);
+              $createDto->setPassword($passMd5);
+              $createDto->setPass($pass);
+              $createDto->setAreaId($areaId);
+              \admin\managers\ObserverManager::getInstance()->insertDto($createDto);
+              }
+              }
+              echo 'End';
+              exit; */
 
 
 
@@ -117,3 +136,4 @@ namespace hqv\actions\main {
     }
 
 }
+    
