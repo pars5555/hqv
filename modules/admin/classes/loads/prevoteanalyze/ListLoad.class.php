@@ -47,6 +47,9 @@ namespace admin\loads\prevoteanalyze {
 
             $count = VoterDataManager::getInstance()->getDuplicatedOrDeathDataCount();
             $pageCount = ceil($count / $limit);
+            if ($count == 0) {
+                $pageCount = 1;
+            }
             $this->addParam('pageCount', $pageCount);
             $this->addParam('rows', $duplicatedOrDeathVoters);
             $this->addParam('voters', $voters);

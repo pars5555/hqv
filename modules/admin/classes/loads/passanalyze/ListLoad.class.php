@@ -52,6 +52,9 @@ namespace admin\loads\passanalyze {
 
             $count = AnalyzeManager::getInstance()->getDuplicatedPassportRealVotersCount();
             $pageCount = ceil($count / $limit);
+            if ($count == 0) {
+                $pageCount = 1;
+            }
             $this->addParam('pageCount', $pageCount);
             $this->addParam('rows', $duplicatedRealVoters);
             $this->addParam('voters', $voters);

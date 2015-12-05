@@ -16,14 +16,15 @@
             <option value="500" {if $ns.limit==500}selected{/if}>500</option>
         </select>
     </div>
-</div>
+</div>        
 <table class="responsive-table real-voters">
     <thead>
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Father Price</th>
+            <th>Father Name</th>
             <th>Birth Date</th>
+            <th>Document</th>
             <th>In List</th>
             <th>In Area List</th>
             <th>Duplication</th>
@@ -36,21 +37,24 @@
         {foreach from=$ns.rows item=row}
             {if $row->getVoterId()>0}
                 {assign voter $ns.voters[$row->getVoterId()]}
+            {else}
+                {assign voter 0}
             {/if}
             <tr data-rowid="{$row->getId()}">
                 <td>{$row->getFirstName()}</td>
                 <td>{$row->getLastName()}</td>
                 <td>{$row->getFatherName()}</td>
                 <td>{$row->getBirthDate()}</td>
-                <td>{if $row->getVoterId()>0}ok{else}error{/if}</td>
-                <td>{if $row->getVoterId()>0 && $voter ->getAreaId() == $row->getVoterId()}ok{else}error{/if}</td>
-                <td>{if $row->getVoterId()>0 && isset($ns.duplicatedInListMappedByVoterId[$row->getVoterId()])}error{else}ok{/if}</td>
+                <td>{$row->getPassportType()}</td>
+                <td>{if $row->getVoterId()>0}<i class="fa fa-check action-btn"></i>{else}<i class="fa fa-close action-btn delete"></i>{/if}</td>
+                <td>{if $row->getInAreaList()}<i class="fa fa-check action-btn"></i>{else}<i class="fa fa-close action-btn delete"></i>{/if}</td>
+                <td>{if in_array($row->getId(), $ns.duplicatedInListMappedById)}<i class="fa fa-close action-btn delete"></i>{else}<i class="fa fa-check action-btn"></i>{/if}</td>
                 <td>
                     {if !isset($ns.preVoteData[$row->getVoterId()])}-{else}
                         {if $ns.preVoteData[$row->getVoterId()]->getWillVote()==1}
-                            OK
+                           <i class="fa fa-check action-btn"></i>
                         {else}
-                            Error
+                            <i class="fa fa-close action-btn delete"></i>
                         {/if}
                     {/if}</td>
                 <td>
@@ -67,15 +71,9 @@
                 </td>
                 <td>
                     <a data-rowid="{$row->getId()}" class="f_edit waves-effect waves-light btn">Edit<i class="material-icons left">mode_edit</i></a>
+                    <a data-rowid="{$row->getId()}" class="f_delete waves-effect waves-light btn">Delete<i class="material-icons left">mode_delete</i></a>
                 </td>
-                <td>
-                    <a href="">
-                        <i class="fa fa-check action-btn"></i>
-                    </a>
-                    <a href="">
-                        <i class="fa fa-close action-btn delete"></i>
-                    </a>
-                </td>
+               
             </tr>
         {/foreach}
     </tbody>
@@ -94,6 +92,15 @@
     </div>
     <div class="modal-footer">
         <a href="#!" id="setInvalidBtn" class="modal-action waves-effect btn" style="margin-left:10px;">Confirm</a>
+        <a href="#!" class="modal-action modal-close waves-effect btn">Cancel</a>
+    </div>
+</div>
+    <div id="caseDeleteModel" class="modal">
+    <div class="modal-content">
+        <h4>Why do you want to delete?</h4>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" id="deleteBtn" class="modal-action waves-effect btn" style="margin-left:10px;">Confirm</a>
         <a href="#!" class="modal-action modal-close waves-effect btn">Cancel</a>
     </div>
 </div>

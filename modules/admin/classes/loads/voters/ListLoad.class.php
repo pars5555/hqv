@@ -77,6 +77,9 @@ namespace admin\loads\voters {
             $voterIdsArray = $this->getVoterIdsArray($rows);
             $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
             $pageCount = ceil($count / $limit);
+            if ($count == 0) {
+                $pageCount = 1;
+            }
             $this->addParam('pageCount', $pageCount);
             $this->addParam('rows', $rows);
             $this->addParam('voters', $voters);
