@@ -18,7 +18,8 @@ namespace admin\actions\passport {
                 return;
             }
             list($firstName, $lastName, $fatherName, $birthYear, $birthMonth, $birthDay, $rowId, $areaId, $passportType) = $validateFields;
-            $where = ['first_name', '=', "'$firstName'", 'and', 'last_name', '=', "'$lastName'", 'and', 'area_id', '=', $areaId];
+            $where = ['first_name', 'like', "'$firstName%'", 'and', 'last_name', 'like', "'$lastName%'", 'and', 'area_id', '=', $areaId];
+            
             if (!empty($fatherName)) {
                 $where[] = 'and';
                 $where[] = 'father_name';
