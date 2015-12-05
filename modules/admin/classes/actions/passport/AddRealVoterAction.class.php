@@ -46,7 +46,7 @@ namespace admin\actions\passport {
             $moderatorId = NGS()->getSessionManager()->getUserId();
             $rows = VoterManager::getInstance()->selectAdvance('*', $where);
             $voter = false;
-            if (!empty($rows) && count($rows) === 1) {
+            if (!empty($rows)) {
                 $voter = $rows[0];
             }
 
@@ -85,6 +85,7 @@ namespace admin\actions\passport {
                 $where[] = "'$birthDay'";
             }
             $rows = VoterManager::getInstance()->selectAdvance('*', $where);
+            
             $voter = false;
             if (!empty($rows) && count($rows) === 1) {
                 $voter = $rows[0];
