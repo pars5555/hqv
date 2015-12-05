@@ -25,7 +25,7 @@
             <th>Father Name</th>
             <th>Birth Date</th>
             <th>Vote Count</th>
-            <th>In Death</th>
+            <th>Is Death</th>
         </tr>
     </thead>
     <tbody id="real_duplicated_voters_table">
