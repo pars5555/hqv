@@ -9,9 +9,11 @@ NGS.createLoad("obs.loads.home", {
         $('#numberInput').focus();
         $('#addForm').submit(function(){
             $('#submitButton').css({'visibility':'hidden'});
+            $('#revertButton').css({'visibility':'hidden'});
         });
         $('#revertButton').click(function(){
-            $(this).css({'visibility':'hidden'});
+            $('#submitButton').css({'visibility':'hidden'});
+            $('#revertButton').css({'visibility':'hidden'});
         });
     }
 });
