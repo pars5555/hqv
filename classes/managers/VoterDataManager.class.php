@@ -88,7 +88,9 @@ namespace hqv\managers {
             $dto = $this->createDto();
             $dto->setId($id);
             $dto->setOldVoterId($voterId);
+            if ($voterId>0){
             $newVoterId = $this->getVoterIdFromOldVoterId($voterId);
+            }
             $dto->setVoterId($newVoterId);
             $dto->setEmail($email);
             $dto->setPhone($phone);
