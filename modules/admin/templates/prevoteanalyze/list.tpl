@@ -29,28 +29,30 @@
         </tr>
     </thead>
     <tbody id="real_duplicated_voters_table">
-        
+
         {foreach from=$ns.rows item=row}
             {if $row->getVoterId()>0}
                 {assign voter $ns.voters[$row->getVoterId()]}
             {else}
                 {assign voter 0}
             {/if}
-            <tr data-rowids="{$row->getDuplicationIds()}">
-                <td>{$voter->getFirstName()}</td>
-                <td>{$voter->getLastName()}</td>
-                <td>{$voter->getFatherName()}</td>
-                <td>{$voter->getBirthDate()}</td>
-                <td>{$row->getVoteCount()}</td>
-                <td>
-                    {if $row->getIsDeath() ==1}
-                        <i class="fa fa-close action-btn delete"></i>
-                    {else}
-                        <i class="fa fa-check action-btn"></i>
-                    {/if}
-                </td>
+            {if $voter !==0}
+                <tr data-rowids="{$row->getDuplicationIds()}">
+                    <td>{$voter->getFirstName()}</td>
+                    <td>{$voter->getLastName()}</td>
+                    <td>{$voter->getFatherName()}</td>
+                    <td>{$voter->getBirthDate()}</td>
+                    <td>{$row->getVoteCount()}</td>
+                    <td>
+                        {if $row->getIsDeath() ==1}
+                            <i class="fa fa-close action-btn delete"></i>
+                        {else}
+                            <i class="fa fa-check action-btn"></i>
+                        {/if}
+                    </td>
 
-            </tr>
+                </tr>
+            {/if}
         {/foreach}
     </tbody>
 </table> 
