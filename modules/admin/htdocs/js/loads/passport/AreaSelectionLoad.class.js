@@ -21,7 +21,7 @@ NGS.createLoad("admin.loads.passport.area_selection", {
             var selectedRegion = $('#p_region').val();
             var selectedRegionCommunity = $('#p_community').val();
             var selectedAreaId = $('#p_address').val();
-            NGS.load('admin.loads.number.area_selection', {selectedRegion: selectedRegion, selectedRegionCommunity: selectedRegionCommunity, selectedAreaId: selectedAreaId});
+            NGS.load('admin.loads.passport.area_selection', {selectedRegion: selectedRegion, selectedRegionCommunity: selectedRegionCommunity, selectedAreaId: selectedAreaId});
         });
         $('#p_area').change(function () {
             var selectedRegion = $('#p_area').find(':selected').data('region');
