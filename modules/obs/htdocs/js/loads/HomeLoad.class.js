@@ -7,5 +7,11 @@ NGS.createLoad("obs.loads.home", {
     },
     afterLoad: function () {
         $('#numberInput').focus();
+        $('#addForm').submit(function(){
+            $('#submitButton').css({'visibility':'hidden'});
+        });
+        $('#revertButton').click(function(){
+            $(this).css({'visibility':'hidden'});
+        });
     }
 });

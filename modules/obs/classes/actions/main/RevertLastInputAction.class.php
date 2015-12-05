@@ -3,7 +3,7 @@
 namespace obs\actions\main {
 
     use admin\managers\ObserverManager;
-    use admin\managers\RealVoterNumberManager;
+    use admin\managers\RealVoterNumberTmpManager;
     use NGS;
     use ngs\framework\AbstractAction;
     use obs\security\RequestGroups;
@@ -15,9 +15,10 @@ namespace obs\actions\main {
             $userId = NGS()->getSessionManager()->getUserId();
             $observerDto = ObserverManager::getInstance()->selectByPK($userId);
             $areaId = $observerDto->getAreaId();
-            $ret= RealVoterNumberManager::getInstance()->revertObserverLastInput($areaId );
-            if (!$ret)
-            {
+            $observerId = NGS()->getSessionManager()->getUserId();
+            
+            $ret = RealVoterNumberTmpManager::getInstance()->revertObserverLastInput($areaId , $observerId);
+            if (!$ret) {
                 $_SESSION['error_message'] = "You can not revert!";
             }
             $this->redirect('');

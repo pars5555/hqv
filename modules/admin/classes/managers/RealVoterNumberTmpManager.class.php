@@ -38,7 +38,7 @@ namespace admin\managers {
         }
 
         public function revertObserverLastInput($areaId, $observerId) {
-            $dtos = $this->selectAdvance('*', ['area_id', '=', $areaId, 'and', 'observer_id', '=', $observerId, 'and', 'moderator_id', '=', '0'], ['create_datetime'], 'DESC');
+            $dtos = $this->selectAdvance('*', ['area_id', '=', $areaId, 'and', 'observer_id', '=', $observerId], ['create_datetime'], 'DESC');
             if (!empty($dtos)) {
                 $rowToBeDeleted = $dtos[0];
                 $createDatetime = $rowToBeDeleted->getCreateDatetime();
