@@ -27,9 +27,9 @@ namespace admin\loads\passport {
             $firstName = "";
             $lastName = "";
             $fatherName = "";
-            $birthYear = 1950;
-            $birthMonth = 1;
-            $birthDay = 1;
+            $birthYear = 0;
+            $birthMonth = 0;
+            $birthDay = 0;
             $passportType = 'passport';
             if (isset(NGS()->args()->rowId)) {
                 $realVoter = RealVoterPassportManager::getInstance()->selectByPK(NGS()->args()->rowId);

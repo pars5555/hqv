@@ -37,15 +37,7 @@ namespace admin\managers {
             return self::$instance;
         }
 
-        public function editRow($id, $firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId, $passportType) {
-            $firstName = $this->mb_ucfirst($firstName);
-            $lastName = $this->mb_ucfirst($lastName);
-            $fatherName = $this->mb_ucfirst($fatherName);
-               
-            $firstName = str_replace('և', 'եւ', $firstName);$firstName = str_replace('եվ', 'եւ', $firstName);$firstName = str_replace('Եվ', 'Եւ', $firstName);
-             $lastName = str_replace('և', 'եւ', $lastName);$lastName = str_replace('եվ', 'եւ', $lastName);$lastName = str_replace('Եվ', 'Եւ', $lastName);
-             $fatherName = str_replace('և', 'եւ', $fatherName);$fatherName = str_replace('եվ', 'եւ', $fatherName);$fatherName = str_replace('Եվ', 'Եւ', $fatherName);
-          
+        public function editRow($voterId, $inArea, $id, $firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId, $passportType) {
             $dto = $this->selectByPK($id);
             $dto->setFirstName($firstName);
             $dto->setLastName($lastName);
@@ -53,39 +45,13 @@ namespace admin\managers {
             $dto->setBirthDate($birthDate);
             $dto->setPassportType($passportType);
             $dto->setChangeDatetime(date('Y-m-d H:i:s'));
-            //$dto->setModeratorId($moderatorId);
             $dto->setAreaId($areaId);
-            
-            $where = ['birth_date', '=', "'$birthDate'", 'and', 'first_name', '=', "'$firstName'", 'and',
-                'last_name', '=', "'$lastName'"];
-            if (!empty($fatherName)) {
-                $where [] = 'and';
-                $where [] = 'father_name';
-                $where [] = '=';
-                $where [] = "'$fatherName'";
-            }
-            $listVoters = VoterManager::getInstance()->selectAdvance('*', $where);
-            if (!empty($listVoters) && count($listVoters) === 1) {
-                $voter = $listVoters[0];
-                $dto->setVoterId($voter->getId());
-                $dto->setFatherName($voter->getFatherName());
-                $dto->setInAreaList($voter->getAreaId() == $areaId ? 1 : 0 );
-            } else {
-                $dto->setVoterId(0);
-                $dto->setInAreaList(0);
-            }
-
+            $dto->setVoterId($voterId);
+            $dto->setInAreaList($inArea);
             return $this->updateByPk($dto);
         }
 
-        public function addRow($firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId, $passportType) {
-            $firstName = $this->mb_ucfirst($firstName);
-            $lastName = $this->mb_ucfirst($lastName);
-            $fatherName = $this->mb_ucfirst($fatherName);
-            $firstName = str_replace('և', 'եւ', $firstName);$firstName = str_replace('եվ', 'եւ', $firstName);$firstName = str_replace('Եվ', 'Եւ', $firstName);
-             $lastName = str_replace('և', 'եւ', $lastName);$lastName = str_replace('եվ', 'եւ', $lastName);$lastName = str_replace('Եվ', 'Եւ', $lastName);
-             $fatherName = str_replace('և', 'եւ', $fatherName);$fatherName = str_replace('եվ', 'եւ', $fatherName);$fatherName = str_replace('Եվ', 'Եւ', $fatherName);
-                        
+        public function addRow($voterId, $inArea, $firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId, $passportType) {
             $dto = $this->createDto();
             $dto->setFirstName($firstName);
             $dto->setLastName($lastName);
@@ -95,27 +61,8 @@ namespace admin\managers {
             $dto->setCreateDatetime(date('Y-m-d H:i:s'));
             $dto->setModeratorId($moderatorId);
             $dto->setAreaId($areaId);
-            
-
-            $where = ['birth_date', '=', "'$birthDate'", 'and', 'first_name', '=', "'$firstName'", 'and',
-                'last_name', '=', "'$lastName'"];
-            if (!empty($fatherName)) {
-                $where [] = 'and';
-                $where [] = 'father_name';
-                $where [] = '=';
-                $where [] = "'$fatherName'";
-            }
-            $listVoters = VoterManager::getInstance()->selectAdvance('*', $where);
-            if (!empty($listVoters) && count($listVoters) === 1) {
-                $voter = $listVoters[0];
-                $dto->setVoterId($voter->getId());
-                $dto->setFatherName($voter->getFatherName());
-                $dto->setInAreaList($voter->getAreaId() == $areaId ? 1 : 0 );
-            } else {
-                $dto->setVoterId(0);
-                $dto->setInAreaList(0);
-            }
-
+            $dto->setVoterId($voterId);
+            $dto->setInAreaList($inArea);
             return $this->insertDto($dto);
         }
 

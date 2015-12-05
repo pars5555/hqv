@@ -37,7 +37,6 @@ namespace admin\loads\passanalyze {
                     if (!empty($prevoteData)) {
                         $this->addParam('prevoteData', $prevoteData);
                     }
-
                     $voter = VoterManager::getInstance()->selectByPK($voterId);
                     $areaId = $voter->getAreaId();
                     $area = AreaManager::getInstance()->selectByPK($areaId);
@@ -60,7 +59,9 @@ namespace admin\loads\passanalyze {
         public function getAreaIdsArray($duplidatedRows) {
             $ret = [];
             foreach ($duplidatedRows as $row) {
+                if ($row->getAreaId()>0){
                 $ret[] = $row->getAreaId();
+                }
             }
             return $ret;
         }

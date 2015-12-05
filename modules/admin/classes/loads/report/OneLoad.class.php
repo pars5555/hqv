@@ -17,18 +17,19 @@
 
 namespace admin\loads\report {
 
-    use admin\loads\ModeratorLoad;
+    use admin\loads\AdminLoad;
+    use admin\managers\RealVoterPassportManager;
+    use hqv\managers\VoterDataManager;
     use NGS;
 
-    class OneLoad extends ModeratorLoad {
+    class OneLoad extends AdminLoad {
 
         public function load() {
-            $willNotVoteVoters = \hqv\managers\VoterDataManager::getInstance()->selectAdvance('*', ['will_vote', '=', 0]);
+            $willNotVoteVoters = VoterDataManager::getInstance()->selectAdvance('*', ['will_vote', '=', 0]);
             $voterIdsArray = $this->getVoterIdsArray($willNotVoteVoters);
             $voterIdsArraySql = "(" . implode(',', $voterIdsArray) . ")";
-            $realVotersPassport = \admin\managers\RealVoterPassportManager::getInstance()->selectAdvance('*', ['voter_id', 'in', $voterIdsArraySql]);
+            $realVotersPassport = RealVoterPassportManager::getInstance()->selectAdvance('*', ['voter_id', 'in', $voterIdsArraySql]);
             $this->addParam("rows", $realVotersPassport);
-            
         }
 
         private function getVoterIdsArray($dtos) {

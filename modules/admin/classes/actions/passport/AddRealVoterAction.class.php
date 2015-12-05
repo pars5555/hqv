@@ -3,9 +3,10 @@
 namespace admin\actions\passport {
 
     use admin\managers\RealVoterPassportManager;
-    use admin\security\RequestGroups;
     use hqv\actions\BaseAction;
+    use hqv\managers\VoterManager;
     use NGS;
+    use obs\security\RequestGroups;
 
     class AddRealVoterAction extends BaseAction {
 
@@ -16,12 +17,97 @@ namespace admin\actions\passport {
                 $this->addParam('message', $validateFields);
                 return;
             }
-            list($firstName, $lastName, $fatherName, $birthDate, $rowId, $areaId ,$passportType) = $validateFields;
+            list($firstName, $lastName, $fatherName, $birthYear, $birthMonth, $birthDay, $rowId, $areaId, $passportType) = $validateFields;
+            $where = ['first_name', '=', "'$firstName'", 'and', 'last_name', '=', "'$lastName'", 'and', 'area_id', '=', $areaId];
+            if (!empty($fatherName)) {
+                $where[] = 'and';
+                $where[] = 'father_name';
+                $where[] = 'like';
+                $where[] = "'$fatherName%'";
+            }
+            if (!empty($birthYear)) {
+                $where[] = 'and';
+                $where[] = 'YEAR(birth_date)';
+                $where[] = '=';
+                $where[] = "'$birthYear'";
+            }
+            if (!empty($birthMonth)) {
+                $where[] = 'and';
+                $where[] = 'MONTH(birth_date)';
+                $where[] = '=';
+                $where[] = "'$birthMonth'";
+            }
+            if (!empty($birthDay)) {
+                $where[] = 'and';
+                $where[] = 'DAY(birth_date)';
+                $where[] = '=';
+                $where[] = "'$birthDay'";
+            }
             $moderatorId = NGS()->getSessionManager()->getUserId();
+            $rows = VoterManager::getInstance()->selectAdvance('*', $where);
+            $voter = false;
+            if (!empty($rows) && count($rows) === 1) {
+                $voter = $rows[0];
+            }
+
+            if ($voter) {
+                if ($rowId == 0) {
+                    RealVoterPassportManager::getInstance()->addRow($voter->getId(), 1, $voter->getFirstName(), $voter->getLastName(), $voter->getFatherName(), $voter->getBirthDate(), $moderatorId, $areaId, $passportType);
+                } else {
+                    RealVoterPassportManager::getInstance()->editRow($voter->getId(), 1, $rowId, $voter->getFirstName(), $voter->getLastName(), $voter->getFatherName(), $voter->getBirthDate(), $moderatorId, $areaId, $passportType);
+                }
+                return;
+            }
+
+            $where = ['first_name', '=', "'$firstName'", 'and', 'last_name', '=', "'$lastName'"];
+            if (!empty($fatherName)) {
+                $where[] = 'and';
+                $where[] = 'father_name';
+                $where[] = 'like';
+                $where[] = "'$fatherName%'";
+            }
+            if (!empty($birthYear)) {
+                $where[] = 'and';
+                $where[] = 'YEAR(birth_date)';
+                $where[] = '=';
+                $where[] = "'$birthYear'";
+            }
+            if (!empty($birthMonth)) {
+                $where[] = 'and';
+                $where[] = 'MONTH(birth_date)';
+                $where[] = '=';
+                $where[] = "'$birthMonth'";
+            }
+            if (!empty($birthDay)) {
+                $where[] = 'and';
+                $where[] = 'DAY(birth_date)';
+                $where[] = '=';
+                $where[] = "'$birthDay'";
+            }
+            $rows = VoterManager::getInstance()->selectAdvance('*', $where);
+            $voter = false;
+            if (!empty($rows) && count($rows) === 1) {
+                $voter = $rows[0];
+            }
+
+            if ($voter) {
+                $birthDate = $voter->getBirthData();
+                if ($rowId == 0) {
+                    RealVoterPassportManager::getInstance()->addRow($voter->getId(), 0, $voter->getFirstName(), $voter->getLastName(), $voter->getFatherName(), $voter->getBirthDate(), $moderatorId, $areaId, $passportType);
+                } else {
+                    RealVoterPassportManager::getInstance()->editRow($voter->getId(), 0, $rowId, $voter->getFirstName(), $voter->getLastName(), $voter->getFatherName(), $voter->getBirthDate(), $moderatorId, $areaId, $passportType);
+                }
+                return;
+            }
+
+            $birthYear = !empty($birthYear) ? $birthYear : 1900;
+            $birthMonth = !empty($birthMonth) ? $birthMonth : 1;
+            $birthDay = !empty($birthDay) ? $birthDay : 1;
+            $birthDate = $birthYear . '-' . $birthMonth . '-' . $birthDay;
             if ($rowId == 0) {
-                RealVoterPassportManager::getInstance()->addRow($firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId, $passportType);
+                RealVoterPassportManager::getInstance()->addRow(0, 0, $firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId, $passportType);
             } else {
-                RealVoterPassportManager::getInstance()->editRow($rowId, $firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId, $passportType);
+                RealVoterPassportManager::getInstance()->editRow(0, 0, $rowId, $firstName, $lastName, $fatherName, $birthDate, $moderatorId, $areaId, $passportType);
             }
         }
 
@@ -30,23 +116,11 @@ namespace admin\actions\passport {
         }
 
         public function validateFields() {
-            if (!isset(NGS()->args()->firstName) || empty(NGS()->args()->firstName)) {
+            if (empty(NGS()->args()->firstName)) {
                 return 'Empty First Name';
             }
-            if (!isset(NGS()->args()->lastName) || empty(NGS()->args()->lastName)) {
+            if (empty(NGS()->args()->lastName)) {
                 return 'Empty Last Name';
-            }
-            if (!isset(NGS()->args()->fatherName)) {
-                return 'Missing Last Name';
-            }
-            if (!isset(NGS()->args()->birthYear)) {
-                return 'Missing Birth Year';
-            }
-            if (!isset(NGS()->args()->birthMonth)) {
-                return 'Missing Birth Month';
-            }
-            if (!isset(NGS()->args()->birthDay)) {
-                return 'Missing Birth Day';
             }
             if (!isset(NGS()->args()->rowId)) {
                 return 'Missing Row Id';
@@ -57,9 +131,47 @@ namespace admin\actions\passport {
             if (!isset(NGS()->args()->passportType)) {
                 return 'Missing Passport Type';
             }
-            $birthDate = NGS()->args()->birthYear . '-' . NGS()->args()->birthMonth . '-' . NGS()->args()->birthDay;
-            return [NGS()->args()->firstName, NGS()->args()->lastName, NGS()->args()->fatherName, $birthDate, intval(NGS()->args()->rowId)
+            $firstName = NGS()->args()->firstName;
+            $lastName = NGS()->args()->lastName;
+            $fatherName = "";
+            if (isset(NGS()->args()->fatherName)) {
+                $fatherName = NGS()->args()->fatherName;
+            }
+            $birthYear = "";
+            if (isset(NGS()->args()->birthYear)) {
+                $birthYear = NGS()->args()->birthYear;
+            }
+            $birthMonth = "";
+            if (isset(NGS()->args()->birthMonth)) {
+                $birthMonth = NGS()->args()->birthMonth;
+            }
+            $birthDay = "";
+            if (isset(NGS()->args()->birthDay)) {
+                $birthDay = NGS()->args()->birthDay;
+            }
+            $firstName = str_replace('և', 'եւ', $firstName);
+            $firstName = str_replace('եվ', 'եւ', $firstName);
+            $firstName = str_replace('Եվ', 'Եւ', $firstName);
+            $lastName = str_replace('և', 'եւ', $lastName);
+            $lastName = str_replace('եվ', 'եւ', $lastName);
+            $lastName = str_replace('Եվ', 'Եւ', $lastName);
+            $fatherName = str_replace('և', 'եւ', $fatherName);
+            $fatherName = str_replace('եվ', 'եւ', $fatherName);
+            $fatherName = str_replace('Եվ', 'Եւ', $fatherName);
+
+            $firstName = $this->mb_ucfirst($firstName);
+            $lastName = $this->mb_ucfirst($lastName);
+            $fatherName = $this->mb_ucfirst($fatherName);
+
+            return [trim($firstName), trim($lastName), trim($fatherName), $birthYear, $birthMonth, $birthDay, intval(NGS()->args()->rowId)
                 , intval(NGS()->args()->areaId), NGS()->args()->passportType];
+        }
+
+        public function mb_ucfirst($string, $encoding = "UTF-8") {
+            $strlen = mb_strlen($string, $encoding);
+            $firstChar = mb_substr($string, 0, 1, $encoding);
+            $then = mb_substr($string, 1, $strlen - 1, $encoding);
+            return mb_strtoupper($firstChar, $encoding) . $then;
         }
 
     }
