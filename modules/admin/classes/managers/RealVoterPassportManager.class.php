@@ -41,6 +41,11 @@ namespace admin\managers {
             $firstName = $this->mb_ucfirst($firstName);
             $lastName = $this->mb_ucfirst($lastName);
             $fatherName = $this->mb_ucfirst($fatherName);
+               
+            $firstName = str_replace('և', 'եւ', $firstName);$firstName = str_replace('եվ', 'եւ', $firstName);$firstName = str_replace('Եվ', 'Եւ', $firstName);
+             $lastName = str_replace('և', 'եւ', $lastName);$lastName = str_replace('եվ', 'եւ', $lastName);$lastName = str_replace('Եվ', 'Եւ', $lastName);
+             $fatherName = str_replace('և', 'եւ', $fatherName);$fatherName = str_replace('եվ', 'եւ', $fatherName);$fatherName = str_replace('Եվ', 'Եւ', $fatherName);
+          
             $dto = $this->selectByPK($id);
             $dto->setFirstName($firstName);
             $dto->setLastName($lastName);
@@ -50,6 +55,7 @@ namespace admin\managers {
             $dto->setChangeDatetime(date('Y-m-d H:i:s'));
             //$dto->setModeratorId($moderatorId);
             $dto->setAreaId($areaId);
+            
             $where = ['birth_date', '=', "'$birthDate'", 'and', 'first_name', '=', "'$firstName'", 'and',
                 'last_name', '=', "'$lastName'"];
             if (!empty($fatherName)) {
@@ -76,6 +82,10 @@ namespace admin\managers {
             $firstName = $this->mb_ucfirst($firstName);
             $lastName = $this->mb_ucfirst($lastName);
             $fatherName = $this->mb_ucfirst($fatherName);
+            $firstName = str_replace('և', 'եւ', $firstName);$firstName = str_replace('եվ', 'եւ', $firstName);$firstName = str_replace('Եվ', 'Եւ', $firstName);
+             $lastName = str_replace('և', 'եւ', $lastName);$lastName = str_replace('եվ', 'եւ', $lastName);$lastName = str_replace('Եվ', 'Եւ', $lastName);
+             $fatherName = str_replace('և', 'եւ', $fatherName);$fatherName = str_replace('եվ', 'եւ', $fatherName);$fatherName = str_replace('Եվ', 'Եւ', $fatherName);
+                        
             $dto = $this->createDto();
             $dto->setFirstName($firstName);
             $dto->setLastName($lastName);
@@ -85,6 +95,8 @@ namespace admin\managers {
             $dto->setCreateDatetime(date('Y-m-d H:i:s'));
             $dto->setModeratorId($moderatorId);
             $dto->setAreaId($areaId);
+            
+
             $where = ['birth_date', '=', "'$birthDate'", 'and', 'first_name', '=', "'$firstName'", 'and',
                 'last_name', '=', "'$lastName'"];
             if (!empty($fatherName)) {
