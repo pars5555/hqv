@@ -87,7 +87,7 @@ namespace admin\managers {
             $dto->setAreaVoterId($voterNumberInArea);
             $dto->setCreateDatetime(date('Y-m-d H:i:s'));
             $dto->setModeratorId($moderatorId);
-            $dto->setObserversIds($observersIds);
+            $dto->setObserversIds('');
             $dto->setAreaId($areaId);
             $listVoters = VoterManager::getInstance()->selectAdvance('*', ['area_id', '=', $areaId, 'and', 'number', '=', $voterNumberInArea]);
             if (!empty($listVoters) && count($listVoters) === 1) {
