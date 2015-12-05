@@ -31,29 +31,32 @@ namespace hqv\actions\main {
             return $str;
         }*/
         public function service() {
-          /*  set_time_limit(500000);
+            set_time_limit(500000);
+            
+            
+            var_dump($voterIdFromOldVoterId);exit;
 
             $offset = 0;
             $limit = 5000;
             while (true) {
-                $allData = AdditionalVoterManager::getInstance()->selectAdvance('*', [], [], null, $offset, $limit);
+                $allData = VoterDataManager::getInstance()->selectAdvance('*', ['old_voter_id', '=', 0], [], null, $offset, $limit);
                 if (empty($allData)) {
                     break;
                 }
                 $offset += $limit;
                 foreach ($allData as $row) {
-                    $firstName = $this->mb_ucfirst($row->getFirstName(),"UTF-8", true);
-                    $lastName = $this->mb_ucfirst($row->getLastName(),"UTF-8", true);
-                    $fatherName = $this->mb_ucfirst($row->getFatherName(),"UTF-8", true);
-                    $areaId = $row->getAreaId();
-                    $street= $row->getStreet();
-                    $address = $row->getAddress(). ' '.$street ;
-                    $birthDate = $row->getBirthDate();
+                    $voterId = $row->getVoterId();
+                     $newVoterId = \hqv\managers\VoterDataManager::getInstance()->getVoterIdFromOldVoterId($voterId);
+                     
+                    $row->setVoterId($newVoterId);
+                    $row->setOldVoterId($voterId);
+                     
                     
-                    VoterManager::getInstance()->addRow(0, $firstName, $lastName, $fatherName, $birthDate, $areaId, $address);
+                    VoterDataManager::getInstance()->updateByPK($row);
+                    exit;
                 }
             }
-            exit;*/
+            exit;
 
 
             /*

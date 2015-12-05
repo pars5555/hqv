@@ -29,6 +29,7 @@ namespace hqv\dal\dto {
         private $mapArray = array(
             "id" => "id", 
             "voter_id" => "voterId",
+            "old_voter_id" => "oldVoterId",
             "will_vote" => "willVote",
             "will_be_in_arm" => "willBeInArm",
             "is_death" => "isDeath",

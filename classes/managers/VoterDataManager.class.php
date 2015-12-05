@@ -65,10 +65,31 @@ namespace hqv\managers {
             return $this->mapper->selectJoinVotersCount($where);
         }
 
+        public  function getVoterIdFromOldVoterId($oldVoterId) {
+            $oldVoter = VoterOldManager::getInstance()->selectByPK($oldVoterId);
+            if (!$oldVoter) {
+                return 0;
+            }
+            $firstName = $oldVoter->getFirstName();
+            $lastName = $oldVoter->getLastName();
+            $fatherName = $oldVoter->getFatherName();
+            $birthDate = $oldVoter->getBirthDate();
+            $newVoters = VoterManager::getInstance()->selectAdvance('*', ['first_name', '=', "'$firstName'", 'and',
+                'last_name', '=', "'$lastName'", 'and',
+                'father_name', '=', "'$fatherName'", 'and',
+                'birth_date', '=', "'$birthDate'"]);
+            if (!empty($newVoters) && count($newVoters) === 1) {
+                return $newVoters[0]->getId();
+            }
+            return 0;
+        }
+
         public function addSystemRow($id, $voterId, $email, $phone, $will_vote, $will_be_in_arm, $is_death, $ip_address, $country, $browser, $version, $os, $datetime) {
             $dto = $this->createDto();
             $dto->setId($id);
-            $dto->setVoterId($voterId);
+            $dto->setOldVoterId($voterId);
+            $newVoterId = $this->getVoterIdFromOldVoterId($voterId);
+            $dto->setVoterId($newVoterId);
             $dto->setEmail($email);
             $dto->setPhone($phone);
             $dto->setWillVote($will_vote);
