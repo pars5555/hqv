@@ -46,6 +46,18 @@ namespace hqv\managers {
             }
             return null;
         }
+        
+        public function  addRow($number, $firstName, $lastName, $fatherName, $birthDate, $areaId, $address){
+            $dto = $this->createDto();
+            $dto->setNumber($number);
+            $dto->setFirstName($firstName);
+            $dto->setLastName($lastName);
+            $dto->setFatherName($fatherName);
+            $dto->setBirthDate($birthDate);
+            $dto->setAddress($address);
+            $dto->setAreaId($areaId);
+            return $this->insertDto($dto);
+        }
 
     }
 

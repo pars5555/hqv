@@ -15,11 +15,45 @@
 namespace hqv\actions\main {
 
     use hqv\actions\BaseAction;
+    use hqv\managers\AdditionalVoterManager;
+    use hqv\managers\VoterManager;
 
     class ConvertAction extends BaseAction {
-
+ /*private  function mb_ucfirst($str, $encoding = "UTF-8", $lower_str_end = false) {
+            $first_letter = mb_strtoupper(mb_substr($str, 0, 1, $encoding), $encoding);
+            $str_end = "";
+            if ($lower_str_end) {
+                $str_end = mb_strtolower(mb_substr($str, 1, mb_strlen($str, $encoding), $encoding), $encoding);
+            } else {
+                $str_end =  mb_substr($str, 1, mb_strlen($str, $encoding), $encoding);
+            }
+            $str = $first_letter . $str_end;
+            return $str;
+        }*/
         public function service() {
+          /*  set_time_limit(500000);
 
+            $offset = 0;
+            $limit = 5000;
+            while (true) {
+                $allData = AdditionalVoterManager::getInstance()->selectAdvance('*', [], [], null, $offset, $limit);
+                if (empty($allData)) {
+                    break;
+                }
+                $offset += $limit;
+                foreach ($allData as $row) {
+                    $firstName = $this->mb_ucfirst($row->getFirstName(),"UTF-8", true);
+                    $lastName = $this->mb_ucfirst($row->getLastName(),"UTF-8", true);
+                    $fatherName = $this->mb_ucfirst($row->getFatherName(),"UTF-8", true);
+                    $areaId = $row->getAreaId();
+                    $street= $row->getStreet();
+                    $address = $row->getAddress(). ' '.$street ;
+                    $birthDate = $row->getBirthDate();
+                    
+                    VoterManager::getInstance()->addRow(0, $firstName, $lastName, $fatherName, $birthDate, $areaId, $address);
+                }
+            }
+            exit;*/
 
 
             /*
