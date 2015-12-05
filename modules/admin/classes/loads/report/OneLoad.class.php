@@ -23,7 +23,6 @@ namespace admin\loads\report {
     class OneLoad extends ModeratorLoad {
 
         public function load() {
-            $this->addParam('aaa', 11);
             $willNotVoteVoters = \hqv\managers\VoterDataManager::getInstance()->selectAdvance('*', ['will_vote', '=', 0]);
             $voterIdsArray = $this->getVoterIdsArray($willNotVoteVoters);
             $voterIdsArraySql = "(" . implode(',', $voterIdsArray) . ")";
