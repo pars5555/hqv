@@ -26,7 +26,7 @@
                 <td>{$row->getPass()}</td>
                 <td>{$row->getLastLogin()}</td>
 
-
+                
                 <td>
                     {assign hash $row->getHash()}
                     {if !empty($hash)}
