@@ -20,6 +20,8 @@
 <table class="responsive-table real-voters">
     <thead>
         <tr>
+            <th>List Number</th>
+            <th>Observers Count</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Father Name</th>
@@ -40,6 +42,8 @@
                 {assign voter 0}
             {/if}
             <tr data-rowids="{$row->getDuplicationIds()}">
+                <td>{$row->getAreaVoterId()}</td>
+                <td>{","|explode:$row->getObserversIds()|@count}</td>
                 <td>{if $row->getVoterId()>0}{$voter->getFirstName()}{/if}</td>
                 <td>{if $row->getVoterId()>0}{$voter->getLastName()}{/if}</td>
                 <td>{if $row->getVoterId()>0}{$voter->getFatherName()}{/if}</td>

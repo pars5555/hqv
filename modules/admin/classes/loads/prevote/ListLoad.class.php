@@ -53,6 +53,9 @@ namespace admin\loads\prevote {
 
             $count = VoterDataManager::getInstance()->getLastSelectAdvanceRowsCount();
             $pageCount = ceil($count / $limit);
+            if ($count == 0) {
+                $pageCount = 1;
+            }
             $this->addParam('pageCount', $pageCount);
             $this->addParam('rows', $rows);
             $this->addParam('voters', $voters);
