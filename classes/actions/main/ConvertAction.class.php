@@ -14,14 +14,14 @@
 
 namespace hqv\actions\main {
 
-    use admin\managers\ObserverManager;
     use hqv\actions\BaseAction;
-    use hqv\managers\AreaManager;
 
     class ConvertAction extends BaseAction {
 
         public function service() {
-            set_time_limit(500000);
+
+
+
             /*
               $offset = 0;
               $limit = 5000;
@@ -41,24 +41,24 @@ namespace hqv\actions\main {
               }
               exit; */
 
-            $allAreas = AreaManager::getInstance()->selectAll();
+            /* $allAreas = AreaManager::getInstance()->selectAll();
 
-            foreach ($allAreas as $area) {
-                $areaId = $area->getId();
-                $areaCode = $area->getTerritoryId() . '_' . $area->getAreaId();
-                for ($i = 0; $i <= 3; $i++) {
-                    $createDto = ObserverManager::getInstance()->createDto();
-                    $createDto->setUsername('obs_' . $areaCode);
-                    $pass = $this->generateRandomString(8);
-                    $passMd5 = md5($pass);
-                    $createDto->setPassword($passMd5);
-                    $createDto->setPass($pass);
-                    $createDto->setAreaId($areaId);
-                    ObserverManager::getInstance()->insertDto($createDto);
-                }
-            }
-            echo 'End';
-            exit;
+              foreach ($allAreas as $area) {
+              $areaId = $area->getId();
+              $areaCode = $area->getTerritoryId() . '_' . $area->getAreaId();
+              for ($i = 0; $i <= 3; $i++) {
+              $createDto = ObserverManager::getInstance()->createDto();
+              $createDto->setUsername('obs_' . $areaCode);
+              $pass = $this->generateRandomString(8);
+              $passMd5 = md5($pass);
+              $createDto->setPassword($passMd5);
+              $createDto->setPass($pass);
+              $createDto->setAreaId($areaId);
+              ObserverManager::getInstance()->insertDto($createDto);
+              }
+              }
+              echo 'End';
+              exit; */
 
 
 
