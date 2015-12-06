@@ -71,6 +71,7 @@ NGS.createLoad("admin.loads.number.list", {
     {
         var page = $('#p_page').val();
         var limit = $('#p_limit').val();
-        NGS.load('admin.loads.number.list', {page: page, limit: limit});
+         var areaId = $('#p_address').val();
+        NGS.load('admin.loads.number.list', {page: page, limit: limit, areaId:areaId});
     }
 });
