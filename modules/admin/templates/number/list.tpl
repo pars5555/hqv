@@ -21,6 +21,7 @@
     <thead>
         <tr>
             <th>Number</th>
+            <th>Area</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Father Name</th>
@@ -39,8 +40,14 @@
             {else}
                 {assign voter 0}
             {/if}
+            {if isset($ns.areas[$row->getAreaId()])}
+                {assign area $ns.areas[$row->getAreaId()]}            
+            {else}
+                {assign area 0}
+            {/if}
             <tr data-rowid="{$row->getId()}">
                 <td>{$row->getAreaVoterId()}</td>
+                <td>{if $area}{$area->getTerritoryId()}/{$area->getAreaId()}{else}N/A{/if}</td>
                 <td>{if !empty($voter)}{$voter->getFirstName()}{/if}</td>
                 <td>{if !empty($voter)}{$voter->getLastName()}{/if}</td>
                 <td>{if !empty($voter)}{$voter->getFatherName()}{/if}</td>

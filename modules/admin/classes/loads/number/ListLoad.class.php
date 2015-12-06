@@ -19,7 +19,7 @@ namespace admin\loads\number {
 
     use admin\loads\ModeratorLoad;
     use admin\managers\RealVoterNumberManager;
-    use admin\managers\RealVoterPassportManager;
+    use hqv\managers\AreaManager;
     use hqv\managers\VoterDataManager;
     use hqv\managers\VoterManager;
     use NGS;
@@ -41,12 +41,15 @@ namespace admin\loads\number {
             $offset = ($page - 1) * $limit;
             $rows = RealVoterNumberManager::getInstance()->selectAdvance('*', ['moderator_id', '=', $moderatorId], ['create_datetime'], 'DESC', $offset, $limit);
             $voterIdsArray = $this->getVoterIdsArray($rows);
+            $areaIdsArray = $this->getAreaIdsArray($rows);
 
             $duplicatedInListRealVoters = [];
             $voters = [];
+            $areas = [];
             $preVoteData = [];
             if (!empty($voterIdsArray)) {
                 $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
+                $areas = AreaManager::getInstance()->selectByPKs($areaIdsArray, true);
                 $duplicatedInListRealVoters = RealVoterNumberManager::getInstance()->getDuplicatedInListRealVotersRowIds($voterIdsArray);
                 $voterIdsSqlString = "(" . implode(',', $voterIdsArray) . ")";
                 $preVoteData = VoterDataManager::getInstance()->selectAdvance('*', ['voter_id', 'in', $voterIdsSqlString]);
@@ -62,6 +65,7 @@ namespace admin\loads\number {
             $this->addParam('pageCount', $pageCount);
             $this->addParam('rows', $rows);
             $this->addParam('voters', $voters);
+            $this->addParam('areas', $areas);
             $this->addParam('duplicatedInListMappedById', $duplicatedInListRealVoters);
             $this->addParam('preVoteData', $preVoteData);
         }
@@ -76,6 +80,17 @@ namespace admin\loads\number {
                 $voterId = trim($row->getVoterId());
                 if (!empty($voterId)) {
                     $ret[] = $voterId;
+                }
+            }
+            return $ret;
+        }
+
+        private function getAreaIdsArray($rows) {
+            $ret = [];
+            foreach ($rows as $row) {
+                $areaId = trim($row->getAreaId());
+                if (!empty($areaId)) {
+                    $ret[] = $areaId;
                 }
             }
             return $ret;
