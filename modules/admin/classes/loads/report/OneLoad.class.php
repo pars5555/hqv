@@ -17,10 +17,11 @@
 
 namespace admin\loads\report {
 
-    use admin\loads\AdminLoad;
-    use admin\managers\RealVoterPassportManager;
-    use hqv\managers\VoterDataManager;
-    use NGS;
+use admin\loads\AdminLoad;
+use admin\managers\RealVoterNumberManager;
+use hqv\managers\VoterDataManager;
+use hqv\managers\VoterManager;
+use NGS;
 
     class OneLoad extends AdminLoad {
 
@@ -28,8 +29,11 @@ namespace admin\loads\report {
             $willNotVoteVoters = VoterDataManager::getInstance()->selectAdvance('*', ['will_vote', '=', 0]);
             $voterIdsArray = $this->getVoterIdsArray($willNotVoteVoters);
             $voterIdsArraySql = "(" . implode(',', $voterIdsArray) . ")";
-            $realVotersPassport = RealVoterPassportManager::getInstance()->selectAdvance('*', ['voter_id', 'in', $voterIdsArraySql]);
-            $this->addParam("rows", $realVotersPassport);
+            $realVoters = RealVoterNumberManager::getInstance()->selectAdvance('*',  ['voter_id', '>',0, 'and','voter_id', 'in', $voterIdsArraySql]);
+            $voterIdsArray = $this->getVoterIdsArray($realVoters);
+             $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
+            $this->addParam("rows", $realVoters);
+            $this->addParam("voters", $voters);
         }
 
         private function getVoterIdsArray($dtos) {

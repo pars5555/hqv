@@ -7,7 +7,8 @@
         <h5>Այն մարդիք ովքեր ասել էին չեն գալու բայց գնացել են քվեարկության</h5>
         <section class="wrapper">
             {foreach from=$ns.rows item=row}
-                {$row->getFirstName()} {$row->getLastName()} {$row->getFatherName()} {$row->getBirthDate()}</br>
+                {assign voter $ns.voters[$row->getVoterId()]}
+                {$voter->getFirstName()} {$voter->getLastName()} {$voter->getFatherName()} {$voter->getBirthDate()}</br>
             {/foreach}
         </section>
     </body>
