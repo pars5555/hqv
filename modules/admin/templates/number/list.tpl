@@ -20,6 +20,7 @@
 <table class="responsive-table real-voters">
     <thead>
         <tr>
+            <th>Number</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Father Name</th>
@@ -39,6 +40,7 @@
                 {assign voter 0}
             {/if}
             <tr data-rowid="{$row->getId()}">
+                <td>{$row->getAreaVoterId()}</td>
                 <td>{if !empty($voter)}{$voter->getFirstName()}{/if}</td>
                 <td>{if !empty($voter)}{$voter->getLastName()}{/if}</td>
                 <td>{if !empty($voter)}{$voter->getFatherName()}{/if}</td>
