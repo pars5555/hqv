@@ -17,11 +17,12 @@
 
 namespace admin\loads\report {
 
-use admin\loads\AdminLoad;
-use admin\managers\RealVoterNumberManager;
-use hqv\managers\VoterDataManager;
-use hqv\managers\VoterManager;
-use NGS;
+    use admin\loads\AdminLoad;
+    use admin\managers\RealVoterNumberManager;
+    use hqv\managers\AreaManager;
+    use hqv\managers\VoterDataManager;
+    use hqv\managers\VoterManager;
+    use NGS;
 
     class OneLoad extends AdminLoad {
 
@@ -29,17 +30,20 @@ use NGS;
             $willNotVoteVoters = VoterDataManager::getInstance()->selectAdvance('*', ['will_vote', '=', 0]);
             $voterIdsArray = $this->getVoterIdsArray($willNotVoteVoters);
             $voterIdsArraySql = "(" . implode(',', $voterIdsArray) . ")";
-            $realVoters = RealVoterNumberManager::getInstance()->selectAdvance('*',  ['voter_id', '>',0, 'and','voter_id', 'in', $voterIdsArraySql]);
+            $realVoters = RealVoterNumberManager::getInstance()->selectAdvance('*', ['voter_id', '>', 0, 'and', 'voter_id', 'in', $voterIdsArraySql]);
             $voterIdsArray = $this->getVoterIdsArray($realVoters);
-             $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
-             
-             $prevotDatas = [];
-             array_unique($voterIdsArray);
-             foreach ($voterIdsArray as $voterId) {
-            $prevotDatas[$voterId] =  VoterDataManager::getInstance()->selectAdvance('*', ['voter_id', '=', $voterId]);
-             }
+            $areaIdsArray = $this->getAreaIdsArray($realVoters);
+            $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
+            $areas = AreaManager::getInstance()->selectByPKs($areaIdsArray, true);
+
+            $prevotDatas = [];
+            array_unique($voterIdsArray);
+            foreach ($voterIdsArray as $voterId) {
+                $prevotDatas[$voterId] = VoterDataManager::getInstance()->selectAdvance('*', ['voter_id', '=', $voterId]);
+            }
             $this->addParam("rows", $realVoters);
             $this->addParam("voters", $voters);
+            $this->addParam("areas", $areas);
             $this->addParam("prevotDatas", $prevotDatas);
         }
 
@@ -48,6 +52,16 @@ use NGS;
             foreach ($dtos as $dto) {
                 if ($dto->getVoterId() > 0) {
                     $ret [] = $dto->getVoterId();
+                }
+            }
+            return $ret;
+        }
+
+        private function getAreaIdsArray($dtos) {
+            $ret = [];
+            foreach ($dtos as $dto) {
+                if ($dto->getAreaId() > 0) {
+                    $ret [] = $dto->getAreaId();
                 }
             }
             return $ret;
