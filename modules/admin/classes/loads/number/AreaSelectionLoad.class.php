@@ -45,18 +45,18 @@ namespace admin\loads\number {
             if (!isset($selectedRegion)) {
                 $selectedRegion = $regionNamesArray [0];
                 if (isset(NGS()->args()->selectedRegion)) {
-                    $selectedRegion = NGS()->args()->selectedRegion;
+                    $selectedRegion = trim(NGS()->args()->selectedRegion);
                 }
             }
             $regionCommunities = AreaManager::getInstance()->getRegionCommunitiesArray($selectedRegion);
             if (!isset($selectedRegionCommunity)) {
                 $selectedRegionCommunity = $regionCommunities[0];
                 if (isset(NGS()->args()->selectedRegionCommunity)) {
-                    $selectedRegionCommunity = NGS()->args()->selectedRegionCommunity;
+                    $selectedRegionCommunity = trim(NGS()->args()->selectedRegionCommunity);
                 }
             }
-
             $areasMappedById = AreaManager::getInstance()->getByRegionAndCommunity($selectedRegion, $selectedRegionCommunity);
+            
             if (!isset($selectedAreaId)) {
                 $areaIds = array_keys($areasMappedById);
                 reset($areaIds);
