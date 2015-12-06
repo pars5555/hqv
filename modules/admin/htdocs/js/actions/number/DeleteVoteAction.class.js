@@ -4,6 +4,7 @@ NGS.createAction("admin.actions.number.delete_vote", {
     },
     afterAction: function () {
        jQuery('#caseDeleteModel').closeModal();
-        NGS.load('admin.loads.number.list', {});
+       var areaId = $('#p_address').val();
+        NGS.load('admin.loads.number.list', {areaId: areaId});
     }
 });
