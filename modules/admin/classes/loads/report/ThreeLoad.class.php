@@ -17,19 +17,23 @@
 
 namespace admin\loads\report {
 
-    use admin\loads\AdminLoad;
-    use admin\managers\RealVoterPassportManager;
-    use hqv\managers\VoterDataManager;
-    use NGS;
+use admin\loads\AdminLoad;
+use admin\managers\RealVoterNumberManager;
+use hqv\managers\VoterDataManager;
+use hqv\managers\VoterManager;
+use NGS;
 
     class ThreeLoad extends AdminLoad {
 
         public function load() {
             $willNotVoteVoters = VoterDataManager::getInstance()->selectAdvance('*', ['is_death', '=', 0]);
-            $voterIdsArray = $this->getVoterIdsArray($willNotVoteVoters);
+           $voterIdsArray = $this->getVoterIdsArray($willNotVoteVoters);
             $voterIdsArraySql = "(" . implode(',', $voterIdsArray) . ")";
-            $realVotersPassport = RealVoterPassportManager::getInstance()->selectAdvance('*', ['voter_id', 'in', $voterIdsArraySql]);
-            $this->addParam("rows", $realVotersPassport);
+            $realVoters = RealVoterNumberManager::getInstance()->selectAdvance('*',  ['voter_id', '>',0, 'and','voter_id', 'in', $voterIdsArraySql]);
+            $voterIdsArray = $this->getVoterIdsArray($realVoters);
+             $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
+            $this->addParam("rows", $realVoters);
+            $this->addParam("voters", $voters);
         }
 
         private function getVoterIdsArray($dtos) {
