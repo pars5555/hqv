@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author Levon Naghashyan
  * @site http://naghashyan.com
@@ -8,69 +9,84 @@
  * @version 1.0.0
  *
  */
+
 namespace admin\managers {
 
-  use ngs\framework\AbstractManager;
-  use admin\dal\mappers\AdminMapper;
-  class AdminManager extends AbstractManager {
+    use ngs\framework\AbstractManager;
+    use admin\dal\mappers\AdminMapper;
 
-    /**
-     * @var singleton instance of class
-     */
-    private static $instance = null;
+    class AdminManager extends AbstractManager {
 
-    /**
-     * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
-     * @return
-     */
-    public static function getInstance() {
-      if (self::$instance == null) {
-        self::$instance = new AdminManager();
-      }
-      return self::$instance;
-    }
+        /**
+         * @var singleton instance of class
+         */
+        private static $instance = null;
 
-    /**
-     * gets admin by username and password
-     *
-     * @param string $username
-     * @param string $password
-     * @return AdminDto or null if admin does not exist
-     */
-    public function getByUsernamePassword($username, $password) {
-      return AdminMapper::getInstance()->getByUsernamePassword($username, md5($password));
-    }
-    
-    /**
-     * get user by id and hash
-     *
-     * @param int $userId
-     * @param string $hash
-     * @return AdminDto or null if admin does not exist
-     */
-    public function validate($userId, $hash) {
-      return AdminMapper::getInstance()->validateUser($userId, $hash);
-    }
-    
-    /**
-     * do login user update hash and last login date
-     *
-     * @param int $userId
-     * @return boolean
-     */
-    public function loginUser($userId) {
-      $userHash = md5(time().$userId);
-      $adminDto = AdminMapper::getInstance()->createDto();
-      $adminDto->setId($userId);
-      $adminDto->setHash($userHash);
-      $adminDto->setLastLogin(date('Y-m-d H:i:s'));
-      AdminMapper::getInstance()->updateByPK($adminDto);
-      return $userHash;
-    }
+        /**
+         * Returns an singleton instance of this class
+         *
+         * @param object $config
+         * @param object $args
+         * @return
+         */
+        public static function getInstance() {
+            if (self::$instance == null) {
+                self::$instance = new AdminManager();
+            }
+            return self::$instance;
+        }
 
-  }
+        /**
+         * gets admin by username and password
+         *
+         * @param string $username
+         * @param string $password
+         * @return AdminDto or null if admin does not exist
+         */
+        public function getByUsernamePassword($username, $password) {
+            return AdminMapper::getInstance()->getByUsernamePassword($username, md5($password));
+        }
+
+        /**
+         * get user by id and hash
+         *
+         * @param int $userId
+         * @param string $hash
+         * @return AdminDto or null if admin does not exist
+         */
+        public function validate($userId, $hash) {
+            return AdminMapper::getInstance()->validateUser($userId, $hash);
+        }
+
+        public function selectAllMappedByIds() {
+            $all = AdminMapper::getInstance()->selectAll();
+            return $this->MapById($all);
+        }
+
+        public function MapById($rows) {
+            $ret = [];
+            foreach ($rows as $dto) {
+                $ret[$dto->getId()] = $dto;
+            }
+            return $ret;
+        }
+
+        /**
+         * do login user update hash and last login date
+         *
+         * @param int $userId
+         * @return boolean
+         */
+        public function loginUser($userId) {
+            $userHash = md5(time() . $userId);
+            $adminDto = AdminMapper::getInstance()->createDto();
+            $adminDto->setId($userId);
+            $adminDto->setHash($userHash);
+            $adminDto->setLastLogin(date('Y-m-d H:i:s'));
+            AdminMapper::getInstance()->updateByPK($adminDto);
+            return $userHash;
+        }
+
+    }
 
 }

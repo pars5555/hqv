@@ -76,9 +76,9 @@ namespace admin\dal\mappers {
 
         public function getDuplicatedRealVoters($offset, $limit) {
             $sql = "SELECT   * FROM (
-                        SELECT   *,  COUNT(*) AS vote_count ,GROUP_CONCAT(id) AS duplication_ids  FROM  `%s` WHERE invalid = 0 GROUP BY area_voter_id, area_id HAVING vote_count > 1 
+                        SELECT   *,  COUNT(*) AS vote_count ,GROUP_CONCAT(id) AS duplication_ids,GROUP_CONCAT(moderator_id) AS moderator_ids  FROM  `%s` WHERE invalid = 0 GROUP BY area_voter_id, area_id HAVING vote_count > 1 
                         UNION
-                        SELECT     *,    COUNT(*) AS vote_count,GROUP_CONCAT(id) AS duplication_ids   FROM  `%s`   WHERE (voter_id = 0       OR area_voter_id = 0)     AND invalid = 0   GROUP BY area_voter_id  HAVING vote_count = 1
+                        SELECT     *,    COUNT(*) AS vote_count,GROUP_CONCAT(id) AS duplication_ids, GROUP_CONCAT(moderator_id) AS moderator_ids   FROM  `%s` WHERE (voter_id = 0  OR area_voter_id = 0) AND invalid = 0 GROUP BY area_voter_id  HAVING vote_count = 1
                     ) AS sss ORDER BY vote_count DESC LIMIT %d, %d";
             $sqlQuery = sprintf($sql, $this->getTableName(), $this->getTableName(), $offset, $limit);
             return $this->fetchRows($sqlQuery);

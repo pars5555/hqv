@@ -21,7 +21,7 @@
     <thead>
         <tr>
             <th>List Number</th>
-            <th>Observers Count</th>
+            <th>Operators</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Father Name</th>
@@ -43,7 +43,12 @@
             {/if}
             <tr data-rowids="{$row->getDuplicationIds()}">
                 <td>{$row->getAreaVoterId()}</td>
-                <td>{","|explode:$row->getObserversIds()|@count}</td>
+                {assign moderatorIds ","|explode:$row->getModeratorIds()}
+                <td>
+                     {foreach from=$moderatorIds item=moderatorId}
+                         {$ns.moderators[$moderatorId]->getUsername()},
+                         {/foreach}
+                </td>
                 <td>{if $row->getVoterId()>0}{$voter->getFirstName()}{/if}</td>
                 <td>{if $row->getVoterId()>0}{$voter->getLastName()}{/if}</td>
                 <td>{if $row->getVoterId()>0}{$voter->getFatherName()}{/if}</td>

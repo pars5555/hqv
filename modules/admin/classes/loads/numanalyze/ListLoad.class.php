@@ -17,11 +17,12 @@
 
 namespace admin\loads\numanalyze {
 
-    use admin\loads\ModeratorLoad;
-    use admin\managers\AnalyzeManager;
-    use hqv\managers\VoterDataManager;
-    use hqv\managers\VoterManager;
-    use NGS;
+use admin\loads\ModeratorLoad;
+use admin\managers\AdminManager;
+use admin\managers\AnalyzeManager;
+use hqv\managers\VoterDataManager;
+use hqv\managers\VoterManager;
+use NGS;
 
     class ListLoad extends ModeratorLoad {
 
@@ -58,6 +59,8 @@ namespace admin\loads\numanalyze {
             $this->addParam('pageCount', $pageCount);
             $this->addParam('rows', $duplicatedRealVoters);
             $this->addParam('voters', $voters);
+            $admins =  AdminManager::getInstance()->selectAllMappedByIds();
+            $this->addParam('moderators',$admins);
             $this->addParam('preVoteData', $preVoteData);
         }
 
@@ -71,7 +74,7 @@ namespace admin\loads\numanalyze {
             }
             return $ret;
         }
-
+       
         public function getTemplate() {
             return NGS()->getTemplateDir() . "/numanalyze/list.tpl";
         }

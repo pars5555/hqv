@@ -25,7 +25,7 @@ namespace admin\dal\dto {
             "create_datetime" => "createDatetime",
             "area_id" => "areaId",
             "invalid" => "invalid",
-            "observers_ids" => "observersIds",
+            "moderator_ids" => "moderatorIds",
             "invalid_note" => "invalidNote",
            
             

@@ -9,7 +9,7 @@
             {foreach from=$ns.rows item=row}
                 {assign voter $ns.voters[$row->getVoterId()]}
                 {assign area $ns.areas[$row->getAreaId()]}
-                {$voter->getFirstName()} {$voter->getLastName()} {$voter->getFatherName()} {$voter->getBirthDate()} 
+                {$row->getAreaVoterId()} {$voter->getFirstName()} {$voter->getLastName()} {$voter->getFatherName()} {$voter->getBirthDate()} 
               area:  {$area->getTerritoryId()}/{$area->getAreaId()}
               operator id:   {$row->getModeratorId()}
               prevote count: {$ns.prevotDatas[$row->getVoterId()]|@count}
