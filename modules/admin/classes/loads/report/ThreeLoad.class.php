@@ -26,14 +26,21 @@ use NGS;
     class ThreeLoad extends AdminLoad {
 
         public function load() {
-            $willNotVoteVoters = VoterDataManager::getInstance()->selectAdvance('*', ['is_death', '=', 0]);
+            $willNotVoteVoters = VoterDataManager::getInstance()->selectAdvance('*', ['is_death', '=', 1]);
            $voterIdsArray = $this->getVoterIdsArray($willNotVoteVoters);
             $voterIdsArraySql = "(" . implode(',', $voterIdsArray) . ")";
             $realVoters = RealVoterNumberManager::getInstance()->selectAdvance('*',  ['voter_id', '>',0, 'and','voter_id', 'in', $voterIdsArraySql]);
             $voterIdsArray = $this->getVoterIdsArray($realVoters);
              $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
+             
+             $prevotDatas = [];
+             array_unique($voterIdsArray);
+             foreach ($voterIdsArray as $voterId) {
+            $prevotDatas[$voterId] =  VoterDataManager::getInstance()->selectAdvance('*', ['voter_id', '=', $voterId]);
+             }
             $this->addParam("rows", $realVoters);
             $this->addParam("voters", $voters);
+            $this->addParam("prevotDatas", $prevotDatas);
         }
 
         private function getVoterIdsArray($dtos) {

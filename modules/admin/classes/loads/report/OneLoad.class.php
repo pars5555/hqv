@@ -32,8 +32,15 @@ use NGS;
             $realVoters = RealVoterNumberManager::getInstance()->selectAdvance('*',  ['voter_id', '>',0, 'and','voter_id', 'in', $voterIdsArraySql]);
             $voterIdsArray = $this->getVoterIdsArray($realVoters);
              $voters = VoterManager::getInstance()->selectByPKs($voterIdsArray, true);
+             
+             $prevotDatas = [];
+             array_unique($voterIdsArray);
+             foreach ($voterIdsArray as $voterId) {
+            $prevotDatas[$voterId] =  VoterDataManager::getInstance()->selectAdvance('*', ['voter_id', '=', $voterId]);
+             }
             $this->addParam("rows", $realVoters);
             $this->addParam("voters", $voters);
+            $this->addParam("prevotDatas", $prevotDatas);
         }
 
         private function getVoterIdsArray($dtos) {
