@@ -27,6 +27,11 @@ namespace admin\loads\number {
     class ListLoad extends ModeratorLoad {
 
         public function load() {
+            global $numberAreaId;
+            if (isset(NGS()->args()->areaId)) {
+                $numberAreaId = NGS()->args()->areaId;
+            }
+           $userType =  NGS()->getSessionManager()->getUserType();
             $moderatorId = NGS()->getSessionManager()->getUserId();
             $limit = 20;
             $page = 1;
@@ -39,7 +44,17 @@ namespace admin\loads\number {
             $this->addParam('page', $page);
             $this->addParam('limit', $limit);
             $offset = ($page - 1) * $limit;
-            $rows = RealVoterNumberManager::getInstance()->selectAdvance('*', ['moderator_id', '=', $moderatorId], ['create_datetime'], 'DESC', $offset, $limit);
+            $where = ['area_id', '=',$numberAreaId];
+            
+            if ($userType == \admin\security\UserGroups::$MODERATOR)
+            
+            {
+              $where[] =   'and';
+              $where[] =   'moderator_id';
+              $where[] =   '=';
+              $where[] =   $moderatorId;
+            } 
+            $rows = RealVoterNumberManager::getInstance()->selectAdvance('*',$where, ['create_datetime'], 'DESC', $offset, $limit);
             $voterIdsArray = $this->getVoterIdsArray($rows);
             $areaIdsArray = $this->getAreaIdsArray($rows);
 

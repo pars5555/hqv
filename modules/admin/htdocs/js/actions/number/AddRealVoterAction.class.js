@@ -10,7 +10,8 @@ NGS.createAction("admin.actions.number.add_real_voter", {
         } else {
             jQuery("#addVoterError").text('');
         }
-        NGS.load('admin.loads.number.list', {});
+         var areaId = $('#p_address').val();
+        NGS.load('admin.loads.number.list', {areaId: areaId});
         NGS.load('admin.loads.number.add_edit', {});
         $('#real_voters_table tr').removeClass('active');
         

@@ -16,18 +16,24 @@ NGS.createLoad("admin.loads.number.area_selection", {
             var selectedRegion = $('#p_region').val();
             var selectedRegionCommunity = $('#p_community').val();
             NGS.load('admin.loads.number.area_selection', {selectedRegion: selectedRegion, selectedRegionCommunity: selectedRegionCommunity});
+             var selectedAreaId = $('#p_area').val();
+             NGS.load('admin.loads.number.list', {areaId: selectedAreaId});
         });
         $('#p_address').change(function () {
             var selectedRegion = $('#p_region').val();
             var selectedRegionCommunity = $('#p_community').val();
             var selectedAreaId = $('#p_address').val();
             NGS.load('admin.loads.number.area_selection', {selectedRegion: selectedRegion, selectedRegionCommunity: selectedRegionCommunity, selectedAreaId:selectedAreaId});
+            var selectedAreaId = $('#p_area').val();
+             NGS.load('admin.loads.number.list', {areaId: selectedAreaId});
         });
         $('#p_area').change(function () {
             var selectedRegion = $('#p_area').find(':selected').data('region');
             var selectedRegionCommunity = $('#p_area').find(':selected').data('community');
             var selectedAreaId = $('#p_area').val();
             NGS.load('admin.loads.number.area_selection', {selectedRegion: selectedRegion, selectedRegionCommunity: selectedRegionCommunity, selectedAreaId:selectedAreaId});
+            var selectedAreaId = $('#p_area').val();
+             NGS.load('admin.loads.number.list', {areaId: selectedAreaId});
         });
     }
 });

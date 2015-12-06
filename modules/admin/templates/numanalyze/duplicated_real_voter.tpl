@@ -1,7 +1,9 @@
 {if $ns.voter_id>0}
     In List<br>
     voter index in list: {$ns.voter->getNumber()}<br>    
-    {$ns.area->getRegion()} {$ns.area->getCommunity()} {$ns.area->getAddress()}<br>
+    {if $ns.area}
+        {$ns.area->getRegion()} {$ns.area->getCommunity()} {$ns.area->getAddress()}<br>
+    {/if}
     pre vote:<br>
     {if !empty($ns.prevoteData)}
         {foreach from=$ns.prevoteData item=prevoteRow}
@@ -15,10 +17,18 @@
 
 {foreach from=$ns.duplidatedRows item=row}
     {assign areaId $row->getAreaId()}
+    {if $areaId>0}
     {assign area $ns.areasMappedById[$areaId]}
+    {/if}
+    
     {$row->getFirstName()} {$row->getLastName()} {$row->getFatherName()} {$row->getBirthDate()} 
     <br>
-    {$area->getTerritoryId()}/{$area->getAreaId()} {$area->getRegion()} {$area->getCommunity()} {$area->getAddress()} [{$row->getCreateDatetime()}]
+    {if isset($area)}
+    {$area->getTerritoryId()}/{$area->getAreaId()} {$area->getRegion()} {$area->getCommunity()} {$area->getAddress()} 
+    {else}
+        Area N/A 
+    {/if}
+    [{$row->getCreateDatetime()}]
     <br>
     <br>
 {/foreach}

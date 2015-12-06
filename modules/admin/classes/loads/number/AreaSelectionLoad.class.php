@@ -25,6 +25,7 @@ namespace admin\loads\number {
     class AreaSelectionLoad extends ModeratorLoad {
 
         public function load() {
+            global $numberAreaId;
 
             if (isset(NGS()->args()->rowId)) {
                 $row = RealVoterNumberManager::getInstance()->selectByPK(NGS()->args()->rowId);
@@ -65,7 +66,7 @@ namespace admin\loads\number {
                     $selectedAreaId = NGS()->args()->selectedAreaId;
                 }
             }
-
+$numberAreaId =$selectedAreaId;
             $allAreas = AreaManager::getInstance()->selectAll();
             $this->addParam('all_areas', $allAreas);
             $this->addParam('selectedRegion', $selectedRegion);
