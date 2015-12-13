@@ -1,7 +1,6 @@
 {if $ns.voter_id>0}
     In List<br>
     voter index in list: {$ns.voter->getNumber()}<br>    
-    {$ns.area->getRegion()} {$ns.area->getCommunity()} {$ns.area->getAddress()}<br>
     pre vote:<br>
     {if !empty($ns.prevoteData)}
         {foreach from=$ns.prevoteData item=prevoteRow}
@@ -15,11 +14,6 @@
 
 
 {foreach from=$ns.duplidatedRows item=row}
-    {assign areaId $row->getAreaId()}
-    {assign area $ns.areasMappedById[$areaId]}
-    {$row->getFirstName()} {$row->getLastName()} {$row->getFatherName()} {$row->getBirthDate()} 
-    <br>
-    {$area->getTerritoryId()}/{$area->getAreaId()} {$area->getRegion()} {$area->getCommunity()} {$area->getAddress()} [{$row->getCreateDatetime()}]
-    <br>
+    is death:{$row->getIsDeath()}  will vote: {$row->getWillVote()} will be in armenia: {$row->getWillBeInArm()} 
     <br>
 {/foreach}

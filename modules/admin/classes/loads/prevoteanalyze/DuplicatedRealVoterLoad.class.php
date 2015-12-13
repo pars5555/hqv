@@ -18,7 +18,6 @@
 namespace admin\loads\prevoteanalyze {
 
     use admin\loads\AdminLoad;
-    use admin\managers\RealVoterPassportManager;
     use hqv\managers\AreaManager;
     use hqv\managers\VoterDataManager;
     use hqv\managers\VoterManager;
@@ -28,16 +27,12 @@ namespace admin\loads\prevoteanalyze {
 
         public function load() {
             $ids = NGS()->args()->ids;
-            $duplidatedRows = RealVoterPassportManager::getInstance()->selectAdvance('*', ['id', 'in', "($ids)"], ['create_datetime'], 'asc');
+            $duplidatedRows = VoterDataManager::getInstance()->selectAdvance('*', ['id', 'in', "($ids)"], ['datetime'], 'asc');
             if (!empty($duplidatedRows)) {
-                $passVoter = $duplidatedRows[0];
-                $voterId = $passVoter->getVoterId();
+                $voterData = $duplidatedRows[0];
+                $voterId = $voterData->getVoterId();
                 if ($voterId > 0) {
-                    $prevoteData = VoterDataManager::getInstance()->selectByField('voter_id', $voterId);
-                    if (!empty($prevoteData)) {
-                        $this->addParam('prevoteData', $prevoteData);
-                    }
-
+                    
                     $voter = VoterManager::getInstance()->selectByPK($voterId);
                     $areaId = $voter->getAreaId();
                     $area = AreaManager::getInstance()->selectByPK($areaId);
@@ -46,10 +41,7 @@ namespace admin\loads\prevoteanalyze {
                 }
                 $this->addParam('voter_id', $voterId);
                 $this->addParam('vote_count', count($duplidatedRows));
-                $areaIdsArray = $this->getAreaIdsArray($duplidatedRows);
-                $areasMappedById = AreaManager::getInstance()->selectbyPKs($areaIdsArray, true);
                 $this->addParam('duplidatedRows', $duplidatedRows);
-                $this->addParam('areasMappedById', $areasMappedById);
             }
         }
 

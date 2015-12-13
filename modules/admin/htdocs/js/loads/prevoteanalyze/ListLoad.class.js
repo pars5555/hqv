@@ -22,7 +22,7 @@ NGS.createLoad("admin.loads.prevoteanalyze.list", {
             $('#real_duplicated_voters_table tr').removeClass('active');
             $(this).addClass('active');
             var rowids = $(this).data('rowids');
-            NGS.load('admin.loads.passanalyze.duplicated_real_voter', {ids: rowids});
+            NGS.load('admin.loads.prevoteanalyze.duplicated_real_voter', {ids: rowids});
         });
     },
     reloadPageWithParams: function ()

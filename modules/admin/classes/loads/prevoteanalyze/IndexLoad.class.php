@@ -23,7 +23,6 @@ use NGS;
     class IndexLoad extends AdminLoad {
 
         public function load() {
-            
         }
 
         public function getDefaultLoads() {
